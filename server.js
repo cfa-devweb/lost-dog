@@ -4,19 +4,13 @@ const sassMiddleware = require("node-sass-middleware");
 const nunjucks = require("nunjucks");
 const express = require("express");
 const path = require("path");
-const odbc = require("Odbc");
+const odbc = require("odbc");
 const app = express();
-const db = odbc();
 const port = 8080;
 
-db.openSync(`
-   DRIVER={${process.env.DRIVER}};
-   Server Name=${process.env.SERVER_NAME};
-   Server Port=${process.env.SERVER_PORT};
-   Database=${process.env.DATABASE};
-   UID=${process.env.UID};
-   PWD=${process.env.PWD};
-`);
+odbc.connect(`DRIVER={HFSQL};Server Name=139.99.135.47;Server Port=4900;Database=LostDogCCI;UID=DevWeb;PWD=ToTheMoon2020;`, (error, connection) => {
+  console.error(error.odbcErrors[0].code);
+});
 
 nunjucks.configure("views", {
   autoescape: true,
@@ -28,16 +22,14 @@ app.use(
     dest: path.join(__dirname, "public"),
     src: path.join(__dirname, "assets"),
     sourceMap: true,
-    debug: true
+    debug: false
   })
 );
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", function(req, res) {
-  const dogs = db.querySync(`select * from dogs`);
-
-  res.render("home.html", { dogs: dogs });
+app.get("/", async (req, res) => {
+  res.send("");
 });
 
 app.listen(port, () => {
