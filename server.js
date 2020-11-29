@@ -8,9 +8,9 @@ const odbc = require("odbc");
 const app = express();
 const port = 8080;
 
-odbc.connect(`DRIVER={HFSQL};Server Name=139.99.135.47;Server Port=4900;Database=LostDogCCI;UID=DevWeb;PWD=ToTheMoon2020;`, (error, connection) => {
-  console.error(error.odbcErrors[0].code);
-});
+// odbc.connect(`DRIVER={HFSQL};Server Name=139.99.135.47;Server Port=4900;Database=LostDogCCI;UID=DevWeb;PWD=ToTheMoon2020;`, (error, connection) => {
+//   console.error(error.odbcErrors[0].code);
+// });
 
 nunjucks.configure("views", {
   autoescape: true,
@@ -29,7 +29,8 @@ app.use(
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", async (req, res) => {
-  res.send("");
+  const dogs = {};
+  res.render("home.html", { dogs: dogs });
 });
 
 app.listen(port, () => {
