@@ -33,6 +33,11 @@ app.get("/", async (req, res) => {
   res.render("home.html", { dogs: dogs });
 });
 
+app.get("/annonces", async (req, res) => {
+  const ads = [{},{},{},{},{},{}];
+  res.render("ads.html", { ads: ads });
+});
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
