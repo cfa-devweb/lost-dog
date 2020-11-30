@@ -73,6 +73,7 @@ app.get("/annonces", async (req, res) => {
   res.render("ads.html", {
     ads: ads
   });
+
 });
 
 app.post("/annonce", (req, res) => {
@@ -88,8 +89,8 @@ app.post("/annonce", (req, res) => {
     animal: animal,
     situation: situation,
     sexe: sexe,
-    age = age,
-    description = description,
+    age: age,
+    description: description,
   };
 
   res.json(ad);
@@ -97,6 +98,10 @@ app.post("/annonce", (req, res) => {
 
 app.get("/contact", async(req, res) => {
     res.render("contact.html");
+});
+
+app.get("/design", async (req, res) => {
+    res.render("design.html");
 });
 
 app.listen(port, () => {
