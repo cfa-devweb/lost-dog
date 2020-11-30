@@ -1,0 +1,42 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        One of three column
+      </div>
+      <div class="col-sm">
+        <div>
+          <h1>Contactez-nous</h1>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="inputNom">Nom</label>
+            <input class="form-control" type="text" placeholder="Nom" id="inputNom">
+          </div>
+          <div class="form-group">
+            <label for="inputPrenom">Prénom</label>
+            <input class="form-control" type="text" placeholder="Nom" id="inputPrenom">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Adresse Mail</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nom" aria-describedby="emailHelp">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+  console.log('Home!');
+</script>
+{% endblock %}
