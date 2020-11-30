@@ -14,7 +14,7 @@
 ### Police à utiliser
 - Big Shoulders Stencil Text Extra-bold 700 (Nom du site) :(css) font-family: 'Big Shoulders Stencil Text', cursive;
 -  Francois One (Titres/Phrases d'accroches) : <br>(css) font-family: 'Francois One', sans-serif;
-- Oswald (Par défaut) : <br>(css) font-family: 'Oswald', sans-serif;
+- Noto sans-JP (Par défaut) : <br>(css) font-family: 'Noto Sans JP', sans-serif;
 
 ### Style css uniforme
 
