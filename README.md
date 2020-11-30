@@ -10,7 +10,17 @@
 - Bouton jaune : btn btn-success.
 - Bouton rouge : btn btn-info.
 
-#### BOUTON
+
+### Police à utiliser
+- Big Shoulders Stencil Text Extra-bold 700 (Nom du site) :(css) font-family: 'Big Shoulders Stencil Text', cursive;
+-  Francois One (Titres/Phrases d'accroches) : <br>(css) font-family: 'Francois One', sans-serif;
+- Oswald (Par défaut) : <br>(css) font-family: 'Oswald', sans-serif;
+
+### Style css uniforme
+
+#### Taille des polices :
+- titre: 
+- Margin à utiliser : 
  
 ### Create your own .env file
 ```

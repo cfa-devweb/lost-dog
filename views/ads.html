@@ -2,10 +2,8 @@
 
 {% block content %}
 <main>
-  Bienvenuesgitur Ads!
-
   <!-- Affichage des cartes -->
-  <div class="container">
+  <div class="container" id="container_cards">
     <div class="row">
       <div class="col-sm">
         <div class="card" style="width: 18rem;">
@@ -36,159 +34,88 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-
-    <!-- Modale -->
-    <div class="row justify-content-md-center">
-      <div class="col-md-auto">
-        <h4 class="">Toutes les annonces</h4>
-
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Input group example"
-            aria-describedby="btnGroupAddon">
-          <div class="input-group-prepend">
-            <button type="button" class="btn btn-secondary">Search</button>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Name dog</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
-
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Name dog</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Name dog</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="col-md-auto">
-        <select id="select">
-          <option value>Animal</option>
-          <option value>1</option>
-          <option value>2</option>
-          <option value>3</option>
-          <option value>4</option>
-        </select>
-
-        <select id="select">
-          <option value>Situation</option>
-          <option value>1</option>
-          <option value>2</option>
-          <option value>3</option>
-          <option value>4</option>
-        </select>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Name dog</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Name dog</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Name dog</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-  <!--Pagination-->
-  <div class="pagination">
-    <button class="btn" onclick="firstPage()">
-      <i class="fas fa-arrow-circle-left"></i>
-    </button>
-    <button class="btn" onclick="previous()"></button>
-    <span id="pageInfo"></span>
-    <button class="btn" onclick="nextPage()"></button>
-    <button class="btn" onclick="lastPage()">
-      <i class="fas fa-arrow-circle-right"></i>
-    </button>
-  </div>
+  <!-- Modale -->
 </main>
 {% endblock %}
 
 {% block js %}
-<script type="text/javascript">
-  // Pagination control
- 
-  function firstPage (){
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script>
+  $("#container_cards").ready(function () {
+  console.log('hello')
+    getData();
+})
+function getData(){
+  $.ajax({
+    method: "GET",
+    url: "/annonces",
+    dataType: "json",
+    success: function(data){
+      alert(data);
+    }
+  })
 
-  };
-
-  function previous (){
-
-  };
-
-  function nextPage (){
-
-  };
-
-  function lastPage (){
-
-  };
-
+}
 </script>
+
 {% endblock %}
