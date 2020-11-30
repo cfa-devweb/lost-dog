@@ -3,3 +3,5 @@ node_modules/
 .env
 .vscode/
 debug.log
+public/style.css
+public/style.css.map

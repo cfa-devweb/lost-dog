@@ -87,7 +87,7 @@ app.get("/annonces", async (req, res) => {
   });
 });
 
-app.get("/add-post", async(req, res) => {
+app.get("/add-post", async (req, res) => {
   res.render("add-post.html");
 });
 
@@ -105,7 +105,7 @@ app.post("/annonce", (req, res) => {
     situation: situation,
     sexe: sexe,
     age: age,
-    description: description,
+    description: description
   };
 
   res.json(ad);
