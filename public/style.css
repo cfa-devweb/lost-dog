@@ -7352,7 +7352,7 @@ textarea.form-control-lg {
     display: none !important; } }
 
 .btn {
-  border-radius: 15px; }
+  border-radius: 0px; }
 
 .btn-primary {
   background-color: #00A8E8;
