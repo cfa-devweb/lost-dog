@@ -7351,4 +7351,23 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important; } }
 
+.btn {
+  border-radius: 15px; }
+
+.btn-primary {
+  background-color: #00A8E8;
+  border-color: #00A8E8; }
+
+.btn-secondary {
+  background-color: #72C217;
+  border-color: #72C217; }
+
+.btn-success {
+  background-color: #F5E505;
+  border-color: #F5E505; }
+
+.btn-info {
+  background-color: #D12517;
+  border-color: #D12517; }
+
 /*# sourceMappingURL=style.css.map */
