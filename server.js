@@ -13,38 +13,42 @@ const port = 8080;
 // });
 
 nunjucks.configure("views", {
-  autoescape: true,
-  noCache: true,
-  watch: true, 
-  express: app
+    autoescape: true,
+    noCache: true,
+    watch: true,
+    express: app
 });
 
 app.use(
-  sassMiddleware({
-    dest: path.join(__dirname, "public"),
-    src: path.join(__dirname, "assets"),
-    sourceMap: true,
-    debug: false
-  })
+    sassMiddleware({
+        dest: path.join(__dirname, "public"),
+        src: path.join(__dirname, "assets"),
+        sourceMap: true,
+        debug: false
+    })
 );
 
 app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", async (req, res) => {
-  const dogs = {};
-  res.render("home.html", { dogs: dogs });
+app.get("/", async(req, res) => {
+    const dogs = {};
+    res.render("home.html", { dogs: dogs });
 });
 
-app.get("/contact", async (req, res) => {
-  res.render("contact.html");
+app.get("/contact", async(req, res) => {
+    res.render("contact.html");
 });
 
-app.get("/annonces", async (req, res) => {
-  const ads = [{},{},{},{},{},{}];
-  res.render("ads.html", { ads: ads });
+app.get("/annonces", async(req, res) => {
+    const ads = [{}, {}, {}, {}, {}, {}];
+    res.render("ads.html", { ads: ads });
+});
+
+app.post("/annonce", async(req, res) => {
+    res.json({});
 });
 
 app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
+    console.log(`App listening at http://localhost:${port}`);
 });
