@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   </head>
   <body>
+    {% block css %}{% endblock %}
     {% include "./header.html" %}
     {% block content %}{% endblock %}
     {% include "./footer.html" %}

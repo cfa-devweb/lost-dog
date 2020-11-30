@@ -34,6 +34,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
+// HOME
 app.get("/", async (req, res) => {
   res.render("home.html");
 });
@@ -86,6 +87,10 @@ app.get("/annonces", async (req, res) => {
   });
 });
 
+app.get("/add-post", async(req, res) => {
+  res.render("add-post.html");
+});
+
 app.post("/annonce", (req, res) => {
   const title = req.body.title;
   const animal = req.body.animal;
@@ -100,7 +105,7 @@ app.post("/annonce", (req, res) => {
     situation: situation,
     sexe: sexe,
     age: age,
-    description: description
+    description: description,
   };
 
   res.json(ad);
@@ -130,6 +135,14 @@ app.post("/contact", (req, res) => {
 
 app.get("/design", async (req, res) => {
   res.render("design.html");
+});
+
+app.get("/tuto", async (req, res) => {
+  res.render("tuto.html");
+});
+
+app.get("/partenaires", async (req, res) => {
+  res.render("partenaires.html");
 });
 
 app.listen(port, () => {

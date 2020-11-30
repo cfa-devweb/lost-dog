@@ -1,13 +1,27 @@
+//variable
+$bleue : #00A8E8;
+$vert: #72C217;
+$jaune: #F5E505;
+$rouge: #D12517;
+
+
+.btn {
+  border-radius: 0px;
+}
 .btn-primary {
-  $body-color : #00A8E8;
+  background-color: $bleue;
+  border-color: $bleue;
 }
 .btn-secondary{
-  $body-color: #72C217;
+  background-color: $vert;
+  border-color: $vert;
 }
 .btn-success{
-  $body-color: #F5E505;
+  background-color: $jaune;
+  border-color: $jaune;
 }
 .btn-info{
-  $body-color: #D12517;
+  background-color: $rouge;
+  border-color: $rouge;
 }
 
