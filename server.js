@@ -112,6 +112,10 @@ app.get("/contact", async(req, res) => {
     res.render("contact.html");
 });
 
+app.get("/partenaires", async(req, res) => {
+    res.render("partenaires.html");
+});
+
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
