@@ -114,6 +114,14 @@ app.get("/design", async (req, res) => {
   res.render("design.html");
 });
 
+app.get("/tuto", async (req, res) => {
+  res.render("tuto.html");
+});
+
+app.get("/partenaires", async (req, res) => {
+  res.render("partenaires.html");
+});
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
