@@ -2,8 +2,41 @@
 
 {% block content %}
 <main>
+  Bienvenuesgitur Ads!
+
   <!-- Affichage des cartes -->
   <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Name dog</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Name dog</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Name dog</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="card" style="width: 18rem;">
       <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
@@ -121,11 +154,41 @@
       </div>
     </div>
   </div>
+
+  <!--Pagination-->
+  <div class="pagination">
+    <button class="btn" onclick="firstPage()">
+      <i class="fas fa-arrow-circle-left"></i>
+    </button>
+    <button class="btn" onclick="previous()"></button>
+    <span id="pageInfo"></span>
+    <button class="btn" onclick="nextPage()"></button>
+    <button class="btn" onclick="lastPage()">
+      <i class="fas fa-arrow-circle-right"></i>
+    </button>
+  </div>
 </main>
 {% endblock %}
 
 {% block js %}
 <script type="text/javascript">
-  console.log('Home!');
+  // Pagination control
+ 
+  function firstPage (){
+
+  };
+
+  function previous (){
+
+  };
+
+  function nextPage (){
+
+  };
+
+  function lastPage (){
+
+  };
+
 </script>
 {% endblock %}
