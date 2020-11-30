@@ -2,6 +2,8 @@
 
 {% block content %}
 <main>
+  Bienvenuesgitur Ads!
+
   <!-- Affichage des cartes -->
   <div class="container">
     <div class="row">
@@ -92,11 +94,41 @@
   </div>
   </div>
   <!-- Modale -->
+
+  <!--Pagination-->
+  <div class="pagination">
+    <button class="btn" onclick="firstPage()">
+      <i class="fas fa-arrow-circle-left"></i>
+    </button>
+    <button class="btn" onclick="previous()"></button>
+    <span id="pageInfo"></span>
+    <button class="btn" onclick="nextPage()"></button>
+    <button class="btn" onclick="lastPage()">
+      <i class="fas fa-arrow-circle-right"></i>
+    </button>
+  </div>
 </main>
 {% endblock %}
 
 {% block js %}
 <script type="text/javascript">
-  console.log('Home!');
+  // Pagination control
+ 
+  function firstPage (){
+
+  };
+
+  function previous (){
+
+  };
+
+  function nextPage (){
+
+  };
+
+  function lastPage (){
+
+  };
+
 </script>
 {% endblock %}
