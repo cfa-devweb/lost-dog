@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const sassMiddleware = require("node-sass-middleware");
+const bodyParser  = require('body-parser'); 
 const nunjucks = require("nunjucks");
 const express = require("express");
 const path = require("path");
@@ -29,14 +30,12 @@ app.use(
 );
 
 app.set('view engine', 'html');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, "public")));
 
-
 app.get("/", async (req, res) => {
-  const dogs = {};
-  res.render("home.html", {
-    dogs: dogs
-  });
+  res.render("home.html");
 });
 
 app.get("/annonces", async (req, res) => {
@@ -76,23 +75,30 @@ app.get("/annonces", async (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
-  =======
-app.get("/", async(req, res) => {
-    const dogs = {};
-    res.render("home.html", { dogs: dogs });
+app.post("/annonce", (req, res) => {
+  const title = req.body.title;
+  const animal = req.body.animal;
+  const situation = req.body.situation;
+  const sexe = res.body.sexe;
+  const age = res.body.age;
+  const description = req.body.description;
+  
+  const ad = {
+    title: title,
+    animal: animal,
+    situation: situation,
+    sexe: sexe,
+    age = age,
+    description = description,
+  };
+
+  res.json(ad);
 });
 
 app.get("/contact", async(req, res) => {
     res.render("contact.html");
 });
 
-app.post("/annonce", async(req, res) => {
-    res.json({});
-});
-
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
-
 });
