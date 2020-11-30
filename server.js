@@ -88,8 +88,8 @@ app.post("/annonce", (req, res) => {
     animal: animal,
     situation: situation,
     sexe: sexe,
-    age = age,
-    description = description,
+    age : age,
+    description : description,
   };
 
   res.json(ad);
