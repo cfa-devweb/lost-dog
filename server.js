@@ -73,6 +73,7 @@ app.get("/annonces", async (req, res) => {
   res.render("ads.html", {
     ads: ads
   });
+
 });
 
 app.post("/annonce", (req, res) => {
@@ -101,6 +102,14 @@ app.get("/contact", async(req, res) => {
 
 app.get("/design", async (req, res) => {
   res.render("design.html");
+});
+
+app.listen(port, () => {
+    console.log(`App listening at http://localhost:${port}`);
+});
+
+app.get("/contact", async(req, res) => {
+    res.render("contact.html");
 });
 
 app.listen(port, () => {

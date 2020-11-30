@@ -1,0 +1,39 @@
+{% extends "layouts/base.html" %} {% block content %}
+<main>
+    <form action="post">
+        <label for="ftitle">Titre de l'annonce</label>
+        <input type="text" name="" id="ftitle" min-length="1" max-length="30">
+        <label for="ftypeanimal">Animal</label>
+        <select id="ftypeanimal">
+            <option value="">--Choisi ton option--</option>
+            <option value="dog">Chien</option>
+            <option value="cat">Chat</option>
+        </select>
+        <label for="fsituatuationanimal">Situation</label>
+        <select id="fsituatuationanimal">
+            <option value="">--Choisi ton option--</option>
+            <option value="dog">Perdue</option>
+            <option value="cat">Trouver</option>
+            <option value="cat">Adopter</option>
+        </select>
+        <label for="fsexanimal">Sex</label>
+        <select id="fsexanimal">
+            <option value="">--Choisi ton option--</option>
+            <option value="dog">Male</option>
+            <option value="cat">Femelle</option>
+        </select>
+        <label for="fageanimal">Age</label>
+        <input type="number" name="" id="fageanimal" min="0" max="255">
+        <!-- No negative -->
+        <label for="fcomentaire">Description</label>
+        <input type="text" min-length="1" max-length="1500">
+        <input type="checkbox" id="fcheckboxvoler"><label for="fcheckboxvoler">Je pense que mon animal à été volé</label>
+        <label for="fnumber">Numéro de télèphone</label>
+        <input type="number" max="6">
+    </form>
+</main>
+{% endblock %} {% block js %}
+<script type="text/javascript">
+    console.log('Add publication page ! ');
+</script>
+{% endblock %}
