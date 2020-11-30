@@ -45,6 +45,10 @@ app.get("/annonces", async(req, res) => {
     res.render("ads.html", { ads: ads });
 });
 
+app.post("/annonce", async(req, res) => {
+    res.json({});
+});
+
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
