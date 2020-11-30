@@ -110,6 +110,24 @@ app.get("/contact", async (req, res) => {
   res.render("contact.html");
 });
 
+app.post("/contact", (req, res) => {
+  const nom = req.body.nom;
+  const prenom = req.body.prenom;
+  const mail = req.body.mail;
+  const sujet = req.body.sujet;
+  const message = req.body.message;
+
+  const ad = {
+    nom: nom,
+    prenom: prenom,
+    mail: mail,
+    sujet: sujet,
+    message: message
+  };
+
+  res.json(ad);
+});
+
 app.get("/design", async (req, res) => {
   res.render("design.html");
 });

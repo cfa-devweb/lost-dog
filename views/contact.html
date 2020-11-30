@@ -29,7 +29,7 @@
             <label for="inputMessage">Message</label>
             <input class="form-control invalid" type="text" placeholder="Nom" id="inputMessage" required>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-primary" onclick="sendMsg()">Submit</button>
         </form>
       </div>
     </div>
@@ -39,23 +39,24 @@
 
 {% block js %}
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<script type="text/javascript">
+<script>
   function sendMsg() {
-    $nom = $('inputNom').val();
-    $prenom = $('inputPrenom').val();
-    $mail = $('inputMail').val();
-    $sujet = $('inputSujet').val();
-    $message = $('inputMessage').val();
+    $nom = $('#inputNom').val();
+    $prenom = $('#inputPrenom').val();
+    $mail = $('#inputMail').val();
+    $sujet = $('#inputSujet').val();
+    $message = $('#inputMessage').val();
 
-    $.post('https://jsonplaceholder.typicode.com/posts/',
+    $.post('/contact',
         {
             nom: $nom,
             prenom: $prenom,
             mail: $mail,
             sujet: $sujet,
-            message: $message,
+            message: $message
         }, function (data) {
-            alert('Nom: ' + data.nom /n + 'Prénom: ' + data.prenom /n + 'Mail: ' + data.mail /n + 'Sujet: ' + data.sujet + 'Message: ' + data.message);
+          alert('Votre message a bien été envoyé');
+          // alert('Nom: ' + data.nom + 'Prénom: ' + data.prenom + 'Mail: ' + data.mail + 'Sujet: ' + data.sujet + 'Message: ' + data.message);
         },
     'json');
   }
