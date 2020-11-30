@@ -20,6 +20,8 @@
     "odbc": "^2.3.5"
   },
   "devDependencies": {
-    "bootstrap": "^5.0.0-alpha3"
+    "bootstrap": "^5.0.0-alpha3",
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1"
   }
 }
