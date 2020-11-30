@@ -29,9 +29,14 @@ app.use(
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", async (req, res) => {
-  const dogs = {};
-  res.render("home.html", { dogs: dogs });
+    const dogs = {};
+    res.render("home.html", { dogs: dogs });
 });
+
+app.get("/design", async (req, res) => {
+    res.render("design.html");
+});
+
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);

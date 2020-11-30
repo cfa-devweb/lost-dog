@@ -3,6 +3,10 @@
 ### Softwares required
 - NodeJS
 
+### Font-awesome
+- Refaire un npm install pour récupérer font-awesome
+
+### 
 ### Create your own .env file
 ```
 cp .env.example .env
