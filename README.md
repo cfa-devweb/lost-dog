@@ -2,6 +2,15 @@
 
 ### Softwares required
 - NodeJS
+
+### Classe Boostrap à utiliser
+#### BOUTON
+- Bouton bleue : btn btn-primary.
+- Bouton vert : btn btn-secondary.
+- Bouton jaune : btn btn-success.
+- Bouton rouge : btn btn-info.
+
+#### BOUTON
  
 ### Create your own .env file
 ```
