@@ -40,6 +40,11 @@ app.get("/contact", async (req, res) => {
   res.render("contact.html");
 });
 
+app.get("/annonces", async (req, res) => {
+  const ads = [{},{},{},{},{},{}];
+  res.render("ads.html", { ads: ads });
+});
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
