@@ -2,7 +2,7 @@
 
 ### Softwares required
 - NodeJS
-
+ 
 ### Create your own .env file
 ```
 cp .env.example .env
