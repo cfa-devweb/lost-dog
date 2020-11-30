@@ -1,35 +1,55 @@
 {% extends "layouts/base.html" %} {% block content %}
 <main>
-    <form action="post">
-        <label for="ftitle">Titre de l'annonce</label>
-        <input type="text" name="" id="ftitle" min-length="1" max-length="30">
-        <label for="ftypeanimal">Animal</label>
-        <select id="ftypeanimal">
-            <option value="">--Choisi ton option--</option>
-            <option value="dog">Chien</option>
-            <option value="cat">Chat</option>
-        </select>
-        <label for="fsituatuationanimal">Situation</label>
-        <select id="fsituatuationanimal">
-            <option value="">--Choisi ton option--</option>
-            <option value="dog">Perdue</option>
-            <option value="cat">Trouver</option>
-            <option value="cat">Adopter</option>
-        </select>
-        <label for="fsexanimal">Sex</label>
-        <select id="fsexanimal">
-            <option value="">--Choisi ton option--</option>
-            <option value="dog">Male</option>
-            <option value="cat">Femelle</option>
-        </select>
-        <label for="fageanimal">Age</label>
-        <input type="number" name="" id="fageanimal" min="0" max="255">
-        <!-- No negative -->
-        <label for="fcomentaire">Description</label>
-        <input type="text" min-length="1" max-length="1500">
-        <input type="checkbox" id="fcheckboxvoler"><label for="fcheckboxvoler">Je pense que mon animal à été volé</label>
-        <label for="fnumber">Numéro de télèphone</label>
-        <input type="number" max="6">
+    <form class="container" action="post">
+        <div class="form-group">
+            <label for="ftitle">Titre de l'annonce</label>
+            <input class="form-control mb-3 js-input-title" type="text" name="" id="ftitle" min-length="1" max-length="30">
+        </div>
+
+        <div class="form-group">
+            <label for="ftype-animal">Animal</label>
+            <select class="form-control mb-3" id="ftype-animal">
+                <option value="">--Choisi ton option--</option>
+                <option value="dog">Chien</option>
+                <option value="cat">Chat</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="fsituation-animal">Situation</label>
+            <select class="form-control mb-3" id="fsituation-animal">
+                <option value="">--Choisi ton option--</option>
+                <option value="lost">Perdu</option>
+                <option value="found">Trouve</option>
+                <option value="adopted">Adopte</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="fsex-animal">Sex</label>
+            <select class="form-control mb-3" id="fsex-animal">
+                <option value="">--Choisi ton option--</option>
+                <option value="male">Male</option>
+                <option value="female">Femelle</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="fage-animal">Age</label>
+            <input class="form-control mb-3" type="number" name="" id="fage-animal" min="0" max="255">
+        </div>
+
+        <div class="form-group">
+            <label for="fnumber">Numéro de télèphone</label>
+            <input class="form-control mb-3" type="text" minlength="6" maxlength="6">
+        </div>
+
+        <div class="form-group">
+            <label for="fcomentaire">Description</label>
+            <textarea class="form-control mb-4" name="story" rows="5" cols="33"></textarea>
+        </div>
+
+        <input class="btn btn-primary mb-3" type="submit" value="Envoyer">
     </form>
 </main>
 {% endblock %} {% block js %}
