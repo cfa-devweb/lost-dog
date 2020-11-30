@@ -2,18 +2,8 @@
 
 {% block content %}
 <main>
-<<<<<<< HEAD
-  Bienvenuesur Ads!
+  Bienvenuesgitur Ads!
 
-  <!--Pagination-->
-  <div class="pagination">
-    <button class="btn" onclick="firstPage()"></button>
-    <button class="btn" onclick="previous()"></button>
-    <span id="pageInfo"></span>
-    <button class="btn" onclick="nextPage()"></button>
-    <button class="btn" onclick="lastPage()"></button>
-  </div>
-=======
   <!-- Affichage des cartes -->
     <div class="container">
       <div class="card" style="width: 18rem;">
@@ -89,13 +79,41 @@
       </div>    
     </div>
     <!-- Modale -->
->>>>>>> master
+
+     <!--Pagination-->
+  <div class="pagination">
+    <button class="btn" onclick="firstPage()">
+      <i class="fas fa-arrow-circle-left"></i>
+    </button>
+    <button class="btn" onclick="previous()"></button>
+    <span id="pageInfo"></span>
+    <button class="btn" onclick="nextPage()"></button>
+    <button class="btn" onclick="lastPage()">
+      <i class="fas fa-arrow-circle-right"></i>
+    </button>
+  </div>
 </main>
 {% endblock %}
 
 {% block js %}
 <script type="text/javascript">
   // Pagination control
-  let
+ 
+  function firstPage (){
+
+  };
+
+  function previous (){
+
+};
+
+function nextPage (){
+
+};
+
+function lastPage (){
+
+};
+
 </script>
 {% endblock %}
