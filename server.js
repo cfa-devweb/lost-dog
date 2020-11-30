@@ -117,3 +117,11 @@ app.get("/design", async (req, res) => {
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
+
+app.get("/partenaires", async(req, res) => {
+    res.render("partenaires.html");
+});
+
+app.listen(port, () => {
+    console.log(`App listening at http://localhost:${port}`);
+});
