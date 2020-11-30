@@ -1,19 +1,15 @@
-const {
-  series,
-  watch,
-  parallel
-} = require('gulp');
+const { series, watch, parallel } = require("gulp");
 const browserSync = require("browser-sync").create();
 const nodemon = require("gulp-nodemon");
 
 function startBrowserSync() {
   browserSync.init(null, {
-    proxy: 'localhost:8080'
+    proxy: "localhost:8080"
   });
 }
 
 function watchFiles() {
-  watch(['views/**/*.html', 'assets/**/*.scss'], function () {
+  watch(["views/**/*.html", "assets/**/*.scss"], function() {
     browserSync.reload();
   });
 }
@@ -21,8 +17,8 @@ function watchFiles() {
 function startNodemon(cb) {
   var callbackCalled = false;
   return nodemon({
-    script: 'server.js'
-  }).on('start', function () {
+    script: "server.js"
+  }).on("start", function() {
     if (!callbackCalled) {
       callbackCalled = true;
       cb();
