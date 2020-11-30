@@ -5,30 +5,32 @@
   <div class="container">
     <div class="row">
       <div class="col-sm">
-        One of three column
-      </div>
-      <div class="col-sm">
         <div>
           <h1>Contactez-nous</h1>
         </div>
         <form>
           <div class="form-group">
             <label for="inputNom">Nom</label>
-            <input class="form-control" type="text" placeholder="Nom" id="inputNom">
+            <input class="form-control invalid" type="text" placeholder="Nom" id="inputNom" required>
           </div>
           <div class="form-group">
             <label for="inputPrenom">Prénom</label>
-            <input class="form-control" type="text" placeholder="Nom" id="inputPrenom">
+            <input class="form-control invalid" type="text" placeholder="Prénom" id="inputPrenom" required>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Adresse Mail</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nom" aria-describedby="emailHelp">
+            <label for="inputMail">Adresse Mail</label>
+            <input type="email" class="form-control invalid" id="inputMail" placeholder="Adresse Email" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+            <label for="inputSujet">Sujet</label>
+            <input class="form-control invalid" type="text" placeholder="Sujet" id="inputSujet" required>
+          </div>
+          <div class="form-group">
+            <label for="inputMessage">Message</label>
+            <input class="form-control invalid" type="text" placeholder="Nom" id="inputMessage" required>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-      </div>
-      <div class="col-sm">
-        One of three columns
       </div>
     </div>
   </div>
@@ -36,7 +38,26 @@
 {% endblock %}
 
 {% block js %}
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script type="text/javascript">
-  console.log('Home!');
+  function sendMsg() {
+    $nom = $('inputNom').val();
+    $prenom = $('inputPrenom').val();
+    $mail = $('inputMail').val();
+    $sujet = $('inputSujet').val();
+    $message = $('inputMessage').val();
+
+    $.post('https://jsonplaceholder.typicode.com/posts/',
+        {
+            nom: $nom,
+            prenom: $prenom,
+            mail: $mail,
+            sujet: $sujet,
+            message: $message,
+        }, function (data) {
+            alert('Nom: ' + data.nom /n + 'Prénom: ' + data.prenom /n + 'Mail: ' + data.mail /n + 'Sujet: ' + data.sujet + 'Message: ' + data.message);
+        },
+    'json');
+  }
 </script>
 {% endblock %}
