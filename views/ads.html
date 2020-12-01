@@ -45,10 +45,10 @@
     </div>
   </div>
 
-  <div class="container" id="container_cards">
-    <div class="row">
+  <div class="container" id="container_cards" >
+    <div class="row"  id="insertCard" style="overflow: auto;">
       {% for ad in ads %}
-      <div class="col-4" id="insertCard">
+      <div class="col-4">
         <div class="card" style="width: 18rem;">
           <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
           <div class="card-body">
@@ -66,7 +66,9 @@
 
 {% block js %}
 <script type="text/javascript">
+
   var block = document.getElementById('container_cards');
+  var test = document.getElementById("insertCard");
 
   document.getElementById('form').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -101,8 +103,7 @@
   }
 
   function loadCard() {
-    xhttp = new XMLHttpRequest();
-
+    var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         cardAds(JSON.parse(this.responseText));
@@ -114,7 +115,8 @@
 
   function cardAds(data) {
     data.ads.forEach(post => {
-      block.innerHTML += `
+      test.innerHTML += `
+      <div class="col-4">
         <div class="card" style="width: 18rem;">
             <img src="${post.image}" class="card-img-top" alt="${post.title}">
             <div class="card-body">
@@ -123,10 +125,16 @@
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
+        </div>
         `
     });
   }
 
-  loadCard();
+  document.addEventListener('scroll', function(event) {
+    if(window.pageYOffset + window.innerHeight >= document.body.offsetHeight) {
+      loadCard();
+    }
+  });
+
 </script>
 {% endblock %}
