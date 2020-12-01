@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const Recaptcha = require('express-recaptcha').RecaptchaV3;
 const sassMiddleware = require("node-sass-middleware");
 const bodyParser = require("body-parser");
 const nunjucks = require("nunjucks");
@@ -12,6 +13,7 @@ const port = 8080;
 // odbc.connect(`DRIVER={HFSQL};Server Name=139.99.135.47;Server Port=4900;Database=LostDogCCI;UID=DevWeb;PWD=ToTheMoon2020;`, (error, connection) => {
 //   console.error(error.odbcErrors[0].code);
 // });
+const recaptcha = new Recaptcha('6LcjTPQZAAAAAHq8XOLzqmk-PtauZBqJ-DejqimV', '6LcjTPQZAAAAAFzKbgsoV5Bj7QFOPKrEBS_ay8l4', {callback:'resRecaptcha'});
 
 nunjucks.configure("views", {
   autoescape: true,
@@ -138,11 +140,11 @@ app.get("/api/annonces", async (req, res) => {
   });
 });
 
-app.get("/add-post", async (req, res) => {
-  res.render("add-post.html");
+app.get("/add-post", recaptcha.middleware.render, (req, res) => {
+  res.render("add-post.html", { captcha: res.recaptcha });
 });
 
-app.post("/annonce", (req, res) => {
+app.post("/annonce", recaptcha.middleware.verify, (req, res) => {
   const title = req.body.title;
   const nameAnimal = req.body.nameAnimal;
   const animal = req.body.animal;
@@ -162,7 +164,14 @@ app.post("/annonce", (req, res) => {
     description: description
   };
 
-  res.json(ad);
+  if (!req.recaptcha.error) {
+    // success code
+    
+  } else {
+    // error code
+  }
+
+  res.json(ad, { error:req.recaptcha.error });
 });
 
 app.get("/contact", async (req, res) => {
