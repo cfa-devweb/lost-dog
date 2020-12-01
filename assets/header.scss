@@ -1,19 +1,27 @@
-.logo-navbar{
-    width: 7%; 
-    margin-left: 5%;}
+.logo-navbar{ 
+    margin-left: 5%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    font-family: 'Big Shoulders Stencil Text';
+    font-size: 2em;
+    width: 4%;
+}
 
-.header{
-    margin-bottom: 3%};
+.logo-name{
+    margin: 1% 0 0% 10%;
+}
 
 .appli-mobile{
     text-align: center; 
     margin-right: 5%; 
     text-decoration: none; 
-    color: #7F7F7F; 
+    color: #000000; 
     width: 7%;
     display: flex;
     flex-flow: column;
     align-items: center;
+    margin-top: 1%;
 }
     
 
@@ -21,15 +29,21 @@
     color: #00A8E8};
 
 .bg-navbar {
-    background-color: #ffffff; 
-    border-bottom: solid 3px #000000; };
+    background-color: #EDEDED; 
+}
 
-.link-color{color: #7F7F7F; 
+.link-color{color: #828282; 
     font-size: 1.2em;}
 
 .link-color:hover{
     color: #00A8E8;}
 
-.entrypoint{
-    margin-bottom: 5%; 
-    width: 76%;}
+.logo-mobile{
+    font-size: 2em;
+    //background-color: #F2E41B;
+    background-image: url("/images/logo-lostdog.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #F2E41B;
+    background-position-y: 30%;
+}
