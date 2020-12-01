@@ -1,9 +1,8 @@
 {% extends "layouts/base.html" %}
 {% block css %}
 <style>
-  .titre-annonces {
-    margin-top: 30px;
-    margin-bottom: 35px;
+  #select {
+    margin-bottom: 20px;
   }
 </style>
 {% endblock %}
@@ -12,34 +11,32 @@
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-auto">
-        <h4 class="titre-annonces">Toutes les annonces</h4>
+        <h1 class="titre-annonces">Toutes les annonces</h1>
 
-        <form id="form" onsubmit="search(this.value)">
+        <form id="form" onsubmit="searchData(this)">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Input group example"
-              aria-describedby="btnGroupAddon" name="search">
-            <div class="input-group-prepend">
-              <button type="submit" class="btn btn-secondary">Search</button>
-            </div>
+            <input id="input" type="text" class="form-control" placeholder="Rechercher..."
+              aria-label="Input group example" aria-describedby="btnGroupAddon" name="search">
+            <button type="submit" class="btn btn-secondary">Search</button>
           </div>
         </form>
       </div>
     </div>
     <div class="row justify-content-md-center">
-      <div class="col-md-auto">
+      <div class="col-md-auto" id="select">
         <select id="select">
-          <option value>Animal</option>
-          <option value>Chien</option>
-          <option value>Chat</option>
-          <option value>Oiseaux</option>
-          <option value>Autres</option>
+          <option value>Catégorie</option>
+          <option id="chien" name="chien" value>Chien</option>
+          <option id="chat" name="chat" value>Chat</option>
+          <option id="oiseaux" name="oiseaux" value>Oiseaux</option>
+          <option id="autres" name="autres" value>Autres</option>
         </select>
 
         <select id="select">
           <option value>Situation</option>
-          <option value>Perdu</option>
-          <option value>Trouvé</option>
-          <option value>Fourrière</option>
+          <option id="perdu" name="perdu" value>Perdu</option>
+          <option id="trouve" name="trouve" value>Trouvé</option>
+          <option id="a-adopter" name="a-adopter" value>A adopter</option>
         </select>
       </div>
     </div>
@@ -87,46 +84,31 @@
 
   function displayInfo(data) {
     block.innerHTML = '';
-    data.ads.forEach(function (ads) {
+    data.ads.forEach(function (ad) {
       var info = document.createElement('div');
       info.innerHTML = `
-      <div>
-        <h2>${ads.title}</h2>
-        <p>${ads.description}</p>
-        <im>${ads.image}</img>
+      <div class="container">
+        <div class="row">
+          {% for ad in ads %}
+          <div class="col-4" id="insertCard">
+            <div class="card" style="width: 18rem;">
+              <img src="${ad.image}" class="card-img-top" alt="${ad.title}">
+                <div class="card-body">
+                  <h5 class="card-title">${ad.title}</h5>
+                  <p class="card-text">${ad.description}</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
       `;
       block.appendChild(info);
     });
   }
 
-  function loadCard() {
-    xhttp = new XMLHttpRequest();
+  
 
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        cardAds(JSON.parse(this.responseText));
-      }
-    };
-    xhttp.open("GET", "/api/annonces", true);
-    xhttp.send();
-  };
-
-  function cardAds(data) {
-    data.ads.forEach(post => {
-      block.innerHTML += `
-        <div class="card" style="width: 18rem;">
-            <img src="${post.image}" class="card-img-top" alt="${post.title}">
-            <div class="card-body">
-              <h5 class="card-title">${post.title}</h5>
-              <p class="card-text">${post.description}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        `
-    });
-  }
-
-  loadCard();
 </script>
 {% endblock %}
