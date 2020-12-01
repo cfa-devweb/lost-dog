@@ -145,6 +145,10 @@ app.get("/partenaires", async (req, res) => {
   res.render("partenaires.html");
 });
 
+app.get("/annonce", async (req, res) => {
+  res.render("page-ad.html");
+});
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
