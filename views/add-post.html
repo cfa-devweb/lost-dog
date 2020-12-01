@@ -1,14 +1,15 @@
 {% extends "layouts/base.html" %} {% block content %}
 <main>
-    
-    
+
+
     <form class="container " action="post">
         <div class="container w-75">
             <div class="container d-inline-flex w-100">
                 <span class="container w-50">
                     <div class="form-group">
                         <label for="ftitle">Titre de l'annonce</label>
-                        <input class="form-control mb-3 js-input-title" type="text" name="" id="ftitle" min-length="1" max-length="30">
+                        <input class="form-control mb-3 js-input-title" type="text" name="" id="ftitle" min-length="1"
+                            max-length="30">
                     </div>
 
                     <div class="form-group">
@@ -52,33 +53,47 @@
                 <span class="container w-50  mt-6">
                     <div class="container h-25"></div>
                     <div class="container h-75">
-                        <img src="images/icon-photo.png" alt="cette image représente un appareil photo pour rajouter la photo d'un chien " class="rounded mx-auto d-block" width="100">
+                        <img src="images/icon-photo.png"
+                            alt="cette image représente un appareil photo pour rajouter la photo d'un chien "
+                            class="rounded mx-auto d-block" width="100">
                         <div class=" text-center">
                             <div class="btn btn-mdb-color btn-rounded">
-                                <span class="text-uppercase">Ajouter une photo</span>                                
-                                <div class="container">    
+                                <span class="text-uppercase">Ajouter une photo</span>
+                                <div class="container">
                                     <input type="file" class="border border-dark border-1 rounded-pill">
                                 </div>
-                            </div>              
+                            </div>
                         </div>
-                    </div>                    
+                    </div>
                 </span>
             </div>
             <div class="container">
                 <div class="form-group">
                     <label for="fcomentaire">Description</label>
-                    <textarea class="form-control mb-4" name="story" rows="5" cols="33"></textarea>                    
+                    <textarea class="form-control mb-4" name="story" rows="5" cols="33"></textarea>
                     <input class="btn btn-primary mb-3" type="submit" value="Envoyer">
                 </div>
             </div>
-        </div>  
-    
+        </div>
+
+        {{ captcha | safe }}
     </form>
 </main>
-{% endblock %} {% block js %}
+{% endblock %}
+
+{% block js %}
+
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 <script type="text/javascript">
+    function resRecaptcha(token) {
+        var input = document.createElement('input');
+        input.setAttribute('type', 'hidden');
+        input.setAttribute('name', 'g-recaptcha-response');
+        input.setAttribute('value', token);
+        document.getElementsByTagName('form')[0].appendChild(input);
+    }
+
     $('form').submit(function (event) {
         event.preventDefault();
         alert('Votre publication a bien été ajoutée');
