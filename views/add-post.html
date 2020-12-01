@@ -6,7 +6,11 @@
         align-self: center;
     }
 
-
+    .preview {
+        max-width: 200px;
+        max-height: 200px;
+        display: block;
+    }
 
     /* #F5E400 couleur logo */
 </style>
@@ -85,8 +89,10 @@
                                     <h3 class="font-title font-default">Photo principale</h3>
                                     <span class="text-uppercase font-default">Ajouter une photo</span>
                                     <div class="container">
-                                        <input type="file" class="border border-dark border-1  w-100">
+                                        <input type="file" class="border border-dark border-1  w-100"
+                                            data-preview=".preview">
                                     </div>
+                                    <img class="preview m-auto" />
                                     <small>3mo max</small>
                                 </div>
                             </div>
@@ -100,7 +106,8 @@
                     <textarea class="form-control mb-4" name="story" rows="5" cols="33" id="description"></textarea>
                     <div class="custom-control custom-checkbox mb-2">
                         <input type="checkbox" class="custom-control-input" id="defaultChecked2">
-                        <label class="custom-control-label" for="defaultChecked2" id="urgentDog">Urgent cette animal risque d'étre
+                        <label class="custom-control-label" for="defaultChecked2" id="urgentDog">Urgent cette animal
+                            risque d'étre
                             euthanasier</label>
                     </div>
                     <input class="btn btn-primary mb-3" type="submit" value="Envoyer">
@@ -167,7 +174,7 @@
             $(this).css(styles);
         });
 
-        // Animal type
+    // Animal type
     $("#ftype-animal")
         .on("mouseenter", function () {
             $(this).css({
@@ -184,7 +191,7 @@
             };
             $(this).css(styles);
         });
-        // Animal Situation
+    // Animal Situation
     $("#fsituation-animal")
         .on("mouseenter", function () {
             $(this).css({
@@ -201,7 +208,7 @@
             };
             $(this).css(styles);
         });
-        // Animal SEX
+    // Animal SEX
     $("#fsex-animal")
         .on("mouseenter", function () {
             $(this).css({
@@ -218,7 +225,7 @@
             };
             $(this).css(styles);
         });
-        // Animal Age
+    // Animal Age
     $("#fage-animal")
         .on("mouseenter", function () {
             $(this).css({
@@ -235,7 +242,7 @@
             };
             $(this).css(styles);
         });
-        // Number phone
+    // Number phone
     $("#numberPhone")
         .on("mouseenter", function () {
             $(this).css({
@@ -252,7 +259,7 @@
             };
             $(this).css(styles);
         });
-        // Description
+    // Description
     $("#description")
         .on("mouseenter", function () {
             $(this).css({
@@ -269,7 +276,7 @@
             };
             $(this).css(styles);
         });
-        // URGENCE
+    // URGENCE
     // $(document).ready(function () {
     //         $('input[id="urgentDog"]').click(function () {
     //             if ($(this).prop("checked") == true) {
@@ -281,5 +288,15 @@
     //             }
     //         });
     //     });
+
+    // Apercue de upload
+    $("input[data-preview]").change(function () {
+        var $input = $(this);
+        var fileReader = new FileReader();
+        fileReader.readAsDataURL(this.files[0]);
+        fileReader.onload = function (fileEvent) {
+            $($input.data('preview')).attr('src', fileEvent.target.result);
+        };
+    });
 </script>
 {% endblock %}
