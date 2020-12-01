@@ -2,7 +2,7 @@
 {% block css %}
 <style>
   .main_form_contact {
-    background: linear-gradient(#d2e9bc, #f1f16a);
+    padding-top: 20px;
   }
 
   .titre_contact {
@@ -26,10 +26,8 @@
 {% block content %}
 <main class="main_form_contact">
   <div class="container">
-    <div class="row">
-      <div class="col-sm">
-      </div>
-      <div class="col-sm">
+    <div class="row justify-content-center">
+      <div class="col-sm-4">
         <div>
           <h1 class="titre_contact">Contactez-nous</h1>
         </div>
@@ -42,17 +40,19 @@
           <br>
           <div class="form-group">
             <label for="inputPrenom">Prénom</label>
-            <input class="form-control invalid" type="text" id="inputPrenom" placeholder="Votre prénom..."  required>
+            <input class="form-control invalid" type="text" id="inputPrenom" placeholder="Votre prénom..." required>
           </div>
           <br>
           <div class="form-group">
             <label for="inputMail">Adresse Mail</label>
-            <input type="email" class="form-control invalid" id="inputMail" aria-describedby="emailHelp" placeholder="Votre adresse mail..." required>
+            <input type="email" class="form-control invalid" id="inputMail" aria-describedby="emailHelp"
+              placeholder="Votre adresse mail..." required>
           </div>
           <br>
           <div class="form-group">
             <label for="inputSujet">Sujet</label>
-            <input class="form-control invalid" type="text" id="inputSujet" placeholder="Le sujet de votre message..." required>
+            <input class="form-control invalid" type="text" id="inputSujet" placeholder="Le sujet de votre message..."
+              required>
           </div>
           <br>
           <div class="form-group">
@@ -84,25 +84,20 @@
           </div>
         </div>
       </div>
-      <div class="col-sm">
-      </div>
     </div>
   </div>
   <br>
   <br>
   <!--  Information num tel, mail de lostDog -->
   <div class="container contact_lostdog">
-    <div class="row">
-      <div class="col-sm">
-      </div>
-      <div class="col-sm">
+    <div class="row justify-content-center">
+      <div class="col-sm-4">
         <p>Nos contacts </p>
         <!-- icone Tel boostrap  -->
         <p>
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone" fill="currentColor"
             xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568
+            <path fill-rule="evenodd" d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568
               0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0
               0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482
               8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 
@@ -118,11 +113,9 @@
             xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 
             7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2
-            13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+            13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
           </svg> lostdog.nc@gmx.com
         </p>
-      </div>
-      <div class="col-sm">
       </div>
     </div>
   </div>
@@ -132,39 +125,38 @@
 {% block js %}
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-$('form').ready(function () {
-  $nom = $('#inputNom').val();
-  $prenom = $('#inputPrenom').val();
-  $mail = $('#inputMail').val();
-  $sujet = $('#inputSujet').val();
-  $message = $('#inputMessage').val();
+  $('form').ready(function () {
+    $nom = $('#inputNom').val();
+    $prenom = $('#inputPrenom').val();
+    $mail = $('#inputMail').val();
+    $sujet = $('#inputSujet').val();
+    $message = $('#inputMessage').val();
 
-  // if ($message = "") {
-  //   $('button').prop('disabled', true);
-  // } else {
-  //   $('button').prop('disabled', false);
-  // }
+    // if ($message = "") {
+    //   $('button').prop('disabled', true);
+    // } else {
+    //   $('button').prop('disabled', false);
+    // }
 
-})
+  })
 
   // Envoi du données rentrées en champs 
   $('form').submit(function (event) {
     event.preventDefault();
-    $.post('/contact',
-        {
-            nom: $nom,
-            prenom: $prenom,
-            mail: $mail,
-            sujet: $sujet,
-            message: $message
-        }, function (data) {
-          console.log('Votre message a bien été envoyé');
-          $('#exampleModal').modal();
-          // alert('Nom: ' + data.nom + 'Prénom: ' + data.prenom + 'Mail: ' + data.mail + 'Sujet: ' + data.sujet + 'Message: ' + data.message);
-        },
-    'json');
+    $.post('/contact', {
+        nom: $nom,
+        prenom: $prenom,
+        mail: $mail,
+        sujet: $sujet,
+        message: $message
+      }, function (data) {
+        console.log('Votre message a bien été envoyé');
+        $('#exampleModal').modal();
+        // alert('Nom: ' + data.nom + 'Prénom: ' + data.prenom + 'Mail: ' + data.mail + 'Sujet: ' + data.sujet + 'Message: ' + data.message);
+      },
+      'json');
   })
 </script>
 {% endblock %}

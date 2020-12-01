@@ -1,15 +1,100 @@
 {% extends "layouts/base.html" %}
 {% block css %}
 <style>
+    .div_partenaire {
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
     .titre_partenaire {
         text-align: center;
     }
-    .img_partenaire{
-        height: 13em;
+    .img_partenaire {
+        width: 100%;
+    }
+    .nom_partenaire{
+        text-align:center;
     }
 </style>
 {% endblock %}
 {% block content %}
+<main>
+    <div class="div_partenaire">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    <h1 class="titre_partenaire">NOS PARTENAIRES</h1>
+                    <br>
+                    <p>Il est évident qu'aujourd'hui une association ne peut vivre sans l'aide d'homme et de femme,
+                        alors,
+                        à vous nos partenaires, nous vous témoignons notre gratitude
+                        pour le soutien que vous nous apportez. 
+                        <br>
+                        Nos partenaires soucieux du bien être animal, nous suivent dans toutes nos actions!</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 div_img_partenaire">
+                    <p class="nom_partenaire">Elagage Evolution</p>
+                    <a href="http://www.elagage-evolution.sitew.com/">
+                        <img class="img_partenaire" src="images/logo_elagage_evolution.png"
+                            alt="logo elagage evolution">
+                    </a>
+                </div>
+                <div class="col-sm-4 div_img_partenaire">
+                    <p class="nom_partenaire">DogMe.nc</p>
+                    <a href="https://www.facebook.com/DogMe.nc/?pageid=188484478543433&ftentidentifier=627305311328012&padding=0">
+                        <img class="img_partenaire" src="images/logo_dogMe.png" alt="logo dogMe">
+                    </a>
+                </div>
+                <div class="col-sm-4 div_img_partenaire">
+                    <p class="nom_partenaire">Croq à Dom</p>
+                    <a href="https://croqadom.nc/fr/">
+                        <img class="img_partenaire" src="images/logo_croqADom.png" alt="logo Croq à Dom">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 div_img_partenaire">
+                    <p class="nom_partenaire">Bien Naître Animal</p>
+                    <a href="https://www.helloasso.com/associations/bien-naitre-animal">
+                        <img class="img_partenaire" src="images/logo_bien_naitre_animal.png"
+                            alt="logo Bien Naître Animal">
+                    </a>
+                </div>
+                <div class="col-sm-4 div_img_partenaire">
+                    <p class="nom_partenaire">Chat Perdu nc</p>
+                    <a href="https://www.chat-perdu.org/fr-nc/">
+                        <img class="img_partenaire" src="images/logo_ouEstLeChat.png" alt="logo Chat perdu">
+                    </a>
+                </div>                
+                <div class="col-sm-4 div_img_partenaire">
+                    <p class="nom_partenaire">La bande à Nounou</p>
+                    <a href="https://www.clicanimaux.com/association-447-la-bande-a-nounou">
+                        <img class="img_partenaire" src="images/logo_la_bande_a_nounou.png" alt="logo La bande à Nounou">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-4">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <main class="main_partenaire">
     <div class="container">
         <div class="row">
@@ -61,6 +146,7 @@
           </div>
         </div>
       </div>
+
 </main>
 {% endblock %}
 
