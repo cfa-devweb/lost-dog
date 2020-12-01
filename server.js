@@ -87,6 +87,57 @@ app.get("/annonces", async (req, res) => {
   });
 });
 
+app.get("/api/annonces", async (req, res) => {
+  const animal = req.body.animal;
+  const situation = req.body.situation;
+  
+  const ads = [
+    {
+      title: "Chien Marron",
+      description:
+        "Petit chien marron, perdu pas très loin de la piscine de koutio. Merci de me contacter au 000000",
+      image:
+        "https://www.toutpourmonchat.fr/wp-content/uploads/2013/01/chat-chocolat.jpg"
+    },
+    {
+      title: "Chat Gris",
+      description:
+        "Petit chat gris, perdu à Magenta pas très loin du stage de Magenta",
+      image:
+        "https://www.toutpourmonchat.fr/wp-content/uploads/2013/01/chat-chocolat.jpg"
+    },
+    {
+      title: "Chat blanc, avec des tâches grise",
+      description:
+        "Petit chat blanc avec des petites tâches gris, perdu dans le quartier de rivière salée",
+      image:
+        "https://www.toutpourmonchat.fr/wp-content/uploads/2013/01/chat-chocolat.jpg"
+    },
+    {
+      title: "Petit chien brun",
+      description: "Petit chien brun perdu, dans le quartien de ducos",
+      image:
+        "https://www.toutpourmonchat.fr/wp-content/uploads/2013/01/chat-chocolat.jpg"
+    },
+    {
+      title: "Chat Marron",
+      description: "Petit chat marron, perdu dans le quartie du Mont-dore",
+      image:
+        "https://www.toutpourmonchat.fr/wp-content/uploads/2013/01/chat-chocolat.jpg"
+    },
+    {
+      title: "Chien blanc",
+      description: "Chien blanc perdu dans nouméa",
+      image:
+        "https://www.toutpourmonchat.fr/wp-content/uploads/2013/01/chat-chocolat.jpg"
+    }
+  ];
+
+  res.json({
+    ads: ads
+  });
+});
+
 app.get("/add-post", async (req, res) => {
   res.render("add-post.html");
 });
@@ -146,7 +197,12 @@ app.get("/partenaires", async (req, res) => {
 });
 
 app.get("/annonce", async (req, res) => {
-  res.render("page-ad.html");
+  res.render("page-ad.html", { ad: {
+    title: "Chien blanc",
+    description: "Chien blanc perdu dans nouméa",
+    image:
+      "https://www.toutpourmonchat.fr/wp-content/uploads/2013/01/chat-chocolat.jpg"
+  }});
 });
 
 app.listen(port, () => {

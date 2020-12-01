@@ -5,21 +5,25 @@
 {% endblock %}
 <header class="header">
     <nav class="navbar navbar-expand-lg bg-navbar navbar-color">
-        <img src="/images/logo-lostdog.png" class="img-fluid logo-navbar" alt="Image du logo">
+        <div class="logo-navbar">
+          <img src="/images/logo-lostdog.png" class="img-fluid" alt="Image du logo">
+          <p class="logo-name">LostDog</p>
+        </div>
+        </div>  
         <div class="mx-auto text-center">
           <div class="collapse navbar-collapse entrypoint" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item liste">
-                <a class="nav-link link-color" href="#">Accueil</a>
+                <a class="nav-link link-color" href="/">Accueil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link link-color" href="#">Annonces</a>
+                <a class="nav-link link-color" href="/annonces">Annonces</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link link-color" href="#">Tuto</a>
+                <a class="nav-link link-color" href="/tuto">Tuto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link link-color" href="#">Contact</a>
+                <a class="nav-link link-color" href="/contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -28,7 +32,7 @@
           </div>
         </div>
         <a class="appli-mobile" href="https://play.google.com/store/apps/details?id=com.pacifiscreen.lostdog&hl=fr&gl=US">
-          <i class="fas fa-mobile-alt"></i>
+          <i class="fas fa-mobile-alt logo-mobile"></i>
           <p>App android</p>
         </a>
     </nav>
