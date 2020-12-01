@@ -12,15 +12,21 @@
 
 
 ### Police à utiliser
-- Big Shoulders Stencil Text Extra-bold 700 (Nom du site) :(css) font-family: 'Big Shoulders Stencil Text', cursive;
--  Francois One (Titres/Phrases d'accroches) : <br>(css) font-family: 'Francois One', sans-serif;
-- Noto sans-JP (Par défaut) : <br>(css) font-family: 'Noto Sans JP', sans-serif;
+- Big Shoulders Stencil Text Extra-bold 700 (Nom du site) :(classe =  font-site.
+-  Francois One (Titres/Phrases d'accroches) : <br>(classe = font-title.
+- Noto sans-JP (Par défaut) : <br>(classe = font-default.
 
 ### Style css uniforme
 
 #### Taille des polices :
-- titre: 
-- Margin à utiliser : 
+- h1 : classe : size-h1
+- h2 : classe : size-h2
+- h3 : classe : size-h3
+- paragraphe(description) : size-p
+
+#### Couleur background
+- background light : bg-default
+- background dark : bg-dark
  
 ### Create your own .env file
 ```
