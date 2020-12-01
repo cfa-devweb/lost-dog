@@ -37,10 +37,15 @@
 
 .bg-navbar {
     background-color: #EDEDED; 
+    display: flex;
+    flex-flow: row;
 }
 
-.link-color{color: #828282; 
-    font-size: 1.2em;}
+.link-color{
+    color: #828282; 
+    font-size: 1.2em;
+    text-decoration: none;
+}
 
 .link-color:hover{
     color: #00A8E8;}
@@ -60,9 +65,22 @@
     width: 50%;
     padding: 2% 5% 2% 5%;
     font-size: 0.8em;
+    border-radius: 15px;
+    margin-bottom: 3%
 }
 .btn-navbar:hover{
     background-color: #F2E41B;
     color: #000000;
     border: none;
+}
+
+.liste{
+    display: flex;
+    flex-flow: row;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.element-nav{
+    margin: 5%;
 }
