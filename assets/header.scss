@@ -17,6 +17,7 @@
 
 .header{
     width: 100%;
+    background-color: #EDEDED; 
 }
 
 .appli-mobile{
@@ -36,18 +37,27 @@
     color: #00A8E8};
 
 .bg-navbar {
-    background-color: #EDEDED; 
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    padding-top: 1%;
 }
 
-.link-color{color: #828282; 
-    font-size: 1.2em;}
+.link-color{
+    color: #828282; 
+    font-size: 1.2em;
+    text-decoration: none;
+}
 
 .link-color:hover{
     color: #00A8E8;}
 
+.link-part{
+    display: none;
+}
+
 .logo-mobile{
     font-size: 2em;
-    //background-color: #F2E41B;
     background-image: url("/images/logo-lostdog.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -57,12 +67,98 @@
 .btn-navbar{
     border: none;
     background-color: #00A8E8;
-    width: 50%;
-    padding: 2% 5% 2% 5%;
-    font-size: 0.8em;
+    width: 12%;
+    padding: 5px;
+    border-radius: 15px;
+    margin-bottom: 1%;
+    margin-top: -2%;
+    color: #FFFFFF;
 }
+
 .btn-navbar:hover{
     background-color: #F2E41B;
     color: #000000;
     border: none;
+}
+
+.box-btn{
+    display: flex;
+    justify-content: center;
+}
+
+.liste{
+    display: flex;
+    flex-flow: row;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.element-nav{
+    margin: 0% 5% 0% 5%;
+}
+
+@media only screen and (max-width: 800px){
+    .liste{
+        font-size: 0.8em;
+        flex-flow: column;
+    }
+
+    .btn-navbar{
+    display: none;
+    }
+
+    .link-part{
+        display: inline-block;
+        border: none;
+        background-color: #00A8E8;
+        padding: 5px;
+        border-radius: 15px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    .logo-name{
+        font-size: 1.5em;
+    }
+
+    .logo-navbar{
+        width: 20%;
+    }
+
+    .appli-mobile{
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .liste{
+        font-size: 0.8em;
+        flex-flow: column;
+    }
+
+    .btn-navbar{
+    display: none;
+    }
+
+    .link-part{
+        display: inline-block;
+        border: none;
+        background-color: #00A8E8;
+        padding: 5px;
+        border-radius: 15px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    .logo-name{
+        font-size: 1.2em;
+    }
+
+    .logo-navbar{
+        width: 25%;
+    }
+
+    .appli-mobile{
+        font-size: 0.7em;
+    }
 }
