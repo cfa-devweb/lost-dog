@@ -7,12 +7,23 @@
     }
     .titre_partenaire {
         text-align: center;
+        color: white;
     }
     .img_partenaire {
         width: 100%;
     }
     .nom_partenaire{
         text-align:center;
+    }
+    .remerciement_partenaire{
+        background-image: url("images/chien_partenaire.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 600px;
+    }
+    .p_remerciement{
+        text-align: center;
+        color: white;
     }
 </style>
 {% endblock %}
@@ -21,10 +32,10 @@
     <div class="div_partenaire">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-sm-6">
+                <div class="col-sm-15 remerciement_partenaire">
                     <h1 class="titre_partenaire">NOS PARTENAIRES</h1>
                     <br>
-                    <p>Il est évident qu'aujourd'hui une association ne peut vivre sans l'aide d'homme et de femme,
+                    <p class="p_remerciement">Il est évident qu'aujourd'hui une association ne peut vivre sans l'aide d'homme et de femme,
                         alors,
                         à vous nos partenaires, nous vous témoignons notre gratitude
                         pour le soutien que vous nous apportez. 
@@ -87,67 +98,12 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-sm-4">
-                    <p>
-                        
+                    <p> 
                     </p>
                 </div>
             </div>
         </div>
     </div>
-
-<main class="main_partenaire">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-            </div>
-            <div class="col-sm">
-                <h1 class="titre_partenaire">NOS PARTENAIRES</h1>
-                <br>
-                <p>Nos partenaires soucieux du bien être animal, nous suivent dans toutes nos actions!</p>         
-            </div>
-            <div class="col-sm">
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            <a href="http://www.elagage-evolution.sitew.com/">
-                <img class="img_partenaire" src="images/logo_elagage_evolution.png" alt="logo elagage evolution">
-            </a>
-          </div>
-          <div class="col-sm">
-            <a href="http://www.elagage-evolution.sitew.com/">
-                <img class="img_partenaire" src="images/logo_elagage_evolution.png" alt="logo elagage evolution">
-            </a>
-          </div>
-          <div class="col-sm">
-            <a href="http://www.elagage-evolution.sitew.com/">
-                <img class="img_partenaire" src="images/logo_elagage_evolution.png" alt="logo elagage evolution">
-            </a>
-          </div>
-        </div>
-      </div>
-      <br>
-      <br>
-    <div class="container">
-        <div class="row">
-          <div class="col-sm">
-          </div>
-          <div class="col-sm">
-            <p>    
-                Il est évident qu'aujourd'hui une association ne peut vivre sans l'aide d'homme et de femme, alors,
-                à vous nos partenaires, nous vous témoignons notre gratitude
-                pour le soutien que vous nous apportez.
-            </p>
-          </div>
-          <div class="col-sm">
-          </div>
-        </div>
-      </div>
-
-</main>
 {% endblock %}
 
 {% block js %}
