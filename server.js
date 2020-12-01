@@ -146,14 +146,17 @@ app.get("/add-post", recaptcha.middleware.render, (req, res) => {
 
 app.post("/annonce", recaptcha.middleware.verify, (req, res) => {
   const title = req.body.title;
+  const nameAnimal = req.body.nameAnimal;
   const animal = req.body.animal;
   const situation = req.body.situation;
   const sexe = res.body.sexe;
   const age = res.body.age;
   const description = req.body.description;
+  
 
   const ad = {
     title: title,
+    nameAnimal: nameAnimal,
     animal: animal,
     situation: situation,
     sexe: sexe,
@@ -206,7 +209,12 @@ app.get("/partenaires", async (req, res) => {
 });
 
 app.get("/annonce", async (req, res) => {
-  res.render("page-ad.html");
+  res.render("page-ad.html", { ad: {
+    title: "Chien blanc",
+    description: "Chien blanc perdu dans nouméa",
+    image:
+      "https://www.toutpourmonchat.fr/wp-content/uploads/2013/01/chat-chocolat.jpg"
+  }});
 });
 
 app.listen(port, () => {
