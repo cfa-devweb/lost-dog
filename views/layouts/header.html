@@ -4,7 +4,7 @@
 </style>
 {% endblock %}
 <header class="header">
-    <nav class="bg-navbar navbar-color">
+    <nav class="bg-navbar">
         <div class="logo-navbar">
           <img src="/images/logo-lostdog.png" class="img-fluid image-logo" alt="Image du logo">
           <p class="logo-name">LostDog</p>
@@ -25,10 +25,10 @@
               <li class="element-nav">
                 <a class="link-color" href="/contact">Contact</a>
               </li>
+              <li class="element-nav">
+                <a class="link-part" href=""><i class="fas fa-plus-circle"></i>annonce</a>
+              </li>
             </ul>
-          </div>
-          <div>
-            <button type="button" class="btn-navbar">Ajouter une annonce</button>
           </div>
         </div>
         <a class="appli-mobile nav-link" href="https://play.google.com/store/apps/details?id=com.pacifiscreen.lostdog&hl=fr&gl=US">
@@ -36,4 +36,10 @@
           <p>App android</p>
         </a>
     </nav>
+    <div class="box-btn">
+      <button type="button" class="btn-navbar">
+        <i class="fas fa-plus-circle"></i>
+        annonce
+      </button>
+    </div>
 </header>
