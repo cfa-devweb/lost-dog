@@ -19,8 +19,14 @@
 ### Style css uniforme
 
 #### Taille des polices :
-- titre: 
-- Margin à utiliser : 
+- h1 : classe : size-h1
+- h2 : classe : size-h2
+- h3 : classe : size-h3
+- paragraphe(description) : size-p
+
+#### Couleur background
+- background light : bg-default
+- background dark : bg-dark
  
 ### Create your own .env file
 ```
