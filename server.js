@@ -197,7 +197,12 @@ app.get("/partenaires", async (req, res) => {
 });
 
 app.get("/annonce", async (req, res) => {
-  res.render("page-ad.html");
+  res.render("page-ad.html", { ad: {
+    title: "Chien blanc",
+    description: "Chien blanc perdu dans nouméa",
+    image:
+      "https://www.toutpourmonchat.fr/wp-content/uploads/2013/01/chat-chocolat.jpg"
+  }});
 });
 
 app.listen(port, () => {

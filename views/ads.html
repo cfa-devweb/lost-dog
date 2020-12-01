@@ -42,7 +42,7 @@
       </div>
     </div>
   </div>
-
+          <!-- Affichages des cartes -->
   <div class="container" id="container_cards">
     <div class="row">
       {% for ad in ads %}
@@ -53,6 +53,9 @@
             <h5 class="card-title">{{ ad.title }}</h5>
             <p class="card-text">{{ ad.description }}</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
+            <button type="button" class="btn btn-secondary" name="found" disabled></button>
+            <button type="button" class="btn btn-info" name="lost" disabled></button>
+            <button type="button" class="btn btn-success" name="adopted" disabled></button>
           </div>
         </div>
       </div>
@@ -98,7 +101,7 @@
     });
   }
 
-  function loadCard() {
+/**  function loadCard() {
     xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function () {
@@ -125,6 +128,6 @@
     });
   }
 
-  loadCard();
+  loadCard();**/
 </script>
 {% endblock %}
