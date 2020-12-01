@@ -11,10 +11,12 @@
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-auto">
-        <h1 class="titre-annonces">Toutes les annonces</h1>
+
+        <h1 class="titre-annonces size-h1">Toutes les annonces</h1>
 
         <form id="form" onsubmit="searchData(this)">
           <div class="input-group">
+
             <input id="input" type="text" class="form-control" placeholder="Rechercher..."
               aria-label="Input group example" aria-describedby="btnGroupAddon" name="search">
             <button type="submit" class="btn btn-secondary">Search</button>
@@ -42,16 +44,19 @@
     </div>
   </div>
 
-  <div class="container" id="container_cards">
-    <div class="row">
+  <div class="container" id="container_cards" >
+    <div class="row"  id="insertCard" style="overflow: auto;">
       {% for ad in ads %}
-      <div class="col-4" id="insertCard">
+      <div class="col-4">
         <div class="card" style="width: 18rem;">
           <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
           <div class="card-body">
             <h5 class="card-title">{{ ad.title }}</h5>
             <p class="card-text">{{ ad.description }}</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
+            <button type="button" class="btn btn-secondary" name="found" disabled></button>
+            <button type="button" class="btn btn-info" name="lost" disabled></button>
+            <button type="button" class="btn btn-success" name="adopted" disabled></button>
           </div>
         </div>
       </div>
@@ -63,7 +68,9 @@
 
 {% block js %}
 <script type="text/javascript">
+
   var block = document.getElementById('container_cards');
+  var test = document.getElementById("insertCard");
 
   document.getElementById('form').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -108,7 +115,39 @@
     });
   }
 
-  
+  function loadCard() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        cardAds(JSON.parse(this.responseText));
+      }
+    };
+    xhttp.open("GET", "/api/annonces", true);
+    xhttp.send();
+  };
+
+  function cardAds(data) {
+    data.ads.forEach(post => {
+      test.innerHTML += `
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+            <img src="${post.image}" class="card-img-top" alt="${post.title}">
+            <div class="card-body">
+              <h5 class="card-title">${post.title}</h5>
+              <p class="card-text">${post.description}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        `
+    });
+  }
+
+  document.addEventListener('scroll', function(event) {
+    if(window.pageYOffset + window.innerHeight >= document.body.offsetHeight) {
+      loadCard();
+    }
+  });
 
 </script>
 {% endblock %}
