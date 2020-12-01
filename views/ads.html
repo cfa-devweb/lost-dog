@@ -6,16 +6,9 @@
   <div class="container" id="container_cards">
     <div class="row">
       {% for ad in ads %}
-        <div class="col-4">
-          <div class="card" style="width: 18rem;">
-            <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
-            <div class="card-body">
-              <h5 class="card-title">{{ ad.title }}</h5>
-              <p class="card-text">{{ ad.description }}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
+      <div class="col-4" id="insertCard">
+
+      </div>
       {% endfor %}
     </div>
   </div>
@@ -24,4 +17,41 @@
 {% endblock %}
 
 {% block js %}
+
+<script type="text/javascript">
+  // General data
+
+  var test = document.getElementById("insertCard");
+
+  // Pagination control
+
+  function loadCard() {
+    xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        cardAds(JSON.parse(this.responseText));
+      }
+    };
+    xhttp.open("GET", " ", true);
+    xhttp.send();
+  };
+
+  function cardAds(data) {
+    data.ads.forEach(post => {
+      test.innerHTML += `
+        <div class="card" style="width: 18rem;">
+            <img src="${post.image}" class="card-img-top" alt="${post.title}">
+            <div class="card-body">
+              <h5 class="card-title">${post.title}</h5>
+              <p class="card-text">${post.description}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        `
+    });
+  }
+
+  loadCard();
+</script>
 {% endblock %}
