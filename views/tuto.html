@@ -2,14 +2,109 @@
 
 {% block css %}
 <style>
-  body{
-    background-color: #6987b3;
+  body {
+    background-color: white;
   }
 </style>
 {% endblock %}
 
+
 {% block content %}
 <main>
-    
+  <div class="container">
+    <h2>CONSEILS POUR UN ANIMAIL PERDU</h2>
+    <div class="row">
+      <div class="col">
+        <h4>CONSEILS</h4>
+        <ul>
+          <li>Préparer les informations sur votre animal (photo, couleur, collier, n°tatouage, lieux de disparition,
+            signes particuliers, etc.)</li>
+          <li>Utiliser l'application LOSTDOG (sur mobile), dans la catégorie perdus/trouvés </li>
+          <li>Prévenir la fourrière et le refuge SPANC</li>
+          <li>Faire une déclaration de perte aupès de la gendarmerie ou de la police</li>
+          <li>Prévenir les vétérinaires des environs</li>
+          <li>Distribuer des affiches, appeler les radios et prendre contact avec un maximum de communautés Facebook
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>CONTACT IMPORTANT</h4>
+        <h6>FOURRIERE</h6>
+        <ul>
+          <li>Téléphné : 26.86.66</li>
+          <li>Adresse : 16 rue Rqymonde JORE - DUCOS</li>
+          <li>Horaires : 8h00 - 15h30 du lundi au jeudi, et 8h00 - 12h00 le vendredi</li>
+        </ul>
+        <h6>LA BANDE A NOUNOUS</h6>
+        <ul>
+          <li>Téléphone : 79.41.30</li>
+          <li>@ : spanc-nc@hotmail.nc</li>
+        </ul>
+        <button type="button" class="btn btn-secondary"  class="card-body" data-toggle="popover" title="AUTRES CONTACTS" data-content="AAAC :
+          Téléphone : 47.12.66
+          @ : aaac.caledo@gmail.com
+          site : http://www.aaac-nouvelle-caledonie.net
+          BIEN NAÎTRE ANIMAL
+          Téléphone : 50.08.03
+          @ : bna.animal0nc@gmail.com
+          CHATS DE NC: 
+          Téléphone : 91.97.60
+          @ : chatdenc@gmail.com
+          REFUGE QNIMQLIER NC: 
+          Téléphone : 78.75.20
+          @ : ranc@lagoon.nc
+          SOS ANIMAUX: 
+          Téléphone : 76.02.08
+          @: sosanimauxnc@hotmail.fr
+          ANIMAL ACTION : 
+          @ : animal.action.nc@gmai.com
+          ">Voir plus</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">METTRE UNE IMAGE</div>
+      <div class="col">
+        <h4>Conseil pour chiens perdu</h4>
+        <ul>
+          <li>Faites un tour du quartier en sifflant dans le quartier</li>
+          <li>Déposez un vêtement qui vous appartient au dernier endroit où il a été vu</li>
+          <li>Laissez uniquement un bol d'eau à proximité. Pas de nourriture pour éviter d'attirer d'autres animaux</li>
+          <li>Demandez à vos voisins d'être vigilants</li>
+          <li>Revenez régulièrement là où il a été vu en dernier, et appelez-le régulièrement</li>
+        </ul>
+      </div>
+      <div class="w-100"></div>
+      <div class="col">
+        <h4>Conseil pour chats perdu</h4>
+        <ul>
+          <li>Faites un tour du quartier en sifflant dans le quartier</li>
+          <li>Déposez un vêtement qui vous appartient au dernier endroit où il a été vu</li>
+          <li>Laissez uniquement un bol d'eau à proximité. Pas de nourriture pour éviter d'attirer d'autres animaux</li>
+          <li>Demandez à vos voisins d'être vigilants</li>
+          <li>Revenez régulièrement là où il a été vu en dernier, et appelez-le régulièrement</li>
+        </ul>
+        </div>
+      <div class="col">
+        METTRE UNE IMAGE
+      </div>
+    </div>
+  </div>
+
+
 </main>
+{% endblock %}
+
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+</script>
+
 {% endblock %}
