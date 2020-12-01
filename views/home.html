@@ -2,6 +2,17 @@
 
 {% block css %}
 <style>
+.titres {
+  font-family: 'Francois One', sans-serif;
+}
+
+.test-bg {
+  background-color: #9dd45d;
+}
+
+.pgeneral {
+  font-family: 'Noto Sans JP', sans-serif;
+}
 
 </style>
 {% endblock %}
@@ -10,10 +21,10 @@
 <main>
   <section class="container">
     <!--Section Barre de recherche-->
-    <h1>Bienvenue sur LostDog</h1>
+    <h1 class="titres text-center">Bienvenue sur LostDog</h1>
     <div class="row justify-content-md-center">
       <div class="col-md-auto">
-        <h4 class="">Vous avez perdu un animal ? Retrouver le grace a LostDog</h4>
+        <h4 class="titres">Vous avez perdu un animal ? Retrouver le grâce à LostDog !</h4>
 
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Input group example"
@@ -46,19 +57,71 @@
     </div>
   </section>
 
-  <section>
+  <section class="container">
     <!--Section Dernieres annonces-->
+    <div class="row">
+
+      <h2 class="titres text-center">Les dernières annonces</h2>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <!-- Annonce 1-->
+      </div>
+
+      <div class="col">
+        <!-- Annonce 2-->
+      </div>
+
+      <div class="col">
+        <!-- Annonce 3-->
+      </div>
+
+      <div class="col">
+        <!-- Annonce 4-->
+      </div>
+
+    </div>
+
+    <div class="row">
+      <button class="btn btn-secondary">Consulter toutes les annonces</button>
+    </div>
   </section>
 
-  <section id="a-propos">
-    <!--Section A propos-->
-    <div>
-      <h2>A propos</h2>
+  <section id="a-propos" class="container">
+    <!--Section À propos-->
+    <div class="row">
+      <!--<h2 class="titres text-center">À propos</h2>-->
     </div>
-    <div>
-      <div></div>
-      <div></div>
+
+    <div class="row test-bg">
+
+      <div class="col">
+        <img src="/images/logo-lostdog.png">
+      </div>
+
+      <div class="col pgeneral">
+        <h2 class="titres text-center">À propos</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, voluptas molestias! Explicabo voluptate ex consectetur
+          recusandae ipsum nihil,deserunt laboriosam nisi unde quae animirerum vero consequatur voluptatibus saepe similique!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam harum perferendis maxime a veniam.
+          Minima quos saepe suscipit quas similique, odio iste veritatis a consectetur rem distinctio corrupti, eius totam!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, dolorum. Soluta ad nisi,
+          unde nesciunt rem sint in possimus architecto cumque quis molestiae officiis quae impedit voluptate. Aliquid, maxime amet.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, voluptas molestias! Explicabo voluptate ex consectetur
+          recusandae ipsum nihil,deserunt laboriosam nisi unde quae animirerum vero consequatur voluptatibus saepe similique!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam harum perferendis maxime a veniam.
+          Minima quos saepe suscipit quas similique, odio iste veritatis a consectetur rem distinctio corrupti, eius totam!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, dolorum. Soluta ad nisi,
+          unde nesciunt rem sint in possimus architecto cumque quis molestiae officiis quae impedit voluptate. Aliquid, maxime amet.
+        </p>
+      </div>
+
     </div>
+
   </section>
 </main>
 {% endblock %}

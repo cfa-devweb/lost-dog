@@ -7,21 +7,37 @@ $rouge: #D12517;
 
 .btn {
   border-radius: 10px;
+  &:hover {
+    color: #f5f9ff;
+    border-color: white;
+  }
 }
 .btn-primary {
   background-color: $bleue;
   border-color: $bleue;
+  &:hover {
+    background-color: #006eff;
+  }
 }
 .btn-secondary{
   background-color: $vert;
   border-color: $vert;
+  &:hover {
+    background-color: #399c00;
+  }
 }
 .btn-success{
   background-color: $jaune;
   border-color: $jaune;
+  &:hover {
+    background-color: #d4db00;
+  }
 }
 .btn-info{
   background-color: $rouge;
   border-color: $rouge;
+  &:hover {
+    background-color: #a80000;
+  }
 }
 
