@@ -5,6 +5,10 @@
     .aligneVertical {
         align-self: center;
     }
+
+
+
+    /* #F5E400 couleur logo */
 </style>
 {% endblock %}
 
@@ -20,13 +24,19 @@
                 <div class="row mt-4">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="ftitle">Titre de l'annonce</label>
+                            <label for="ftitle" class="font-default ">Titre de l'annonce</label>
                             <input class="form-control mb-3 js-input-title" type="text" name="" id="ftitle"
                                 min-length="1" max-length="30">
                         </div>
 
                         <div class="form-group">
-                            <label for="ftype-animal">Animal</label>
+                            <label for="nameAnimal" class="font-default">Nom de animal</label>
+                            <input class="form-control mb-3 js-input-title" type="text" name="nameAnimal"
+                                id="nameAnimal" min-length="1" max-length="30">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ftype-animal" class="font-default">Animal</label>
                             <select class="form-control mb-3" id="ftype-animal">
                                 <option value="">--Choisi ton option--</option>
                                 <option value="dog">Chien</option>
@@ -35,7 +45,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="fsituation-animal">Situation</label>
+                            <label for="fsituation-animal" class="font-default">Situation</label>
                             <select class="form-control mb-3" id="fsituation-animal">
                                 <option value="">--Choisi ton option--</option>
                                 <option value="lost">Perdu</option>
@@ -45,7 +55,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="fsex-animal">Sex</label>
+                            <label for="fsex-animal" class="font-default">Sex</label>
                             <select class="form-control mb-3" id="fsex-animal">
                                 <option value="">--Choisi ton option--</option>
                                 <option value="male">Male</option>
@@ -54,13 +64,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="fage-animal">Age</label>
+                            <label for="fage-animal" class="font-default">Age</label>
                             <input class="form-control mb-3" type="number" name="" id="fage-animal" min="0" max="255">
                         </div>
 
                         <div class="form-group">
-                            <label for="fnumber">Numéro de télèphone</label>
-                            <input class="form-control mb-3" type="text" minlength="6" maxlength="6">
+                            <label for="fnumber" class="font-default">Numéro de télèphone</label>
+                            <input class="form-control mb-3" type="text" minlength="6" maxlength="6" id="numberPhone">
                         </div>
                         </span>
 
@@ -71,11 +81,13 @@
                                 alt="cette image représente un appareil photo pour rajouter la photo d'un chien "
                                 class="rounded mx-auto d-block" width="100">
                             <div class=" text-center">
-                                <div class="btn btn-mdb-color btn-rounded">
-                                    <span class="text-uppercase">Ajouter une photo</span>
+                                <div class="">
+                                    <h3 class="font-title font-default">Photo principale</h3>
+                                    <span class="text-uppercase font-default">Ajouter une photo</span>
                                     <div class="container">
-                                        <input type="file" class="border border-dark border-1 rounded-pill w-100">
+                                        <input type="file" class="border border-dark border-1  w-100">
                                     </div>
+                                    <small>3mo max</small>
                                 </div>
                             </div>
                         </div>
@@ -84,11 +96,11 @@
             </div>
             <div class="col-lg-12 mb-4">
                 <div class="form-group">
-                    <label for="fcomentaire">Description</label>
-                    <textarea class="form-control mb-4" name="story" rows="5" cols="33"></textarea>
+                    <label for="fcomentaire" class="font-default">Description</label>
+                    <textarea class="form-control mb-4" name="story" rows="5" cols="33" id="description"></textarea>
                     <div class="custom-control custom-checkbox mb-2">
                         <input type="checkbox" class="custom-control-input" id="defaultChecked2">
-                        <label class="custom-control-label" for="defaultChecked2">Urgent cette animal risque d'étre
+                        <label class="custom-control-label" for="defaultChecked2" id="urgentDog">Urgent cette animal risque d'étre
                             euthanasier</label>
                     </div>
                     <input class="btn btn-primary mb-3" type="submit" value="Envoyer">
@@ -118,5 +130,156 @@
         event.preventDefault();
         alert('Votre publication a bien été ajoutée');
     })
+
+    // Titre de l'anonce
+    $("#ftitle")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+
+    // Nom de animal
+    $("#nameAnimal")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+
+        // Animal type
+    $("#ftype-animal")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+        // Animal Situation
+    $("#fsituation-animal")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+        // Animal SEX
+    $("#fsex-animal")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+        // Animal Age
+    $("#fage-animal")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+        // Number phone
+    $("#numberPhone")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+        // Description
+    $("#description")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+        // URGENCE
+    // $(document).ready(function () {
+    //         $('input[id="urgentDog"]').click(function () {
+    //             if ($(this).prop("checked") == true) {
+    //                 //Active un élément 
+    //                 $('#urgentDog').val("OUI");
+    //             } else if ($(this).prop("checked") == false) {
+    //                 //Désactive un élément
+    //                 $('#urgentDog').val("NON");
+    //             }
+    //         });
+    //     });
 </script>
 {% endblock %}
