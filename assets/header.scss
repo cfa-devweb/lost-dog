@@ -4,20 +4,27 @@
     flex-flow: row;
     align-items: center;
     font-family: 'Big Shoulders Stencil Text';
-    font-size: 2em;
-    width: 4%;
+    width: 15%;
 }
 
 .logo-name{
-    margin: 1% 0 0% 10%;
+    margin: 1% 0 0% 5%;
+    font-size: 2em;
+}
+.image-logo{
+    max-width: 30%;
+}
+
+.header{
+    width: 100%;
 }
 
 .appli-mobile{
     text-align: center; 
-    margin-right: 5%; 
     text-decoration: none; 
     color: #000000; 
-    width: 7%;
+    width: 15%;
+    margin-left: 5%;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -46,4 +53,16 @@
     background-repeat: no-repeat;
     background-color: #F2E41B;
     background-position-y: 30%;
+}
+.btn-navbar{
+    border: none;
+    background-color: #00A8E8;
+    width: 50%;
+    padding: 2% 5% 2% 5%;
+    font-size: 0.8em;
+}
+.btn-navbar:hover{
+    background-color: #F2E41B;
+    color: #000000;
+    border: none;
 }
