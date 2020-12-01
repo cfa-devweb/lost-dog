@@ -8,17 +8,36 @@
   opacity: 0.7;
 }
 
+.bg-img { 
+
+  
+  background-image:url(images/hey.jpg);
+  height:400px;
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+
+.texte-titre {
+  color:white;
+  padding-top:4em;
+  vertical-align: middle;
+
+}
+
+
+
 </style>
 {% endblock %}
 
 {% block content %}
 <main>
-  <!--Section Presentation-->
-  <section class="container my-4 font-default">
+  <section class="container">
+    <!--Section bienvenue-->
+    <div class="bg-img img-fluid" >
 
-    <h1 class="font-title text-center">Bienvenue sur LostDog</h1>
-
-    <h4 class="font-title text-center">Vous avez perdu un animal ? Retrouver le grâce à LostDog !</h4>
+        <h1 class="font-title text-center texte-titre">Bienvenue sur LostDog</h1>
+        
+    </div>  
 
   </section>
 

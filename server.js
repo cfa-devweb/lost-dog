@@ -144,14 +144,17 @@ app.get("/add-post", async (req, res) => {
 
 app.post("/annonce", (req, res) => {
   const title = req.body.title;
+  const nameAnimal = req.body.nameAnimal;
   const animal = req.body.animal;
   const situation = req.body.situation;
   const sexe = res.body.sexe;
   const age = res.body.age;
   const description = req.body.description;
+  
 
   const ad = {
     title: title,
+    nameAnimal: nameAnimal,
     animal: animal,
     situation: situation,
     sexe: sexe,
