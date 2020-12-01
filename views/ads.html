@@ -1,16 +1,15 @@
 {% extends "layouts/base.html" %}
 {% block css %}
 <style>
-.titre-annonces{
-  margin-top: 30px;
-  margin-bottom: 35px;
-}
+  .titre-annonces {
+    margin-top: 30px;
+    margin-bottom: 35px;
+  }
 </style>
 {% endblock %}
 {% block content %}
 <main>
-  Bienvenuesgitur Ads!
-  <div class="container" action="/annonces" method="GET">
+  <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-auto">
         <h4 class="titre-annonces">Toutes les annonces</h4>
@@ -20,11 +19,10 @@
             <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Input group example"
               aria-describedby="btnGroupAddon" name="search">
             <div class="input-group-prepend">
-              <button type="submit" class="btn btn-secondary" onkeydown="searchData(this.value)">Search</button>
+              <button type="submit" class="btn btn-secondary">Search</button>
             </div>
           </div>
         </form>
-
       </div>
     </div>
     <div class="row justify-content-md-center">
@@ -45,162 +43,51 @@
         </select>
       </div>
     </div>
-
-    <!-- Affichage des cartes -->
-    <div class="row" id="animals">
-      <div class="col-sm">
-        <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Name dog</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Name dog</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Name dog</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Name dog</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
   </div>
 
-  <!--Pagination-->
-  <div class="pagination">
-    <button class="btn" onclick="firstPage()">
-      <i class="fas fa-arrow-circle-left"></i>
-    </button>
-    <button class="btn" onclick="previous()"></button>
-    <span id="pageInfo"></span>
-    <button class="btn" onclick="nextPage()"></button>
-    <button class="btn" onclick="lastPage()">
-      <i class="fas fa-arrow-circle-right"></i>
-    </button>
+  <div class="container" id="container_cards">
+    <div class="row">
+      {% for ad in ads %}
+      <div class="col-4" id="insertCard">
+        <div class="card" style="width: 18rem;">
+          <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ ad.title }}</h5>
+            <p class="card-text">{{ ad.description }}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </main>
 {% endblock %}
 
 {% block js %}
 <script type="text/javascript">
+  var block = document.getElementById('container_cards');
 
-  document.getElementById('form').addEventListener('submit', function(event) {
+  document.getElementById('form').addEventListener('submit', function (event) {
     event.preventDefault();
     searchData(event.target.search.value);
   });
 
   function searchData(search) {
-    var url = "/api/annonces";
-    var xhr = new XMLHttpRequest;
-    xhr.open('GET', url, true);
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', "/api/annonces", true);
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && this.status === 200) {
-          var response = JSON.parse(xhr.responseText);
-          displayInfo(response);
+        var response = JSON.parse(xhr.responseText);
+        displayInfo(response);
       }
     };
     xhr.send();
   }
 
   function displayInfo(data) {
-    var block = document.getElementById('animals');
     block.innerHTML = '';
-    data.ads.forEach(function(ads) {
+    data.ads.forEach(function (ads) {
       var info = document.createElement('div');
       info.innerHTML = `
       <div>
@@ -209,26 +96,37 @@
         <im>${ads.image}</img>
       </div>
       `;
-      block.appendChild(info); 
+      block.appendChild(info);
     });
   }
 
-  // Pagination control
+  function loadCard() {
+    xhttp = new XMLHttpRequest();
 
-  function firstPage() {
-
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        cardAds(JSON.parse(this.responseText));
+      }
+    };
+    xhttp.open("GET", "/api/annonces", true);
+    xhttp.send();
   };
 
-  function previous() {
+  function cardAds(data) {
+    data.ads.forEach(post => {
+      block.innerHTML += `
+        <div class="card" style="width: 18rem;">
+            <img src="${post.image}" class="card-img-top" alt="${post.title}">
+            <div class="card-body">
+              <h5 class="card-title">${post.title}</h5>
+              <p class="card-text">${post.description}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        `
+    });
+  }
 
-  };
-
-  function nextPage() {
-
-  };
-
-  function lastPage() {
-
-  };
+  loadCard();
 </script>
 {% endblock %}
