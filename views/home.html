@@ -5,7 +5,6 @@
 
 .test-bg {
   background-color: #9dd45d;
-  opacity: 0.7;
 }
 
 .bg-img { 
@@ -36,7 +35,7 @@
     <!--Section bienvenue-->
     <div class="bg-img img-fluid" >
 
-        <h1 class="font-title text-center texte-titre size-h1 ">Bienvenue sur LostDog</h1>
+        <h1 class="font-title text-center texte-titre size-h1">Bienvenue sur LostDog</h1>
         
     </div>  
 
@@ -45,55 +44,63 @@
   <!--Section Dernieres annonces-->
   <section class="container my-4 font-default">
 
-    <div class="row">
+    <div class="row my-4">
 
-      <h2 class="font-title text-center">Les dernières annonces</h2>
+      <h2 class="font-title size-h2 text-center">Les dernières annonces</h2>
+
+    </div>
+
+    <div class="row my-4">
+      
+        <div class="col-sm card">
+          <!-- Annonce 1-->
+          <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ ad.title }}</h5>
+            <p class="card-text">{{ ad.description }}</p>
+            <a href="#" class="btn btn-primary">En savoir plus</a>
+          </div>
+        </div>
+
+        <div class="col-sm card">
+          <!-- Annonce 2-->
+          <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ ad.title }}</h5>
+            <p class="card-text">{{ ad.description }}</p>
+            <a href="#" class="btn btn-primary">En savoir plus</a>
+          </div>
+        </div>
+
+        <div class="col-sm card">
+          <!-- Annonce 3-->
+          <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ ad.title }}</h5>
+            <p class="card-text">{{ ad.description }}</p>
+            <a href="#" class="btn btn-primary">En savoir plus</a>
+          </div>
+        </div>
+
+        <div class="col-sm card">
+          <!-- Annonce 4-->
+          <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ ad.title }}</h5>
+            <p class="card-text">{{ ad.description }}</p>
+            <a href="#" class="btn btn-primary">En savoir plus</a>
+          </div>
+        </div>
 
     </div>
 
     <div class="row">
-
-      <div class="col">
-        <!-- Annonce 1-->
-      </div>
-
-      <div class="col">
-        <!-- Annonce 2-->
-      </div>
-
-      <div class="col">
-        <!-- Annonce 3-->
-      </div>
-
-      <div class="col">
-        <!-- Annonce 4-->
-      </div>
-
-    </div>
-
-    <div class="row">
-      <button class="btn btn-secondary">Consulter toutes les annonces</button>
+      <a href="/annonces">Consulter toutes les annonces</a>
     </div>
   </section>
 
-  <!--Section À propos-->
-  <section id="a-propos" class="my-4 font-default">
-    
-    <div class="row test-bg">
-
-      <div class="col-sm">
-        <img class="img-fluid text-center" src="/images/photo-chiens.jpg">
-      </div>
-
-      <div class="col m-4">
-        <h2 class="font-title text-center m-4">À propos de nous</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, voluptas molestias! Explicabo voluptate ex consectetur
-          recusandae ipsum nihil,deserunt laboriosam nisi unde quae animirerum vero consequatur voluptatibus saepe similique!
-        </p>
-      </div>
-
-    </div>
+  <!--Section ?-->
+  <section class="container my-4 font-default">
 
   </section>
 </main>
