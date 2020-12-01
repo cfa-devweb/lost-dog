@@ -2,16 +2,10 @@
 
 {% block css %}
 <style>
-.titres {
-  font-family: 'Francois One', sans-serif;
-}
 
 .test-bg {
   background-color: #9dd45d;
-}
-
-.pgeneral {
-  font-family: 'Noto Sans JP', sans-serif;
+  opacity: 0.7;
 }
 
 </style>
@@ -19,49 +13,21 @@
 
 {% block content %}
 <main>
-  <section class="container">
-    <!--Section Barre de recherche-->
-    <h1 class="titres text-center">Bienvenue sur LostDog</h1>
-    <div class="row justify-content-md-center">
-      <div class="col-md-auto">
-        <h4 class="titres">Vous avez perdu un animal ? Retrouver le grâce à LostDog !</h4>
+  <!--Section Presentation-->
+  <section class="container my-4 font-default">
 
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Input group example"
-            aria-describedby="btnGroupAddon">
-          <div class="input-group-prepend">
-            <button type="button" class="btn btn-secondary">Search</button>
-          </div>
-        </div>
+    <h1 class="font-title text-center">Bienvenue sur LostDog</h1>
 
-      </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="col-md-auto">
-        <select id="select">
-          <option value>Animal</option>
-          <option value>1</option>
-          <option value>2</option>
-          <option value>3</option>
-          <option value>4</option>
-        </select>
+    <h4 class="font-title text-center">Vous avez perdu un animal ? Retrouver le grâce à LostDog !</h4>
 
-        <select id="select">
-          <option value>Situation</option>
-          <option value>1</option>
-          <option value>2</option>
-          <option value>3</option>
-          <option value>4</option>
-        </select>
-      </div>
-    </div>
   </section>
 
-  <section class="container">
-    <!--Section Dernieres annonces-->
+  <!--Section Dernieres annonces-->
+  <section class="container my-4 font-default">
+
     <div class="row">
 
-      <h2 class="titres text-center">Les dernières annonces</h2>
+      <h2 class="font-title text-center">Les dernières annonces</h2>
 
     </div>
 
@@ -90,33 +56,20 @@
     </div>
   </section>
 
-  <section id="a-propos" class="container">
-    <!--Section À propos-->
-    <div class="row">
-      <!--<h2 class="titres text-center">À propos</h2>-->
-    </div>
-
+  <!--Section À propos-->
+  <section id="a-propos" class="my-4 font-default">
+    
     <div class="row test-bg">
 
-      <div class="col">
-        <img src="/images/logo-lostdog.png">
+      <div class="col-sm">
+        <img class="img-fluid text-center" src="/images/photo-chiens.jpg">
       </div>
 
-      <div class="col pgeneral">
-        <h2 class="titres text-center">À propos</h2>
+      <div class="col m-4">
+        <h2 class="font-title text-center m-4">À propos de nous</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, voluptas molestias! Explicabo voluptate ex consectetur
           recusandae ipsum nihil,deserunt laboriosam nisi unde quae animirerum vero consequatur voluptatibus saepe similique!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam harum perferendis maxime a veniam.
-          Minima quos saepe suscipit quas similique, odio iste veritatis a consectetur rem distinctio corrupti, eius totam!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, dolorum. Soluta ad nisi,
-          unde nesciunt rem sint in possimus architecto cumque quis molestiae officiis quae impedit voluptate. Aliquid, maxime amet.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, voluptas molestias! Explicabo voluptate ex consectetur
-          recusandae ipsum nihil,deserunt laboriosam nisi unde quae animirerum vero consequatur voluptatibus saepe similique!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam harum perferendis maxime a veniam.
-          Minima quos saepe suscipit quas similique, odio iste veritatis a consectetur rem distinctio corrupti, eius totam!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, dolorum. Soluta ad nisi,
-          unde nesciunt rem sint in possimus architecto cumque quis molestiae officiis quae impedit voluptate. Aliquid, maxime amet.
         </p>
       </div>
 
@@ -128,6 +81,5 @@
 
 {% block js %}
 <script type="text/javascript">
-  console.log('Home!');
 </script>
 {% endblock %}
