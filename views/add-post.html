@@ -2,11 +2,11 @@
 
 {% block css %}
 <style>
-    .aligneVertical{
+    .aligneVertical {
         align-self: center;
     }
 </style>
-{% endblock %} 
+{% endblock %}
 
 {% block content %}
 
@@ -17,7 +17,7 @@
     <form class="container " action="post">
         <div class=" row">
             <div class="col-lg-12">
-                <div class="row">
+                <div class="row mt-4">
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="ftitle">Titre de l'annonce</label>
@@ -82,14 +82,15 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12">
+            <div class="col-lg-12 mb-4">
                 <div class="form-group">
                     <label for="fcomentaire">Description</label>
                     <textarea class="form-control mb-4" name="story" rows="5" cols="33"></textarea>
-                    <div class="custom-control custom-checkbox">
+                    <div class="custom-control custom-checkbox mb-2">
                         <input type="checkbox" class="custom-control-input" id="defaultChecked2">
-                        <label class="custom-control-label" for="defaultChecked2">Urgent cette animal risque d'étre euthanasier</label>
-                      </div>
+                        <label class="custom-control-label" for="defaultChecked2">Urgent cette animal risque d'étre
+                            euthanasier</label>
+                    </div>
                     <input class="btn btn-primary mb-3" type="submit" value="Envoyer">
                 </div>
             </div>
@@ -99,7 +100,7 @@
 </main>
 {% endblock %} {% block js %}
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 <script type="text/javascript">
     $('form').submit(function (event) {
         event.preventDefault();
