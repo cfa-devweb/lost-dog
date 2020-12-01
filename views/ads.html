@@ -1,12 +1,53 @@
 {% extends "layouts/base.html" %}
-
+{% block css %}
+<style>
+.titre-annonces{
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+</style>
+{% endblock %}
 {% block content %}
 <main>
   Bienvenuesgitur Ads!
+  <div class="container" action="/annonces" method="GET">
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <h4 class="titre-annonces">Toutes les annonces</h4>
 
-  <!-- Affichage des cartes -->
-  <div class="container">
-    <div class="row">
+        <form id="form" onsubmit="search(this.value)">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Input group example"
+              aria-describedby="btnGroupAddon" name="search">
+            <div class="input-group-prepend">
+              <button type="submit" class="btn btn-secondary" onkeydown="searchData(this.value)">Search</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <select id="select">
+          <option value>Animal</option>
+          <option value>Chien</option>
+          <option value>Chat</option>
+          <option value>Oiseaux</option>
+          <option value>Autres</option>
+        </select>
+
+        <select id="select">
+          <option value>Situation</option>
+          <option value>Perdu</option>
+          <option value>Trouvé</option>
+          <option value>Fourrière</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Affichage des cartes -->
+    <div class="row" id="animals">
       <div class="col-sm">
         <div class="card" style="width: 18rem;">
           <img src="..." class="card-img-top" alt="...">
@@ -118,41 +159,6 @@
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
-
-    <!-- Modale -->
-    <div class="row justify-content-md-center">
-      <div class="col-md-auto">
-        <h4 class="">Toutes les annonces</h4>
-
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Input group example"
-            aria-describedby="btnGroupAddon">
-          <div class="input-group-prepend">
-            <button type="button" class="btn btn-secondary">Search</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="col-md-auto">
-        <select id="select">
-          <option value>Animal</option>
-          <option value>1</option>
-          <option value>2</option>
-          <option value>3</option>
-          <option value>4</option>
-        </select>
-
-        <select id="select">
-          <option value>Situation</option>
-          <option value>1</option>
-          <option value>2</option>
-          <option value>3</option>
-          <option value>4</option>
-        </select>
-      </div>
-    </div>
   </div>
 
   <!--Pagination-->
@@ -172,23 +178,57 @@
 
 {% block js %}
 <script type="text/javascript">
+
+  document.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    searchData(event.target.search.value);
+  });
+
+  function searchData(search) {
+    var url = "/api/annonces";
+    var xhr = new XMLHttpRequest;
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && this.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          displayInfo(response);
+      }
+    };
+    xhr.send();
+  }
+
+  function displayInfo(data) {
+    var block = document.getElementById('animals');
+    block.innerHTML = '';
+    data.ads.forEach(function(ads) {
+      var info = document.createElement('div');
+      info.innerHTML = `
+      <div>
+        <h2>${ads.title}</h2>
+        <p>${ads.description}</p>
+        <im>${ads.image}</img>
+      </div>
+      `;
+      block.appendChild(info); 
+    });
+  }
+
   // Pagination control
- 
-  function firstPage (){
+
+  function firstPage() {
 
   };
 
-  function previous (){
+  function previous() {
 
   };
 
-  function nextPage (){
+  function nextPage() {
 
   };
 
-  function lastPage (){
+  function lastPage() {
 
   };
-
 </script>
 {% endblock %}
