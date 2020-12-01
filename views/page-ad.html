@@ -1,12 +1,22 @@
 {% extends "layouts/base.html" %}
 
-{% block css %}
-
-{% endblock %}
-
 {% block content %}
 <main>
+    <div class="col-4" id="insertCard">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ ad.title }}</h5>
+                <p class="card-text">{{ ad.description }}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+    <div class="container">
+        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
 
 
-</main>
-{% endblock %}
+
+    </div>
+</main> 
+{% endblock %}  
