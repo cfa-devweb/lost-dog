@@ -1,40 +1,35 @@
-{% block css %}
-<style>
-
-</style>
-{% endblock %}
-<header class="header">
-
-    <nav class="navbar navbar-expand-lg bg-navbar navbar-color">
-        <div class="logo-navbar">
-          <img src="/images/logo-lostdog.png" class="img-fluid image-logo" alt="Image du logo">
-          <p class="logo-name">LostDog</p>
-        </div>
-        </div>  
-        <div class="mx-auto text-center">
-          <div class="collapse navbar-collapse entrypoint" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item liste">
-                <a class="nav-link link-color" href="/">Accueil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link link-color" href="/annonces">Annonces</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link link-color" href="/tuto">Tuto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link link-color" href="/contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <button type="button" class="btn btn-primary btn-navbar">Ajouter une annonce</button>
-          </div>
-        </div>
-        <a class="appli-mobile" href="https://play.google.com/store/apps/details?id=com.pacifiscreen.lostdog&hl=fr&gl=US">
-          <i class="fas fa-mobile-alt logo-mobile"></i>
-          <p>App android</p>
-        </a>
-    </nav>
+<header>
+  <div class="info-navbar">
+    <span>  Suivez nous sur Facebook :&nbsp</span>
+    <a class="infos" href="https://www.facebook.com/lostdoganimauxducaillou"><i class="fab fa-facebook"></i></a>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <img src="/images/logo-navbar.png" class="img-fluid logo-navbar" alt="Logo de LostDog">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yossicaillou" aria-controls="yossicaillou" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse menu-navbar" id="yossicaillou">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link entrypoints" href="/">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link entrypoints" href="/annonces">Annonces</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link entrypoints" href="/tuto">Tutos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link entrypoints" href="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link add-annonce-nav" href="/add-post"><i class="fas fa-plus-circle"></i> annonce</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link entrypoints" href="https://play.google.com/store/apps/details?id=com.pacifiscreen.lostdog&hl=fr&gl=US"><i class="fas fa-mobile-alt"></i> app android</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>

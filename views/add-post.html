@@ -5,6 +5,36 @@
     .aligneVertical {
         align-self: center;
     }
+
+    .preview {
+        max-width: 195px;
+        max-height: 195px;
+        display: block;
+    }
+
+    #file {
+        display: none;
+        width: auto;
+        margin-left: 25%;
+        margin-right: 25%;
+        word-wrap: break-word;
+    }
+
+    .border-bottomUnique {
+        border-bottom-color: #F5E400 !important;
+    }
+
+    .itemCenter {
+        align-items: center;
+    }
+
+    @media only screen and (max-width: 991px) {
+        .textAligneLeft {
+            text-align: left !important;
+        }
+    }
+
+    /* #F5E400 couleur logo */
 </style>
 {% endblock %}
 
@@ -18,64 +48,132 @@
         <div class=" row">
             <div class="col-lg-12">
                 <div class="row mt-4">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="ftitle">Titre de l'annonce</label>
-                            <input class="form-control mb-3 js-input-title" type="text" name="" id="ftitle"
-                                min-length="1" max-length="30">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="ftype-animal">Animal</label>
-                            <select class="form-control mb-3" id="ftype-animal">
-                                <option value="">--Choisi ton option--</option>
-                                <option value="dog">Chien</option>
-                                <option value="cat">Chat</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fsituation-animal">Situation</label>
-                            <select class="form-control mb-3" id="fsituation-animal">
-                                <option value="">--Choisi ton option--</option>
-                                <option value="lost">Perdu</option>
-                                <option value="found">Trouve</option>
-                                <option value="adopted">Adopte</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fsex-animal">Sex</label>
-                            <select class="form-control mb-3" id="fsex-animal">
-                                <option value="">--Choisi ton option--</option>
-                                <option value="male">Male</option>
-                                <option value="female">Femelle</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fage-animal">Age</label>
-                            <input class="form-control mb-3" type="number" name="" id="fage-animal" min="0" max="255">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fnumber">Numéro de télèphone</label>
-                            <input class="form-control mb-3" type="text" minlength="6" maxlength="6">
-                        </div>
-                        </span>
-
+                    <div class="container">
+                        <h2 class="text-center border-2 border-bottom border-secondary pb-4 ">AJOUTER UNE ANNONCE</h2>
                     </div>
-                    <div class="col-lg-6 aligneVertical">
+                    <div class="container mt-4">
+                        <p class="text-muted">Hésité pas à donner le plus information concernant annimal </p>
+                    </div>
+                    <div class="col-lg-8">
+                        <legend class="border-bottom border-bottomUnique mb-3">Info De l'Animal</legend>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-4 text-right textAligneLeft">
+                                    <label for="ftitle" class="font-default ">Titre de l'annonce</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <input class="form-control mb-3 js-input-title" type="text" name="" id="ftitle"
+                                        min-length="1" max-length="30" required></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-4 text-right textAligneLeft">
+                                    <label for="nameAnimal" class="font-default">Nom de animal</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <input class="form-control mb-3 js-input-title" type="text" name="nameAnimal"
+                                        id="nameAnimal" min-length="1" max-length="30">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-4 text-right textAligneLeft">
+                                    <label for="fage-animal" class="font-default">Age</label></div>
+                                <div class="col-lg-8">
+                                    <input class="form-control mb-3" type="number" name="" id="fage-animal" min="0"
+                                        max="255"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="col-lg-12 ">
+                                        <label for="ftype-animal" class="font-default">Animal</label>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <select class="form-control mb-3" id="ftype-animal">
+                                            <option value="">--Choisi ton option--</option>
+                                            <option value="dog">Chien</option>
+                                            <option value="cat">Chat</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="col-lg-12">
+                                        <label for="fsituation-animal" class="font-default">Situation</label>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <select class="form-control mb-3" id="fsituation-animal" required>
+                                            <option value="">--Choisi ton option--</option>
+                                            <option value="lost">Perdu</option>
+                                            <option value="found">Trouve</option>
+                                            <option value="adopted">Adopte</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="col-lg-12">
+                                        <label for="fsex-animal" class="font-default">Sex</label>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <select class="form-control mb-3" id="fsex-animal">
+                                            <option value="">--Choisi ton option--</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Femelle</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <legend class="border-bottom border-bottomUnique mb-3">Info personel</legend>
+                        <div class="form-group required">
+                            <div class="row">
+                                <div class="col-lg-4 text-right textAligneLeft">
+                                    <label class=" control-label text-right font-default required"
+                                        for="input-firstname">Prénom</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <input type="text" name="firstname" value="" id="input-firstname"
+                                        class="form-control w75 mb-3" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-4 text-right textAligneLeft">
+                                    <label for="fnumber" class="font-default">Numéro de télèphone</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <input class="form-control mb-3" type="text" minlength="6" maxlength="6"
+                                        id="numberPhone" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 aligneVertical">
                         <div class="container h-75">
                             <img src="images/icon-photo.png"
                                 alt="cette image représente un appareil photo pour rajouter la photo d'un chien "
                                 class="rounded mx-auto d-block" width="100">
                             <div class=" text-center">
-                                <div class="btn btn-mdb-color btn-rounded">
-                                    <span class="text-uppercase">Ajouter une photo</span>
+                                <div>
+                                    <h3 class="font-title font-default">Photo principale</h3>
+                                    <div class="text-uppercase font-default btn btn-primary" id="file">Ajouter
+                                        une
+                                        photo</div>
                                     <div class="container">
-                                        <input type="file" class="border border-dark border-1 rounded-pill w-100">
+                                        <input type="file" class="border border-dark border-1  w-100"
+                                            data-preview=".preview" id="fimage-animal">
+
                                     </div>
+                                    <img class="preview m-auto" />
+                                    <small>3mo max</small>
                                 </div>
                             </div>
                         </div>
@@ -84,27 +182,286 @@
             </div>
             <div class="col-lg-12 mb-4">
                 <div class="form-group">
-                    <label for="fcomentaire">Description</label>
-                    <textarea class="form-control mb-4" name="story" rows="5" cols="33"></textarea>
-                    <div class="custom-control custom-checkbox mb-2">
-                        <input type="checkbox" class="custom-control-input" id="defaultChecked2">
-                        <label class="custom-control-label" for="defaultChecked2">Urgent cette animal risque d'étre
-                            euthanasier</label>
+                    <label for="fcomentaire" class="font-default">Description</label>
+                    <textarea class="form-control mb-4" name="story" rows="5" cols="33" id="description"
+                        required></textarea>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6"></div>
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <div class="custom-control custom-checkbox mb-2 d-flex itemCenter">
+                                            <input type="checkbox" class="custom-control-input" id="defaultChecked2">
+                                            <label class="custom-control-label" for="defaultChecked2"
+                                                id="urgentDog "><small class="ml-2">Urgent
+                                                    cette
+                                                    animal
+                                                    risque d'étre
+                                                    euthanasier</small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <input class="btn btn-primary mb-3" type="submit" value="Envoyer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <input class="btn btn-primary mb-3" type="submit" value="Envoyer">
                 </div>
             </div>
         </div>
 
+        {{ captcha | safe }}
     </form>
 </main>
-{% endblock %} {% block js %}
+{% endblock %}
+
+{% block js %}
+
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 <script type="text/javascript">
+    // reCapatcha Google
+    function resRecaptcha(token) {
+        var input = document.createElement('input');
+        input.setAttribute('type', 'hidden');
+        input.setAttribute('name', 'g-recaptcha-response');
+        input.setAttribute('value', token);
+        document.getElementsByTagName('form')[0].appendChild(input);
+    }
+
+    // Envoi des données aux Back-End
     $('form').submit(function (event) {
         event.preventDefault();
-        alert('Votre publication a bien été ajoutée');
+        $title = $('#ftitle').val();
+        $nameAnimal = $('#nameAnimal').val();
+        $animal = $('#ftype-animal').val();
+        $situation = $('#fsituation-animal').val();
+        $sexe = $('#fsex-animal').val();
+        $age = $('#fage-animal').val();
+        $tel = $('#numberPhone').val();
+        $description = $('#description').val();
+        $img = $('#fimage-animal').get(0).files;
+        $image = $img[0].name;
+
+        $('form').submit(function (event) {
+            event.preventDefault();
+            $.post('/annonce', {
+                    title: $title,
+                    nameAnimal: $nameAnimal,
+                    animal: $animal,
+                    situation: $situation,
+                    sexe: $sexe,
+                    age: $age,
+                    tel: $tel,
+                    description: $description,
+                    image: $image
+                }, function (data) {
+                    // alert('Votre publication a bien été ajoutée');
+                    console.log(data);
+                },
+                'json');
+        })
     })
+    // prénom
+    $("#input-firstname")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+    // Titre de l'anonce
+    $("#ftitle")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+
+    // Nom de animal
+    $("#nameAnimal")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+
+    // Animal type
+    $("#ftype-animal")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+    // Animal Situation
+    $("#fsituation-animal")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+    // Animal SEX
+    $("#fsex-animal")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+    // Animal Age
+    $("#fage-animal")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+    // Number phone
+    $("#numberPhone")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+    // Description
+    $("#description")
+        .on("mouseenter", function () {
+            $(this).css({
+                "background-color": "seashell",
+                "font-weight": "bolder",
+                "border-bottom": "2px solid #F5E400"
+            });
+        })
+        .on("mouseleave", function () {
+            var styles = {
+                backgroundColor: "",
+                fontWeight: "",
+                borderBottom: ""
+            };
+            $(this).css(styles);
+        });
+    // URGENCE
+    // $(document).ready(function () {
+    //         $('input[id="urgentDog"]').click(function () {
+    //             if ($(this).prop("checked") == true) {
+    //                 //Active un élément 
+    //                 $('#urgentDog').val("OUI");
+    //             } else if ($(this).prop("checked") == false) {
+    //                 //Désactive un élément
+    //                 $('#urgentDog').val("NON");
+    //             }
+    //         });
+    //     });
+
+    // Apercue de upload
+    $("input[data-preview]").change(function () {
+        var $input = $(this);
+        var fileReader = new FileReader();
+        fileReader.readAsDataURL(this.files[0]);
+        fileReader.onload = function (fileEvent) {
+            $($input.data('preview')).attr('src', fileEvent.target.result);
+        };
+    });
+
+    // style upload
+    var wrapper = $('<div />').css({
+        height: 0,
+        width: 0,
+        'overflow': 'hidden'
+    });
+    var fileInput = $(':file').wrap(wrapper);
+
+    fileInput.change(function () {
+        $this = $(this);
+        $('#file').text($this.val());
+    })
+
+    $('#file').click(function () {
+        fileInput.click();
+    }).show();
+
+    $("#file").click(function () {
+        $("p").css("color", "red");
+    });
 </script>
 {% endblock %}
