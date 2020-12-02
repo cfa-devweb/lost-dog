@@ -210,6 +210,10 @@ app.post("/commit", (req, res) => {
   res.json(ad);
 });
 
+app.get("/commit", async (req, res) => {
+  res.render("page-ad.html");
+});
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });

@@ -5,7 +5,6 @@
   .col-md-auto {
     margin-bottom: 2%;
   }
-
 </style>
 {% endblock %}
 {% block content %}
@@ -13,9 +12,7 @@
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-auto">
-
         <h1 class="titre-annonces size-h1">Toutes les annonces</h1>
-
         <form id="form" class="formsearch" onsubmit="searchData(this)">
           <div class="container" id="search" style="display: block; opacity: 1;">
             <div class="inner d-flex">
@@ -31,9 +28,7 @@
       <div class="justify-content-center d-flex">
         <div class="dropdown mr-3">
           <div class="dropdown">
-
             <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown"à>
-
               Catégories
             </button>
             <div class="dropdown-menu">
@@ -45,6 +40,7 @@
         </div>
         <div class="dropdown">
           <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown">
+
             Situation
           </button>
           <div class="dropdown-menu">
@@ -85,12 +81,10 @@
         </div>
       </div>
       {% endfor %}
-
     </div>
   </div>
 </main>
 {% endblock %}
-
 {% block js %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -98,12 +92,10 @@
 <script type="text/javascript">
   var block = document.getElementById('container_cards');
   var test = document.getElementById("insertCard");
-
   document.getElementById('form').addEventListener('submit', function (event) {
     event.preventDefault();
     searchData(event.target.search.value);
   });
-
   function searchData(search) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', "/api/annonces", true);
@@ -115,7 +107,6 @@
     };
     xhr.send();
   }
-
   function displayInfo(data) {
     block.innerHTML = '';
     data.ads.forEach(function (ad) {
@@ -141,10 +132,7 @@
       block.appendChild(info);
     });
   }
-
-
   // Ajax get data ads 
-
   function loadCard() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -155,12 +143,10 @@
     xhttp.open("GET", "/api/annonces", true);
     xhttp.send();
   };
-
   function truncate(str, n) {
     return (str.length > n) ? str.substr(0, n - 1) + '&hellip;' : str;
   };
   // Creat ads card 
-
   function cardAds(data) {
     data.ads.forEach(post => {
       test.innerHTML += `
@@ -190,7 +176,6 @@
         `
     });
   }
-
   document.addEventListener('scroll', function (event) {
     if (window.pageYOffset + window.innerHeight >= document.body.offsetHeight) {
       loadCard();

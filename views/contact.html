@@ -13,8 +13,8 @@
   }
 
   .div_container_nos_contacts {
-    display: flex;
     border-bottom-style: inset;
+    display: flex;
   }
 
   .div_container_tel_mail {
@@ -22,15 +22,11 @@
   }
 
   .div_container_tel {
-    margin-right: 200px;
+    padding-right: 100px;
   }
 
-  .titre_contact {
+  .titre_form_contact {
     text-align: center;
-  }
-
-  .div_champ_input {
-    display: flex;
   }
 
   .icone_tel {
@@ -50,27 +46,26 @@
     margin-bottom: 0;
   }
 
-  .champ {
-    height: 10vh;
-    vertical-align:top;
+  .champ_text {
+    max-width: 100%;
   }
 
   .icone_enveloppe {
     color: #efe21d;
   }
 
-  .contact_lostdog {
-    color: rgb(12, 11, 11);
+  .champ_text:hover {
+    background-color: #f5f3d6;
   }
-.champ_text:hover{
-  background-color: #f5f3d6;
-}
+
   .div_titre {
     margin-top: 30px;
   }
 
-  .div_label_message {
-    margin-right: 35px;
+  @media screen and (max-width: 767px) {
+    .div_container_nos_contacts {
+      display: block;
+    }
   }
 </style>
 {% endblock %}
@@ -128,27 +123,28 @@
       </div>
     </div>
   </div>
+  <!-- Formulaire message -->
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-sm-5">
+      <div class="col-md-4">
         <div class="div_titre">
-          <h2 class="titre_contact">Contactez-nous</h2>
+          <h2 class="titre_form_contact">Contactez-nous</h2>
         </div>
         <br>
         <form class="div_form_contact">
-          <div class="form-group div_champ_input">
+          <div class="form-group row justify-content-center">
             <div class="div_label_message">
               <label for="inputMessage">Message:</label>
             </div>
-            <div>
-              <textarea rows="5" cols="57" class="invalid champ_text" type="text" id="inputMessage" required></textarea>
+            <div class="justify-content-center">
+              <textarea rows="5" cols="60" class="invalid champ_text" type="text" id="inputMessage" required></textarea>
             </div>
           </div>
-          <br>
           <!-- Bouton qui ouvre la modale de confirmation -->
           <button type="submit" class="btn btn-primary float-right" id="btnSend">
             Envoyer
           </button>
+          <br>
         </form>
         <!-- Modale qui confirme que le message a bien été envoyé -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -192,7 +188,7 @@
         $('#exampleModal').modal();
       },
       'json');
-      $('form')[0].reset();
+    $('form')[0].reset();
   })
 </script>
 {% endblock %}
