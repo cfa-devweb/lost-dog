@@ -2,7 +2,7 @@
   color: #000000;
   display: inline-block;
   font-family: 'Open Sans', sans-serif;
-  width: 83%;
+  width: 100%;
   font-weight: 400;
   height: 50px;
   padding: 16px 30px 16px 35px;
@@ -13,8 +13,11 @@
   box-shadow: none;
   position: relative;
 }
-.button{
+.button, buttonsearch{
   height: 50px;
+}
+.buttonsearch{
+  width: 100%;
 }
 .loupe{
   color: #F5E400;
@@ -22,7 +25,4 @@
   z-index: 1;
   left: 385px;
   top: 172px;
-}
-.formsearch{
-
 }

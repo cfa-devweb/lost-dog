@@ -10,63 +10,59 @@
 {% endblock %}
 {% block content %}
 <main>
-  <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-md-auto">
 
-        <h1 class="titre-annonces size-h1">Toutes les annonces</h1>
-
-        <form id="form" class="formsearch" onsubmit="searchData(this)">
-          <div class="container" id="search" style="display: block; opacity: 1;">
-            <div class="inner d-flex">
-              <i class="fas fa-search loupe"></i>
-              <input class="searchbar mr-4" type="text" name="search" value placeholder="Rechercher une annonce...">
-              <button type="submit" class="btn btn-primary button">Search</button>
+    <div class="container text-center">
+      <h1 class="titre-annonces size-h1 justify-content-center my-3">Toutes les annonces</h1>
+      <div class="row justify-content-center">
+        <div class="col-sm-10">
+          <form id="form" class="formsearch" onsubmit="searchData(this)">
+            <div class="row">
+              <div class="col-sm-10 mb-3">
+                <input class="searchbar mr-4" type="text" name="search" value placeholder="Rechercher une annonce...">
+              </div>
+              <div class="col mb-3">
+                <button type="submit" class="btn btn-primary buttonsearch">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row justify-content-md-center d-flex">
+        <div class="justify-content-center d-flex mb-3">
+          <div class="dropdown mr-3">
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown"à>
+                Catégories
+              </button>
+              <div class="dropdown-menu form-control">
+                <a class="dropdown-item" href="#">Chat</a>
+                <a class="dropdown-item" href="#">Chien</a>
+                <a class="dropdown-item" href="#">Autres</a>
+              </div>
             </div>
           </div>
-        </form>
-      </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="justify-content-center d-flex">
-        <div class="dropdown mr-3">
           <div class="dropdown">
-
-            <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown"à>
-
-              Catégories
+            <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown">
+              Situation
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Chat</a>
-              <a class="dropdown-item" href="#">Chien</a>
-              <a class="dropdown-item" href="#">Autres</a>
+              <a class="dropdown-item" href="#">Perdu</a>
+              <a class="dropdown-item" href="#">Trouvé</a>
+              <a class="dropdown-item" href="#">A adopter</a>
             </div>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown">
-            Situation
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Perdu</a>
-            <a class="dropdown-item" href="#">Trouvé</a>
-            <a class="dropdown-item" href="#">A adopter</a>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
   <div class="container mt-5" id="container_cards">
     <div class="row" id="insertCard" style="overflow: auto;">
-
       {% for ad in ads %}
       <div class="mt-4  col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
         <div class="card border-0">
           <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
           <div class="card-body">
             <h5 class="card-title">{{ ad.title }}</h5>
-            <p class="card-text">{{ ad.description | truncate(50) }}</p>
+            <p class="size-p">{{ ad.description | truncate(50) }}</p>
             <div class="article d-flex  my-3">
               <div class="article_date">
                 <svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-calendar-date-fill "
@@ -85,7 +81,6 @@
         </div>
       </div>
       {% endfor %}
-
     </div>
   </div>
 </main>
