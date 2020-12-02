@@ -22,18 +22,22 @@
 }
 
 .logos-partenaires {
-  width: 10vw;
+  width: 20vw;
 }
 
+.bg-partenaires {
+  background-color: #f7f7f7;
+}
 
 </style>
 {% endblock %}
 
 {% block content %}
 <main>
+
   <!--Section bienvenue-->
   <section>
-    <div cass="container">
+    <div>
 
       <div class="bg-img img-fluid"></div>
 
@@ -43,6 +47,126 @@
 
       <h1 class="font-title text-center texte-titre size-h1">Bienvenue sur LostDog</h1>
     
+    </div>
+
+  </section>
+
+  <!--Section Boutons filtres-->
+  <section>
+    <div class="container">
+
+      <div class="">
+
+        <div class="">
+
+          <a href="">
+
+            <i class="far fa-frown"></i>
+
+            <h3>Perdus</h3>
+          </a>
+
+        </div>
+
+        <div class="">
+
+          <a href="">
+
+            <i class="far fa-grin-beam"></i>
+
+            <h3>Trouvés</h3>
+          </a>
+
+        </div>
+
+        <div class="">
+
+          <a href="">
+
+            <i class="far fa-grin-stars"></i>
+
+            <h3>À l'adoption</h3>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>  
+
+  </section>
+
+  <!--Section Nos partenaires-->
+  <section class="container font-default bg-partenaires">
+
+    <div class="row text-center">
+
+      <h2 class="font-title size-h2 m-4">Nos partenaires</h2>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm mb-5 ml-4">
+
+        <a href="http://www.elagage-evolution.sitew.com/">
+
+          <img class="logos-partenaires" src="images/logo_elagage_evolution.png" alt="Élevage évolution">
+
+        </a>
+
+      </div>
+
+      <div class="col-sm mb-5">
+
+        <a href="https://www.facebook.com/DogMe.nc/?pageid=188484478543433&ftentidentifier=627305311328012&padding=0">
+
+          <img class="logos-partenaires" src="images/logo_dogMe.png" alt="DogMe">
+
+        </a>
+
+      </div>
+
+      <div class="col-sm mb-5">
+
+        <a href="https://croqadom.nc/fr/">
+
+          <img class="logos-partenaires" src="images/logo_croqADom.png" alt="Crop à Dom">
+
+        </a>
+
+      </div>
+
+      <div class="col-sm mb-5">
+
+        <a href="https://www.helloasso.com/associations/bien-naitre-animal">
+
+          <img class="logos-partenaires" src="images/logo_bien_naitre_animal.png" alt="Bien Naître Animal">
+
+        </a>
+
+      </div>
+
+      <div class="col-sm mb-5">
+
+        <a href="https://www.chat-perdu.org/fr-nc/">
+
+          <img class="logos-partenaires" src="images/logo_ouEstLeChat.png" alt="Chat perdu">
+
+        </a>
+
+      </div>
+
+      <div class="col-sm mb-5 mr-4">
+
+        <a href="https://www.clicanimaux.com/association-447-la-bande-a-nounou">
+
+          <img class="logos-partenaires" src="images/logo_la_bande_a_nounou.png" alt="La bande à Nounou"> 
+
+        </a>
+
+      </div>
+
     </div>
 
   </section>
@@ -105,76 +229,6 @@
     </div>
   </section>
 
-  <!--Section Nos partenaires-->
-  <section class="container my-4 font-default">
-
-    <h2 class="font-title size-h2 text-center m-4">Nos partenaires</h2>
-
-    <div class="row">
-
-      <div class="col-sm m-2">
-
-        <a href="http://www.elagage-evolution.sitew.com/">
-
-          <img class="logos-partenaires" src="images/logo_elagage_evolution.png" alt="Élevage évolution">
-
-        </a>
-
-      </div>
-
-      <div class="col-sm m-2">
-
-        <a href="https://www.facebook.com/DogMe.nc/?pageid=188484478543433&ftentidentifier=627305311328012&padding=0">
-
-          <img class="logos-partenaires" src="images/logo_dogMe.png" alt="DogMe">
-
-        </a>
-
-      </div>
-
-      <div class="col-sm m-2">
-
-        <a href="https://croqadom.nc/fr/">
-
-          <img class="logos-partenaires" src="images/logo_croqADom.png" alt="Crop à Dom">
-
-        </a>
-
-      </div>
-
-      <div class="col-sm m-2">
-
-        <a href="https://www.helloasso.com/associations/bien-naitre-animal">
-
-          <img class="logos-partenaires" src="images/logo_bien_naitre_animal.png" alt="Bien Naître Animal">
-
-        </a>
-
-      </div>
-
-      <div class="col-sm m-2">
-
-        <a href="https://www.chat-perdu.org/fr-nc/">
-
-          <img class="logos-partenaires" src="images/logo_ouEstLeChat.png" alt="Chat perdu">
-
-        </a>
-
-      </div>
-
-      <div class="col-sm m-2">
-
-        <a href="https://www.clicanimaux.com/association-447-la-bande-a-nounou">
-
-          <img class="logos-partenaires" src="images/logo_la_bande_a_nounou.png" alt="La bande à Nounou"> 
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
 </main>
 {% endblock %}
 
