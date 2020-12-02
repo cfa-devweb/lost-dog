@@ -1,29 +1,95 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-    <div class="container">
-        <div class="card" style="width: 50rem;">
-            <div class="img">        
-                <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
-            </div>
-            <div class="descrip_contact">
+<div class="container">
+    <div class="card" style="width: 50rem;">
+        <div class="img">
+            <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+        </div>
+        <div class="descrip_contact">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-title">{{ ad.title }}</h5>
+                        <p class="card-text">{{ ad.description }}</p>
                     </div>
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">{{ ad.title }}</h5>
-                          <p class="card-text">{{ ad.description }}</p>
-                        </div>
-                      </div>
-                  </div>
+                </div>
             </div>
-        
-    
         </div>
     </div>
-</main> 
-{% endblock %}  
+
+    <hr>
+    <!-- champs d'input pour les commentaires d'une annonce -->
+    <div class="container m-4">
+        <div class="row align-items-start">
+            <div class="col-1">
+                COMMENTS
+            </div>
+            <div class="col">
+                <div id="commentaires" class="input-group mb-3">
+                    <input type="text" id="inputCommentaires" class="form-control" placeholder="Votre commentaire">
+                    <button class="btn btn-outline-secondary" id="enter">ENTER</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-11 ml-md-auto">
+                <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum </p>
+            </div>
+        </div>
+    </div>
+    </main>
+    {% endblock %}
+
+    {% block js %}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+        // envoie des données en bdd 
+        $commentaires = $('#inputCommentaires').val();
+        $("#enter").click(function () {
+            console.log($commentaires);
+
+            $.post('/commit', {
+                    commentaires: $commentaires,
+                }, function (data) {
+                    console.log(data);
+                },
+                'json');
+        })
+    </script>
+
+    <!-- <script type="text/javascript">
+  
+//     // Envoi du données rentrées en champs 
+//     $('form').submit(function (event) {
+//       event.preventDefault();
+//       $.post('/contact', {
+//           nom: $nom,
+//           prenom: $prenom,
+//           mail: $mail,
+//           sujet: $sujet,
+//           message: $message
+//         }, function (data) {
+//           console.log('Votre message a bien été envoyé');
+//           $('#exampleModal').modal();
+//           // alert('Nom: ' + data.nom + 'Prénom: ' + data.prenom + 'Mail: ' + data.mail + 'Sujet: ' + data.sujet + 'Message: ' + data.message);
+//         },
+//         'json');
+//     })
+  </script> -->
+    {% endblock %}
