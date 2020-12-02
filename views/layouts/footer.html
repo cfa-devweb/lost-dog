@@ -6,8 +6,8 @@
 }
 
 #dx-bloc {
-    background-color: #ffcd00;
-    color: white;
+    background-color: #f5e400;
+    color: black;
 }
 
 #logo-pic {
@@ -18,39 +18,55 @@
     font-size: 3vw;
 }
 
-ul {
-    list-style-type: none;
+.dsp-flx {
+    display: flex;
+    align-items: center;
 }
 
 a {
     text-decoration: none;
+}
+
+nav {
+    list-style-type: none;
+    display: flex;
+    flex-flow: column;
+}
+
+nav a {
     color: black;
 }
 
-a:hover {
-    color: #ffcd00;
+nav a:hover {
+    color: black;
+    text-decoration: underline 3px #f5e400;
 }
 
 .link-dx-bloc {
-    color: white;
+    color: black;
 }
 
 .link-dx-bloc:hover {
     color: black;
+    text-decoration: underline;
+}
+
+#size-fnt-footer {
+    font-size: small;
 }
 
 </style>
 {% endblock %}
 
-<footer class="font-default size-p">
+<footer class="font-default" id="size-fnt-footer">
 
     <!--Premier bloc-->
     <div class="row" id="pr-bloc">
 
         <!--A propos-->
         <div class="col-sm m-4">
-            <h5 class="font-title text-center text-uppercase">À propos de nous</h5>
-            <p>
+            <h5 class="font-title text-uppercase">À propos de nous</h5>
+            <p class="mt-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Explicabo, saepe quisquam, quo neque totam cum accusantium numquam excepturi culpa placeat autem veritatis, 
                 perspiciatis illo minima ea in. Ipsa, officiis quidem.
@@ -67,49 +83,36 @@ a:hover {
 
         <!--Liens des pages internes-->
         <div class="col-sm m-4">
-            <h5 class="font-title text-center text-uppercase">Information</h5>
-            <ul>
-                <li>
-                    <a href="/">Accueil</a>
-                </li>
+            <h5 class="font-title text-uppercase">Information</h5>
+            <nav class="mt-4">
+                <a href="/">Accueil</a>
 
-                <li>
-                    <a href="/annonces">Annonces</a>
-                </li>
+                <a href="/annonces">Annonces</a>
 
-                <li>
-                    <a href="/add-post">Ajouter une annonce</a>
-                </li>
+                <a href="/add-post">Ajouter une annonce</a>
 
-                <li>
-                    <a href="/contact">Contactez-nous</a>
-                </li>
+                <a href="/contact">Contactez-nous</a>
 
-                <li>
-                    <a href="/partenaires">Nos partenaires</a>
-                </li>
+                <a href="/partenaires">Nos partenaires</a>
 
-                <li>
-                    <a href="/tuto">Tutoriels</a>
-                </li>
-
-            </ul>
+                <a href="/tuto">Tutoriels</a>
+            </nav>
         </div>
 
     </div>
 
     <!--Deuxieme bloc-->
-    <div class="row text-center" id="dx-bloc">
+    <div class="row text-center dsp-flx" id="dx-bloc">
 
         <!--Mentions légales-->
-        <div class="col-sm">
+        <div class="col-sm m-2">
             <a class="link-dx-bloc" href="">Privacy Policy</a>
             |
             <a class="link-dx-bloc" href="">Terms & Conditions</a>
         </div>
 
         <!--Liens externes (réseaux sociaux)-->
-        <div class="col-sm">
+        <div class="col-sm m-2">
 
             <a class="link-dx-bloc" href="https://www.facebook.com/lostdoganimauxducaillou" alt="Page Facebook de Lost Dog">
                 <i class="fab fa-facebook-square" id="icon-rs"></i>
@@ -123,10 +126,10 @@ a:hover {
         </div>
 
         <!---->
-        <div class="col-sm">
-            <p class="">
+        <div class="col-sm m-2">
+            <span>
                 Design by DevWeb promo 2020
-            </p>
+            </span>
         </div>
 
     </div>
