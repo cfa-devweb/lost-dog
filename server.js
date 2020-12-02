@@ -214,7 +214,10 @@ app.get("/annonce", async (req, res) => {
     title: "Chien blanc",
     description: "Chien blanc perdu dans nouméa",
     image:
-      "https://www.toutpourmonchat.fr/wp-content/uploads/2013/01/chat-chocolat.jpg"
+      "https://www.toutpourmonchat.fr/wp-content/uploads/2013/01/chat-chocolat.jpg",
+    date: "20/12/2020",
+    comments: 20,
+    author: "Peone Passa",
   }});
 });
 
