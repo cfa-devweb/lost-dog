@@ -249,13 +249,6 @@
     // Envoi des données aux Back-End
     $('form').submit(function (event) {
         event.preventDefault();
-        $title = $('#ftitle').val();
-        $nameAnimal = $('#nameAnimal').val();
-        $animal = $('#ftype-animal').val();
-        $situation = $('#fsituation-animal').val();
-        $sexe = $('#fsex-animal').val();
-        $age = $('#fage-animal').val();
-        $tel = $('#numberPhone').val();
         $description = $('#description').val();
         $img = $('#fimage-animal').get(0).files;
         $image = $img[0].name;
@@ -263,13 +256,6 @@
         $('form').submit(function (event) {
             event.preventDefault();
             $.post('/annonce', {
-                    title: $title,
-                    nameAnimal: $nameAnimal,
-                    animal: $animal,
-                    situation: $situation,
-                    sexe: $sexe,
-                    age: $age,
-                    tel: $tel,
                     description: $description,
                     image: $image
                 }, function (data) {
