@@ -1,17 +1,12 @@
 {% extends "layouts/base.html" %}
 {% block css %}
 <style>
-
+  #select {
+    margin-bottom: 20px;
+  }
   .col-md-auto {
     margin-bottom: 2%;
   }
-  .btn {
-    border: 1px solid #ced4da;
-    border-radius: .1rem;
-    background-color: white;
-    color: black;
-  }
-
 </style>
 {% endblock %}
 {% block content %}
@@ -19,15 +14,14 @@
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-auto">
-
         <h1 class="titre-annonces size-h1">Toutes les annonces</h1>
-
         <form id="form" onsubmit="searchData(this)">
-          <div class="input-group">
-
-            <input id="input" type="text" class="form-control" placeholder="Rechercher..."
-              aria-label="Input group example" aria-describedby="btnGroupAddon" name="search">
-            <button type="submit" class="btn btn-secondary">Search</button>
+          <div class="container" id="search" style="display: block; opacity: 1; width: 50%;">
+            <div class="inner d-flex">
+              <i class="fas fa-search loupe"></i>
+              <input class="searchbar" type="text" name="search" value placeholder="Rechercher une annonce...">
+              <button type="submit" class="btn btn-primary button ml-1gi">Search</button>
+            </div>
           </div>
         </form>
       </div>
@@ -36,7 +30,8 @@
       <div class="col-md-auto d-flex">
         <div class="dropdown mr-3">
           <div class="dropdown">
-            <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown" style="color: #ffcd00;">
+            <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown"
+              style="color: #FFCD00;" id="btnDropdown">
               Catégories
             </button>
             <div class="dropdown-menu">
@@ -47,7 +42,8 @@
           </div>
         </div>
         <div class="dropdown">
-          <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown" style="color: #ffcd00;">
+          <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown"
+            style="color: #FFCD00;" id="btnDropdown">
             Situation
           </button>
           <div class="dropdown-menu">
@@ -57,53 +53,38 @@
           </div>
         </div>
       </div>
-
-  <div class="container" id="search" style="display: block; opacity: 1; width: 50%">
-    <div class="inner">
-      <i class="fas fa-search loupe"></i>
-      <input class="searchbar" type="text" name="search" value placeholder="Rechercher une annonce...">
-      <button type="button" class="btn btn-primary button">Search</button>
-
     </div>
-
-
-      <div class="container" id="container_cards">
-        <div class="row" id="insertCard" style="overflow: auto;">
-          {% for ad in ads %}
-          <div class="col-4">
-            <div class="card" style="width: 18rem;">
-              <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
-              <div class="card-body">
-                <h5 class="card-title">{{ ad.title }}</h5>
-                <p class="card-text">{{ ad.description }}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-                <button type="button" class="btn btn-secondary" name="found" disabled></button>
-                <button type="button" class="btn btn-info" name="lost" disabled></button>
-                <button type="button" class="btn btn-success" name="adopted" disabled></button>
-              </div>
-            </div>
-
-  <div class="container mt-5" id="container_cards" >
-    <div class="row"  id="insertCard" style="overflow: auto;">
+  <div class="container mt-5" id="container_cards">
+    <div class="row" id="insertCard" style="overflow: auto;">
       {% for ad in ads %}
       <div class="mt-4  col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
-        <div class="card">
+        <div class="card border-0">
           <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
           <div class="card-body">
             <h5 class="card-title">{{ ad.title }}</h5>
             <p class="card-text">{{ ad.description | truncate(50) }}</p>
+            <div class="article d-flex  my-3">
+              <div class="article_date">
+                <svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-calendar-date-fill "
+                  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm.066-2.544c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2zm-2.957-2.89v5.332H5.77v-4.61h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z" />
+                </svg>
+                <label for="" class="size-small">{{ ad.date }}</label>
+              </div>
+            </div>
             <a href="#" class="btn btn-primary">Go somewhere</a>
             <button type="button" class="btn btn-secondary" name="found" disabled></button>
             <button type="button" class="btn btn-info" name="lost" disabled></button>
             <button type="button" class="btn btn-success" name="adopted" disabled></button>
-
           </div>
-          {% endfor %}
         </div>
       </div>
+      {% endfor %}
+    </div>
+  </div>
 </main>
 {% endblock %}
-
 {% block js %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -111,12 +92,10 @@
 <script type="text/javascript">
   var block = document.getElementById('container_cards');
   var test = document.getElementById("insertCard");
-
   document.getElementById('form').addEventListener('submit', function (event) {
     event.preventDefault();
     searchData(event.target.search.value);
   });
-
   function searchData(search) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', "/api/annonces", true);
@@ -128,7 +107,6 @@
     };
     xhr.send();
   }
-
   function displayInfo(data) {
     block.innerHTML = '';
     data.ads.forEach(function (ad) {
@@ -154,10 +132,7 @@
       block.appendChild(info);
     });
   }
-
-
   // Ajax get data ads 
-
   function loadCard() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -168,21 +143,29 @@
     xhttp.open("GET", "/api/annonces", true);
     xhttp.send();
   };
-  
-  function truncate(str, n){
-    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+  function truncate(str, n) {
+    return (str.length > n) ? str.substr(0, n - 1) + '&hellip;' : str;
   };
   // Creat ads card 
-
   function cardAds(data) {
     data.ads.forEach(post => {
       test.innerHTML += `
       <div class="mt-4 col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
-        <div class="card">
+        <div class="card border-0">
             <img src="${post.image}" class="card-img-top" alt="${post.title}">
             <div class="card-body">
               <h5 class="card-title">${post.title}</h5>
               <p class="card-text">${truncate(post.description, 50)}</p>
+              <div class="article d-flex  my-3">
+              <div class="article_date mr-5 d-flex ">
+                  <svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-calendar-date-fill mr-1" fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                          d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm.066-2.544c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2zm-2.957-2.89v5.332H5.77v-4.61h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z" />
+                  </svg>
+                  <label for="" class="size-small">${post.date}</label>
+              </div>
+          </div>
               <a href="#" class="btn btn-primary">Go somewhere</a>
               <button type="button" class="btn btn-secondary" name="found" disabled></button>
               <button type="button" class="btn btn-info" name="lost" disabled></button>
@@ -193,7 +176,6 @@
         `
     });
   }
-
   document.addEventListener('scroll', function (event) {
     if (window.pageYOffset + window.innerHeight >= document.body.offsetHeight) {
       loadCard();
