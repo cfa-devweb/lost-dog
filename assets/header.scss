@@ -65,16 +65,13 @@
         display: none;
     }
 
-    header{
-        background-color: #F5E400;
-    }
-
     .logo-mobile{
         display: flex;
         justify-content: start;
         color: #000000;
         font-family: 'Big Shoulders Stencil Text', cursive;
         font-size: 2em;
+        margin-left: 7%;
     }
 
     .bouton-mobile{
@@ -90,12 +87,15 @@
 
     .add-annonce-nav{
         color: #000000;
+        background-color: #FFFFFF;
         border-radius: 3px;
     }
 
     .mobile-navbar{
         display: flex;
         align-items: center;
+        width: 100%;
+        padding: 1% 5% 1% 5%;
     }
 
     .navbar-light .navbar-toggler {
@@ -103,6 +103,25 @@
     }
 
     .entrypoints, .add-annonce-nav{
+        text-align: left;
+        width: 100%;
         text-align: center;
+        background-color: rgba($color: #FFFFFF, $alpha: 0.6);
+    }
+
+    .menu-deroulant{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 0%;
+    }
+
+    .leheader{
+        background-color: #F5E400;
+    }
+
+    .menu-navbar{
+        margin-right: 0%;
+        margin-bottom: 0%;
     }
 }
