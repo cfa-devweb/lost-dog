@@ -93,21 +93,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Sex de animal -->
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-lg-4 text-right textAligneLeft">
-                                    <label for="fsex-animal" class="font-default ">Sex</label>
-                                </div>
-                                <div class="col-lg-8">
-                                    <select class="form-control mb-3" id="fsex-animal">
-                                        <option value="" class="font-default">--Choisi ton option--</option>
-                                        <option value="male" class=" font-default">Male</option>
-                                        <option value="female" class=" font-default">Femelle</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
                         <legend class="border-bottom border-bottomUnique mb-3  font-default">Informations supplémentaire
                         </legend>
                     </div>
@@ -237,40 +222,6 @@ Email / Téléphone / Facebook ... "></textarea>
         });
     // Animal Situation
     $("#fsituation-animal")
-        .on("mouseenter", function () {
-            $(this).css({
-                "background-color": "seashell",
-                "font-weight": "bolder",
-                "border-bottom": "2px solid #F5E400"
-            });
-        })
-        .on("mouseleave", function () {
-            var styles = {
-                backgroundColor: "",
-                fontWeight: "",
-                borderBottom: ""
-            };
-            $(this).css(styles);
-        });
-    // Animal SEX
-    $("#fsex-animal")
-        .on("mouseenter", function () {
-            $(this).css({
-                "background-color": "seashell",
-                "font-weight": "bolder",
-                "border-bottom": "2px solid #F5E400"
-            });
-        })
-        .on("mouseleave", function () {
-            var styles = {
-                backgroundColor: "",
-                fontWeight: "",
-                borderBottom: ""
-            };
-            $(this).css(styles);
-        });
-    // Number phone
-    $("#numberPhone")
         .on("mouseenter", function () {
             $(this).css({
                 "background-color": "seashell",
