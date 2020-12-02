@@ -48,30 +48,53 @@
         -webkit-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
     }
-    .p_remerciement {
-        color: white;
+    .presentation-partenaire {
+        padding: 5% 15% 15% 5%;
+    }
+
+    .block-partenaires{
+        margin: auto;
+        width: 70%;
+        background-image: url(/images/chat_partenaire.jpg);
+        background-size: cover;
+        background-position-y: center;
+        border-radius: 10px;
+    }
+    .remerciement{
+        width: 60%;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 2%;
+        border-radius: 10px;
+        font-family: 'Open Sans', sans-serif;
+        color: #FFFFFF;
+    }
+
+    .title-partenaire{
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #FFFFFF;
+        width: 50%;
+        border-radius: 10px;
+        padding: 1% 2% 1% 2%;
     }
 </style>
 {% endblock %}
 {% block content %}
 <main>
     <div class="div_contenaire_partenaire">
-        <div class="container container_partenaire_banniere">
-            <div class="row justify-content-center">
-                <div class="col-sm-15 remerciement_partenaire">
-                    <img src="images/chat_partenaire.jpg" alt="photo bannière partenaire" class="img_banniere">
-                    <div class="div_banniere">
-                        <h2 class="titre_partenaire size-h2">NOS PARTENAIRES</h2>
-                        <br>
-                        <p class="p_remerciement">Il est évident qu'aujourd'hui une association ne peut vivre sans
-                            l'aide d'homme et de femme,
-                            alors,
-                            à vous nos partenaires, nous vous témoignons notre gratitude
-                            pour le soutien que vous nous apportez.
-                            <br>
-                            Nos partenaires soucieux du bien être animal, nous suivent dans toutes nos actions!</p>
-                    </div>
-                </div>
+        <div class="block-partenaires">
+            <div class="presentation-partenaire">
+                <h2 class="title-partenaire">
+                    Nos partenaires
+                </h2>
+                <p class="remerciement"> 
+                    Il est évident qu'aujourd'hui une association ne peut vivre sans
+                    l'aide d'homme et de femme,
+                    alors,
+                    à vous nos partenaires, nous vous témoignons notre gratitude
+                    pour le soutien que vous nous apportez.
+                    <br>
+                    Nos partenaires soucieux du bien être animal, nous suivent dans toutes nos actions!
+                </p>
             </div>
         </div>
         <br>
