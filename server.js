@@ -119,8 +119,8 @@ app.get("/partenaires", async (req, res) => {
   res.render("partners.html");
 });
 
-app.get("/design", async (req, res) => {
-  res.render("design.html");
+app.get("/mentions-legales", async (req, res) => {
+  res.render("mentions.html");
 });
 
 app.post("/api/comments", (req, res) => {
