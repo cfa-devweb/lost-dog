@@ -146,24 +146,10 @@ app.get("/add-post", recaptcha.middleware.render, (req, res) => {
 });
 
 app.post("/annonce", recaptcha.middleware.verify, (req, res) => {
-  const title = req.body.title;
-  const nameAnimal = req.body.nameAnimal;
-  const animal = req.body.animal;
-  const situation = req.body.situation;
-  const sexe = req.body.sexe;
-  const age = req.body.age;
-  const tel = req.body.tel;
   const description = req.body.description;
   const image = req.body.image;
 
   const ad = {
-    title: title,
-    nameAnimal: nameAnimal,
-    animal: animal,
-    situation: situation,
-    sexe: sexe,
-    age: age,
-    tel: tel, 
     description: description,
     image: image
   };
@@ -183,17 +169,9 @@ app.get("/contact", async (req, res) => {
 });
 
 app.post("/contact", (req, res) => {
-  const nom = req.body.nom;
-  const prenom = req.body.prenom;
-  const mail = req.body.mail;
-  const sujet = req.body.sujet;
   const message = req.body.message;
 
   const ad = {
-    nom: nom,
-    prenom: prenom,
-    mail: mail,
-    sujet: sujet,
     message: message
   };
 
@@ -230,6 +208,10 @@ app.post("/commit", (req, res) => {
     commentaires: commentaires
   };
   res.json(ad);
+});
+
+app.get("/commit", async (req, res) => {
+  res.render("page-ad.html");
 });
 
 app.listen(port, () => {
