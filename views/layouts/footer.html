@@ -1,153 +1,159 @@
 {% block css %}
 <style>
+    #dx-bloc {
+        background-color: #f5e400;
+        color: black;
+    }
 
-.footer-bloc {
-    color: black;
-    background-color: #f7f7f7;
-}
+    .logo-pic{
+        width: 30%;
+        height: 100%;
+        background-image: url(/images/logo-lostdog.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
 
-#dx-bloc {
-    background-color: #f5e400;
-    color: black;
-}
+    }
 
-#logo-pic {
-    width: 10vw;
-}
+    .title-logo-footer{
+        font-family: 'Big Shoulders Stencil Text', cursive;
+    }
 
-#icon-rs {
-    color: black;
-    font-size: 3vw;
-}
 
-.dsp-flx {
-    display: flex;
-    align-items: center;
-}
+    .links-footer {
+        text-decoration: none;
+        color: #000000;
+    }
 
-.links-footer {
-    text-decoration: none;
-}
+    .nav-footer {
+        list-style-type: none;
+        display: flex;
+        flex-flow: column;
+        margin: 0%;
+    }
 
-.nav-footer {
-    list-style-type: none;
-    display: flex;
-    flex-flow: column;
-}
+    .links-footer {
+        color: black;
+    }
 
-.nav-footer a {
-    color: black;
-}
+    .links-footer:hover {
+        color: black;
+        background-color: rgba(245, 228, 0, 0.5);
+    }
 
-.nav-footer a:hover {
-    color: black;
-    text-decoration: underline 3px #f5e400;
-}
+    .container-1{
+        display: flex;
+        flex-flow: row;
+        background-color: #E6E6E6;
+        padding: 2% 0% 2% 0%;
+    }
 
-.link-dx-bloc {
-    color: black;
-}
+    .lescolonnes{
+        width: 33.3333%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        font-family: 'Open Sans', sans-serif;
+    }
 
-.link-dx-bloc:hover {
-    color: black;
-    text-decoration: underline;
-}
+    .text-apropos{
+        width: 50%;
+    }
 
-#size-fnt-footer {
-    color: black;
-    font-size: small;
-}
+    .title-footer{
+        text-decoration: underline #f5e400 3px;
+    }
 
+    @media only screen and (max-width: 990px){
+        .apropos, .title-footer, .yossi{
+            display: none;
+        }
+
+        .title-footer{
+            display: none;
+        }
+
+        .mobile-resp{
+            max-width: 100%;
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+        }
+
+        .lescolonnes{
+            width: 50%;
+        }
+    }
 </style>
 {% endblock %}
 
 <footer class="font-default footer-bloc" id="size-fnt-footer">
 
-        <!--Premier bloc-->
-        <div class="container">
-            
-            <div class="row">
-
-                <!--A propos-->
-                <div class="col-sm m-4">
-                    <h5 class="font-title text-uppercase">À propos de nous</h5>
-                    <p class="mt-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Explicabo, saepe quisquam, quo neque totam cum accusantium numquam excepturi culpa placeat autem veritatis, 
-                        perspiciatis illo minima ea in. Ipsa, officiis quidem.
-                    </p>
-                </div>
-
-                <!--Logo-->
-                <div class="col-sm text-center m-4">
-                    <a href="/">
-                        <img id="logo-pic" src="/images/logo-lostdog.png">
-                    </a>
-                    <h4 class="font-site">Lost Dog</h4>
-                </div>
-
-                <!--Liens des pages internes-->
-                <div class="col-sm m-4">
-                    <h5 class="font-title text-uppercase">Information</h5>
-                    <nav class="nav-footer mt-4">
-                        <a class="links-footer" href="/">Accueil</a>
-
-                        <a class="links-footer" href="/annonces">Annonces</a>
-
-                        <a class="links-footer" href="/add-post">Ajouter une annonce</a>
-
-                        <a class="links-footer" href="/contact">Contactez-nous</a>
-
-                        <a class="links-footer" href="/partenaires">Nos partenaires</a>
-
-                        <a class="links-footer" href="/tuto">Tutoriels</a>
-                    </nav>
-
-                </div>
-
+    <div class="container-1">
+            <div class="apropos lescolonnes">
+                <h5 class="title-footer">À propos de nous</h5>
+                <p class="text-apropos">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Explicabo, saepe quisquam, quo neque totam cum accusantium numquam excepturi culpa placeat autem
+                    veritatis,
+                    perspiciatis illo minima ea in. Ipsa, officiis quidem.
+                </p>
             </div>
+            <div class="logo-footer lescolonnes">
+                <a class="logo-pic" href="/"></a>
+                <h4 class="title-logo-footer">Lost Dog</h4>
+            </div>
+            <div class="liste-footer lescolonnes">
+                <h5 class="title-info-footer title-footer">Information</h5>
+                <nav class="nav-footer">
+                    <a class="links-footer" href="/">Accueil</a>
+    
+                    <a class="links-footer" href="/annonces">Annonces</a>
+    
+                    <a class="links-footer" href="/add-post">Ajouter une annonce</a>
+    
+                    <a class="links-footer" href="/contact">Contactez-nous</a>
+    
+                    <a class="links-footer" href="/partenaires">Nos partenaires</a>
+    
+                    <a class="links-footer" href="/tuto">Tutoriels</a>
+                </nav>
+    
+            </div>
+    </div>
 
-        </div>
-
-        <!--Deuxieme bloc-->
         <div id="dx-bloc">
 
             <div class="row text-center dsp-flx">
-
-                <!--Mentions légales-->
+    
                 <div class="col-sm m-2">
-
-                    <a class="links-footer link-dx-bloc" href="">Mentions légales</a>
+    
+                    <a class="links-footer" href="">Mentions légales</a>
                     |
-                    <a class="links-footer link-dx-bloc" href="">Conditions d'utilisations</a>
-
+                    <a class="links-footer" href="">Conditions d'utilisations</a>
+    
                 </div>
-
-                <!--Liens externes (réseaux sociaux)-->
+    
                 <div class="col-sm m-2">
-
-                    <a class=" links-footerlink-dx-bloc" href="https://www.facebook.com/lostdoganimauxducaillou" alt="Page Facebook de Lost Dog">
+    
+                    <a class=" links-footer" href="https://www.facebook.com/lostdoganimauxducaillou"
+                        alt="Page Facebook de Lost Dog">
                         <i class="fab fa-facebook-square" id="icon-rs"></i>
                     </a>
 
-                    <!--
-                    <a href="https://www.facebook.com/groups/978594255954364/ " alt="Page Facebook du Groupe de Lost Dog">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    -->
                 </div>
-
-                <!---->
-                <div class="col-sm m-2">
-
+                <div class="col-sm m-2 yossi">
+    
                     <span>
                         Design by DevWeb promo 2020
                     </span>
-
+    
                 </div>
-
+    
             </div>
-
+    
         </div>
 
 </footer>
