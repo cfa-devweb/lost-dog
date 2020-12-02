@@ -52,14 +52,16 @@
                         <h2 class="text-center border-2 border-bottom border-secondary pb-4 ">AJOUTER UNE ANNONCE</h2>
                     </div>
                     <div class="container mt-4">
-                        <p class="text-muted">Hésité pas à donner le plus information concernant annimal </p>
+                        <p class="text-muted">N'hésitai pas à donner le plus possible d'informations concernant animal
+                        </p>
                     </div>
                     <div class="col-lg-8">
-                        <legend class="border-bottom border-bottomUnique mb-3">Info De l'Animal</legend>
+                        <legend class="border-bottom border-bottomUnique mb-3 text-capitalize">Informations de l'animal
+                        </legend>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-lg-4 text-right textAligneLeft">
-                                    <label for="ftitle" class="font-default ">Titre de l'annonce</label>
+                                    <label for="ftitle" class="font-default text-capitalize">titre de l'annonce</label>
                                 </div>
                                 <div class="col-lg-8">
                                     <input class="form-control mb-3 js-input-title" type="text" name="" id="ftitle"
@@ -70,7 +72,7 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-lg-4 text-right textAligneLeft">
-                                    <label for="nameAnimal" class="font-default">Nom de animal</label>
+                                    <label for="nameAnimal" class="font-default text-capitalize">nom de l'animal</label>
                                 </div>
                                 <div class="col-lg-8">
                                     <input class="form-control mb-3 js-input-title" type="text" name="nameAnimal"
@@ -82,7 +84,7 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-lg-4 text-right textAligneLeft">
-                                    <label for="fage-animal" class="font-default">Age</label></div>
+                                    <label for="fage-animal" class="font-default text-capitalize">age</label></div>
                                 <div class="col-lg-8">
                                     <input class="form-control mb-3" type="number" name="" id="fage-animal" min="0"
                                         max="255"></div>
@@ -93,7 +95,7 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="col-lg-12 ">
-                                        <label for="ftype-animal" class="font-default">Animal</label>
+                                        <label for="ftype-animal" class="font-default text-capitalize">animal</label>
                                     </div>
                                     <div class="col-lg-12">
                                         <select class="form-control mb-3" id="ftype-animal">
@@ -105,38 +107,41 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="col-lg-12">
-                                        <label for="fsituation-animal" class="font-default">Situation</label>
+                                        <label for="fsituation-animal"
+                                            class="font-default text-capitalize">situation</label>
                                     </div>
                                     <div class="col-lg-12">
                                         <select class="form-control mb-3" id="fsituation-animal" required>
                                             <option value="">--Choisi ton option--</option>
-                                            <option value="lost">Perdu</option>
-                                            <option value="found">Trouve</option>
-                                            <option value="adopted">Adopte</option>
+                                            <option value="lost" class="text-capitalize">perdu</option>
+                                            <option value="found" class="text-capitalize">trouver</option>
+                                            <option value="adopted" class="text-capitalize" class="text-capitalize">
+                                                adopte</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="col-lg-12">
-                                        <label for="fsex-animal" class="font-default">Sex</label>
+                                        <label for="fsex-animal" class="font-default text-capitalize">sex</label>
                                     </div>
                                     <div class="col-lg-12">
                                         <select class="form-control mb-3" id="fsex-animal">
                                             <option value="">--Choisi ton option--</option>
-                                            <option value="male">Male</option>
-                                            <option value="female">Femelle</option>
+                                            <option value="male" class="text-capitalize">male</option>
+                                            <option value="female" class="text-capitalize">femelle</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <legend class="border-bottom border-bottomUnique mb-3">Info personel</legend>
+                        <legend class="border-bottom border-bottomUnique mb-3 text-capitalize">informations personnel
+                        </legend>
                         <div class="form-group required">
                             <div class="row">
                                 <div class="col-lg-4 text-right textAligneLeft">
                                     <label class=" control-label text-right font-default required"
-                                        for="input-firstname">Prénom</label>
+                                        for="input-firstname text-capitalize">prénom</label>
                                 </div>
                                 <div class="col-lg-8">
                                     <input type="text" name="firstname" value="" id="input-firstname"
@@ -147,7 +152,8 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-lg-4 text-right textAligneLeft">
-                                    <label for="fnumber" class="font-default">Numéro de télèphone</label>
+                                    <label for="fnumber" class="font-default text-capitalize">numéro de
+                                        téléphone</label>
                                 </div>
                                 <div class="col-lg-8">
                                     <input class="form-control mb-3" type="text" minlength="6" maxlength="6"
@@ -163,17 +169,17 @@
                                 class="rounded mx-auto d-block" width="100">
                             <div class=" text-center">
                                 <div>
-                                    <h3 class="font-title font-default">Photo principale</h3>
-                                    <div class="text-uppercase font-default btn btn-primary" id="file">Ajouter
+                                    <h3 class="font-title font-default text-capitalize">photo principale</h3>
+                                    <div class="text-uppercase font-default btn btn-primary " id="file">ajouter
                                         une
                                         photo</div>
                                     <div class="container">
-                                        <input type="file" class="border border-dark border-1  w-100"
-                                            data-preview=".preview" id="fimage-animal">
+                                        <input type="file" class="border border-dark border-1  w-100 upload"
+                                            data-preview=".preview" id="fimage-animal" accept=".jpg, .jpeg, .png">
 
                                     </div>
                                     <img class="preview m-auto" />
-                                    <small>3mo max</small>
+                                    <small>1mo max</small>
                                 </div>
                             </div>
                         </div>
@@ -182,7 +188,7 @@
             </div>
             <div class="col-lg-12 mb-4">
                 <div class="form-group">
-                    <label for="fcomentaire" class="font-default">Description</label>
+                    <label for="fcomentaire" class="font-default text-capitalize">description</label>
                     <textarea class="form-control mb-4" name="story" rows="5" cols="33" id="description"
                         required></textarea>
                     <div class="container">
@@ -194,11 +200,8 @@
                                         <div class="custom-control custom-checkbox mb-2 d-flex itemCenter">
                                             <input type="checkbox" class="custom-control-input" id="defaultChecked2">
                                             <label class="custom-control-label" for="defaultChecked2"
-                                                id="urgentDog "><small class="ml-2">Urgent
-                                                    cette
-                                                    animal
-                                                    risque d'étre
-                                                    euthanasier</small>
+                                                id="urgentDog "><small class="ml-2 ">Urgent! Cet animal risque d'être
+                                                    euthanasié</small>
                                             </label>
                                         </div>
                                     </div>
@@ -223,6 +226,17 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 <script type="text/javascript">
+    // Calcule de la taile de l'image 
+    $(document).on("change", ".upload", function () {
+        files = this.files;
+        size = files[0].size;
+        //max size 50kb => 50*1000 1000141
+        if (size > 1000141) {
+            alert("Please upload less than 1mb file");
+            return false;
+        }
+        return true;
+    });
     // reCapatcha Google
     function resRecaptcha(token) {
         var input = document.createElement('input');
