@@ -184,16 +184,8 @@
   // Envoi du données rentrées en champs 
   $('form').submit(function (event) {
     event.preventDefault();
-    $nom = $('#inputNom').val();
-    $prenom = $('#inputPrenom').val();
-    $mail = $('#inputMail').val();
-    $sujet = $('#inputSujet').val();
     $message = $('#inputMessage').val();
     $.post('/contact', {
-        nom: $nom,
-        prenom: $prenom,
-        mail: $mail,
-        sujet: $sujet,
         message: $message
       }, function (data) {
         console.log('Votre message a bien été envoyé');
