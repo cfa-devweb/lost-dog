@@ -12,6 +12,14 @@
         display: block;
     }
 
+    #file {
+        display: none;
+        width: auto;
+        margin-left: 25%;
+        margin-right: 25%;
+        word-wrap: break-word;
+    }
+
     /* #F5E400 couleur logo */
 </style>
 {% endblock %}
@@ -85,12 +93,14 @@
                                 alt="cette image représente un appareil photo pour rajouter la photo d'un chien "
                                 class="rounded mx-auto d-block" width="100">
                             <div class=" text-center">
-                                <div class="">
+                                <div>
                                     <h3 class="font-title font-default">Photo principale</h3>
-                                    <span class="text-uppercase font-default">Ajouter une photo</span>
+                                    <div class="text-uppercase font-default btn btn-primary" id="file">Ajouter une
+                                        photo</div>
                                     <div class="container">
                                         <input type="file" class="border border-dark border-1  w-100"
                                             data-preview=".preview" id="fimage-animal">
+
                                     </div>
                                     <img class="preview m-auto"/>
                                     <small>3mo max</small>
@@ -327,6 +337,27 @@
         fileReader.onload = function (fileEvent) {
             $($input.data('preview')).attr('src', fileEvent.target.result);
         };
+    });
+
+    // style upload
+    var wrapper = $('<div />').css({
+        height: 0,
+        width: 0,
+        'overflow': 'hidden'
+    });
+    var fileInput = $(':file').wrap(wrapper);
+
+    fileInput.change(function () {
+        $this = $(this);
+        $('#file').text($this.val());
+    })
+
+    $('#file').click(function () {
+        fileInput.click();
+    }).show();
+
+    $("#file").click(function () {
+        $("p").css("color", "red");
     });
 </script>
 {% endblock %}

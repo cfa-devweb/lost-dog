@@ -221,6 +221,14 @@ app.get("/annonce", async (req, res) => {
   }});
 });
 
+app.post("/commit", (req, res) => {
+  const commentaires = req.body.commentaires;
+  const ad = {
+    commentaires: commentaires
+  };
+  res.json(ad);
+});
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });

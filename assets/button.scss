@@ -1,43 +1,26 @@
 //variable
-$bleue : #00A8E8;
-$vert: #72C217;
-$jaune: #F5E505;
-$rouge: #D12517;
+$jaune : #F5E400;
 
 
 .btn {
-  border-radius: 10px;
+  border-radius: 3px;
   &:hover {
     color: #f5f9ff;
     border-color: white;
   }
 }
 .btn-primary {
-  background-color: $bleue;
-  border-color: $bleue;
-  &:hover {
-    background-color: #006eff;
-  }
-}
-.btn-secondary{
-  background-color: $vert;
-  border-color: $vert;
-  &:hover {
-    background-color: #399c00;
-  }
-}
-.btn-success{
   background-color: $jaune;
+  color: black;
   border-color: $jaune;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 14px 26px 15px;
+  line-height: 21px;
+  transition: .3s all ease;
   &:hover {
-    background-color: #d4db00;
+    background-color: #2e2b00;
   }
 }
-.btn-info{
-  background-color: $rouge;
-  border-color: $rouge;
-  &:hover {
-    background-color: #a80000;
-  }
-}
+
 

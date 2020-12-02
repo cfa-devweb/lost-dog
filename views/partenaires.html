@@ -1,66 +1,97 @@
 {% extends "layouts/base.html" %}
 {% block css %}
 <style>
-    .div_partenaire {
+    .div_contenaire_partenaire {
         padding-bottom: 20px;
         padding-top: 20px;
+        text-align: justify;
     }
-    .titre_partenaire {
+    .div_banniere {
+        width:40vw;
+        position: absolute;
+        top:30px;
+        left:30px;
+    }
+    .container_partenaire_banniere{
+        position:relative;
+    }
+    .div_contenaire_image{
         text-align: center;
+    } 
+    .titre_partenaire {
         color: white;
     }
     .img_partenaire {
         width: 100%;
+        filter: sepia(100%);
+        border-radius: 10px;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
     }
-    .nom_partenaire{
-        text-align:center;
+    .img_partenaire:hover {
+        filter: none;
     }
-    .remerciement_partenaire{
-        background-image: url("images/chien_partenaire.jpg");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        height: 600px;
-    }
-    .p_remerciement{
+    .nom_partenaire {
         text-align: center;
+        font-weight: 21em;
+    }
+    .img_banniere {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        -webkit-filter: blur(0);
+	    filter: blur(0);
+    }
+    .img_banniere:hover{
+        -webkit-filter: blur(3px);
+        filter: blur(3px);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    .p_remerciement {
         color: white;
     }
 </style>
 {% endblock %}
 {% block content %}
 <main>
-    <div class="div_partenaire">
-        <div class="container">
+    <div class="div_contenaire_partenaire">
+        <div class="container container_partenaire_banniere">
             <div class="row justify-content-center">
                 <div class="col-sm-15 remerciement_partenaire">
-                    <h1 class="titre_partenaire">NOS PARTENAIRES</h1>
-                    <br>
-                    <p class="p_remerciement">Il est évident qu'aujourd'hui une association ne peut vivre sans l'aide d'homme et de femme,
-                        alors,
-                        à vous nos partenaires, nous vous témoignons notre gratitude
-                        pour le soutien que vous nous apportez. 
+                    <img src="images/chat_partenaire.jpg" alt="photo bannière partenaire" class="img_banniere">
+                    <div class="div_banniere">
+                        <h2 class="titre_partenaire size-h2">NOS PARTENAIRES</h2>
                         <br>
-                        Nos partenaires soucieux du bien être animal, nous suivent dans toutes nos actions!</p>
+                        <p class="p_remerciement">Il est évident qu'aujourd'hui une association ne peut vivre sans
+                            l'aide d'homme et de femme,
+                            alors,
+                            à vous nos partenaires, nous vous témoignons notre gratitude
+                            pour le soutien que vous nous apportez.
+                            <br>
+                            Nos partenaires soucieux du bien être animal, nous suivent dans toutes nos actions!</p>
+                    </div>
                 </div>
             </div>
         </div>
         <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 div_img_partenaire">
+        <div class="container div_contenaire_image">
+            <div class="row justify-content-center">
+                <div class="col-sm-3 div_img_partenaire">
                     <p class="nom_partenaire">Elagage Evolution</p>
                     <a href="http://www.elagage-evolution.sitew.com/">
                         <img class="img_partenaire" src="images/logo_elagage_evolution.png"
                             alt="logo elagage evolution">
                     </a>
                 </div>
-                <div class="col-sm-4 div_img_partenaire">
+                <div class="col-sm-3 div_img_partenaire">
                     <p class="nom_partenaire">DogMe.nc</p>
-                    <a href="https://www.facebook.com/DogMe.nc/?pageid=188484478543433&ftentidentifier=627305311328012&padding=0">
+                    <a
+                        href="https://www.facebook.com/DogMe.nc/?pageid=188484478543433&ftentidentifier=627305311328012&padding=0">
                         <img class="img_partenaire" src="images/logo_dogMe.png" alt="logo dogMe">
                     </a>
                 </div>
-                <div class="col-sm-4 div_img_partenaire">
+                <div class="col-sm-3 div_img_partenaire">
                     <p class="nom_partenaire">Croq à Dom</p>
                     <a href="https://croqadom.nc/fr/">
                         <img class="img_partenaire" src="images/logo_croqADom.png" alt="logo Croq à Dom">
@@ -70,43 +101,36 @@
         </div>
         <br>
         <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 div_img_partenaire">
+        <div class="container div_contenaire_image">
+            <div class="row justify-content-center">
+                <div class="col-sm-3 div_img_partenaire">
                     <p class="nom_partenaire">Bien Naître Animal</p>
                     <a href="https://www.helloasso.com/associations/bien-naitre-animal">
                         <img class="img_partenaire" src="images/logo_bien_naitre_animal.png"
                             alt="logo Bien Naître Animal">
                     </a>
                 </div>
-                <div class="col-sm-4 div_img_partenaire">
+                <div class="col-sm-3 div_img_partenaire">
                     <p class="nom_partenaire">Chat Perdu nc</p>
                     <a href="https://www.chat-perdu.org/fr-nc/">
                         <img class="img_partenaire" src="images/logo_ouEstLeChat.png" alt="logo Chat perdu">
                     </a>
-                </div>                
-                <div class="col-sm-4 div_img_partenaire">
+                </div>
+                <div class="col-sm-3 div_img_partenaire">
                     <p class="nom_partenaire">La bande à Nounou</p>
                     <a href="https://www.clicanimaux.com/association-447-la-bande-a-nounou">
-                        <img class="img_partenaire" src="images/logo_la_bande_a_nounou.png" alt="logo La bande à Nounou">
+                        <img class="img_partenaire" src="images/logo_la_bande_a_nounou.png"
+                            alt="logo La bande à Nounou">
                     </a>
                 </div>
             </div>
         </div>
         <br>
         <br>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-sm-4">
-                    <p> 
-                    </p>
-                </div>
-            </div>
-        </div>
     </div>
-{% endblock %}
+    {% endblock %}
 
-{% block js %}
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous"></script>
-{% endblock %}
+    {% block js %}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    {% endblock %}
