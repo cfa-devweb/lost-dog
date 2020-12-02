@@ -90,9 +90,9 @@
                                     <span class="text-uppercase font-default">Ajouter une photo</span>
                                     <div class="container">
                                         <input type="file" class="border border-dark border-1  w-100"
-                                            data-preview=".preview">
+                                            data-preview=".preview" id="fimage-animal">
                                     </div>
-                                    <img class="preview m-auto" />
+                                    <img class="preview m-auto"/>
                                     <small>3mo max</small>
                                 </div>
                             </div>
@@ -125,6 +125,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 <script type="text/javascript">
+    // reCapatcha Google
     function resRecaptcha(token) {
         var input = document.createElement('input');
         input.setAttribute('type', 'hidden');
@@ -133,9 +134,38 @@
         document.getElementsByTagName('form')[0].appendChild(input);
     }
 
+    // Envoi des données aux Back-End
     $('form').submit(function (event) {
         event.preventDefault();
-        alert('Votre publication a bien été ajoutée');
+        $title = $('#ftitle').val();
+        $nameAnimal = $('#nameAnimal').val();
+        $animal = $('#ftype-animal').val();
+        $situation = $('#fsituation-animal').val();
+        $sexe = $('#fsex-animal').val();
+        $age = $('#fage-animal').val();
+        $tel = $('#numberPhone').val();
+        $description = $('#description').val();
+        $img = $('#fimage-animal').get(0).files;
+        $image = $img[0].name;
+
+        $('form').submit(function (event) {
+            event.preventDefault();
+            $.post('/annonce', {
+                    title: $title,
+                    nameAnimal: $nameAnimal,
+                    animal: $animal,
+                    situation: $situation,
+                    sexe: $sexe,
+                    age: $age,
+                    tel: $tel,
+                    description: $description,
+                    image: $image
+                }, function (data) {
+                    // alert('Votre publication a bien été ajoutée');
+                    console.log(data);
+                },
+                'json');
+        })
     })
 
     // Titre de l'anonce
