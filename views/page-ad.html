@@ -1,4 +1,18 @@
 {% extends "layouts/base.html" %}
+{% block css %}
+<style>
+.author {
+    color: black;
+}    
+.author:hover {
+    color: black;
+    text-decoration: underline 3px #f5e400;
+}
+
+</style>
+{% endblock %}
+
+
 
 {% block content %}
 <main>
@@ -76,10 +90,10 @@
 </main>
 {% endblock %}
 
-{% block js %}
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+    {% block js %}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
     $("#enter").click(function () {
