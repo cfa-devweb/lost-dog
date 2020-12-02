@@ -1,46 +1,134 @@
 {% block css %}
 <style>
 
-#logo-ld {
-    width: 8vw;
+#pr-bloc {
+    background-color: #f7f7f7;
 }
 
-#fond-footer {
-    background-color: #f7f7f7;
+#dx-bloc {
+    background-color: #ffcd00;
+    color: white;
+}
+
+#logo-pic {
+    width: 10vw;
+}
+
+#icon-rs {
+    font-size: 3vw;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #ffcd00;
+}
+
+.link-dx-bloc {
+    color: white;
+}
+
+.link-dx-bloc:hover {
+    color: black;
 }
 
 </style>
 {% endblock %}
 
-<footer id="fond-footer">
+<footer class="font-default size-p">
 
-    <div class="row">
-        <!-- Menu de navigation -->
-        <div class="col-sm-4 justify-content-center">
-            <nav class="d-block m-4">
-                <a class="text-decoration-none" href="/">Accueil</a>
-                <a class="text-decoration-none" href="/annonces">Annonces</a>
-                <a class="text-decoration-none" href="/add-post">Ajouter une annonce</a>
-                <a class="text-decoration-none" href="/tuto">Tutoriels</a>
-                <a class="text-decoration-none" href="/contact">Nos contacts</a>
-                <a class="text-decoration-none" href="/partenaires">Nos partenaires</a>
-            </nav>
+    <!--Premier bloc-->
+    <div class="row" id="pr-bloc">
+
+        <!--A propos-->
+        <div class="col-sm m-4">
+            <h5 class="font-title text-center text-uppercase">À propos de nous</h5>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Explicabo, saepe quisquam, quo neque totam cum accusantium numquam excepturi culpa placeat autem veritatis, 
+                perspiciatis illo minima ea in. Ipsa, officiis quidem.
+            </p>
         </div>
 
-       <!-- Logo LostDog -->
-        <div class="col-sm-4 justify-content-center d-flex align-items-center">
+        <!--Logo-->
+        <div class="col-sm text-center m-4">
             <a href="/">
-                <img id="logo-ld" class="m-4" src="/images/logo-lostdog.png" alt="Lost Dog">
+                <img id="logo-pic" src="/images/logo-lostdog.png">
             </a>
+            <h4 class="font-site">Lost Dog</h4>
         </div>
 
-        <!-- Lien de la page Facebook -->
-        <div class="col-sm-4 justify-content-center d-flex align-items-center">
-            <h6 class="m-4">Suivez-nous</h6>
-            <a href="https://www.facebook.com/groups/978594255954364/" alt="Page Facebook du Groupe de Lost Dog">
-                <i class="fab fa-facebook-square m-4"></i>
-            </a>
+        <!--Liens des pages internes-->
+        <div class="col-sm m-4">
+            <h5 class="font-title text-center text-uppercase">Information</h5>
+            <ul>
+                <li>
+                    <a href="/">Accueil</a>
+                </li>
+
+                <li>
+                    <a href="/annonces">Annonces</a>
+                </li>
+
+                <li>
+                    <a href="/add-post">Ajouter une annonce</a>
+                </li>
+
+                <li>
+                    <a href="/contact">Contactez-nous</a>
+                </li>
+
+                <li>
+                    <a href="/partenaires">Nos partenaires</a>
+                </li>
+
+                <li>
+                    <a href="/tuto">Tutoriels</a>
+                </li>
+
+            </ul>
         </div>
+
     </div>
 
+    <!--Deuxieme bloc-->
+    <div class="row text-center" id="dx-bloc">
+
+        <!--Mentions légales-->
+        <div class="col-sm">
+            <a class="link-dx-bloc" href="">Privacy Policy</a>
+            |
+            <a class="link-dx-bloc" href="">Terms & Conditions</a>
+        </div>
+
+        <!--Liens externes (réseaux sociaux)-->
+        <div class="col-sm">
+
+            <a class="link-dx-bloc" href="https://www.facebook.com/lostdoganimauxducaillou" alt="Page Facebook de Lost Dog">
+                <i class="fab fa-facebook-square" id="icon-rs"></i>
+            </a>
+
+            <!--
+            <a href="https://www.facebook.com/groups/978594255954364/ " alt="Page Facebook du Groupe de Lost Dog">
+                <i class="fab fa-facebook"></i>
+            </a>
+            -->
+        </div>
+
+        <!---->
+        <div class="col-sm">
+            <p class="">
+                Design by DevWeb promo 2020
+            </p>
+        </div>
+
+    </div>
+    
 </footer>
