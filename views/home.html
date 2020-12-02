@@ -10,17 +10,20 @@
 .bg-img { 
 
   
-  background-image:url(images/hey.jpg);
-  height:400px;
-  background-size: cover;
+   background-image:url(/images/dogs.jpg);
+   /*Blue photo created by serhii_bobyk - www.freepik.com; */
+  background-size: contain;
   background-repeat: no-repeat; 
+  height: 385px;
   background-position-x: center;
+  background-position-y: center;
+
 }
 
 .texte-titre {
-  color:white;
-  padding-top:3em;
-  vertical-align: middle;
+  color:rgb(0, 0, 0);
+ 
+  
 
 }
 
@@ -31,13 +34,18 @@
 
 {% block content %}
 <main>
-  <section class="container">
+  <section>
     <!--Section bienvenue-->
-    <div class="bg-img img-fluid" >
-
-        <h1 class="font-title text-center texte-titre size-h1 ">Bienvenue sur LostDog</h1>
-        
+    <div cass="container">
+      <div class="bg-img img-fluid"></div>
     </div>  
+    <div>
+      <h1 class="font-title text-center texte-titre size-h1">Bienvenue sur LostDog</h1>
+    </div>
+
+
+        
+      
 
   </section>
 
@@ -46,77 +54,61 @@
 
     <div class="row my-4">
 
-      <h2 class="font-title text-center">Les dernières annonces</h2>
+      <h2 class="font-title size-h2 text-center">Les dernières annonces</h2>
 
     </div>
 
     <div class="row my-4">
-
-      <div class="col-sm card">
-        <!-- Annonce 1-->
-        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ ad.title }}</h5>
-          <p class="card-text">{{ ad.description }}</p>
-          <a href="#" class="btn btn-primary">En savoir plus</a>
+      
+        <div class="col-sm card">
+          <!-- Annonce 1-->
+          <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ ad.title }}</h5>
+            <p class="card-text">{{ ad.description }}</p>
+            <a href="#" class="btn btn-primary">En savoir plus</a>
+          </div>
         </div>
-      </div>
 
-      <div class="col-sm card">
-        <!-- Annonce 2-->
-        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ ad.title }}</h5>
-          <p class="card-text">{{ ad.description }}</p>
-          <a href="#" class="btn btn-primary">En savoir plus</a>
+        <div class="col-sm card">
+          <!-- Annonce 2-->
+          <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ ad.title }}</h5>
+            <p class="card-text">{{ ad.description }}</p>
+            <a href="#" class="btn btn-primary">En savoir plus</a>
+          </div>
         </div>
-      </div>
 
-      <div class="col-sm card">
-        <!-- Annonce 3-->
-        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ ad.title }}</h5>
-          <p class="card-text">{{ ad.description }}</p>
-          <a href="#" class="btn btn-primary">En savoir plus</a>
+        <div class="col-sm card">
+          <!-- Annonce 3-->
+          <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ ad.title }}</h5>
+            <p class="card-text">{{ ad.description }}</p>
+            <a href="#" class="btn btn-primary">En savoir plus</a>
+          </div>
         </div>
-      </div>
 
-      <div class="col-sm card">
-        <!-- Annonce 4-->
-        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ ad.title }}</h5>
-          <p class="card-text">{{ ad.description }}</p>
-          <a href="#" class="btn btn-primary">En savoir plus</a>
+        <div class="col-sm card">
+          <!-- Annonce 4-->
+          <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ ad.title }}</h5>
+            <p class="card-text">{{ ad.description }}</p>
+            <a href="#" class="btn btn-primary">En savoir plus</a>
+          </div>
         </div>
-      </div>
 
     </div>
 
     <div class="row">
-      <button class="btn btn-secondary">Consulter toutes les annonces</button>
+      <a href="/annonces">Consulter toutes les annonces</a>
     </div>
   </section>
 
-  <!--Section À propos-->
-  <section id="a-propos" class="container my-4 font-default">
-    
-    <div class="row test-bg">
-
-      <div class="col-sm m-0">
-        <img class="img-fluid text-center m-0" src="/images/photo-chiens.jpg">
-      </div>
-
-      <div class="col-sm m-4">
-        <h2 class="font-title text-center m-4">À propos de nous</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, voluptas molestias! Explicabo voluptate ex consectetur
-          recusandae ipsum nihil,deserunt laboriosam nisi unde quae animirerum vero consequatur voluptatibus saepe similique!
-        </p>
-      </div>
-
-    </div>
+  <!--Section Nos partenaires-->
+  <section class="container my-4 font-default">
 
   </section>
 </main>

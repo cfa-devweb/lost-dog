@@ -1,68 +1,108 @@
-.logo-navbar{ 
-    margin-left: 5%;
+.info-navbar{
     display: flex;
-    flex-flow: row;
     align-items: center;
-    font-family: 'Big Shoulders Stencil Text';
-    width: 15%;
+    justify-content: center;
+    background-color: #F5E400;
+    padding: 7px 0 7px 0;
+    font-family: 'Open Sans', sans-serif;
 }
-
-.logo-name{
-    margin: 1% 0 0% 5%;
-    font-size: 2em;
-}
-.image-logo{
-    max-width: 30%;
-}
-
-.header{
-    width: 100%;
-}
-
-.appli-mobile{
-    text-align: center; 
-    text-decoration: none; 
-    color: #000000; 
-    width: 15%;
-    margin-left: 5%;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    margin-top: 1%;
-}
-    
-
-.appli-mobile:hover{
-    color: #00A8E8};
-
-.bg-navbar {
-    background-color: #EDEDED; 
-}
-
-.link-color{color: #828282; 
-    font-size: 1.2em;}
-
-.link-color:hover{
-    color: #00A8E8;}
 
 .logo-mobile{
-    font-size: 2em;
-    //background-color: #F2E41B;
-    background-image: url("/images/logo-lostdog.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: #F2E41B;
-    background-position-y: 30%;
+    display: none;
 }
-.btn-navbar{
-    border: none;
-    background-color: #00A8E8;
-    width: 50%;
-    padding: 2% 5% 2% 5%;
-    font-size: 0.8em;
-}
-.btn-navbar:hover{
-    background-color: #F2E41B;
+
+.infos{
     color: #000000;
-    border: none;
+    font-size: 1.5em;
+}
+
+.logo-navbar{
+    width: 9%;
+    margin-left: 10%;
+}
+
+.menu-navbar{
+    margin-right: 10%;
+}
+
+.entrypoints:hover{
+    color: #000000;
+    text-decoration: underline 3px #F5E400;
+}
+
+.add-annonce-nav{
+    background-color: rgba($color: #F5E400, $alpha: 1);
+    color: #FFFFFF;
+    border-radius: 3px;
+}
+
+.add-annonce-nav:hover{
+    transition: .3s all ease;
+    background-color: #2e2b00;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: #000000;
+}
+
+.navbar-light .navbar-nav .add-annonce-nav:hover{
+    color: #FFFFFF;
+}
+
+@media only screen and (max-width: 990px){
+
+    .info-navbar{
+        display: none;
+    }
+
+    .logo-navbar{
+        display: none;
+    }
+
+    header{
+        background-color: #F5E400;
+    }
+
+    .logo-mobile{
+        display: flex;
+        justify-content: start;
+        color: #000000;
+        font-family: 'Big Shoulders Stencil Text', cursive;
+        font-size: 2em;
+    }
+
+    .bouton-mobile{
+        color: #000000;
+        font-size: 1.5em;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: #000000;
+        font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .add-annonce-nav{
+        color: #000000;
+        border-radius: 3px;
+    }
+
+    .mobile-navbar{
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-light .navbar-toggler {
+        border: none;
+    }
+
+    .entrypoints, .add-annonce-nav{
+        text-align: center;
+    }
 }
