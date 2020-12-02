@@ -48,7 +48,7 @@
     <div class="row"  id="insertCard" style="overflow: auto;">
       {% for ad in ads %}
       <div class="mt-4  col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
-        <div class="card">
+        <div class="card border-0">
           <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
           <div class="card-body">
             <h5 class="card-title">{{ ad.title }}</h5>
@@ -138,7 +138,7 @@
     data.ads.forEach(post => {
       test.innerHTML += `
       <div class="mt-4 col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
-        <div class="card">
+        <div class="card border-0">
             <img src="${post.image}" class="card-img-top" alt="${post.title}">
             <div class="card-body">
               <h5 class="card-title">${post.title}</h5>
