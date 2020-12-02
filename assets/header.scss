@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #F5E401;
+    background-color: #F5E400;
     padding: 7px 0 7px 0;
     font-family: 'Open Sans', sans-serif;
 }
@@ -13,7 +13,7 @@
 }
 
 .logo-navbar{
-    width: 10%;
+    width: 9%;
     margin-left: 10%;
 }
 
@@ -23,11 +23,11 @@
 
 .entrypoints:hover{
     color: #000000;
-    text-decoration: underline 3px #F5E401;
+    text-decoration: underline 3px #F5E400;
 }
 
 .add-annonce-nav{
-    background-color: rgba($color: #F5E401, $alpha: 1);
+    background-color: rgba($color: #F5E400, $alpha: 1);
     color: #FFFFFF;
     border-radius: 3px;
 }
@@ -49,4 +49,19 @@
 
 .navbar-light .navbar-nav .add-annonce-nav:hover{
     color: #FFFFFF;
+}
+
+@media only screen and (max-width: 990px){
+
+    .info-navbar{
+        display: none;
+    }
+
+    .logo-navbar{
+        display: none;
+    }
+
+    header{
+        background-color: #808080;
+    }
 }
