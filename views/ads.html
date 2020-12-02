@@ -1,17 +1,87 @@
 {% extends "layouts/base.html" %}
 {% block css %}
 <style>
+
+  .col-md-auto {
+    margin-bottom: 2%;
+  }
+  .btn {
+    border: 1px solid #ced4da;
+    border-radius: .1rem;
+    background-color: white;
+    color: black;
+  }
+
 </style>
 {% endblock %}
 {% block content %}
 <main>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+
+        <h1 class="titre-annonces size-h1">Toutes les annonces</h1>
+
+        <form id="form" onsubmit="searchData(this)">
+          <div class="input-group">
+
+            <input id="input" type="text" class="form-control" placeholder="Rechercher..."
+              aria-label="Input group example" aria-describedby="btnGroupAddon" name="search">
+            <button type="submit" class="btn btn-secondary">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto d-flex">
+        <div class="dropdown mr-3">
+          <div class="dropdown">
+            <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown" style="color: #ffcd00;">
+              Catégories
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Chat</a>
+              <a class="dropdown-item" href="#">Chien</a>
+              <a class="dropdown-item" href="#">Autres</a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown" style="color: #ffcd00;">
+            Situation
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Perdu</a>
+            <a class="dropdown-item" href="#">Trouvé</a>
+            <a class="dropdown-item" href="#">A adopter</a>
+          </div>
+        </div>
+      </div>
+
   <div class="container" id="search" style="display: block; opacity: 1; width: 50%">
     <div class="inner">
       <i class="fas fa-search loupe"></i>
       <input class="searchbar" type="text" name="search" value placeholder="Rechercher une annonce...">
       <button type="button" class="btn btn-primary button">Search</button>
+
     </div>
-  </div>
+
+
+      <div class="container" id="container_cards">
+        <div class="row" id="insertCard" style="overflow: auto;">
+          {% for ad in ads %}
+          <div class="col-4">
+            <div class="card" style="width: 18rem;">
+              <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+              <div class="card-body">
+                <h5 class="card-title">{{ ad.title }}</h5>
+                <p class="card-text">{{ ad.description }}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <button type="button" class="btn btn-secondary" name="found" disabled></button>
+                <button type="button" class="btn btn-info" name="lost" disabled></button>
+                <button type="button" class="btn btn-success" name="adopted" disabled></button>
+              </div>
+            </div>
 
   <div class="container mt-5" id="container_cards" >
     <div class="row"  id="insertCard" style="overflow: auto;">
@@ -26,18 +96,19 @@
             <button type="button" class="btn btn-secondary" name="found" disabled></button>
             <button type="button" class="btn btn-info" name="lost" disabled></button>
             <button type="button" class="btn btn-success" name="adopted" disabled></button>
+
           </div>
+          {% endfor %}
         </div>
       </div>
-      {% endfor %}
-    </div>
-  </div>
 </main>
 {% endblock %}
 
 {% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-
   var block = document.getElementById('container_cards');
   var test = document.getElementById("insertCard");
 
@@ -123,11 +194,10 @@
     });
   }
 
-  document.addEventListener('scroll', function(event) {
-    if(window.pageYOffset + window.innerHeight >= document.body.offsetHeight) {
+  document.addEventListener('scroll', function (event) {
+    if (window.pageYOffset + window.innerHeight >= document.body.offsetHeight) {
       loadCard();
     }
   });
-
 </script>
 {% endblock %}
