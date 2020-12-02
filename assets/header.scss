@@ -1,164 +1,67 @@
-.logo-navbar{ 
-    margin-left: 5%;
+.info-navbar{
     display: flex;
-    flex-flow: row;
     align-items: center;
-    font-family: 'Big Shoulders Stencil Text';
-    width: 15%;
+    justify-content: center;
+    background-color: #F5E400;
+    padding: 7px 0 7px 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.logo-name{
-    margin: 1% 0 0% 5%;
-    font-size: 2em;
-}
-.image-logo{
-    max-width: 30%;
+.infos{
+    color: #000000;
+    font-size: 1.5em;
 }
 
-.header{
-    width: 100%;
-    background-color: #EDEDED; 
+.logo-navbar{
+    width: 9%;
+    margin-left: 10%;
 }
 
-.appli-mobile{
-    text-align: center; 
-    text-decoration: none; 
-    color: #000000; 
-    width: 15%;
-    margin-left: 5%;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    margin-top: 1%;
-}
-    
-
-.appli-mobile:hover{
-    color: #00A8E8};
-
-.bg-navbar {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    padding-top: 1%;
+.menu-navbar{
+    margin-right: 10%;
 }
 
-.link-color{
-    color: #828282; 
-    font-size: 1.2em;
-    text-decoration: none;
+.entrypoints:hover{
+    color: #000000;
+    text-decoration: underline 3px #F5E400;
 }
 
-.link-color:hover{
-    color: #00A8E8;}
-
-.link-part{
-    display: none;
+.add-annonce-nav{
+    background-color: rgba($color: #F5E400, $alpha: 1);
+    color: #FFFFFF;
+    border-radius: 3px;
 }
 
-.logo-mobile{
-    font-size: 2em;
-    background-image: url("/images/logo-lostdog.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: #F2E41B;
-    background-position-y: 30%;
+.add-annonce-nav:hover{
+    transition: .3s all ease;
+    background-color: #2e2b00;
 }
-.btn-navbar{
-    border: none;
-    background-color: #00A8E8;
-    width: 12%;
-    padding: 5px;
-    border-radius: 15px;
-    margin-bottom: 1%;
-    margin-top: -2%;
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: #000000;
+}
+
+.navbar-light .navbar-nav .add-annonce-nav:hover{
     color: #FFFFFF;
 }
 
-.btn-navbar:hover{
-    background-color: #F2E41B;
-    color: #000000;
-    border: none;
-}
+@media only screen and (max-width: 990px){
 
-.box-btn{
-    display: flex;
-    justify-content: center;
-}
-
-.liste{
-    display: flex;
-    flex-flow: row;
-    list-style-type: none;
-    justify-content: center;
-}
-
-.element-nav{
-    margin: 0% 5% 0% 5%;
-}
-
-@media only screen and (max-width: 800px){
-    .liste{
-        font-size: 0.8em;
-        flex-flow: column;
-    }
-
-    .btn-navbar{
-    display: none;
-    }
-
-    .link-part{
-        display: inline-block;
-        border: none;
-        background-color: #00A8E8;
-        padding: 5px;
-        border-radius: 15px;
-        color: #FFFFFF;
-        text-decoration: none;
-    }
-
-    .logo-name{
-        font-size: 1.5em;
+    .info-navbar{
+        display: none;
     }
 
     .logo-navbar{
-        width: 20%;
+        display: none;
     }
 
-    .appli-mobile{
-        font-size: 0.8em;
-    }
-}
-
-@media only screen and (max-width: 500px){
-    .liste{
-        font-size: 0.8em;
-        flex-flow: column;
-    }
-
-    .btn-navbar{
-    display: none;
-    }
-
-    .link-part{
-        display: inline-block;
-        border: none;
-        background-color: #00A8E8;
-        padding: 5px;
-        border-radius: 15px;
-        color: #FFFFFF;
-        text-decoration: none;
-    }
-
-    .logo-name{
-        font-size: 1.2em;
-    }
-
-    .logo-navbar{
-        width: 25%;
-    }
-
-    .appli-mobile{
-        font-size: 0.7em;
+    header{
+        background-color: #808080;
     }
 }

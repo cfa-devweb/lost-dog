@@ -44,15 +44,15 @@
     </div>
   </div>
 
-  <div class="container" id="container_cards" >
+  <div class="container mt-5" id="container_cards" >
     <div class="row"  id="insertCard" style="overflow: auto;">
       {% for ad in ads %}
-      <div class="col-4">
-        <div class="card" style="width: 18rem;">
+      <div class="mt-4  col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+        <div class="card">
           <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
           <div class="card-body">
             <h5 class="card-title">{{ ad.title }}</h5>
-            <p class="card-text">{{ ad.description }}</p>
+            <p class="card-text">{{ ad.description | truncate(50) }}</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
             <button type="button" class="btn btn-secondary" name="found" disabled></button>
             <button type="button" class="btn btn-info" name="lost" disabled></button>
@@ -115,6 +115,9 @@
     });
   }
 
+
+  // Ajax get data ads 
+
   function loadCard() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -125,17 +128,25 @@
     xhttp.open("GET", "/api/annonces", true);
     xhttp.send();
   };
+  
+  function truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+  };
+  // Creat ads card 
 
   function cardAds(data) {
     data.ads.forEach(post => {
       test.innerHTML += `
-      <div class="col-4">
-        <div class="card" style="width: 18rem;">
+      <div class="mt-4 col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+        <div class="card">
             <img src="${post.image}" class="card-img-top" alt="${post.title}">
             <div class="card-body">
               <h5 class="card-title">${post.title}</h5>
-              <p class="card-text">${post.description}</p>
+              <p class="card-text">${truncate(post.description, 50)}</p>
               <a href="#" class="btn btn-primary">Go somewhere</a>
+              <button type="button" class="btn btn-secondary" name="found" disabled></button>
+              <button type="button" class="btn btn-info" name="lost" disabled></button>
+              <button type="button" class="btn btn-success" name="adopted" disabled></button>
             </div>
           </div>
         </div>

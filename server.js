@@ -150,10 +150,11 @@ app.post("/annonce", recaptcha.middleware.verify, (req, res) => {
   const nameAnimal = req.body.nameAnimal;
   const animal = req.body.animal;
   const situation = req.body.situation;
-  const sexe = res.body.sexe;
-  const age = res.body.age;
+  const sexe = req.body.sexe;
+  const age = req.body.age;
+  const tel = req.body.tel;
   const description = req.body.description;
-  
+  const image = req.body.image;
 
   const ad = {
     title: title,
@@ -162,7 +163,9 @@ app.post("/annonce", recaptcha.middleware.verify, (req, res) => {
     situation: situation,
     sexe: sexe,
     age: age,
-    description: description
+    tel: tel, 
+    description: description,
+    image: image
   };
 
   if (!req.recaptcha.error) {
@@ -219,6 +222,14 @@ app.get("/annonce", async (req, res) => {
     comments: 20,
     author: "Peone Passa",
   }});
+});
+
+app.post("/commit", (req, res) => {
+  const commentaires = req.body.commentaires;
+  const ad = {
+    commentaires: commentaires
+  };
+  res.json(ad);
 });
 
 app.listen(port, () => {
