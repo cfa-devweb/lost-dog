@@ -2,6 +2,7 @@
 <style>
 
 .footer-bloc {
+    color: black;
     background-color: #f7f7f7;
 }
 
@@ -15,6 +16,7 @@
 }
 
 #icon-rs {
+    color: black;
     font-size: 3vw;
 }
 
@@ -23,21 +25,21 @@
     align-items: center;
 }
 
-a {
+.links-footer {
     text-decoration: none;
 }
 
-nav {
+.nav-footer {
     list-style-type: none;
     display: flex;
     flex-flow: column;
 }
 
-nav a {
+.nav-footer a {
     color: black;
 }
 
-nav a:hover {
+.nav-footer a:hover {
     color: black;
     text-decoration: underline 3px #f5e400;
 }
@@ -52,6 +54,7 @@ nav a:hover {
 }
 
 #size-fnt-footer {
+    color: black;
     font-size: small;
 }
 
@@ -86,18 +89,18 @@ nav a:hover {
                 <!--Liens des pages internes-->
                 <div class="col-sm m-4">
                     <h5 class="font-title text-uppercase">Information</h5>
-                    <nav class="mt-4">
-                        <a href="/">Accueil</a>
+                    <nav class="nav-footer mt-4">
+                        <a class="links-footer" href="/">Accueil</a>
 
-                        <a href="/annonces">Annonces</a>
+                        <a class="links-footer" href="/annonces">Annonces</a>
 
-                        <a href="/add-post">Ajouter une annonce</a>
+                        <a class="links-footer" href="/add-post">Ajouter une annonce</a>
 
-                        <a href="/contact">Contactez-nous</a>
+                        <a class="links-footer" href="/contact">Contactez-nous</a>
 
-                        <a href="/partenaires">Nos partenaires</a>
+                        <a class="links-footer" href="/partenaires">Nos partenaires</a>
 
-                        <a href="/tuto">Tutoriels</a>
+                        <a class="links-footer" href="/tuto">Tutoriels</a>
                     </nav>
 
                 </div>
@@ -114,16 +117,16 @@ nav a:hover {
                 <!--Mentions légales-->
                 <div class="col-sm m-2">
 
-                    <a class="link-dx-bloc" href="">Privacy Policy</a>
+                    <a class="links-footer link-dx-bloc" href="">Privacy Policy</a>
                     |
-                    <a class="link-dx-bloc" href="">Terms & Conditions</a>
+                    <a class="links-footer link-dx-bloc" href="">Terms & Conditions</a>
 
                 </div>
 
                 <!--Liens externes (réseaux sociaux)-->
                 <div class="col-sm m-2">
 
-                    <a class="link-dx-bloc" href="https://www.facebook.com/lostdoganimauxducaillou" alt="Page Facebook de Lost Dog">
+                    <a class=" links-footerlink-dx-bloc" href="https://www.facebook.com/lostdoganimauxducaillou" alt="Page Facebook de Lost Dog">
                         <i class="fab fa-facebook-square" id="icon-rs"></i>
                     </a>
 
