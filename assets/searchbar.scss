@@ -1,0 +1,31 @@
+.searchbar{
+  color: #000000;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  width: 83%;
+  font-weight: 400;
+  height: 50px;
+  padding: 16px 30px 16px 35px;
+  background: #fff;
+  border: 1px solid;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: none;
+  position: relative;
+}
+.button{
+  width: 16%;
+  float: right;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 50px;
+
+}
+.loupe{
+  color: #F5E400;
+  position: absolute;
+  z-index: 1;
+  left: 385px;
+  top: 172px;
+
+}

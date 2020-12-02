@@ -1,12 +1,20 @@
 {% extends "layouts/base.html" %}
 {% block css %}
 <style>
-  #select {
-    margin-bottom: 20px;
+
+  .col-md-auto {
+    margin-bottom: 2%;
+  }
+  .btn {
+    border: 1px solid #ced4da;
+    border-radius: .1rem;
+    background-color: white;
+    color: black;
   }
   .col-md-auto {
     margin-bottom: 2%;
   }
+
 </style>
 {% endblock %}
 {% block content %}
@@ -32,8 +40,10 @@
       <div class="col-md-auto d-flex">
         <div class="dropdown mr-3">
           <div class="dropdown">
+
             <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown"
               style="color: #ffcd00;" id="btnDropdown">
+
               Catégories
             </button>
             <div class="dropdown-menu">
@@ -55,8 +65,14 @@
           </div>
         </div>
       </div>
-    </div>
 
+  <div class="container" id="search" style="display: block; opacity: 1; width: 50%">
+    <div class="inner">
+      <i class="fas fa-search loupe"></i>
+      <input class="searchbar" type="text" name="search" value placeholder="Rechercher une annonce...">
+      <button type="button" class="btn btn-primary button">Search</button>
+
+   </div>
   <div class="container mt-5" id="container_cards">
     <div class="row" id="insertCard" style="overflow: auto;">
       {% for ad in ads %}
@@ -80,22 +96,19 @@
             <button type="button" class="btn btn-secondary" name="found" disabled></button>
             <button type="button" class="btn btn-info" name="lost" disabled></button>
             <button type="button" class="btn btn-success" name="adopted" disabled></button>
+
           </div>
+          {% endfor %}
         </div>
       </div>
-      {% endfor %}
-    </div>
-  </div>
 </main>
 {% endblock %}
 
 {% block js %}
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-
   var block = document.getElementById('container_cards');
   var test = document.getElementById("insertCard");
 
