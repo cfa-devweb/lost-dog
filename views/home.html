@@ -10,17 +10,20 @@
 .bg-img { 
 
   
-  background-image:url(images/hey.jpg);
-  height:400px;
-  background-size: cover;
+   background-image:url(/images/dogs.jpg);
+   /*Blue photo created by serhii_bobyk - www.freepik.com; */
+  background-size: contain;
   background-repeat: no-repeat; 
+  height: 385px;
   background-position-x: center;
+  background-position-y: center;
+
 }
 
 .texte-titre {
-  color:white;
-  padding-top:3em;
-  vertical-align: middle;
+  color:rgb(0, 0, 0);
+ 
+  
 
 }
 
@@ -31,13 +34,18 @@
 
 {% block content %}
 <main>
-  <section class="container">
+  <section>
     <!--Section bienvenue-->
-    <div class="bg-img img-fluid" >
-
-        <h1 class="font-title text-center texte-titre size-h1">Bienvenue sur LostDog</h1>
-        
+    <div cass="container">
+      <div class="bg-img img-fluid"></div>
     </div>  
+    <div>
+      <h1 class="font-title text-center texte-titre size-h1">Bienvenue sur LostDog</h1>
+    </div>
+
+
+        
+      
 
   </section>
 
