@@ -1,136 +1,141 @@
 {% extends "layouts/base.html" %}
 {% block css %}
 <style>
-    .div_contenaire_partenaire {
-        padding-bottom: 20px;
-        padding-top: 20px;
-        text-align: justify;
+    .block-partenaires {
+        margin: auto;
+        width: 50%;
+        margin-bottom: 3%;
+        font-family: 'Open Sans', sans-serif;
+        color: #000000;
     }
-    .div_banniere {
-        width:40vw;
-        position: absolute;
-        top:30px;
-        left:30px;
+
+    .sous-titre1 {
+        font-weight: bold;
     }
-    .container_partenaire_banniere{
-        position:relative;
-    }
-    .div_contenaire_image{
-        text-align: center;
-    } 
-    .titre_partenaire {
-        color: white;
-    }
-    .img_partenaire {
-        width: 100%;
-        filter: sepia(100%);
+
+
+    .title-partenaire {
+        background-image: url(/images/chat_partenaire.jpg);
+        background-size: cover;
+        background-position-y: center;
+        color: #FFFFFF;
+        text-shadow: 1px 1px 2px #000000, 0 0 1em #000000, 0 0 0.2em #000000;
+        width: 80%;
         border-radius: 10px;
-        -webkit-transition: all 0.5s ease;
-        transition: all 0.5s ease;
+        padding: 4% 0% 4% 0%;
+        font-family: 'Francois One', sans-serif;
+        margin: auto;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 4em;
+        line-height: 0%;
+        margin-bottom: 3%;
     }
-    .img_partenaire:hover {
-        filter: none;
+
+    .montitre {
+        font-size: 1em;
     }
-    .nom_partenaire {
-        text-align: center;
-        font-weight: 21em;
+
+    .thecarousel {
+        width: 50%;
+        display: flex;
+        flex-flow: row wrap;
+        margin: auto;
     }
-    .img_banniere {
-        display: block;
-        max-width: 100%;
-        height: auto;
-        -webkit-filter: blur(0);
-	    filter: blur(0);
+
+    .boite-partner {
+        width: 100%;
+        height: 100%;
     }
-    .img_banniere:hover{
-        -webkit-filter: blur(3px);
-        filter: blur(3px);
-        -webkit-transition: .3s ease-in-out;
-        transition: .3s ease-in-out;
+
+    .boite-partner:hover {
+        background-color: rgba(245, 228, 0, 0.4);
     }
-    .p_remerciement {
-        color: white;
+
+    .logo-partner {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 33.33333%;
+        height: 200px;
+    }
+
+    .page-partner{
+        margin: 4% 0 4% 0;
+    }
+
+    @media only screen and (max-width: 990px){
+        .logo-partner {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 50%;
+        height: 150px;}
+        
+        .montitre {
+        font-size: 0.5em;}
+
+        .block-partenaires {
+        width: 80%;}
+
+        .title-partenaire {
+            width: 100%;
+            border-radius: 0;
+        }
     }
 </style>
 {% endblock %}
 {% block content %}
-<main>
-    <div class="div_contenaire_partenaire">
-        <div class="container container_partenaire_banniere">
-            <div class="row justify-content-center">
-                <div class="col-sm-15 remerciement_partenaire">
-                    <img src="images/chat_partenaire.jpg" alt="photo bannière partenaire" class="img_banniere">
-                    <div class="div_banniere">
-                        <h2 class="titre_partenaire size-h2">NOS PARTENAIRES</h2>
-                        <br>
-                        <p class="p_remerciement">Il est évident qu'aujourd'hui une association ne peut vivre sans
-                            l'aide d'homme et de femme,
-                            alors,
-                            à vous nos partenaires, nous vous témoignons notre gratitude
-                            pour le soutien que vous nous apportez.
-                            <br>
-                            Nos partenaires soucieux du bien être animal, nous suivent dans toutes nos actions!</p>
-                    </div>
-                </div>
+    <div class="page-partner">
+        <div class="div_contenaire_partenaire">
+            <div class="title-partenaire">
+                <i class="fas fa-handshake"></i>
+                &nbsp;
+                <h2 class="montitre">Nos partenaires</h2>
+            </div>
+            <div class="block-partenaires">
+                <h3 class="sous-titre1">Nous vous remercions !</h3>
+                <p>
+                    Il est évident qu'aujourd'hui une association ne peut vivre sans
+                    l'aide d'homme et de femme,
+                    alors,
+                    à vous nos partenaires, nous vous témoignons notre gratitude
+                    pour le soutien que vous nous apportez.
+                    <br>
+                    Nos partenaires soucieux du bien être animal, nous suivent dans toutes nos actions!
+                </p>
+            </div>
+            <div class="block-partenaires">
+                <h3 class="sous-titre1">Nos partenaires :</h3>
+            </div>
+            <div class="thecarousel">
+                <a class="logo-partner" style="background-image: url(/images/logo_elagage_evolution.png);"
+                    href="http://www.elagage-evolution.sitew.com/" target="_blank">
+                    <div class="boite-partner"></div>
+                </a>
+                <a class="logo-partner" style="background-image: url(/images/logo-dogme.jpeg);"
+                    href="http://www.elagage-evolution.sitew.com/" target="_blank">
+                    <div class="boite-partner"></div>
+                </a>
+                <a class="logo-partner" style="background-image: url(/images/logo-bandeanounou.png);"
+                    href="http://www.elagage-evolution.sitew.com/" target="_blank">
+                    <div class="boite-partner"></div>
+                </a>
+                <a class="logo-partner" style="background-image: url(/images/logo-croqadom.jpeg);"
+                    href="http://www.elagage-evolution.sitew.com/" target="_blank">
+                    <div class="boite-partner"></div>
+                </a>
+                <a class="logo-partner" style="background-image: url(/images/logo_ouEstLeChat.png);"
+                    href="http://www.elagage-evolution.sitew.com/" target="_blank">
+                    <div class="boite-partner"></div>
+                </a>
+                <a class="logo-partner" style="background-image: url(/images/logo_bien_naitre_animal.png);"
+                    href="http://www.elagage-evolution.sitew.com/" target="_blank">
+                    <div class="boite-partner"></div>
+                </a>
             </div>
         </div>
-        <br>
-        <div class="container div_contenaire_image">
-            <div class="row justify-content-center">
-                <div class="col-sm-3 div_img_partenaire">
-                    <p class="nom_partenaire">Elagage Evolution</p>
-                    <a href="http://www.elagage-evolution.sitew.com/">
-                        <img class="img_partenaire" src="images/logo_elagage_evolution.png"
-                            alt="logo elagage evolution">
-                    </a>
-                </div>
-                <div class="col-sm-3 div_img_partenaire">
-                    <p class="nom_partenaire">DogMe.nc</p>
-                    <a
-                        href="https://www.facebook.com/DogMe.nc/?pageid=188484478543433&ftentidentifier=627305311328012&padding=0">
-                        <img class="img_partenaire" src="images/logo_dogMe.png" alt="logo dogMe">
-                    </a>
-                </div>
-                <div class="col-sm-3 div_img_partenaire">
-                    <p class="nom_partenaire">Croq à Dom</p>
-                    <a href="https://croqadom.nc/fr/">
-                        <img class="img_partenaire" src="images/logo_croqADom.png" alt="logo Croq à Dom">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-        <div class="container div_contenaire_image">
-            <div class="row justify-content-center">
-                <div class="col-sm-3 div_img_partenaire">
-                    <p class="nom_partenaire">Bien Naître Animal</p>
-                    <a href="https://www.helloasso.com/associations/bien-naitre-animal">
-                        <img class="img_partenaire" src="images/logo_bien_naitre_animal.png"
-                            alt="logo Bien Naître Animal">
-                    </a>
-                </div>
-                <div class="col-sm-3 div_img_partenaire">
-                    <p class="nom_partenaire">Chat Perdu nc</p>
-                    <a href="https://www.chat-perdu.org/fr-nc/">
-                        <img class="img_partenaire" src="images/logo_ouEstLeChat.png" alt="logo Chat perdu">
-                    </a>
-                </div>
-                <div class="col-sm-3 div_img_partenaire">
-                    <p class="nom_partenaire">La bande à Nounou</p>
-                    <a href="https://www.clicanimaux.com/association-447-la-bande-a-nounou">
-                        <img class="img_partenaire" src="images/logo_la_bande_a_nounou.png"
-                            alt="logo La bande à Nounou">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
     </div>
-    {% endblock %}
-
-    {% block js %}
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    {% endblock %}
+{% endblock %}
