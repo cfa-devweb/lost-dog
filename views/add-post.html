@@ -93,36 +93,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Sex de animal -->
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-lg-4 text-right textAligneLeft">
-                                    <label for="fsex-animal" class="font-default ">Sex</label>
-                                </div>
-                                <div class="col-lg-8">
-                                    <select class="form-control mb-3" id="fsex-animal">
-                                        <option value="" class="font-default">--Choisi ton option--</option>
-                                        <option value="male" class=" font-default">Male</option>
-                                        <option value="female" class=" font-default">Femelle</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <legend class="border-bottom border-bottomUnique mb-3  font-default">Informations
-                            personnel
+                        <legend class="border-bottom border-bottomUnique mb-3  font-default">Informations supplémentaire
                         </legend>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-lg-4 text-right textAligneLeft">
-                                    <label for="fnumber" class="font-default ">Numéro de
-                                        téléphone</label>
-                                </div>
-                                <div class="col-lg-8">
-                                    <input class="form-control mb-3" type="text" minlength="6" maxlength="6"
-                                        id="numberPhone" required>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="col-lg-4 aligneVertical">
                         <div class="container h-75">
@@ -151,8 +123,9 @@
             <div class="col-lg-12 mb-4">
                 <div class="form-group">
                     <label for="fcomentaire" class="font-default text-capitalize">description</label>
-                    <textarea class="form-control mb-4" name="story" rows="5" cols="33" id="description"
-                        required></textarea>
+                    <textarea class="form-control mb-4" name="story" rows="5" cols="33" id="description" required
+                        placeholder="Penser à renseigner le plus d'information sur l'animal ou encore le lieu que vous l'aurez vue . Laissez aussi un moyen de vous joindre rapidement.
+Email / Téléphone / Facebook ... "></textarea>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6"></div>
@@ -249,40 +222,6 @@
         });
     // Animal Situation
     $("#fsituation-animal")
-        .on("mouseenter", function () {
-            $(this).css({
-                "background-color": "seashell",
-                "font-weight": "bolder",
-                "border-bottom": "2px solid #F5E400"
-            });
-        })
-        .on("mouseleave", function () {
-            var styles = {
-                backgroundColor: "",
-                fontWeight: "",
-                borderBottom: ""
-            };
-            $(this).css(styles);
-        });
-    // Animal SEX
-    $("#fsex-animal")
-        .on("mouseenter", function () {
-            $(this).css({
-                "background-color": "seashell",
-                "font-weight": "bolder",
-                "border-bottom": "2px solid #F5E400"
-            });
-        })
-        .on("mouseleave", function () {
-            var styles = {
-                backgroundColor: "",
-                fontWeight: "",
-                borderBottom: ""
-            };
-            $(this).css(styles);
-        });
-    // Number phone
-    $("#numberPhone")
         .on("mouseenter", function () {
             $(this).css({
                 "background-color": "seashell",
