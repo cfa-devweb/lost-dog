@@ -83,18 +83,17 @@
                                     <label for="fsituation-animal" class="font-default ">Situation</label>
                                 </div>
                                 <div class="col-lg-8">
-                                    <select class="form-control mb-3" id="fsituation-animal" required>
-                                        <option value="" class="font-default">--Choisi ton option--</option>
-                                        <option value="lost" class=" font-default">Perdu</option>
-                                        <option value="found" class=" font-default">Trouver</option>
-                                        <option value="adopted" class=" font-default">
-                                            Adopter</option>
+                                    <select class="form-control mb-3 fsituation-animal" required name="ddselect"
+                                        id="select_designatfirst">
+                                        <option value="0" id="choiceNull" class="font-default">--Choisi ton option--
+                                        </option>
+                                        <option value="1" class=" font-default">Perdu</option>
+                                        <option value="2" class=" font-default">Trouver</option>
+                                        <option value="3" class=" font-default">Adopter</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <legend class="border-bottom border-bottomUnique mb-3  font-default">Informations supplémentaire
-                        </legend>
                     </div>
                     <div class="col-lg-4 aligneVertical">
                         <div class="container h-75">
@@ -120,12 +119,13 @@
                     </div>
                 </div>
             </div>
+            <legend class="border-bottom border-bottomUnique mb-3  font-default">Informations supplémentaire
+            </legend>
             <div class="col-lg-12 mb-4">
                 <div class="form-group">
                     <label for="fcomentaire" class="font-default text-capitalize">description</label>
-                    <textarea class="form-control mb-4" name="story" rows="5" cols="33" id="description" required
-                        placeholder="Penser à renseigner le plus d'information sur l'animal ou encore le lieu que vous l'aurez vue . Laissez aussi un moyen de vous joindre rapidement.
-Email / Téléphone / Facebook ... "></textarea>
+                    <textarea class="form-control mb-4 description" name="story" rows="5" cols="33" id="empSearch"
+                        required placeholder="Choisisez la situation de votre poste"></textarea>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6"></div>
@@ -162,6 +162,24 @@ Email / Téléphone / Facebook ... "></textarea>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 <script type="text/javascript">
+    // placeholder tcheck choiceNull
+
+    var select_designatfirst = $('#select_designatfirst'),
+        empSearch = $('#empSearch');
+    let choiceNull = document.getElementById('choiceNull');
+
+    select_designatfirst.on('change', function () {
+        if (choiceNull.selected == true) {
+            console.log("salut");
+            empSearch.attr('placeholder',
+                'Choisisez la situation de votre poste');
+        } else {
+            empSearch.attr('placeholder',
+                'Veuillez renseigner un moyen de vous contacter ainsi que toutes informations pouvant nous aider sur le contexte de la situation: ' +
+                select_designatfirst.find(':selected').text());
+        }
+    });
+
     // Calcule de la taile de l'image 
     $(document).on("change", ".upload", function () {
         files = this.files;
@@ -187,7 +205,7 @@ Email / Téléphone / Facebook ... "></textarea>
     // Envoi des données aux Back-End
     $('form').submit(function (event) {
         event.preventDefault();
-        $description = $('#description').val();
+        $description = $('.description').val();
         $img = $('#fimage-animal').get(0).files;
         $image = $img[0].name;
 
@@ -221,7 +239,7 @@ Email / Téléphone / Facebook ... "></textarea>
             $(this).css(styles);
         });
     // Animal Situation
-    $("#fsituation-animal")
+    $(".fsituation-animal")
         .on("mouseenter", function () {
             $(this).css({
                 "background-color": "seashell",
@@ -238,7 +256,7 @@ Email / Téléphone / Facebook ... "></textarea>
             $(this).css(styles);
         });
     // Description
-    $("#description")
+    $(".description")
         .on("mouseenter", function () {
             $(this).css({
                 "background-color": "seashell",
