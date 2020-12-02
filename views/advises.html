@@ -5,6 +5,12 @@
   body {
     background-color: white;
   }
+  .list {
+    list-style: none;
+  }
+  .text-color {
+    color: #f5e400;
+  }
 </style>
 {% endblock %}
 
@@ -12,11 +18,11 @@
 {% block content %}
 <main>
   <div class="container">
-    <h2 class="titres text-center m-4">CONSEILS POUR UN ANIMAL PERDU</h2>
-    <div class="row">
+    <h1 class="titres text-center m-4 font-title size-h1">Conseils</h1>
+    <div>
       <div class="col m-4">
-        <h4 class="titres text-center">CONSEILS</h4>
-        <ul>
+        <h4 class="titres text-center font-title text-color">UN ANIMAL PERDU ?</h4>
+        <ul class="font-default list text-center">
           <li>Préparer les informations sur votre animal (photo, couleur, collier, n° tatouage, lieux de disparition,
             signes particuliers, etc.)</li>
           <li>Utiliser l'application LOSTDOG (sur mobile), dans la catégorie perdus/trouvés </li>
@@ -27,10 +33,11 @@
           </li>
         </ul>
       </div>
-      <div class="col m-4">
-        <h4 class="titres text-center">CONTACT IMPORTANT</h4>
+      <hr class="solid">
+      <div class="col m-4 pt-3">
+        <h4 class="titres text-center font-title text-color">CONTACT IMPORTANT</h4>
         <h6>FOURRIERE</h6>
-        <ul>
+        <ul class="list font-default">
           <li>Téléphone : 26.86.66</li>
           <li>Adresse : 16 rue Raymonde JORE - DUCOS</li>
           <li>LUNDI - JEUDI : 8h00 à 15h30 en continu</li>
@@ -39,12 +46,12 @@
           <li>Ou dans LOSTDOG "animaux capturés"</li>
         </ul>
         <h6>RADIO OCEANE FM</h6>
-        <ul>
+        <ul class="list">
           <li>Antenne : 36.70.71
           <li>Standard : 41.00.95</li>
         </ul>
         <div class="titres text-center m-4">
-          <button type="button " class="btn btn-secondary " class="card-body" data-toggle="popover"
+          <button type="button " class="btn btn btn-primary " class="card-body" data-toggle="popover"
             title="AUTRES CONTACTS" data-content="RADIO NC 1ère : 25.82.58 LA BANDE A NOUNOUS
              Téléphone : 79.41.30
              @ : spanc-nc@hotmail.nc
@@ -80,9 +87,9 @@
         </div>
         <div class="col-md-6">
           <div class="card-body">
-            <h5 class="card-title">Conseil pour retrouver un chien</h5>
+            <h5 class="card-title text-center m-4 font-title text-color">Conseil pour retrouver un chien</h5>
             <p class="card-text">
-              <ul>
+              <ul class="list font-default">
                 <li>Faites un tour du quartier en sifflant dans le quartier</li>
                 <li>Déposez un vêtement qui vous appartient au dernier endroit où il a été vu</li>
                 <li>Laissez uniquement un bol d'eau à proximité. Pas de nourriture pour éviter d'attirer d'autres
@@ -95,9 +102,9 @@
         </div>
         <div class="col-md-6">
           <div class="card-body">
-            <h5 class="card-title">Conseil pour retrouver un chat</h5>
+            <h5 class="card-title text-center m-4 font-title text-color">Conseil pour retrouver un chat</h5>
             <p class="card-text">
-              <ul>
+              <ul class="list font-default">
                 <li>Le chat est souvent plus plès que l'on ne pense. Si votre animal n'est pas stérilisé, il a tendance
                   à
                   beaucoup plus s'éloigner !</li>

@@ -20,6 +20,8 @@
     "nodemon": "^2.0.6",
     "nunjucks": "^3.2.2",
     "rfs": "^9.0.3"
+    "nunjucks": "^3.2.2",
+    "odbc": "^2.3.5"
   },
   "devDependencies": {
     "bootstrap": "^5.0.0-alpha3"
