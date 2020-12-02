@@ -4,12 +4,14 @@
     .author {
         color: black;
     }
+
     .author:hover {
         color: black;
         text-decoration: underline 3px #F5E400;
     }
 </style>
 {% endblock %}
+
 {% block content %}
 <main>
     <div class="container text-center">
@@ -49,7 +51,9 @@
                     </div>
                 </div>
             </div>
-            <div class="font-default mt-4 footer-bloc">
+          
+            <div id="comments" class="font-default mt-4 footer-bloc">
+
                 <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
                     and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
@@ -61,20 +65,21 @@
 </main>
 {% endblock %}
 
-    {% block js %}
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+{% block js %}
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+
 
 <script type="text/javascript">
     $("#enter").click(function () {
         var commentaires = $('#inputCommentaires').val();
         // envoie des données en bdd
-        $.post('/commit', {
+        $.post('/api/comments', {
                 commentaires: commentaires,
             }, function (data) {
-                $( "#comments" ).append(`
-                <div>${data}</div>
+                $("#comments").append(`
+                <div>${data.commentaires}</div>
                 `);
                 console.log(data);
             },

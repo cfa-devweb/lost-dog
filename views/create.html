@@ -28,9 +28,30 @@
         align-items: center;
     }
 
+    .borderUniqueappPost {
+        border: 1.5px dotted #F5E400;
+    }
+
+
     @media only screen and (max-width: 991px) {
         .textAligneLeft {
             text-align: left !important;
+        }
+    }
+
+    @media only screen and (max-width: 695px) {
+        .preview {
+            max-width: 160px;
+            max-height: 160px;
+            display: block;
+        }
+    }
+
+    @media only screen and (max-width: 515px) {
+        .preview {
+            max-width: 120px;
+            max-height: 120px;
+            display: block;
         }
     }
 
@@ -57,7 +78,7 @@
                             concernant l'animal
                         </p>
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-12 col-xl-6">
                         <legend class="border-bottom border-bottomUnique mb-3  font-default">Informations
                             de l'animal
                         </legend>
@@ -95,7 +116,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 aligneVertical">
+                    <div class="col-md-6 col-lg-6 col-xl-3 aligneVertical">
                         <div class="container h-75">
                             <img src="images/icon-photo.png"
                                 alt="cette image représente un appareil photo pour rajouter la photo d'un chien "
@@ -111,45 +132,49 @@
                                             data-preview=".preview" id="fimage-animal" accept=".jpg, .jpeg, .png">
 
                                     </div>
-                                    <img class="preview m-auto" />
                                     <small class="font-default">700ko max</small>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 aligneVertical">
+                        <img class="preview m-auto borderUniqueappPost" src="images/icon-picture.png"
+                            alt="cette image représente une image que l'utilisateur importera" />
+                    </div>
                 </div>
             </div>
-            <legend class="border-bottom border-bottomUnique mb-3  font-default">Informations supplémentaire
-            </legend>
-            <div class="col-lg-12 mb-4">
-                <div class="form-group">
-                    <label for="fcomentaire" class="font-default text-capitalize">description</label>
-                    <textarea class="form-control mb-4 description" name="story" rows="5" cols="33" id="empSearch"
-                        required placeholder="Choisisez la situation de votre poste"></textarea>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6"></div>
-                            <div class="col-lg-6">
-                                <div class="row">
-                                    <div class="col-lg-7">
-                                        <div class="custom-control custom-checkbox mb-2 d-flex itemCenter">
-                                            <input type="checkbox" class="custom-control-input" id="defaultChecked2">
-                                            <label class="custom-control-label" for="defaultChecked2"
-                                                id="urgentDog "><small class="ml-2 font-default">Urgent! Cet animal
-                                                    risque d'être
-                                                    euthanasié</small>
-                                            </label>
-                                        </div>
+        </div>
+        <legend class="border-bottom border-bottomUnique mb-3  font-default">Informations supplémentaire
+        </legend>
+        <div class="col-lg-12 mb-4">
+            <div class="form-group">
+                <label for="fcomentaire" class="font-default text-capitalize">description</label>
+                <textarea class="form-control mb-4 description" name="story" rows="5" cols="33" id="empSearch" required
+                    placeholder="Choisisez la situation de votre poste"></textarea>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6"></div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <div class="custom-control custom-checkbox mb-2 d-flex itemCenter">
+                                        <input type="checkbox" class="custom-control-input" id="defaultChecked2">
+                                        <label class="custom-control-label" for="defaultChecked2" id="urgentDog "><small
+                                                class="ml-2 font-default">Urgent! Cet animal
+                                                risque d'être
+                                                euthanasié</small>
+                                        </label>
                                     </div>
-                                    <div class="col-lg-4">
-                                        <input class="btn btn-primary mb-3" type="submit" value="Envoyer">
-                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input class="btn btn-primary mb-3" type="submit" value="Envoyer">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
         {{ captcha | safe }}
@@ -163,7 +188,6 @@
     crossorigin="anonymous"></script>
 <script type="text/javascript">
     // placeholder tcheck choiceNull
-
     var select_designatfirst = $('#select_designatfirst'),
         empSearch = $('#empSearch');
     let choiceNull = document.getElementById('choiceNull');
