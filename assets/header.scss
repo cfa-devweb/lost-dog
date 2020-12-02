@@ -7,6 +7,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.logo-mobile{
+    display: none;
+}
+
 .infos{
     color: #000000;
     font-size: 1.5em;
@@ -62,6 +66,43 @@
     }
 
     header{
-        background-color: #808080;
+        background-color: #F5E400;
+    }
+
+    .logo-mobile{
+        display: flex;
+        justify-content: start;
+        color: #000000;
+        font-family: 'Big Shoulders Stencil Text', cursive;
+        font-size: 2em;
+    }
+
+    .bouton-mobile{
+        color: #000000;
+        font-size: 1.5em;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: #000000;
+        font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .add-annonce-nav{
+        color: #000000;
+        border-radius: 3px;
+    }
+
+    .mobile-navbar{
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-light .navbar-toggler {
+        border: none;
+    }
+
+    .entrypoints, .add-annonce-nav{
+        text-align: center;
     }
 }
