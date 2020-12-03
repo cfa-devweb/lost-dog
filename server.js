@@ -165,6 +165,10 @@ app.get("/mentions-legales", async (req, res) => {
   res.render("mentions.html");
 });
 
+app.get("/tutoriel", async (req, res) => {
+  res.render("tutoriel.html");
+});
+
 app.post("/api/comments", (req, res) => {
   const commentaires = req.body.commentaires;
 
