@@ -5,23 +5,30 @@
         padding-top: 50px;
         padding-bottom: 80px;
         border-top-style: solid;
-        border-top-color: #efe21d;
+        border-top-color: #EFE21D;
     }
-
+    .container_title {
+        padding-bottom: 30px;
+    }
     .title_tuto {
         text-align: center;
     }
-    .img_tuto{
+    .img_tuto {
         height: 200px;
+        border-radius: 10px;
     }
-    .container_consultation{
-        padding-top: 30px;
+    .container_consultation {
+        padding-top: 50px;
+        border-top-style: inset;
     }
-    .div_contenu_consult{
+    .div_contenu_consult {
         display: flex;
-        padding-top: 30px;
-        width: 20vw;
+        padding-top: 50px;
         padding-right: 20px;
+        margin-bottom: 30px;
+    }
+    .div_paragraphe {
+        padding-right: 10px;
     }
 </style>
 {% endblock %}
@@ -34,7 +41,7 @@
             <h5>Pour consulter les animaux perdus</h5>
             <div class="col div_contenu_consult">
                 <div>
-                    <p> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
+                    <p class="size-p"> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
                 </div>
                 <div>
                     <img class="img_tuto" src="images/acc_app.png" alt="accueil de l'application">
@@ -42,33 +49,47 @@
             </div>
             <div class="col div_contenu_consult">
                 <div>
-                    <p> Si vous voulez consulter les animaux trouvés, taper sur 'trouvé'. Si vous voulez voir les animaux qui ont été perdu, taper sur 'perdu'.</p>
+                    <p class="size-p"> Si vous voulez consulter les animaux trouvés, taper sur 'trouvé'. Si vous voulez voir les
+                        animaux qui ont été perdu, taper sur 'perdu'.</p>
                 </div>
                 <div>
                     <img class="img_tuto" src="images/choix_statut_consult.png" alt="accueil de l'application">
-                </div>               
+                </div>
             </div>
             <div class="col div_contenu_consult">
-                <p> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
+                <p class="size-p"> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
                 <img class="img_tuto" src="images/choix_race_consult.png" alt="accueil de l'application">
             </div>
         </div>
         <div class="row container_consultation justify-content-center col-10">
+            <h5>Pour ajouter un animal (perdu, trouvé ou a adopté)</h5>
             <div class="col div_contenu_consult">
-                <div>
-                    <p> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
+                <div class="div_paragraphe">
+                    <p class="size-p"> Sur l'accueil cliquer sur 'Ajouter un animal'. Ensuite selon la situation qui vous convient
+                        cliquer sur "Mon album photo". Dans le cas d'un animal trouvé il est possible de prendre une
+                        photo avec GPS en cliquant sur "Prendre photo (GPS)" </p>
                 </div>
-                <div>
-                    <img class="img_tuto" src="images/acc_app.png" alt="accueil de l'application">
+                <div class="content-img-ajout">
+                    <img class="img_tuto" src="images/acc_ajout_anim_tuto.jpg" alt="accueil de l'application">
                 </div>
             </div>
             <div class="col div_contenu_consult">
-                <p> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
-                <img class="img_tuto" src="images/choix_date_consult.png" alt="accueil de l'application">
+                <div class="div_paragraphe">
+                    <p class="size-p">Lorsque votre écran s'affiche comme l'image ci-contre, taper sur le type d'animal que vous
+                        ajouter. </p>
+                </div>
+                <div class="content-img-ajout">
+                    <img class="img_tuto" src="images/choix_race_ajout_tuto.jpg" alt="accueil de l'application">
+                </div>
             </div>
             <div class="col div_contenu_consult">
-                <p> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
-                <img class="img_tuto" src="images/annonce_consult.png" alt="accueil de l'application">
+                <div class="div_paragraphe">
+                    <p class="size-p">Enfin, rédiger votre publication en mettant le plus d'information possible concernant l'animal
+                    </p>
+                </div>
+                <div class="content-img-ajout">
+                    <img class="img_tuto" src="images/ajouter_comm_tuto.jpg" alt="accueil de l'application">
+                </div>
             </div>
         </div>
     </div>
