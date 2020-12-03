@@ -1,11 +1,17 @@
 {% block css %}
 <style>
-    #dx-bloc {
+    .container-2 {
         background-color: #f5e400;
         color: black;
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        padding: 1% 0% 1% 0%;
+        align-items: center;
+        justify-content: center;
     }
 
-    .logo-pic{
+    .logo-pic {
         width: 30%;
         height: 100%;
         background-image: url(/images/logo-lostdog.png);
@@ -15,7 +21,7 @@
 
     }
 
-    .title-logo-footer{
+    .title-logo-footer {
         font-family: 'Big Shoulders Stencil Text', cursive;
     }
 
@@ -29,7 +35,7 @@
         list-style-type: none;
         display: flex;
         flex-flow: column;
-        margin: 0%;
+        text-align: right;
     }
 
     .links-footer {
@@ -41,14 +47,14 @@
         background-color: rgba(245, 228, 0, 0.5);
     }
 
-    .container-1{
+    .container-1 {
         display: flex;
         flex-flow: row;
         background-color: #E6E6E6;
         padding: 2% 0% 2% 0%;
     }
 
-    .lescolonnes{
+    .lescolonnes1 {
         width: 33.3333%;
         display: flex;
         flex-flow: column;
@@ -58,32 +64,80 @@
         font-family: 'Open Sans', sans-serif;
     }
 
-    .text-apropos{
+    .lescolonnes2 {
+        width: 33.3333%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .text-footer {
         width: 50%;
     }
 
-    .title-footer{
+    .title-footer {
         text-decoration: underline #f5e400 3px;
+        font-weight: bold;
+        font-family: 'Francois One', sans-serif;
+        text-align: left;
     }
 
-    @media only screen and (max-width: 990px){
-        .apropos, .title-footer, .yossi{
+    .title-footer-1 {
+        text-align: right;
+    }
+
+    .ML-CU{
+        display: flex;
+        flex-flow: row;
+    }
+
+    @media only screen and (max-width: 990px) {
+
+        .apropos,
+        .title-footer,
+        .yossi {
             display: none;
         }
 
-        .title-footer{
+        .title-footer {
             display: none;
         }
 
-        .mobile-resp{
+        .mobile-resp {
             max-width: 100%;
             display: flex;
             flex-flow: row;
             justify-content: center;
         }
 
-        .lescolonnes{
+        .lescolonnes1 {
             width: 50%;
+        }
+
+        .text-footer {
+        width: 100%;
+        }
+
+        .nav-footer{
+            text-align: center;
+        }
+        .container-2 {
+        display: flex;
+        flex-flow: column-reverse;
+        padding: 1% 0% 1% 0%;
+        }
+
+        .ML-CU{
+        display: flex;
+        flex-flow: row;
+        font-size: 0.8em;
+        }
+
+        .lescolonnes2{
+            width: 100%;
         }
     }
 </style>
@@ -92,68 +146,56 @@
 <footer class="font-default footer-bloc" id="size-fnt-footer">
 
     <div class="container-1">
-            <div class="apropos lescolonnes">
-                <h5 class="title-footer">À propos de nous</h5>
-                <p class="text-apropos">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Explicabo, saepe quisquam, quo neque totam cum accusantium numquam excepturi culpa placeat autem
-                    veritatis,
-                    perspiciatis illo minima ea in. Ipsa, officiis quidem.
-                </p>
-            </div>
-            <div class="logo-footer lescolonnes">
-                <a class="logo-pic" href="/"></a>
-                <h4 class="title-logo-footer">Lost Dog</h4>
-            </div>
-            <div class="liste-footer lescolonnes">
-                <h5 class="title-info-footer title-footer">Information</h5>
-                <nav class="nav-footer">
-                    <a class="links-footer" href="/">Accueil</a>
-    
-                    <a class="links-footer" href="/annonces">Annonces</a>
-    
-                    <a class="links-footer" href="/add-post">Ajouter une annonce</a>
-    
-                    <a class="links-footer" href="/contact">Contactez-nous</a>
-    
-                    <a class="links-footer" href="/partenaires">Nos partenaires</a>
-    
-                    <a class="links-footer" href="/tuto">Tutoriels</a>
-                </nav>
-    
-            </div>
+        <div class="apropos lescolonnes1">
+            <h5 class="title-footer text-footer">À propos de nous</h5>
+            <p class="text-footer">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Explicabo, saepe quisquam, quo neque totam cum accusantium numquam excepturi culpa placeat autem
+                veritatis,
+                perspiciatis illo minima ea in. Ipsa, officiis quidem.
+            </p>
+        </div>
+        <div class="logo-footer lescolonnes1">
+            <a class="logo-pic" href="/"></a>
+            <h4 class="title-logo-footer">Lost Dog</h4>
+        </div>
+        <div class="liste-footer lescolonnes1">
+            <h5 class="title-info-footer title-footer title-footer-1 text-footer">Information</h5>
+            <nav class="nav-footer text-footer">
+                <a class="links-footer" href="/">Accueil</a>
+
+                <a class="links-footer" href="/annonces">Annonces</a>
+
+                <a class="links-footer" href="/add-post">Ajouter une annonce</a>
+
+                <a class="links-footer" href="/contact">Contactez-nous</a>
+
+                <a class="links-footer" href="/partenaires">Nos partenaires</a>
+
+                <a class="links-footer" href="/tuto">Tutoriels</a>
+            </nav>
+
+        </div>
     </div>
 
-        <div id="dx-bloc">
-
-            <div class="row text-center dsp-flx">
-    
-                <div class="col-sm m-2">
-    
-                    <a class="links-footer" href="">Mentions légales</a>
-                    |
-                    <a class="links-footer" href="">Conditions d'utilisations</a>
-    
-                </div>
-    
-                <div class="col-sm m-2">
-    
-                    <a class=" links-footer" href="https://www.facebook.com/lostdoganimauxducaillou"
-                        alt="Page Facebook de Lost Dog">
-                        <i class="fab fa-facebook-square" id="icon-rs"></i>
-                    </a>
-
-                </div>
-                <div class="col-sm m-2 yossi">
-    
-                    <span>
-                        Design by DevWeb promo 2020
-                    </span>
-    
-                </div>
-    
+    <div class="container-2">
+        <div class="lescolonnes2">
+            <div class="ML-CU">
+                <a class="links-footer" href="">Mentions légales</a>
+                |
+                <a class="links-footer" href="">Conditions d'utilisations</a>
             </div>
-    
         </div>
-
+        <div class="lescolonnes2">
+            <a class=" links-footer" href="https://www.facebook.com/lostdoganimauxducaillou"
+                alt="Page Facebook de Lost Dog">
+                <i class="fab fa-facebook-square" id="icon-rs"></i>
+            </a>
+        </div>
+        <div class="lescolonnes2 yossi">
+            <span>
+                Design by DevWeb promo 2020
+            </span>
+        </div>
+    </div>
 </footer>
