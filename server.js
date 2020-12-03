@@ -59,8 +59,50 @@ app.get("/annonce/{id}", async (req, res) => {
 
 app.get("/annonces", async (req, res) => {
   try {
-    const connection = await odbc.connect(process.env.CONNECTION);
-    const ads = await connection.query(`SELECT * FROM FichesSaisies LIMIT 8`);
+    // const connection = await odbc.connect(process.env.CONNECTION);
+    // const ads = await connection.query(`SELECT * FROM FichesSaisies LIMIT 8`);
+
+    const ads = [
+      {
+        title: "Chien Marron",
+        description:
+          "Petit chien marron, perdu pas très loin de la piscine de koutio. Merci de me contacter au 000000",
+        image:
+          "https://lemagduchat.ouest-france.fr/images/dossiers/2020-01/korat-073252.jpg"
+      },
+      {
+        title: "Chat Gris",
+        description:
+          "Petit chat gris, perdu à Magenta pas très loin du stage de Magenta",
+        image:
+          "https://lemagduchat.ouest-france.fr/images/dossiers/2020-01/korat-073252.jpg"
+      },
+      {
+        title: "Chat blanc, avec des tâches grise",
+        description:
+          "Petit chat blanc avec des petites tâches gris, perdu dans le quartier de rivière salée",
+        image:
+          "https://lemagduchat.ouest-france.fr/images/dossiers/2020-01/korat-073252.jpg"
+      },
+      {
+        title: "Petit chien brun",
+        description: "Petit chien brun perdu, dans le quartien de ducos",
+        image:
+          "https://lemagduchat.ouest-france.fr/images/dossiers/2020-01/korat-073252.jpg"
+      },
+      {
+        title: "Chat Marron",
+        description: "Petit chat marron, perdu dans le quartie du Mont-dore",
+        image:
+          "https://lemagduchat.ouest-france.fr/images/dossiers/2020-01/korat-073252.jpg"
+      },
+      {
+        title: "Chien blanc",
+        description: "Chien blanc perdu dans nouméa",
+        image:
+          "https://lemagduchat.ouest-france.fr/images/dossiers/2020-01/korat-073252.jpg"
+      }
+    ];
 
     res.render("ads.html", { ads: ads });
   }  catch (error) {
