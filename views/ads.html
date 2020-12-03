@@ -10,49 +10,49 @@
 {% block content %}
 <main>
   {% include "layouts/breadcrumb.html" %}
-    <div class="container text-center">
-      <h1 class="titre-annonces size-h1 justify-content-center my-3 font-title size-h1">Toutes les annonces</h1>
-      <div class="row justify-content-center">
-        <div class="col-sm-10">
-          <form id="form" class="formsearch" onsubmit="searchData(this)">
-            <div class="row">
-              <div class="col-sm-10 mb-3">
-                <input class="searchbar" type="text" name="search" value placeholder="Rechercher une annonce...">
-              </div>
-              <div class="col mb-3">
-                <button type="submit" class="btn btn-primary buttonsearch">Search</button>
-              </div>
+  <div class="container text-center">
+    <h1 class="titre-annonces size-h1 justify-content-center my-3 font-title size-h1">Toutes les annonces</h1>
+    <div class="row justify-content-center">
+      <div class="col-sm-10">
+        <form id="form" class="formsearch" onsubmit="searchData(this)">
+          <div class="row">
+            <div class="col-sm-10 mb-3">
+              <input class="searchbar" type="text" name="search" value placeholder="Rechercher une annonce...">
             </div>
-          </form>
-        </div>
-      </div>
-      <div class="row justify-content-md-center d-flex">
-        <div class="justify-content-center d-flex mb-3">
-          <div class="dropdown mr-3">
-            <div class="dropdown">
-              <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown">
-                Catégories
-              </button>
-              <div class="dropdown-menu form-control">
-                <a class="dropdown-item" href="#">Chat</a>
-                <a class="dropdown-item" href="#">Chien</a>
-                <a class="dropdown-item" href="#">Autres</a>
-              </div>
+            <div class="col mb-3">
+              <button type="submit" class="btn btn-primary buttonsearch">Search</button>
             </div>
           </div>
-          <div class="dropdown">
-            <button type="button" class="btn btn-primary button dropdown-toggle" data-toggle="dropdown">
-              Situation
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Perdu</a>
-              <a class="dropdown-item" href="#">Trouvé</a>
-              <a class="dropdown-item" href="#">A adopter</a>
-            </div>
+        </form>
+      </div>
+    </div>
+    <div class="row justify-content-md-center d-flex">
+      <div class="justify-content-center d-flex mb-3">
+        <div class="dropdown mr-3">
+          <button type="button" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Catégories
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Chat</a></li>
+            <li><a class="dropdown-item" href="#">Chien</a></li>
+            <li><a class="dropdown-item" href="#">Autres</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button type="button" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Situation
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Perdu</a>
+            <a class="dropdown-item" href="#">Trouvé</a>
+            <a class="dropdown-item" href="#">A adopter</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
   <div class="container mt-5" id="container_cards">
     <div class="row" id="insertCard" style="overflow: auto;">
       {% for ad in ads %}
@@ -64,9 +64,9 @@
             <div class="article d-flex  my-3">
               <div class="article_date">
                 <svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-calendar-date-fill "
-                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd"
-                        d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm.066-2.544c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2zm-2.957-2.89v5.332H5.77v-4.61h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z" />
+                    d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm.066-2.544c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2zm-2.957-2.89v5.332H5.77v-4.61h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z" />
                 </svg>
                 <label for="" class="size-small">{{ ad.date }}</label>
               </div>
@@ -88,6 +88,7 @@
 {% block js %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
   var block = document.getElementById('container_cards');
   var test = document.getElementById("insertCard");
