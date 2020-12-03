@@ -55,6 +55,20 @@
     color: #FFFFFF;
 }
 
+.entrypoints2{
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.entrypoints2:hover{
+    background-color: rgba(245, 228, 0, 0.7);
+}
+
+.deroulant{
+    border: #000000 solid 1px;
+    color: #000000;
+}
+
 @media only screen and (max-width: 990px){
 
     .info-navbar{
