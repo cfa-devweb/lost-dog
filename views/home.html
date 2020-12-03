@@ -2,9 +2,18 @@
 
 {% block css %}
 <style>
-  .test-bg {
-    background-color: #9dd45d;
+
+/* Toute la page */
+
+  .bg-sections-home {
+    background-color: #f7f7f7;
   }
+
+  .texte-titre {
+    color: rgb(0, 0, 0);
+  }
+
+/* Section bienvenue */
 
   .bg-img {
     background-image: url(/images/dogs.jpg);
@@ -16,23 +25,35 @@
     background-position-y: center;
   }
 
-  .texte-titre {
-    color: rgb(0, 0, 0);
-  }
+/* Section boutons filtres */
 
-  .logos-partenaires {
-    width: 20vw;
-  }
+.links-situations{
+  text-decoration: none;
+}
+.links-situations:hover{
+  text-decoration: underline 3px black;
+}
 
-  .bg-partenaires {
-    background-color: #f7f7f7;
-  }
+.icons-situations {
+  font-size: 5vh;
+}
+
+.card-perdus, .card-trouves, .card-adoption {
+  background-color: white;
+}
+
+
+/* Section dernieres annonces */
+
+
+/* Carousel */
 
   .img-carousel {
-    height: 25vh;
+    width: auto;
+    height: 280px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 430px) {
     .carousel-inner .carousel-item>div {
       display: none;
     }
@@ -40,6 +61,11 @@
     .carousel-inner .carousel-item>div:first-child {
       display: block;
     }
+
+    .img-carousel {
+      width: 100%;
+      height: 45vh;
+  }
   }
 
   .carousel-inner .carousel-item.active,
@@ -48,7 +74,6 @@
     display: flex;
   }
 
-  /* display 3 */
   @media (min-width: 768px) {
 
     .carousel-inner .carousel-item-right.active,
@@ -66,6 +91,9 @@
   .carousel-inner .carousel-item-left {
     transform: translateX(0);
   }
+
+/* Section ? */
+
 </style>
 {% endblock %}
 
@@ -89,141 +117,58 @@
   </section>
 
   <!--Section Boutons filtres-->
-  <section>
-    <div class="container">
+  <section class="container my-5">
 
-      <div class="">
-
-        <div class="">
-
-          <a href="">
-
-            <i class="far fa-frown"></i>
-
-            <h3>Perdus</h3>
-          </a>
-
-        </div>
-
-        <div class="">
-
-          <a href="">
-
-            <i class="far fa-grin-beam"></i>
-
-            <h3>Trouvés</h3>
-          </a>
-
-        </div>
-
-        <div class="">
-
-          <a href="">
-
-            <i class="far fa-grin-stars"></i>
-
-            <h3>À l'adoption</h3>
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!--Section du carousel de Nos partenaires-->
-  <section class="container font-default bg-partenaires">
-    <!-- Ligne du titre -->
-    <div class="row text-center">
-
-      <h2 class="font-title size-h2 m-4">Nos partenaires</h2>
-
-    </div>
-    <!-- Ligne contenant le carousel -->
     <div class="row">
-      <!-- Div du carousel -->
-      <div class="container text-center my-3">
-        <div class="row mx-auto my-auto">
-          <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-            <div class="carousel-inner w-100" role="listbox">
-              <div class="carousel-item active">
-                <div class="col-md-4">
-                  <a href="http://www.elagage-evolution.sitew.com/">
-                  <div class="card card-body">
-                    <img class="img-carousel" src="images/logo_elagage_evolution.png">
-                  </div>
-                  </a>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="col-md-4">
-                  <a href="https://www.facebook.com/DogMe.nc/?pageid=188484478543433&ftentidentifier=627305311328012&padding=0"></a>
-                  <div class="card card-body">
-                    <img class="img-carousel" src="images/logo-dogme.jpeg">
-                  </div>
-                  </a>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="col-md-4">
-                  <a href="https://croqadom.nc/fr/">
-                    <div class="card card-body">
-                      <img class="img-carousel" src="images/logo-croqadom.jpeg">
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="col-md-4">
-                  <a href="https://www.helloasso.com/associations/bien-naitre-animal">
-                    <div class="card card-body">
-                      <img class="img-carousel" src="images/logo_bien_naitre_animal.png">
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="col-md-4">
-                  <a href="https://www.chat-perdu.org/fr-nc/">
-                    <div class="card card-body">
-                      <img class="img-carousel" src="images/logo_ouEstLeChat.png">
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="col-md-4">
-                  <a href="https://www.clicanimaux.com/association-447-la-bande-a-nounou">
-                    <div class="card card-body">
-                      <img class="img-carousel" src="images/logo-bandeanounou.png">
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
-              <span class="bg-dark border border-dark rounded-circle"
-                aria-hidden="true"><i class="fas fa-caret-left"></i></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
-              <span class="bg-dark border border-dark rounded-circle"
-                aria-hidden="true"><i class="fas fa-angle-right"></i></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
+
+      <div class="card col-sm card-perdus">
+        <div class="card-body text-center">
+
+          <a class="links-situations" href="">
+
+            <i class="far fa-frown color-perdus icons-situations"></i>
+
+            <h3 class="font-title size-h3 color-perdus">Perdus</h3>
+
+          </a>
+
+        </div>
+      </div>
+
+      <div class="card col-sm card-trouves">
+        <div class="card-body text-center">
+
+          <a class="links-situations" href="">
+
+            <i class="far fa-grin-beam color-trouves icons-situations"></i>
+
+            <h3 class="font-title size-h3 color-trouves">Trouvés</h3>
+
+          </a>
+
+        </div>
+      </div>
+
+      <div class="card col-sm card-adoption">
+        <div class="card-body text-center">
+
+          <a class="links-situations" href="">
+
+            <i class="far fa-grin-stars color-adoption icons-situations"></i>
+
+            <h3 class="font-title size-h3 color-adoption">À l'adoption</h3>
+
+          </a>
+
         </div>
       </div>
 
     </div>
 
   </section>
-
 
   <!--Section Dernieres annonces-->
-  <section class="container my-4 font-default">
+  <section class="container my-5 font-default">
 
     <div class="row my-4">
 
@@ -279,6 +224,113 @@
       <a href="/annonces">Consulter toutes les annonces</a>
     </div>
   </section>
+
+  <!--Section du carousel de Nos partenaires-->
+  <section class="container my-5 font-default bg-sections-home">
+    <!-- Ligne du titre -->
+    <div class="row text-center">
+
+      <h2 class="font-title size-h2 m-4">Nos partenaires</h2>
+
+    </div>
+    <!-- Ligne contenant le carousel -->
+    <div class="row">
+      <!-- Div du carousel -->
+      <div class="container text-center my-3">
+        <div class="row mx-auto my-auto">
+          <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+            <div class="carousel-inner w-100" role="listbox">
+
+              <div class="carousel-item active">
+
+                <div class="col-md-4">
+                  <a href="http://www.elagage-evolution.sitew.com/">
+                    <div class="card card-body">
+                      <img class="img-carousel" src="images/logo_elagage_evolution.png">
+                    </div>
+                  </a>
+                </div>
+
+              </div>
+
+              <div class="carousel-item">
+                <div class="col-md-4">
+                  <a href="https://www.facebook.com/DogMe.nc/?pageid=188484478543433&ftentidentifier=627305311328012&padding=0"></a>
+                    <div class="card card-body">
+                      <img class="img-carousel" src="images/logo-dogme.jpeg">
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="col-md-4">
+                  <a href="https://croqadom.nc/fr/">
+                      <div class="card card-body">
+                        <img class="img-carousel" src="images/logo-croqadom.jpeg">
+                      </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="col-md-4">
+                  <a href="https://www.helloasso.com/associations/bien-naitre-animal">
+                      <div class="card card-body">
+                        <img class="img-carousel" src="images/logo_bien_naitre_animal.png">
+                      </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="col-md-4">
+                  <a href="https://www.chat-perdu.org/fr-nc/">
+                      <div class="card card-body">
+                        <img class="img-carousel" src="images/logo_ouEstLeChat.png">
+                      </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="col-md-4">
+                  <a href="https://www.clicanimaux.com/association-447-la-bande-a-nounou">
+                      <div class="card card-body">
+                        <img class="img-carousel" src="images/logo-bandeanounou.png">
+                      </div>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+              <span class="bg-dark border border-dark rounded-circle" aria-hidden="true">
+                <i class="fas fa-angle-left"></i>
+              </span>
+              <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+              <span class="bg-dark border border-dark rounded-circle" aria-hidden="true">
+                <i class="fas fa-angle-right"></i>
+              </span>
+              <span class="sr-only">Next</span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!--Section ?-->
+  <section>
+  </section>
+
 
 </main>
 {% endblock %}
