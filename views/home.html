@@ -34,21 +34,53 @@
 .links-situations{
   text-decoration: none;
 }
-.links-situations:hover{
-  text-decoration: underline 3px black;
-}
 
 .icons-situations {
   font-size: 5vh;
 }
 
-.card-perdus, .card-trouves, .card-adoption {
+.cards-btnsituations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   background-color: white;
 }
 
+#card-perdus, #card-trouves, #card-adoption{
+  display: flex;
+  flex-flow: column;
+  width: 50%;
+  justify-items: center;
+  justify-content: center;
+  padding: 1%;
+  border-radius: 5px;
+}
+
+#card-perdus:hover {
+  background-color: rgba(209, 37, 23, 0.4);
+}
+
+#card-trouves:hover {
+  background-color: rgba(114, 194, 23, 0.4);
+}
+
+#card-adoption:hover {
+  background-color: rgba(0, 168, 232, 0.4);
+}
 
 /* Section dernieres annonces */
 
+#link-consultAdds {
+  color: black;
+  text-decoration: none;
+}
+
+#link-consultAdds:hover {
+  color: black;
+  text-decoration: underline 3px #F5E400;
+  font-weight: bolder;
+}
 
 /* Carousel */
 
@@ -133,10 +165,10 @@
 
     <div class="row">
 
-      <div class="card col-sm card-perdus">
-        <div class="card-body text-center">
+      <div class="card col-sm">
+        <div class="card-body text-center cards-btnsituations">
 
-          <a class="links-situations" href="">
+          <a class="links-situations" id="card-perdus" href="/annonces?type=1">
 
             <i class="far fa-frown color-perdus icons-situations"></i>
 
@@ -147,10 +179,10 @@
         </div>
       </div>
 
-      <div class="card col-sm card-trouves">
-        <div class="card-body text-center">
+      <div class="card col-sm">
+        <div class="card-body text-center cards-btnsituations">
 
-          <a class="links-situations" href="">
+          <a class="links-situations" id="card-trouves" href="/annonces?type=2">
 
             <i class="far fa-grin-beam color-trouves icons-situations"></i>
 
@@ -161,10 +193,10 @@
         </div>
       </div>
 
-      <div class="card col-sm card-adoption">
-        <div class="card-body text-center">
+      <div class="card col-sm">
+        <div class="card-body text-center cards-btnsituations">
 
-          <a class="links-situations" href="">
+          <a class="links-situations" id="card-adoption" href="/annonces?type=3">
 
             <i class="far fa-grin-stars color-adoption icons-situations"></i>
 
@@ -184,7 +216,7 @@
 
     <div class="row my-4">
 
-      <h2 class="font-title size-h2 text-center">Les dernières annonces</h2>
+      <h2 class="font-title size-h2 text-center m-4">Les dernières annonces</h2>
 
     </div>
 
@@ -233,7 +265,7 @@
     </div>
 
     <div class="row">
-      <a href="/annonces">Consulter toutes les annonces</a>
+      <a class="m-4 text-center size-p" id="link-consultAdds" href="/annonces">Consulter toutes les annonces</a>
     </div>
   </section>
 
