@@ -142,14 +142,21 @@ app.post("/api/annonce", recaptcha.middleware.verify, (req, res) => {
   res.json(ad, { error:req.recaptcha.error });
 });
 
-app.post("/api/contact", (req, res) => {
+app.post("/api/contact", recaptcha.middleware.verify, (req, res) => {
   const message = req.body.message;
 
-  res.json({ message: message });
+  if (!req.recaptcha.error) {
+    // success code
+    
+  } else {
+    // error code
+  }
+
+  res.json({ message: message }, { error:req.recaptcha.error });
 });
 
-app.get("/contact", async (req, res) => {
-  res.render("contact.html");
+app.get("/contact", recaptcha.middleware.render, async (req, res) => {
+  res.render("contact.html", { captcha: res.recaptcha });
 });
 
 app.get("/conseils", async (req, res) => {

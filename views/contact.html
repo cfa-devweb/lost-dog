@@ -145,6 +145,7 @@
             Envoyer
           </button>
           <br>
+          {{ captcha | safe }}
         </form>
         <!-- Modale qui confirme que le message a bien été envoyé -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -176,6 +177,15 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
 <script type="text/javascript">
+  // reCapatcha Google
+  function resRecaptcha(token) {
+        var input = document.createElement('input');
+        input.setAttribute('type', 'hidden');
+        input.setAttribute('name', 'g-recaptcha-response');
+        input.setAttribute('value', token);
+        document.getElementsByTagName('form')[0].appendChild(input);
+    }
+
   // Envoi du données rentrées en champs 
   $('form').submit(function (event) {
     event.preventDefault();
