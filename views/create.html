@@ -44,8 +44,12 @@
         transition: opacity .3s ease-in-out;
     }
 
-    .area-ctn{
+    .relative-position{
         position: relative;
+    }
+
+    .hide-overflow{
+        overflow: hidden;
     }
 
     .border-bottomUnique {
@@ -99,7 +103,7 @@
     <form class="container " action="post">
         <div class=" row">
             <div class="col-lg-12">
-                <div class="row mt-4">
+                <div class="row mt-4 hide-overflow">
                     <div class="container">
                         <h2 class="text-center text-capitalize border-2 border-bottom border-secondary pb-4 font-title">
                             ajouter une annonce</h2>
@@ -150,7 +154,7 @@
                     <div class="col-md-6 col-lg-6 col-xl-3 aligneVertical">
                         <div class="container h-75">
                             <div class=" text-center">
-                                <div class="area-ctn">
+                                <div class="relative-position">
                                     <div class="btn btn-primary btn-sendPic">
                                        <span class="text-capitalize font-default" id="file">Ajouter une photo</span>
                                     </div>
@@ -350,7 +354,18 @@
 
         // TOOLTIP
         filePath = $(this).val();
-        document.getElementsByClassName("tooltip-file-path")[0].innerHTML = filePath;
+
+        // FORMAT STRING
+        filePathFormat = filePath.substring(filePath.lastIndexOf("\\") + 1);
+        console.log(filePathFormat);
+
+        if(filePathFormat.length > 31)
+        {
+            filePathFormat = filePathFormat.substring(filePathFormat.length - 31);
+            console.log("formated again = " + filePathFormat);
+        }
+
+        document.getElementsByClassName("tooltip-file-path")[0].innerHTML = filePathFormat;
     });
 
     $('#file').click(function () {
