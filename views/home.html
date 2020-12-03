@@ -186,7 +186,7 @@
       <div class="card col-sm">
         <div class="card-body text-center cards-btnsituations">
 
-          <a class="links-situations" id="card-perdus" href="/annonces?type=1">
+          <a class="links-situations" id="card-perdus" href="/annonces?adType=PERDU">
 
             <i class="far fa-frown color-perdus icons-situations"></i>
 
@@ -200,7 +200,7 @@
       <div class="card col-sm">
         <div class="card-body text-center cards-btnsituations">
 
-          <a class="links-situations" id="card-trouves" href="/annonces?type=2">
+          <a class="links-situations" id="card-trouves" href="/annonces?adType=TROUVE">
 
             <i class="far fa-grin-beam color-trouves icons-situations"></i>
 
@@ -214,7 +214,7 @@
       <div class="card col-sm">
         <div class="card-body text-center cards-btnsituations">
 
-          <a class="links-situations" id="card-adoption" href="/annonces?type=3">
+          <a class="links-situations" id="card-adoption" href="/annonces?adType=ADOPTION">
 
             <i class="far fa-grin-stars color-adoption icons-situations"></i>
 
@@ -243,53 +243,9 @@
 
     <div class="row d-flex justify-content-center">
 
-      <div class="col-sm card" style="width: 18rem;">
-        <!-- Annonce 1-->
-        <img src="/images/dessin-groupe-chats-chiens.jpg" class="card-img-top" alt="Titre annonce 1">
-        <div class="card-body">
-          <h5 class="card-title font-title">Titre annonce 1</h5>
-          <p class="card-text font-default">
-            Courte description de l'annonce 1
-          </p>
-          <a href="#" class="btn btn-primary">En savoir plus</a>
-        </div>
-      </div>
-
-      <div class="col-sm card" style="width: 18rem;">
-        <!-- Annonce 2-->
-        <img src="/images/dessin-groupe-chats-chiens.jpg" class="card-img-top" alt="Titre annonce 2">
-        <div class="card-body">
-          <h5 class="card-title font-title">Titre annonce 2</h5>
-          <p class="card-text font-default">
-            Courte description de l'annonce 2
-          </p>
-          <a href="#" class="btn btn-primary">En savoir plus</a>
-        </div>
-      </div>
-
-      <div class="col-sm card" style="width: 18rem;">
-        <!-- Annonce 3-->
-        <img src="/images/dessin-groupe-chats-chiens.jpg" class="card-img-top" alt="Titre annonce 3">
-        <div class="card-body">
-          <h5 class="card-title font-title">Titre annonce 3</h5>
-          <p class="card-text font-default">
-            Courte description de l'annonce 3
-          </p>
-          <a href="#" class="btn btn-primary">En savoir plus</a>
-        </div>
-      </div>
-
-      <div class="col-sm card" style="width: 18rem;"> 
-        <!-- Annonce 4-->
-        <img src="/images/dessin-groupe-chats-chiens.jpg" class="card-img-top" alt="Titre annonce 4">
-        <div class="card-body">
-          <h5 class="card-title font-title">Titre annonce 4</h5>
-          <p class="card-text font-default">
-            Courte description de l'annonce 4
-          </p>
-          <a href="#" class="btn btn-primary">En savoir plus</a>
-        </div>
-      </div>
+      {% for ad in ads %}
+        {% include "./layouts/ad.html" %}
+      {% endfor %}
 
     </div>
 
