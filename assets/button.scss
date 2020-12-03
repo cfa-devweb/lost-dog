@@ -8,6 +8,11 @@ $jaune : #F5E400;
     color: #f5f9ff;
     border-color: white;
   }
+  &:focus{
+    color: white;
+    border-color: white;
+    background-color: $jaune;
+  }
 }
 .btn-primary {
   background-color: $jaune;

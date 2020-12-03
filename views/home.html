@@ -3,31 +3,107 @@
 {% block css %}
 <style>
 
-.test-bg {
-  background-color: #9dd45d;
+/* Toute la page */
+
+  .bg-sections-home {
+    background-color: #f7f7f7;
+  }
+
+  .texte-titre {
+    color: rgb(0, 0, 0);
+  }
+
+/* Section bienvenue */
+
+  .bg-img {
+    background-image: url(/images/dogs.jpg);
+    /*Blue photo created by serhii_bobyk - www.freepik.com; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 385px;
+    background-position-x: center;
+    background-position-y: center;
+  }
+
+/* Section boutons filtres */
+
+#section-btn-fltrs .card {
+  border: none;
 }
 
-.bg-img { 
-  background-image:url(/images/dogs.jpg);
-  /*Blue photo created by serhii_bobyk - www.freepik.com; */
-  background-size: contain;
-  background-repeat: no-repeat; 
-  height: 385px;
-  background-position-x: center;
-  background-position-y: center;
+.links-situations{
+  text-decoration: none;
+}
+.links-situations:hover{
+  text-decoration: underline 3px black;
 }
 
-.texte-titre {
-  color:rgb(0, 0, 0);
+.icons-situations {
+  font-size: 5vh;
 }
 
-.logos-partenaires {
-  width: 20vw;
+.card-perdus, .card-trouves, .card-adoption {
+  background-color: white;
 }
 
-.bg-partenaires {
-  background-color: #f7f7f7;
-}
+
+/* Section dernieres annonces */
+
+
+/* Carousel */
+
+  .img-carousel {
+    width: auto;
+    height: 280px;
+  }
+
+  #carousel-lbtn{
+    font-size: large;
+  }
+  #carousel-rbtn{
+    font-size: large;
+  }
+
+  @media (max-width: 430px) {
+    .carousel-inner .carousel-item>div {
+      display: none;
+    }
+
+    .carousel-inner .carousel-item>div:first-child {
+      display: block;
+    }
+
+    .img-carousel {
+      width: 100%;
+      height: 45vh;
+  }
+  }
+
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    display: flex;
+  }
+
+  @media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(33.333%);
+    }
+
+    .carousel-inner .carousel-item-left.active,
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  .carousel-inner .carousel-item-right,
+  .carousel-inner .carousel-item-left {
+    transform: translateX(0);
+  }
+
+/* Section ? */
 
 </style>
 {% endblock %}
@@ -36,135 +112,67 @@
 <main>
 
   <!--Section bienvenue-->
-  <section>
+  <section class="container my-5 font-default">
     <div>
 
       <div class="bg-img img-fluid"></div>
 
-    </div>  
+    </div>
 
     <div>
 
       <h1 class="font-title text-center texte-titre size-h1">Bienvenue sur LostDog</h1>
-    
+      <h3 class="text-center texte-titre size-h3">Vous avez perdu un animal ? Retrouvez le grâce à LostDog !</h3>
+
     </div>
 
   </section>
 
   <!--Section Boutons filtres-->
-  <section>
-    <div class="container">
-
-      <div class="">
-
-        <div class="">
-
-          <a href="">
-
-            <i class="far fa-frown"></i>
-
-            <h3>Perdus</h3>
-          </a>
-
-        </div>
-
-        <div class="">
-
-          <a href="">
-
-            <i class="far fa-grin-beam"></i>
-
-            <h3>Trouvés</h3>
-          </a>
-
-        </div>
-
-        <div class="">
-
-          <a href="">
-
-            <i class="far fa-grin-stars"></i>
-
-            <h3>À l'adoption</h3>
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>  
-
-  </section>
-
-  <!--Section Nos partenaires-->
-  <section class="container font-default bg-partenaires">
-    
-    <div class="row text-center">
-
-      <h2 class="font-title size-h2 m-4">Nos partenaires</h2>
-
-    </div>
+  <section class="container my-5" id="section-btn-fltrs">
 
     <div class="row">
 
-      <div class="col-sm mb-5 ml-4">
+      <div class="card col-sm card-perdus">
+        <div class="card-body text-center">
 
-        <a href="http://www.elagage-evolution.sitew.com/">
+          <a class="links-situations" href="">
 
-          <img class="logos-partenaires" src="images/logo_elagage_evolution.png" alt="Élevage évolution">
+            <i class="far fa-frown color-perdus icons-situations"></i>
 
-        </a>
+            <h3 class="font-title size-h3 color-perdus">Perdus</h3>
 
+          </a>
+
+        </div>
       </div>
 
-      <div class="col-sm mb-5">
+      <div class="card col-sm card-trouves">
+        <div class="card-body text-center">
 
-        <a href="https://www.facebook.com/DogMe.nc/?pageid=188484478543433&ftentidentifier=627305311328012&padding=0">
+          <a class="links-situations" href="">
 
-          <img class="logos-partenaires" src="images/logo_dogMe.png" alt="DogMe">
+            <i class="far fa-grin-beam color-trouves icons-situations"></i>
 
-        </a>
+            <h3 class="font-title size-h3 color-trouves">Trouvés</h3>
 
+          </a>
+
+        </div>
       </div>
 
-      <div class="col-sm mb-5">
+      <div class="card col-sm card-adoption">
+        <div class="card-body text-center">
 
-        <a href="https://croqadom.nc/fr/">
+          <a class="links-situations" href="">
 
-          <img class="logos-partenaires" src="images/logo_croqADom.png" alt="Crop à Dom">
+            <i class="far fa-grin-stars color-adoption icons-situations"></i>
 
-        </a>
+            <h3 class="font-title size-h3 color-adoption">À l'adoption</h3>
 
-      </div>
+          </a>
 
-      <div class="col-sm mb-5">
-
-        <a href="https://www.helloasso.com/associations/bien-naitre-animal">
-
-          <img class="logos-partenaires" src="images/logo_bien_naitre_animal.png" alt="Bien Naître Animal">
-
-        </a>
-
-      </div>
-
-      <div class="col-sm mb-5">
-
-        <a href="https://www.chat-perdu.org/fr-nc/">
-
-          <img class="logos-partenaires" src="images/logo_ouEstLeChat.png" alt="Chat perdu">
-
-        </a>
-
-      </div>
-
-      <div class="col-sm mb-5 mr-4">
-
-        <a href="https://www.clicanimaux.com/association-447-la-bande-a-nounou">
-
-          <img class="logos-partenaires" src="images/logo_la_bande_a_nounou.png" alt="La bande à Nounou"> 
-
-        </a>
-
+        </div>
       </div>
 
     </div>
@@ -172,7 +180,7 @@
   </section>
 
   <!--Section Dernieres annonces-->
-  <section class="container my-4 font-default">
+  <section class="container my-5 font-default bg-sections-home">
 
     <div class="row my-4">
 
@@ -181,46 +189,46 @@
     </div>
 
     <div class="row my-4">
-      
-        <div class="col-sm card">
-          <!-- Annonce 1-->
-          <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ ad.title }}</h5>
-            <p class="card-text">{{ ad.description }}</p>
-            <a href="#" class="btn btn-primary">En savoir plus</a>
-          </div>
-        </div>
 
-        <div class="col-sm card">
-          <!-- Annonce 2-->
-          <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ ad.title }}</h5>
-            <p class="card-text">{{ ad.description }}</p>
-            <a href="#" class="btn btn-primary">En savoir plus</a>
-          </div>
+      <div class="col-sm card">
+        <!-- Annonce 1-->
+        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ ad.title }}</h5>
+          <p class="card-text">{{ ad.description }}</p>
+          <a href="#" class="btn btn-primary">En savoir plus</a>
         </div>
+      </div>
 
-        <div class="col-sm card">
-          <!-- Annonce 3-->
-          <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ ad.title }}</h5>
-            <p class="card-text">{{ ad.description }}</p>
-            <a href="#" class="btn btn-primary">En savoir plus</a>
-          </div>
+      <div class="col-sm card">
+        <!-- Annonce 2-->
+        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ ad.title }}</h5>
+          <p class="card-text">{{ ad.description }}</p>
+          <a href="#" class="btn btn-primary">En savoir plus</a>
         </div>
+      </div>
 
-        <div class="col-sm card">
-          <!-- Annonce 4-->
-          <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ ad.title }}</h5>
-            <p class="card-text">{{ ad.description }}</p>
-            <a href="#" class="btn btn-primary">En savoir plus</a>
-          </div>
+      <div class="col-sm card">
+        <!-- Annonce 3-->
+        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ ad.title }}</h5>
+          <p class="card-text">{{ ad.description }}</p>
+          <a href="#" class="btn btn-primary">En savoir plus</a>
         </div>
+      </div>
+
+      <div class="col-sm card">
+        <!-- Annonce 4-->
+        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ ad.title }}</h5>
+          <p class="card-text">{{ ad.description }}</p>
+          <a href="#" class="btn btn-primary">En savoir plus</a>
+        </div>
+      </div>
 
     </div>
 
@@ -229,13 +237,140 @@
     </div>
   </section>
 
+  <!--Section du carousel de Nos partenaires-->
+  <section class="container my-5 font-default">
+    <!-- Ligne du titre -->
+    <div class="row text-center">
+
+      <h2 class="font-title size-h2 m-4">Nos partenaires</h2>
+
+    </div>
+    <!-- Ligne contenant le carousel -->
+    <div class="row">
+      <!-- Div du carousel -->
+      <div class="container text-center my-3">
+        <div class="row mx-auto my-auto">
+          <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+            <div class="carousel-inner w-100" role="listbox">
+
+              <div class="carousel-item active">
+
+                <div class="col-md-4">
+                  <a href="http://www.elagage-evolution.sitew.com/">
+                    <div class="card card-body">
+                      <img class="img-carousel" src="images/logo_elagage_evolution.png">
+                    </div>
+                  </a>
+                </div>
+
+              </div>
+
+              <div class="carousel-item">
+                <div class="col-md-4">
+                  <a href="https://www.facebook.com/DogMe.nc/?pageid=188484478543433&ftentidentifier=627305311328012&padding=0"></a>
+                    <div class="card card-body">
+                      <img class="img-carousel" src="images/logo-dogme.jpeg">
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="col-md-4">
+                  <a href="https://croqadom.nc/fr/">
+                      <div class="card card-body">
+                        <img class="img-carousel" src="images/logo-croqadom.jpeg">
+                      </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="col-md-4">
+                  <a href="https://www.helloasso.com/associations/bien-naitre-animal">
+                      <div class="card card-body">
+                        <img class="img-carousel" src="images/logo_bien_naitre_animal.png">
+                      </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="col-md-4">
+                  <a href="https://www.chat-perdu.org/fr-nc/">
+                      <div class="card card-body">
+                        <img class="img-carousel" src="images/logo_ouEstLeChat.png">
+                      </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="col-md-4">
+                  <a href="https://www.clicanimaux.com/association-447-la-bande-a-nounou">
+                      <div class="card card-body">
+                        <img class="img-carousel" src="images/logo-bandeanounou.png">
+                      </div>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+              <span class="bg-dark border border-dark rounded-circle" aria-hidden="true" id="carousel-lbtn">
+                <i class="fas fa-angle-left"></i>
+              </span>
+              <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+              <span class="bg-dark border border-dark rounded-circle" aria-hidden="true" id="carousel-rbtn">
+                <i class="fas fa-angle-right"></i>
+              </span>
+              <span class="sr-only">Next</span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!--Section ?-->
+  <section>
+  </section>
+
+
 </main>
 {% endblock %}
 
 {% block js %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+  $('#recipeCarousel').carousel({
+    interval: 10000
+  })
+
+  $('.carousel .carousel-item').each(function () {
+    var minPerSlide = 3;
+    var next = $(this).next();
+    if (!next.length) {
+      next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+
+    for (var i = 0; i < minPerSlide; i++) {
+      next = next.next();
+      if (!next.length) {
+        next = $(this).siblings(':first');
+      }
+
+      next.children(':first-child').clone().appendTo($(this));
+    }
+  });
 </script>
 {% endblock %}

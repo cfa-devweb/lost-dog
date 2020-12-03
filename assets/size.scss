@@ -1,20 +1,31 @@
+$enable-responsive-font-sizes : true;
+
 .size-h1{
-  @extend .display-1;
+  @include rfs(4rem);
   font-weight: bold;
 }
 .size-h2{
-  @extend .h2;
+  @include rfs(3rem);
   font-weight: bolder;
 }
 .size-h3{
-  @extend .h3;
+  @include rfs(2rem);
   font-weight: bolder;
 }
 .size-p{
-  font-size: 100%;
+  @include rfs(1.2rem);
   font-weight: normal;
 }
+.size-footer{
+  @include rfs(0.80rem);
+  font-weight: normal;
+}
+.size-footer-lg{
+  @include rfs(1rem);
+  font-weight: bolder;
+}
 .size-small{
+  @include rfs(65%);
   font-size: 65%;
   font-weight: lighter;
 }
@@ -25,5 +36,9 @@
   background-color: $gray-300;
 }
 .size-small{
-  font-size:65% ;
+  @include rfs(65%);
+  font-size: 65%;
 }
+
+
+
