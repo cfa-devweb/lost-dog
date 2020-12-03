@@ -1,10 +1,15 @@
 {% block css %}
 <style>
+    .breadcrumb{
+        background: #f5f5f5;
+    }
 </style>
 {% endblock %}
 {% block content %}
-    <div class="justify-content-center d-flex bread mt-5">
-        <p class="size-footer-lg font-default bread">{{ breadcrumb | safe }}</p>
+    <div class= "container">
+        <ul class="breadcrumb my-5">
+            <li class="size-footer-lg font-default bread">{{ breadcrumb | safe }}</li>
+        </ul>
     </div>
 {% endblock %}
 {% block js %}

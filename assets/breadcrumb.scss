@@ -1,0 +1,13 @@
+.bread-js{
+  color: #000000;
+  text-decoration: none;
+  &:hover{
+    color: #F5E400;
+    transition: ease-in-out 0.2s;
+  }
+}
+@media screen and (max-width: 400px) {
+  .size-p{
+    font-size: 1rem;
+  }
+}

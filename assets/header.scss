@@ -25,10 +25,37 @@
     margin-right: 10%;
 }
 
-.entrypoints:hover{
-    color: #000000;
-    text-decoration: underline 3px #F5E400;
+/* code ken underline outwards */
+a.entrypoints {
+    position: relative;
+    &:hover{
+        text-shadow: 0.4px 0px 0.4px #000000;
+    }
 }
+
+a.entrypoints.dropdown-toggle:after{
+    background: none;
+}
+a.entrypoints:after {
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #F5E400;
+    transition: width 0.5s ease 0s, left 0.5s ease 0s;
+    width: 0;
+}
+a.entrypoints:hover:after {
+    width: 100%;
+    left: 0;
+}
+@media screen and (max-height: 300px) {
+    ul {
+        margin-top: 40px;
+    }
+}
+
 
 .add-annonce-nav{
     background-color: rgba($color: #F5E400, $alpha: 1);
@@ -117,7 +144,7 @@
     }
 
     .entrypoints, .add-annonce-nav{
-        text-align: left;
+        transition: ease-in-out 0.2s;
         width: 100%;
         text-align: center;
         background-color: rgba($color: #000000, $alpha: 0.2);
@@ -127,7 +154,7 @@
         width: 100%;
         display: flex;
         justify-content: flex-end;
-        margin-right: 0%;
+        margin-right: 0;
     }
 
     .leheader{
@@ -135,8 +162,8 @@
     }
 
     .menu-navbar{
-        margin-right: 0%;
-        margin-bottom: 0%;
+        margin-right: 0;
+        margin-bottom: 0;
     }
 
     .entrypoints2{
@@ -148,6 +175,6 @@
         border: none;
         background-color: rgba($color: #FFFFFF, $alpha: 0.35);
         text-align: center;
-        margin-top: 0%;
+        margin-top: 0;
     }
 }
