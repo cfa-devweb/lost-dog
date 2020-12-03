@@ -56,6 +56,7 @@
   <div class="container mt-5" id="container_cards">
     <div class="row" id="insertCard" style="overflow: auto;">
       {% for ad in ads %}
+
       <div class="mt-4  col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
         <div class="card border-0">
           <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
@@ -75,10 +76,11 @@
             <i class="far fa-frown color-perdus icons-situations"></i>
             <i class="far fa-grin-beam color-trouves icons-situations"></i>
             <i class="far fa-grin-stars color-adoption icons-situations"></i>
-
           </div>
         </div>
       </div>
+        {% include "./layouts/ad.html" %}
+
       {% endfor %}
     </div>
   </div>
