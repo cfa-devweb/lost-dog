@@ -160,7 +160,7 @@ app.post("/api/contact", recaptcha.middleware.verify, (req, res) => {
 
 app.get("/contact", async (req, res) => {
   res.render("contact.html", {title: 'Contact'});
-
+});
 app.get("/contact", recaptcha.middleware.render, async (req, res) => {
   res.render("contact.html", { captcha: res.recaptcha });
 
