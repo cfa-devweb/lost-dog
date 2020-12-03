@@ -12,12 +12,36 @@
         display: block;
     }
 
-    #file {
-        display: none;
-        width: auto;
-        margin-left: 25%;
-        margin-right: 25%;
-        word-wrap: break-word;
+    .btn-sendPic {
+        width: 100%;
+
+        /* FIX */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .btn-sendPic:hover + .tooltip-file-path{
+        opacity: 1;
+    }
+
+    .tooltip-file-path{
+        position: absolute;
+        opacity: 0;
+
+        white-space: nowrap;
+
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+
+        transition: opacity .3s ease-in-out;
+    }
+
+    .area-ctn{
+        position: relative;
     }
 
     .border-bottomUnique {
@@ -121,12 +145,8 @@
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3 aligneVertical">
                         <div class="container h-75">
-                            <img src="images/icon-photo.png"
-                                alt="cette image représente un appareil photo pour rajouter la photo d'un chien "
-                                class="rounded mx-auto d-block" width="100">
                             <div class=" text-center">
                                 <div>
-                                    <h3 class=" font-default ">Photo principale</h3>
                                     <div class="text-capitalize font-default btn btn-primary " id="file">ajouter
                                         une
                                         photo</div>
@@ -299,18 +319,6 @@
             };
             $(this).css(styles);
         });
-    // URGENCE
-    // $(document).ready(function () {
-    //         $('input[id="urgentDog"]').click(function () {
-    //             if ($(this).prop("checked") == true) {
-    //                 //Active un élément 
-    //                 $('#urgentDog').val("OUI");
-    //             } else if ($(this).prop("checked") == false) {
-    //                 //Désactive un élément
-    //                 $('#urgentDog').val("NON");
-    //             }
-    //         });
-    //     });
 
     // Apercue de upload
     $("input[data-preview]").change(function () {
@@ -329,11 +337,16 @@
         'overflow': 'hidden'
     });
     var fileInput = $(':file').wrap(wrapper);
+    let filePath = "";
 
     fileInput.change(function () {
         $this = $(this);
         $('#file').text($this.val());
-    })
+
+        // TOOLTIP
+        filePath = $(this).val();
+        document.getElementsByClassName("tooltip-file-path")[0].innerHTML = filePath;
+    });
 
     $('#file').click(function () {
         fileInput.click();
