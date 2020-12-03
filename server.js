@@ -7,6 +7,7 @@ const nunjucks = require("nunjucks");
 const express = require("express");
 const path = require("path");
 const odbc = require("odbc");
+const { title } = require("process");
 const app = express();
 const port = 8080;
 
@@ -39,18 +40,20 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // HOME
 app.get("/", async (req, res) => {
-  res.render("home.html");
+  res.render("home.html", { title: 'Accueil' });
 });
 
 app.get("/annonce", recaptcha.middleware.render, (req, res) => {
-  res.render("create.html", { captcha: res.recaptcha });
+  res.render("create.html", { captcha: res.recaptcha, title: 'Ajouter une annonce' });
 });
 
 app.get("/annonce/{id}", async (req, res) => {
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
     const ad = await connection.query(`SELECT * FROM FichesSaisies WHERE Id= ${req.params.id}`);
-    res.render("ad.html", { ad: ad });
+
+    res.render("ad.html", { ad: ad, title: 'annonce'});
+
   } catch (error) {
     res.render("error.html", { error: error });
   }
@@ -103,7 +106,7 @@ app.get("/annonces", async (req, res) => {
       }
     ];
 
-    res.render("ads.html", { ads: ads });
+    res.render("ads.html", { ads: ads, title: 'Annonces'});
   }  catch (error) {
     res.render("error.html", { error: error });
   }
@@ -155,20 +158,24 @@ app.post("/api/contact", recaptcha.middleware.verify, (req, res) => {
   res.json({ message: message }, { error:req.recaptcha.error });
 });
 
+app.get("/contact", async (req, res) => {
+  res.render("contact.html", {title: 'Contact'});
+
 app.get("/contact", recaptcha.middleware.render, async (req, res) => {
   res.render("contact.html", { captcha: res.recaptcha });
+
 });
 
 app.get("/conseils", async (req, res) => {
-  res.render("advises.html");
+  res.render("advises.html", {title: 'Conseils'});
 });
 
 app.get("/partenaires", async (req, res) => {
-  res.render("partners.html");
+  res.render("partners.html",{title: 'Partenaires'});
 });
 
 app.get("/mentions-legales", async (req, res) => {
-  res.render("mentions.html");
+  res.render("mentions.html", {title: 'Mentions legales'});
 });
 
 app.get("/tutoriel", async (req, res) => {
