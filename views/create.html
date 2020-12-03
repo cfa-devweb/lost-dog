@@ -25,11 +25,11 @@
         text-overflow: ellipsis;
     }
 
-    .btn-sendPic:hover + .tooltip-file-path{
+    .btn-sendPic:hover+.tooltip-file-path {
         opacity: 1;
     }
 
-    .tooltip-file-path{
+    .tooltip-file-path {
         position: absolute;
         opacity: 0;
 
@@ -44,11 +44,11 @@
         transition: opacity .3s ease-in-out;
     }
 
-    .relative-position{
+    .relative-position {
         position: relative;
     }
 
-    .hide-overflow{
+    .hide-overflow {
         overflow: hidden;
     }
 
@@ -156,7 +156,7 @@
                             <div class=" text-center">
                                 <div class="relative-position">
                                     <div class="btn btn-primary btn-sendPic">
-                                       <span class="text-capitalize font-default" id="file">Ajouter une photo</span>
+                                        <span class="text-capitalize font-default" id="file">Ajouter une photo</span>
                                     </div>
                                     <div class="tooltip-file-path"></div>
                                     <div class="container">
@@ -226,7 +226,6 @@
 
     select_designatfirst.on('change', function () {
         if (choiceNull.selected == true) {
-            console.log("salut");
             empSearch.attr('placeholder',
                 'Choisisez la situation de votre poste');
         } else {
@@ -272,7 +271,6 @@
                     image: $image
                 }, function (data) {
                     // alert('Votre publication a bien été ajoutée');
-                    console.log(data);
                 },
                 'json');
         })
@@ -357,12 +355,8 @@
 
         // FORMAT STRING
         filePathFormat = filePath.substring(filePath.lastIndexOf("\\") + 1);
-        console.log(filePathFormat);
-
-        if(filePathFormat.length > 31)
-        {
+        if (filePathFormat.length > 31) {
             filePathFormat = filePathFormat.substring(filePathFormat.length - 31);
-            console.log("formated again = " + filePathFormat);
         }
 
         document.getElementsByClassName("tooltip-file-path")[0].innerHTML = filePathFormat;
