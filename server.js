@@ -7,6 +7,7 @@ const nunjucks = require("nunjucks");
 const express = require("express");
 const path = require("path");
 const odbc = require("odbc");
+const { title } = require("process");
 const app = express();
 const port = 8080;
 
@@ -44,11 +45,11 @@ app.use(function(req, res, next){
 
 // HOME
 app.get("/", async (req, res) => {
-  res.render("home.html");
+  res.render("home.html", { title: 'Accueil' });
 });
 
 app.get("/annonce", recaptcha.middleware.render, (req, res) => {
-  res.render("create.html", { captcha: res.recaptcha, breadcrumb: req.breadcrumb });
+  res.render("create.html", { captcha: res.recaptcha, title: 'Ajouter une annonce', breadcrumb: req.breadcrumb });
 });
 
 app.get("/annonce/{id}", async (req, res) => {
@@ -56,7 +57,7 @@ app.get("/annonce/{id}", async (req, res) => {
     const connection = await odbc.connect(process.env.CONNECTION);
     const ad = await connection.query(`SELECT * FROM FichesSaisies WHERE Id= ${req.params.id}`);
 
-    res.render("ad.html", { ad: ad, breadcrumb: req.breadcrumb });
+    res.render("ad.html", { ad: ad, title: 'annonce', breadcrumb: req.breadcrumb });
   } catch (error) {
     res.render("error.html", { error: error });
   }
@@ -109,7 +110,7 @@ app.get("/annonces", async (req, res) => {
       }
     ];
 
-    res.render("ads.html", { ads: ads, breadcrumb: req.breadcrumb });
+    res.render("ads.html", { ads: ads, title: 'Annonces', breadcrumb: req.breadcrumb });
   }  catch (error) {
     res.render("error.html", { error: error });
   }
@@ -148,26 +149,40 @@ app.post("/api/annonce", recaptcha.middleware.verify, (req, res) => {
   res.json(ad, { error:req.recaptcha.error, breadcrumb: req.breadcrumb });
 });
 
-app.post("/api/contact", (req, res) => {
+app.post("/api/contact", recaptcha.middleware.verify, (req, res) => {
   const message = req.body.message;
+  if (!req.recaptcha.error) {
+    // success code
+    
+  } else {
+    // error code
+  }
 
-  res.json({ message: message, breadcrumb: req.breadcrumb });
+  res.json({ message: message }, { error:req.recaptcha.error });
 });
 
 app.get("/contact", async (req, res) => {
-  res.render("contact.html", { breadcrumb: req.breadcrumb });
+  res.render("contact.html", {title: 'Contact', breadcrumb: req.breadcrumb});
+});
+app.get("/contact", recaptcha.middleware.render, async (req, res) => {
+  res.render("contact.html", { captcha: res.recaptcha });
+
 });
 
 app.get("/conseils", async (req, res) => {
-  res.render("advises.html", { breadcrumb: req.breadcrumb });
+  res.render("advises.html", {title: 'Conseils', breadcrumb: req.breadcrumb });
 });
 
 app.get("/partenaires", async (req, res) => {
-  res.render("partners.html" , { breadcrumb: req.breadcrumb });
+  res.render("partners.html",{title: 'Partenaires', breadcrumb: req.breadcrumb });
 });
 
 app.get("/mentions-legales", async (req, res) => {
-  res.render("mentions.html",{ breadcrumb: req.breadcrumb });
+  res.render("mentions.html", {title: 'Mentions legales', breadcrumb: req.breadcrumb });
+});
+
+app.get("/tutoriel", async (req, res) => {
+  res.render("tutoriel.html", { breadcrumb: req.breadcrumb });
 });
 
 app.post("/api/comments", (req, res) => {

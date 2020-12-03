@@ -1,4 +1,8 @@
 {% extends "layouts/base.html" %}
+{% block meta %}
+<meta name=" description" content=" Description de la page">
+<meta name=" robots" content=" index, follow">
+{% endblock %}
 {% block css %}
 <style>
     .block-partenaires {
@@ -48,6 +52,7 @@
     .boite-partner {
         width: 100%;
         height: 100%;
+        border-radius: 10px;
     }
 
     .boite-partner:hover {
@@ -83,6 +88,11 @@
         .title-partenaire {
             width: 100%;
             border-radius: 0;
+        }
+
+        .sous-titre1{
+            text-align: center;
+            font-size: 1.3em;
         }
     }
 </style>

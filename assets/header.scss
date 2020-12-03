@@ -55,6 +55,20 @@
     color: #FFFFFF;
 }
 
+.entrypoints2{
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.entrypoints2:hover{
+    background-color: rgba(245, 228, 0, 0.7);
+}
+
+.deroulant{
+    border: #000000 solid 1px;
+    color: #000000;
+}
+
 @media only screen and (max-width: 990px){
 
     .info-navbar{
@@ -106,7 +120,7 @@
         text-align: left;
         width: 100%;
         text-align: center;
-        background-color: rgba($color: #FFFFFF, $alpha: 0.6);
+        background-color: rgba($color: #000000, $alpha: 0.2);
     }
 
     .menu-deroulant{
@@ -123,5 +137,17 @@
     .menu-navbar{
         margin-right: 0%;
         margin-bottom: 0%;
+    }
+
+    .entrypoints2{
+        color: #000000;
+        font-family: 'Open Sans', sans-serif;
+    }
+ 
+    .deroulant{
+        border: none;
+        background-color: rgba($color: #FFFFFF, $alpha: 0.35);
+        text-align: center;
+        margin-top: 0%;
     }
 }

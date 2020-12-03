@@ -1,5 +1,9 @@
 {% extends "layouts/base.html" %}
-
+{% block meta %}
+<meta name=" description" content=" Description de la page">
+<meta name=" robots" content=" index, follow">
+<meta name="author" content="LostDog">
+{% endblock %}
 {% block css %}
 <style>
 
@@ -11,6 +15,10 @@
 
   .texte-titre {
     color: rgb(0, 0, 0);
+  }
+
+  .images-chat-noir {
+    height: 8vh;
   }
 
 /* Section bienvenue */
@@ -34,67 +42,116 @@
 .links-situations{
   text-decoration: none;
 }
-.links-situations:hover{
-  text-decoration: underline 3px black;
-}
 
 .icons-situations {
   font-size: 5vh;
 }
 
-.card-perdus, .card-trouves, .card-adoption {
+.cards-btnsituations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   background-color: white;
 }
 
+#card-perdus, #card-trouves, #card-adoption{
+  display: flex;
+  flex-flow: column;
+  width: 50%;
+  justify-items: center;
+  justify-content: center;
+  padding: 1%;
+  border-radius: 5px;
+}
+
+#card-perdus:hover {
+  background-color: rgba(209, 37, 23, 0.4);
+}
+
+#card-trouves:hover {
+  background-color: rgba(114, 194, 23, 0.4);
+}
+
+#card-adoption:hover {
+  background-color: rgba(0, 168, 232, 0.4);
+}
 
 /* Section dernieres annonces */
 
 
-/* Carousel */
+#link-consultAdds {
+  color: black;
+  text-decoration: none;
+}
 
-  .img-carousel {
-    width: auto;
-    height: 280px;
+#link-consultAdds:hover {
+  color: black;
+  text-decoration: underline 3px #F5E400;
+  font-weight: bolder;
+}
+
+@media (max-width: 576px) {
+  #png-chat-lPosts {
+    display: none;
   }
+}
 
-  @media (max-width: 430px) {
-    .carousel-inner .carousel-item>div {
-      display: none;
-    }
+/* Section Nos partenaires */
 
-    .carousel-inner .carousel-item>div:first-child {
-      display: block;
-    }
+
+  /* Carousel */
 
     .img-carousel {
-      width: 100%;
-      height: 45vh;
-  }
-  }
-
-  .carousel-inner .carousel-item.active,
-  .carousel-inner .carousel-item-next,
-  .carousel-inner .carousel-item-prev {
-    display: flex;
-  }
-
-  @media (min-width: 768px) {
-
-    .carousel-inner .carousel-item-right.active,
-    .carousel-inner .carousel-item-next {
-      transform: translateX(33.333%);
+      width: auto;
+      height: 280px;
     }
 
-    .carousel-inner .carousel-item-left.active,
+    #carousel-lbtn{
+      font-size: large;
+    }
+    #carousel-rbtn{
+      font-size: large;
+    }
+
+    @media (max-width: 430px) {
+      .carousel-inner .carousel-item>div {
+        display: none;
+      }
+
+      .carousel-inner .carousel-item>div:first-child {
+        display: block;
+      }
+
+      .img-carousel {
+        width: 100%;
+        height: 45vh;
+    }
+    }
+
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
     .carousel-inner .carousel-item-prev {
-      transform: translateX(-33.333%);
+      display: flex;
     }
-  }
 
-  .carousel-inner .carousel-item-right,
-  .carousel-inner .carousel-item-left {
-    transform: translateX(0);
-  }
+    @media (min-width: 768px) {
+
+      .carousel-inner .carousel-item-right.active,
+      .carousel-inner .carousel-item-next {
+        transform: translateX(33.333%);
+      }
+
+      .carousel-inner .carousel-item-left.active,
+      .carousel-inner .carousel-item-prev {
+        transform: translateX(-33.333%);
+      }
+    }
+
+    .carousel-inner .carousel-item-right,
+    .carousel-inner .carousel-item-left {
+      transform: translateX(0);
+    }
 
 /* Section ? */
 
@@ -105,7 +162,7 @@
 <main>
 
   <!--Section bienvenue-->
-  <section>
+  <section class="container my-5 font-default">
     <div>
 
       <div class="bg-img img-fluid"></div>
@@ -115,6 +172,7 @@
     <div>
 
       <h1 class="font-title text-center texte-titre size-h1">Bienvenue sur LostDog</h1>
+      <h3 class="text-center texte-titre size-h3">Vous avez perdu un animal ? Retrouvez le grâce à LostDog !</h3>
 
     </div>
 
@@ -125,10 +183,10 @@
 
     <div class="row">
 
-      <div class="card col-sm card-perdus">
-        <div class="card-body text-center">
+      <div class="card col-sm">
+        <div class="card-body text-center cards-btnsituations">
 
-          <a class="links-situations" href="">
+          <a class="links-situations" id="card-perdus" href="/annonces?type=1">
 
             <i class="far fa-frown color-perdus icons-situations"></i>
 
@@ -139,10 +197,10 @@
         </div>
       </div>
 
-      <div class="card col-sm card-trouves">
-        <div class="card-body text-center">
+      <div class="card col-sm">
+        <div class="card-body text-center cards-btnsituations">
 
-          <a class="links-situations" href="">
+          <a class="links-situations" id="card-trouves" href="/annonces?type=2">
 
             <i class="far fa-grin-beam color-trouves icons-situations"></i>
 
@@ -153,10 +211,10 @@
         </div>
       </div>
 
-      <div class="card col-sm card-adoption">
-        <div class="card-body text-center">
+      <div class="card col-sm">
+        <div class="card-body text-center cards-btnsituations">
 
-          <a class="links-situations" href="">
+          <a class="links-situations" id="card-adoption" href="/annonces?type=3">
 
             <i class="far fa-grin-stars color-adoption icons-situations"></i>
 
@@ -174,50 +232,61 @@
   <!--Section Dernieres annonces-->
   <section class="container my-5 font-default bg-sections-home">
 
-    <div class="row my-4">
+    <div class="row">
 
-      <h2 class="font-title size-h2 text-center">Les dernières annonces</h2>
+      <h2 class="font-title size-h2 text-center">
+        <img id="png-chat-lPosts" class="images-chat-noir" src="/images/chat-patte-leve.png">
+        Les dernières annonces
+      </h2>
 
     </div>
 
-    <div class="row my-4">
+    <div class="row d-flex justify-content-center">
 
-      <div class="col-sm card">
+      <div class="col-sm card" style="width: 18rem;">
         <!-- Annonce 1-->
-        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+        <img src="/images/dessin-groupe-chats-chiens.jpg" class="card-img-top" alt="Titre annonce 1">
         <div class="card-body">
-          <h5 class="card-title">{{ ad.title }}</h5>
-          <p class="card-text">{{ ad.description }}</p>
+          <h5 class="card-title font-title">Titre annonce 1</h5>
+          <p class="card-text font-default">
+            Courte description de l'annonce 1
+          </p>
           <a href="#" class="btn btn-primary">En savoir plus</a>
         </div>
       </div>
 
-      <div class="col-sm card">
+      <div class="col-sm card" style="width: 18rem;">
         <!-- Annonce 2-->
-        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+        <img src="/images/dessin-groupe-chats-chiens.jpg" class="card-img-top" alt="Titre annonce 2">
         <div class="card-body">
-          <h5 class="card-title">{{ ad.title }}</h5>
-          <p class="card-text">{{ ad.description }}</p>
+          <h5 class="card-title font-title">Titre annonce 2</h5>
+          <p class="card-text font-default">
+            Courte description de l'annonce 2
+          </p>
           <a href="#" class="btn btn-primary">En savoir plus</a>
         </div>
       </div>
 
-      <div class="col-sm card">
+      <div class="col-sm card" style="width: 18rem;">
         <!-- Annonce 3-->
-        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+        <img src="/images/dessin-groupe-chats-chiens.jpg" class="card-img-top" alt="Titre annonce 3">
         <div class="card-body">
-          <h5 class="card-title">{{ ad.title }}</h5>
-          <p class="card-text">{{ ad.description }}</p>
+          <h5 class="card-title font-title">Titre annonce 3</h5>
+          <p class="card-text font-default">
+            Courte description de l'annonce 3
+          </p>
           <a href="#" class="btn btn-primary">En savoir plus</a>
         </div>
       </div>
 
-      <div class="col-sm card">
+      <div class="col-sm card" style="width: 18rem;"> 
         <!-- Annonce 4-->
-        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+        <img src="/images/dessin-groupe-chats-chiens.jpg" class="card-img-top" alt="Titre annonce 4">
         <div class="card-body">
-          <h5 class="card-title">{{ ad.title }}</h5>
-          <p class="card-text">{{ ad.description }}</p>
+          <h5 class="card-title font-title">Titre annonce 4</h5>
+          <p class="card-text font-default">
+            Courte description de l'annonce 4
+          </p>
           <a href="#" class="btn btn-primary">En savoir plus</a>
         </div>
       </div>
@@ -225,7 +294,7 @@
     </div>
 
     <div class="row">
-      <a href="/annonces">Consulter toutes les annonces</a>
+      <a class="text-center size-p my-4" id="link-consultAdds" href="/annonces">Consulter toutes les annonces</a>
     </div>
   </section>
 
@@ -234,7 +303,10 @@
     <!-- Ligne du titre -->
     <div class="row text-center">
 
-      <h2 class="font-title size-h2 m-4">Nos partenaires</h2>
+      <h2 class="font-title size-h2">
+        Nos partenaires
+        <img class="images-chat-noir mb-3" src="/images/chat-assis.png">
+      </h2>
 
     </div>
     <!-- Ligne contenant le carousel -->
@@ -242,7 +314,7 @@
       <!-- Div du carousel -->
       <div class="container text-center my-3">
         <div class="row mx-auto my-auto">
-          <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+          <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel" data-interval="10000">
             <div class="carousel-inner w-100" role="listbox">
 
               <div class="carousel-item active">
@@ -301,7 +373,7 @@
                 <div class="col-md-4">
                   <a href="https://www.clicanimaux.com/association-447-la-bande-a-nounou">
                       <div class="card card-body">
-                        <img class="img-carousel" src="images/logo-bandeanounou.png">
+                        <img class="img-carousel" src="images/logo-bandeanounou.png" alt="logo-bandeanounou">
                       </div>
                   </a>
                 </div>
@@ -310,14 +382,14 @@
             </div>
 
             <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
-              <span class="bg-dark border border-dark rounded-circle" aria-hidden="true">
+              <span class="bg-dark border border-dark rounded-circle" aria-hidden="true" id="carousel-lbtn">
                 <i class="fas fa-angle-left"></i>
               </span>
               <span class="sr-only">Previous</span>
             </a>
 
             <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
-              <span class="bg-dark border border-dark rounded-circle" aria-hidden="true">
+              <span class="bg-dark border border-dark rounded-circle" aria-hidden="true" id="carousel-rbtn">
                 <i class="fas fa-angle-right"></i>
               </span>
               <span class="sr-only">Next</span>
@@ -342,12 +414,7 @@
 {% block js %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-  $('#recipeCarousel').carousel({
-    interval: 10000
-  })
-
   $('.carousel .carousel-item').each(function () {
     var minPerSlide = 3;
     var next = $(this).next();

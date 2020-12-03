@@ -1,15 +1,35 @@
 {% extends "layouts/base.html" %}
+{% block meta %}
+<meta name=" description" content=" Description de la page">
+<meta name=" robots" content=" index, follow">
+{% endblock %}
 
 {% block css %}
 <style>
   body {
     background-color: white;
   }
+
   .list {
     list-style: none;
   }
+
   .text-color {
     color: #f5e400;
+  }
+
+  .img-ajust {
+    padding: 1em;
+    border-radius: 40px;
+  }
+
+  .style-link {
+    text-decoration: none;
+    color: #f5e400;
+  }
+
+  .padd-left {
+    padding-left: 10%;
   }
 </style>
 {% endblock %}
@@ -19,10 +39,10 @@
 <main>
   <div class="container">
     {% include "layouts/breadcrumb.html" %}
-    <h1 class="titres text-center m-4 font-title size-h1">Conseils</h1>
+    <h1 class="titres text-center m-4 font-title size-h1">Infos utiles</h1>
     <div>
-      <div class="col m-4">
-        <h4 class="titres text-center font-title text-color">UN ANIMAL PERDU ?</h4>
+      <div class="col">
+        <h4 class="titres text-center mb-4 font-title text-color">UN ANIMAL PERDU ?</h4>
         <ul class="font-default list text-center">
           <li>Préparer les informations sur votre animal (photo, couleur, collier, n° tatouage, lieux de disparition,
             signes particuliers, etc.)</li>
@@ -34,59 +54,14 @@
           </li>
         </ul>
       </div>
-      <hr class="solid">
-      <div class="col m-4 pt-3">
-        <h4 class="titres text-center font-title text-color">CONTACT IMPORTANT</h4>
-        <h6>FOURRIERE</h6>
-        <ul class="list font-default">
-          <li>Téléphone : 26.86.66</li>
-          <li>Adresse : 16 rue Raymonde JORE - DUCOS</li>
-          <li>LUNDI - JEUDI : 8h00 à 15h30 en continu</li>
-          <li>VENDREDI : 8h00 à 12h00</li>
-          <li>Photos sur www.sign.nc</li>
-          <li>Ou dans LOSTDOG "animaux capturés"</li>
-        </ul>
-        <h6>RADIO OCEANE FM</h6>
-        <ul class="list">
-          <li>Antenne : 36.70.71
-          <li>Standard : 41.00.95</li>
-        </ul>
-        <div class="titres text-center m-4">
-          <button type="button " class="btn btn btn-primary " class="card-body" data-toggle="popover"
-            title="AUTRES CONTACTS" data-content="RADIO NC 1ère : 25.82.58 LA BANDE A NOUNOUS
-             Téléphone : 79.41.30
-             @ : spanc-nc@hotmail.nc
-            AAAC :
-          Téléphone : 47.12.66
-          @ : aaac.caledo@gmail.com
-          site : http://www.aaac-nouvelle-caledonie.net
-          BIEN NAÎTRE ANIMAL
-          Téléphone : 50.08.03
-          @ : bna.animal0nc@gmail.com
-          CHATS DE NC: 
-          Téléphone : 91.97.60
-          @ : chatdenc@gmail.com
-          REFUGE ANIMALIER NC: 
-          Téléphone : 78.75.20
-          @ : ranc@lagoon.nc
-          SOS ANIMAUX: 
-          Téléphone : 76.02.08
-          @: sosanimauxnc@hotmail.fr
-          ANIMAL ACTION : 
-          @ : animal.action.nc@gmail.com
-          ">PLUS DE CONTACTS</button>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <div class="container">
-    <div class="card mb-3" >
+    <div class="card mt-5">
       <div class="row no-gutters">
-        <div class="col-md-6">
-          <img src="images/petit_chien.jpg" class="card-img img-fluid" alt="chien dans un carton">
+        <div class="col-md-12 col-lg-6">
+          <img src="images/petit_chien.jpg" class="card-img img-fluid img-ajust" alt="chien dans un carton">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12 col-lg-6">
           <div class="card-body">
             <h5 class="card-title text-center m-4 font-title text-color">Conseil pour retrouver un chien</h5>
             <p class="card-text">
@@ -101,7 +76,7 @@
             </p>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12 col-lg-6">
           <div class="card-body">
             <h5 class="card-title text-center m-4 font-title text-color">Conseil pour retrouver un chat</h5>
             <p class="card-text">
@@ -122,8 +97,74 @@
             </p>
           </div>
         </div>
-        <div class="col-md-6">
-          <img src="images/petit_chat.jpg" class="card-img img-fluid" alt="chat gris avec des tâches">
+        <div class="col-md-12 col-lg-6">
+          <img src="images/petit_chat.jpg" class="card-img img-fluid img-ajust" alt="chat gris avec des tâches">
+        </div>
+      </div>
+    </div>
+
+    <h4 class="titres text-center font-title text-color mt-5">CONTACT IMPORTANT</h4>
+    <div class="container padd-left">
+      <div class="row mb-5">
+        <div class="col mt-5 col-12 col-lg-4">
+          <h6>FOURRIERE</h6>
+          <ul class="list font-default">
+            <li>Téléphone : 26.86.66</li>
+            <li>Adresse : 16 rue Raymonde JORE - DUCOS</li>
+            <li>LUNDI - JEUDI : 8h00 à 15h30 en continu</li>
+            <li>VENDREDI : 8h00 à 12h00</li>
+            <li>Photos sur <a href="https://www.sign.nc/" target="_blanck" class="style-link">www.sign.nc</a></li>
+            <li>Ou dans LOSTDOG "animaux capturés"</li>
+          </ul>
+          <h6>RADIO OCEANE FM</h6>
+          <ul class="list font-default">
+            <li>Antenne : 36.70.71
+            <li>Standard : 41.00.95</li>
+          </ul>
+          <h6>RADIO NC 1ère</h6>
+          <ul class="list font-default">
+            <li>Téléphone :25.82.58</li>
+          </ul>
+        </div>
+        <div class="col mt-5 col-12 col-lg-4">
+          <h6>LA BANDE A NOUNOUS </h6>
+          <ul class="list font-default">
+            <li>Téléphone : 79.41.30</li>
+            <li>Email : spanc-nc@hotmail.nc</li>
+          </ul>
+          <h6>AAAC </h6>
+          <ul class="list font-default">
+            <li>Téléphone : 47.12.66</li>
+            <li>Email : aaac.caledo@gmail.com</li>
+            <li>site : <a href="http://www.aaac-nouvelle-caledonie.net" target="_blanck"
+                class="style-link">http://www.aaac-nouvelle-caledonie.net</a></li>
+          </ul>
+          <h6>BIEN NAÎTRE ANIMAL</h6>
+          <ul class="list font-default">
+            <li>Téléphone : 50.08.03</li>
+            <li>Email : bna.animal0nc@gmail.com</li>
+          </ul>
+        </div>
+        <div class="col mt-5 col-12 col-lg-4">
+          <h6>CHATS DE NC</h6>
+          <ul class="list font-default">
+            <li>Téléphone : 91.97.60</li>
+            <li>Email: chatdenc@gmail.com</li>
+          </ul>
+          <h6>REFUGE ANIMALIER NC</h6>
+          <ul class="list font-default">
+            <li>Téléphone : 78.75.20</li>
+            <li>Email: ranc@lagoon.nc</li>
+          </ul>
+          <h6>SOS ANIMAUX</h6>
+          <ul class="list font-default">
+            <li>Téléphone : 76.02.08</li>
+            <li>Email: sosanimauxnc@hotmail.fr</li>
+          </ul>
+          <h6>ANIMAL ACTION </h6>
+          <ul class="list font-default">
+            <li>Email: animal.action.nc@gmail.com</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -134,11 +175,5 @@
 {% block js %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-  $(function () {
-    $('[data-toggle="popover"]').popover()
-  })
-</script>
 
 {% endblock %}
