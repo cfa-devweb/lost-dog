@@ -243,7 +243,7 @@
         //500ko = 500070.5
         //700ko = 700100.5
         if (size > 700101) {
-            alert("Veuillez téléverser moins de 1 700 ko de fichier");
+            alert("Veuillez téléverser moins de 700 ko de fichier");
             return false;
         }
         return true;
@@ -365,9 +365,5 @@
     $('#file').click(function () {
         fileInput.click();
     }).show();
-
-    $("#file").click(function () {
-        $("p").css("color", "red");
-    });
 </script>
 {% endblock %}
