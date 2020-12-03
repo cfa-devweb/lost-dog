@@ -39,7 +39,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(function(req, res, next){
-  req.breadcrumb = '<a style="color: #000000" onmouseover="this.style.color=\'#F5E400\';"; href="/"><i class="fas fa-home"></i></a> / ' + req.originalUrl.substring(1).split('/').map(item => `<a>${item}</a>`).join("");
+  req.breadcrumb = '<a class="bread-js" href="/"><i class="fas fa-home"></i> Accueil </a> > ' + req.originalUrl.substring(1).split('/').map(item => `<a>${item}</a>`).join("");
   next();
 });
 

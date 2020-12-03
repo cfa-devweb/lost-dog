@@ -25,6 +25,7 @@ $jaune : #F5E400;
   transition: .3s all ease;
   &:hover {
     background-color: #2e2b00;
+    @extend .shadow-lg;
   }
 }
 

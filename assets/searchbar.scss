@@ -10,8 +10,21 @@
   border: 1px solid;
   border-radius: 3px;
   box-sizing: border-box;
-  box-shadow: none;
   position: relative;
+  transition: 1s ease;
+
+  &:focus {
+    blur-radius: 0;
+    transition: box-shadow 0.5s ease;
+    @extend .shadow-lg;
+    outline: none;
+  }
+  &:hover{
+    blur-radius: 0;
+    transition: box-shadow ease-in-out 0.5s;
+    @extend .shadow-lg;
+    outline: none;
+  }
 }
 .button, buttonsearch{
   height: 50px;
