@@ -4,8 +4,7 @@
     .container_tutoriel {
         padding-top: 50px;
         padding-bottom: 80px;
-        border-top-style: solid;
-        border-top-color: #EFE21D;
+        border-top-style: inset;
     }
 
     .container_title {
@@ -27,7 +26,8 @@
 
     .container_consultation {
         padding-top: 50px;
-        border-top-style: inset;
+        border-top-style: solid;
+        border-top-color: #EFE21D;
     }
 
     .div_contenu_consult {
@@ -36,9 +36,14 @@
         padding-right: 20px;
         margin-bottom: 30px;
     }
-
+.numero{
+    color:#EFE21D;
+}
     .div_paragraphe {
         padding-right: 10px;
+    }
+    .title_section_tuto{
+        font-weight: bold;
     }
 </style>
 {% endblock %}
@@ -50,10 +55,10 @@
             <h3 class="size-h3 title_tuto">Tutoriel pour l'utilisation de l'application mobile</h3>
         </div>
         <div class="row container_consultation justify-content-center">
-            <h5>Pour consulter les animaux perdus et trouvés</h5>
+            <h5 class="title_section_tuto">Pour consulter les animaux perdus et trouvés</h5>
             <div class="col div_contenu_consult">
                 <div class="div_paragraphe">
-                    <p class="size-p"><b>1.</b> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
+                    <p class="size-p"><b class="numero">1.</b> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
                 </div>
                 <div>
                     <img class="img_tuto" src="images/acc_app.png" alt="accueil de l'application">
@@ -61,7 +66,7 @@
             </div>
             <div class="col div_contenu_consult">
                 <div class="div_paragraphe">
-                    <p class="size-p"><b>2.</b> Si vous voulez consulter les animaux trouvés, taper sur 'trouvé', les
+                    <p class="size-p"><b class="numero">2.</b> Si vous voulez consulter les animaux trouvés, taper sur 'trouvé', les
                         animaux perdu, allez sur
                         'perdu'. Et enfin, si vous voulez en
                         adopter, choisissez 'A adopter'.
@@ -73,7 +78,7 @@
             </div>
             <div class="col div_contenu_consult">
                 <div class="div_paragraphe">
-                    <p class="size-p"><b>3.</b>Choisir le type de l'animal que vous recherchez, en cliquant soit sur
+                    <p class="size-p"><b class="numero">3.</b>Choisir le type de l'animal que vous recherchez, en cliquant soit sur
                         chien, soit sur chat</p>
                 </div>
                 <div>
@@ -84,7 +89,7 @@
         <div class="row justify-content-center">
             <div class="col div_contenu_consult">
                 <div class="div_paragraphe">
-                    <p class="size-p"><b>4.</b> Vous pouvez choisir le moment où l'annnonce a été publiée</p>
+                    <p class="size-p"><b class="numero">4.</b> Vous pouvez choisir le moment où l'annnonce a été publiée</p>
                 </div>
                 <div>
                     <img class="img_tuto" src="images/choix_date_consult.png" alt="accueil de l'application">
@@ -92,7 +97,7 @@
             </div>
             <div class="col div_contenu_consult">
                 <div class="div_paragraphe">
-                    <p class="size-p"><b>5.</b> Vous avez les annonces qui s'affichent une par une. Vous avez la
+                    <p class="size-p"><b class="numero">5.</b> Vous avez les annonces qui s'affichent une par une. Vous avez la
                         possibilité de zapper en cliquant sur les flêches du bas</p>
                 </div>
                 <div>
@@ -101,13 +106,15 @@
             </div>
         </div>
         <div class="row container_consultation justify-content-center">
-            <h5>Pour ajouter un animal (perdu, trouvé ou a adopté)</h5>
+            <h5 class="title_section_tuto">Pour ajouter un animal (perdu, trouvé ou a adopté)</h5>
+
             <div class="col div_contenu_consult">
                 <div class="div_paragraphe">
-                    <p class="size-p"><b>1.</b> Sur l'accueil cliquer sur 'Ajouter un animal'. Ensuite selon la situation qui vous
+                    <p class="size-p">
+                        <b class="numero">1.</b> Sur l'accueil cliquer sur 'Ajouter un animal'. Ensuite selon la situation qui vous
                         convient
-                        cliquer sur "Mon album photo". Dans le cas d'un animal trouvé il est possible de prendre une
-                        photo avec GPS en cliquant sur "Prendre photo (GPS)" </p>
+                        cliquer sur "Mon album photo". 
+                    </p>
                 </div>
                 <div>
                     <img class="img_tuto" src="images/acc_ajout_anim_tuto.jpg" alt="accueil de l'application">
@@ -115,7 +122,8 @@
             </div>
             <div class="col div_contenu_consult">
                 <div class="div_paragraphe">
-                    <p class="size-p"><b>2.</b>Lorsque votre écran s'affiche comme l'image ci-contre, taper sur le type d'animal que
+                    <p class="size-p">
+                        <b class="numero">2.</b>Lorsque votre écran s'affiche comme l'image ci-contre, taper sur le type d'animal que
                         vous
                         ajouter. 
                     </p>
@@ -126,15 +134,15 @@
             </div>
             <div class="col div_contenu_consult">
                 <div class="div_paragraphe">
-                    <p class="size-p"><b>3.</b>Enfin, rédiger votre publication en mettant le plus d'information possible concernant
-                        l'animal.
-                    </p>
+                    <p class="size-p">
+                        <b class="numero">3.</b>Enfin, rédiger votre publication en mettant le plus d'information possible concernant
+                        l'animal.</p>
                 </div>
                 <div>
                     <img class="img_tuto" src="images/ajouter_comm_tuto.jpg" alt="accueil de l'application">
                 </div>
             </div>
-        </div>
+          </div>
     </div>
 </main>
 {% endblock %}
