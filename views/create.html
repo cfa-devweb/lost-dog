@@ -226,7 +226,6 @@
 
     select_designatfirst.on('change', function () {
         if (choiceNull.selected == true) {
-            console.log("salut");
             empSearch.attr('placeholder',
                 'Choisisez la situation de votre poste');
         } else {
@@ -272,7 +271,6 @@
                     image: $image
                 }, function (data) {
                     // alert('Votre publication a bien été ajoutée');
-                    console.log(data);
                 },
                 'json');
         })
@@ -357,11 +355,8 @@
 
         // FORMAT STRING
         filePathFormat = filePath.substring(filePath.lastIndexOf("\\") + 1);
-        console.log(filePathFormat);
-
         if (filePathFormat.length > 31) {
             filePathFormat = filePathFormat.substring(filePathFormat.length - 31);
-            console.log("formated again = " + filePathFormat);
         }
 
         document.getElementsByClassName("tooltip-file-path")[0].innerHTML = filePathFormat;
