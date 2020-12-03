@@ -10,7 +10,7 @@
 {% endblock %}
 {% block content %}
 <main>
-
+  {% include "layouts/breadcrumb.html" %}
     <div class="container text-center">
       <h1 class="titre-annonces size-h1 justify-content-center my-3">Toutes les annonces</h1>
       <div class="row justify-content-center">
@@ -18,7 +18,7 @@
           <form id="form" class="formsearch" onsubmit="searchData(this)">
             <div class="row">
               <div class="col-sm-10 mb-3">
-                <input class="searchbar mr-4" type="text" name="search" value placeholder="Rechercher une annonce...">
+                <input class="searchbar" type="text" name="search" value placeholder="Rechercher une annonce...">
               </div>
               <div class="col mb-3">
                 <button type="submit" class="btn btn-primary buttonsearch">Search</button>

@@ -37,13 +37,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(function(req, res, next){
+  req.breadcrumb = '<a style="color: #000000" onmouseover="this.style.color=\'#F5E400\';"; href="/"><i class="fas fa-home"></i></a> / ' + req.originalUrl.substring(1).split('/').map(item => `<a>${item}</a>`).join("");
+  next();
+});
+
 // HOME
 app.get("/", async (req, res) => {
   res.render("home.html");
 });
 
 app.get("/annonce", recaptcha.middleware.render, (req, res) => {
-  res.render("create.html", { captcha: res.recaptcha });
+  res.render("create.html", { captcha: res.recaptcha, breadcrumb: req.breadcrumb });
 });
 
 app.get("/annonce/{id}", async (req, res) => {
@@ -51,7 +56,7 @@ app.get("/annonce/{id}", async (req, res) => {
     const connection = await odbc.connect(process.env.CONNECTION);
     const ad = await connection.query(`SELECT * FROM FichesSaisies WHERE Id= ${req.params.id}`);
 
-    res.render("ad.html", { ad: ad });
+    res.render("ad.html", { ad: ad, breadcrumb: req.breadcrumb });
   } catch (error) {
     res.render("error.html", { error: error });
   }
@@ -104,7 +109,7 @@ app.get("/annonces", async (req, res) => {
       }
     ];
 
-    res.render("ads.html", { ads: ads });
+    res.render("ads.html", { ads: ads, breadcrumb: req.breadcrumb });
   }  catch (error) {
     res.render("error.html", { error: error });
   }
@@ -120,7 +125,7 @@ app.get("/api/annonces", async (req, res) => {
 
     res.json({ ads: ads });
   } catch (error) {
-    res.render("error.html", { error: error });
+    res.render("error.html", { error: error, breadcrumb: req.breadcrumb });
   }
 });
 
@@ -140,35 +145,35 @@ app.post("/api/annonce", recaptcha.middleware.verify, (req, res) => {
     // error code
   }
 
-  res.json(ad, { error:req.recaptcha.error });
+  res.json(ad, { error:req.recaptcha.error, breadcrumb: req.breadcrumb });
 });
 
 app.post("/api/contact", (req, res) => {
   const message = req.body.message;
 
-  res.json({ message: message });
+  res.json({ message: message, breadcrumb: req.breadcrumb });
 });
 
 app.get("/contact", async (req, res) => {
-  res.render("contact.html");
+  res.render("contact.html", { breadcrumb: req.breadcrumb });
 });
 
 app.get("/conseils", async (req, res) => {
-  res.render("advises.html");
+  res.render("advises.html", { breadcrumb: req.breadcrumb });
 });
 
 app.get("/partenaires", async (req, res) => {
-  res.render("partners.html");
+  res.render("partners.html" , { breadcrumb: req.breadcrumb });
 });
 
 app.get("/mentions-legales", async (req, res) => {
-  res.render("mentions.html");
+  res.render("mentions.html",{ breadcrumb: req.breadcrumb });
 });
 
 app.post("/api/comments", (req, res) => {
   const commentaires = req.body.commentaires;
 
-  res.json({ commentaires: commentaires });
+  res.json({ commentaires: commentaires, breadcrumb: req.breadcrumb });
 });
 
 app.listen(port, () => {
