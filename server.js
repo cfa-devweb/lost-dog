@@ -53,6 +53,7 @@ app.get("/annonce/{id}", async (req, res) => {
     const ad = await connection.query(`SELECT * FROM FichesSaisies WHERE Id= ${req.params.id}`);
 
     res.render("ad.html", { ad: ad, title: 'annonce'});
+
   } catch (error) {
     res.render("error.html", { error: error });
   }
@@ -144,14 +145,25 @@ app.post("/api/annonce", recaptcha.middleware.verify, (req, res) => {
   res.json(ad, { error:req.recaptcha.error });
 });
 
-app.post("/api/contact", (req, res) => {
+app.post("/api/contact", recaptcha.middleware.verify, (req, res) => {
   const message = req.body.message;
 
-  res.json({ message: message });
+  if (!req.recaptcha.error) {
+    // success code
+    
+  } else {
+    // error code
+  }
+
+  res.json({ message: message }, { error:req.recaptcha.error });
 });
 
 app.get("/contact", async (req, res) => {
   res.render("contact.html", {title: 'Contact'});
+
+app.get("/contact", recaptcha.middleware.render, async (req, res) => {
+  res.render("contact.html", { captcha: res.recaptcha });
+
 });
 
 app.get("/conseils", async (req, res) => {
@@ -164,6 +176,10 @@ app.get("/partenaires", async (req, res) => {
 
 app.get("/mentions-legales", async (req, res) => {
   res.render("mentions.html", {title: 'Mentions legales'});
+});
+
+app.get("/tutoriel", async (req, res) => {
+  res.render("tutoriel.html");
 });
 
 app.post("/api/comments", (req, res) => {
