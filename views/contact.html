@@ -5,7 +5,6 @@
 {% endblock %}
 {% block css %}
 <style>
-
   .title-contact {
     background-image: url(/images/friends-1149841_1280.jpg);
     background-size: cover;
@@ -25,11 +24,15 @@
     line-height: 0%;
   }
 
+  .page-contact{
+        margin: 4% 0 4% 0;
+    }
+
   .montitrecontact {
     font-size: 1em;
   }
 
-  .phone-mail{
+  .phone-mail {
     margin: auto;
     background-color: rgba(0, 0, 0, 0.9);
     width: 80%;
@@ -38,35 +41,71 @@
     padding: 1% 0 1% 0;
     border-radius: 0px 0px 10px 10px;
     margin-bottom: 3%;
-  }
-  
-  .part{
-    width: 50%;
-    text-align: center;
     font-size: 1.5em;
   }
 
-  .link-contact{
+  .part {
+    width: 50%;
+    text-align: center;
+  }
+
+  .link-contact {
     color: #FFFFFF;
     text-decoration: none;
   }
 
-  .link-contact:hover{
+  .link-contact:hover {
     color: #F5E400;
   }
 
-  .formulaire-contact{
-    width: 60%;
+  .block-message {
     display: flex;
+    margin: auto;
     flex-flow: column;
+    width: 50%;
     justify-content: center;
-    align-items: center;
   }
 
+  .champ-text {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: solid 1px #000000;
+  }
+
+  .champ-text:focus {
+    background-color: #F5E400;
+  }
+
+  @media only screen and (max-width: 990px) {
+    .montitrecontact {
+      font-size: 0.5em;
+    }
+
+    .title-contact {
+      width: 100%;
+      border-radius: 0%;
+    }
+
+    .phone-mail {
+      width: 100%;
+      border-radius: 0%;
+      font-size: 1em;
+    }
+
+    .block-message {
+      width: 80%;
+    }
+
+    .page-contact{
+        margin: 0% 0 4% 0;
+    }
+  }
 </style>
 {% endblock %}
 {% block content %}
-<main class="main_form_contact">
+<main class="page-contact">
+
+
 
   <div class="title-contact">
     <i class="fas fa-address-card"></i>
@@ -87,57 +126,48 @@
   </div>
 
 
-
-  <!-- Formulaire message -->
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="formulaire-contact">
-        <div class="div_titre">
-          <h2 class="titre_form_contact">Contactez-nous par message</h2>
+  <div class="block-message">
+    <h2 class="titre_form_contact">Contactez-nous par message</h2>
+    <form class="div_form_contact">
+      <div class="form-group row justify-content-center">
+        <div>
+          <textarea rows="5" cols="60" class="champ-text" type="text" id="inputMessage" required
+            placeholder="Écrivez votre message dans cette zone."></textarea>
         </div>
-        <br>
-        <form class="div_form_contact">
-          <div class="form-group row justify-content-center">
-            <div class="div_label_message">
-              <label for="inputMessage">Message:</label>
-            </div>
-            <div class="justify-content-center">
-              <textarea rows="5" cols="60" class="invalid champ_text" type="text" id="inputMessage" required></textarea>
-            </div>
-          </div>
-          <!-- Bouton qui ouvre la modale de confirmation -->
-          <button type="submit" class="btn btn-primary float-right" id="btnSend">
-            Envoyer
+      </div>
+      <!-- Bouton qui ouvre la modale de confirmation -->
+      <button type="submit" class="btn btn-primary float-right" id="btnSend">
+        Envoyer
+      </button>
+      <br>
+      {{ captcha | safe }}
+    </form>
+  </div>
+
+
+
+
+  <!-- Modale qui confirme que le message a bien été envoyé -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirmation d'envoi du message</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
           </button>
-          <br>
-          {{ captcha | safe }}
-        </form>
-
-
-
-        <!-- Modale qui confirme que le message a bien été envoyé -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Confirmation d'envoi du message</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <p>Félicitation votre message a bien été envoyé!!</p>
-              </div>
-              <div class="modal-footer">
-              </div>
-            </div>
-          </div>
+        </div>
+        <div class="modal-body">
+          <p>Félicitation votre message a bien été envoyé!!</p>
+        </div>
+        <div class="modal-footer">
         </div>
       </div>
     </div>
   </div>
-  <br>
-  <br>
+  </div>
+  </div>
+  </div>
 </main>
 {% endblock %}
 
@@ -147,12 +177,12 @@
 <script type="text/javascript">
   // reCapatcha Google
   function resRecaptcha(token) {
-        var input = document.createElement('input');
-        input.setAttribute('type', 'hidden');
-        input.setAttribute('name', 'g-recaptcha-response');
-        input.setAttribute('value', token);
-        document.getElementsByTagName('form')[0].appendChild(input);
-    }
+    var input = document.createElement('input');
+    input.setAttribute('type', 'hidden');
+    input.setAttribute('name', 'g-recaptcha-response');
+    input.setAttribute('value', token);
+    document.getElementsByTagName('form')[0].appendChild(input);
+  }
 
   // Envoi du données rentrées en champs 
   $('form').submit(function (event) {
