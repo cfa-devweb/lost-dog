@@ -35,4 +35,10 @@
         <lastmod>2020-12-03</lastmod>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://www.lostdog.nc/mentions-legales</loc>
+        <changefreq>weekly</changefreq>
+        <lastmod>2020-12-03</lastmod>
+        <priority>0.1</priority>
+    </url>
 </urlset>
