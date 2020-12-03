@@ -13,6 +13,10 @@
     color: rgb(0, 0, 0);
   }
 
+  .images-chat-noir {
+    height: 8vh;
+  }
+
 /* Section bienvenue */
 
   .bg-img {
@@ -71,6 +75,7 @@
 
 /* Section dernieres annonces */
 
+
 #link-consultAdds {
   color: black;
   text-decoration: none;
@@ -82,58 +87,67 @@
   font-weight: bolder;
 }
 
-/* Carousel */
-
-  .img-carousel {
-    width: auto;
-    height: 280px;
+@media (max-width: 576px) {
+  #png-chat-lPosts {
+    display: none;
   }
+}
 
-  #carousel-lbtn{
-    font-size: large;
-  }
-  #carousel-rbtn{
-    font-size: large;
-  }
+/* Section Nos partenaires */
 
-  @media (max-width: 430px) {
-    .carousel-inner .carousel-item>div {
-      display: none;
-    }
 
-    .carousel-inner .carousel-item>div:first-child {
-      display: block;
-    }
+  /* Carousel */
 
     .img-carousel {
-      width: 100%;
-      height: 45vh;
-  }
-  }
-
-  .carousel-inner .carousel-item.active,
-  .carousel-inner .carousel-item-next,
-  .carousel-inner .carousel-item-prev {
-    display: flex;
-  }
-
-  @media (min-width: 768px) {
-
-    .carousel-inner .carousel-item-right.active,
-    .carousel-inner .carousel-item-next {
-      transform: translateX(33.333%);
+      width: auto;
+      height: 280px;
     }
 
-    .carousel-inner .carousel-item-left.active,
+    #carousel-lbtn{
+      font-size: large;
+    }
+    #carousel-rbtn{
+      font-size: large;
+    }
+
+    @media (max-width: 430px) {
+      .carousel-inner .carousel-item>div {
+        display: none;
+      }
+
+      .carousel-inner .carousel-item>div:first-child {
+        display: block;
+      }
+
+      .img-carousel {
+        width: 100%;
+        height: 45vh;
+    }
+    }
+
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
     .carousel-inner .carousel-item-prev {
-      transform: translateX(-33.333%);
+      display: flex;
     }
-  }
 
-  .carousel-inner .carousel-item-right,
-  .carousel-inner .carousel-item-left {
-    transform: translateX(0);
-  }
+    @media (min-width: 768px) {
+
+      .carousel-inner .carousel-item-right.active,
+      .carousel-inner .carousel-item-next {
+        transform: translateX(33.333%);
+      }
+
+      .carousel-inner .carousel-item-left.active,
+      .carousel-inner .carousel-item-prev {
+        transform: translateX(-33.333%);
+      }
+    }
+
+    .carousel-inner .carousel-item-right,
+    .carousel-inner .carousel-item-left {
+      transform: translateX(0);
+    }
 
 /* Section ? */
 
@@ -214,50 +228,61 @@
   <!--Section Dernieres annonces-->
   <section class="container my-5 font-default bg-sections-home">
 
-    <div class="row my-4">
+    <div class="row">
 
-      <h2 class="font-title size-h2 text-center">Les dernières annonces</h2>
+      <h2 class="font-title size-h2 text-center">
+        <img id="png-chat-lPosts" class="images-chat-noir" src="/images/chat-patte-leve.png">
+        Les dernières annonces
+      </h2>
 
     </div>
 
-    <div class="row my-4">
+    <div class="row d-flex justify-content-center">
 
-      <div class="col-sm card">
+      <div class="col-sm card" style="width: 18rem;">
         <!-- Annonce 1-->
-        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+        <img src="/images/dessin-groupe-chats-chiens.jpg" class="card-img-top" alt="Titre annonce 1">
         <div class="card-body">
-          <h5 class="card-title">{{ ad.title }}</h5>
-          <p class="card-text">{{ ad.description }}</p>
+          <h5 class="card-title font-title">Titre annonce 1</h5>
+          <p class="card-text font-default">
+            Courte description de l'annonce 1
+          </p>
           <a href="#" class="btn btn-primary">En savoir plus</a>
         </div>
       </div>
 
-      <div class="col-sm card">
+      <div class="col-sm card" style="width: 18rem;">
         <!-- Annonce 2-->
-        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+        <img src="/images/dessin-groupe-chats-chiens.jpg" class="card-img-top" alt="Titre annonce 2">
         <div class="card-body">
-          <h5 class="card-title">{{ ad.title }}</h5>
-          <p class="card-text">{{ ad.description }}</p>
+          <h5 class="card-title font-title">Titre annonce 2</h5>
+          <p class="card-text font-default">
+            Courte description de l'annonce 2
+          </p>
           <a href="#" class="btn btn-primary">En savoir plus</a>
         </div>
       </div>
 
-      <div class="col-sm card">
+      <div class="col-sm card" style="width: 18rem;">
         <!-- Annonce 3-->
-        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+        <img src="/images/dessin-groupe-chats-chiens.jpg" class="card-img-top" alt="Titre annonce 3">
         <div class="card-body">
-          <h5 class="card-title">{{ ad.title }}</h5>
-          <p class="card-text">{{ ad.description }}</p>
+          <h5 class="card-title font-title">Titre annonce 3</h5>
+          <p class="card-text font-default">
+            Courte description de l'annonce 3
+          </p>
           <a href="#" class="btn btn-primary">En savoir plus</a>
         </div>
       </div>
 
-      <div class="col-sm card">
+      <div class="col-sm card" style="width: 18rem;"> 
         <!-- Annonce 4-->
-        <img src="{{ ad.image }}" class="card-img-top" alt="{{ ad.title }}">
+        <img src="/images/dessin-groupe-chats-chiens.jpg" class="card-img-top" alt="Titre annonce 4">
         <div class="card-body">
-          <h5 class="card-title">{{ ad.title }}</h5>
-          <p class="card-text">{{ ad.description }}</p>
+          <h5 class="card-title font-title">Titre annonce 4</h5>
+          <p class="card-text font-default">
+            Courte description de l'annonce 4
+          </p>
           <a href="#" class="btn btn-primary">En savoir plus</a>
         </div>
       </div>
@@ -265,7 +290,7 @@
     </div>
 
     <div class="row">
-      <a class="text-center size-p" id="link-consultAdds" href="/annonces">Consulter toutes les annonces</a>
+      <a class="text-center size-p my-4" id="link-consultAdds" href="/annonces">Consulter toutes les annonces</a>
     </div>
   </section>
 
@@ -274,7 +299,10 @@
     <!-- Ligne du titre -->
     <div class="row text-center">
 
-      <h2 class="font-title size-h2">Nos partenaires</h2>
+      <h2 class="font-title size-h2">
+        Nos partenaires
+        <img class="images-chat-noir mb-3" src="/images/chat-assis.png">
+      </h2>
 
     </div>
     <!-- Ligne contenant le carousel -->
