@@ -46,12 +46,19 @@ app.get("/annonce", recaptcha.middleware.render, (req, res) => {
   res.render("create.html", { captcha: res.recaptcha });
 });
 
-app.get("/annonce/{id}", async (req, res) => {
+app.get("/annonce/:id", async (req, res) => {
   try {
-    const connection = await odbc.connect(process.env.CONNECTION);
-    const ad = await connection.query(`SELECT * FROM FichesSaisies WHERE Id= ${req.params.id}`);
-
-    res.render("ad.html", { ad: ad });
+    // const connection = await odbc.connect(process.env.CONNECTION);
+    // const ad = await connection.query(`SELECT * FROM FichesSaisies WHERE Id= ${req.params.id}`);
+    res.render("ad.html", { ad: {
+      title: "Chien blanc",
+      description: "Chien blanc perdu dans nouméa",
+      image:
+        "https://www.toutpourmonchat.fr/wp-content/uploads/2013/01/chat-chocolat.jpg",
+      date: "20/12/2020",
+      comments: 20,
+      author: "Peone Passa",
+    } });
   } catch (error) {
     res.render("error.html", { error: error });
   }
