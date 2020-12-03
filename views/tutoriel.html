@@ -1,0 +1,78 @@
+{% extends "layouts/base.html" %}
+{% block css %}
+<style>
+    .container_tutoriel {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .title_tuto {
+        text-align: center;
+    }
+    .img_tuto{
+        height: 200px;
+    }
+    .container_consultation{
+        padding-top: 30px;
+    }
+    .div_contenu_consult{
+        display: flex;
+        padding-top: 30px;
+        width: 20%;
+        padding-right: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container_tutoriel container">
+        <h3 class="size-h3 title_tuto">Tutoriel pour l'utilisation de l'application mobile</h3>
+        <div class="row container_consultation justify-content-center col-10">
+            <h5>Pour consulter les animaux perdus</h5>
+            <div class="col div_contenu_consult">
+                <div>
+                    <p> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
+                </div>
+                <div>
+                    <img class="img_tuto" src="images/acc_app.png" alt="accueil de l'application">
+                </div>
+            </div>
+            <div class="col div_contenu_consult">
+                <div>
+                    <p> Si vous voulez consulter les animaux trouvés, taper sur 'trouvé'. Si vous voulez voir les animaux qui ont été perdu, taper sur 'perdu'.</p>
+                </div>
+                <div>
+                    <img class="img_tuto" src="images/choix_statut_consult.png" alt="accueil de l'application">
+                </div>               
+            </div>
+            <div class="col div_contenu_consult">
+                <p> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
+                <img class="img_tuto" src="images/choix_race_consult.png" alt="accueil de l'application">
+            </div>
+        </div>
+        <div class="row container_consultation justify-content-center col-10">
+            <div class="col div_contenu_consult">
+                <div>
+                    <p> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
+                </div>
+                <div>
+                    <img class="img_tuto" src="images/acc_app.png" alt="accueil de l'application">
+                </div>
+            </div>
+            <div class="col div_contenu_consult">
+                <p> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
+                <img class="img_tuto" src="images/choix_date_consult.png" alt="accueil de l'application">
+            </div>
+            <div class="col div_contenu_consult">
+                <p> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
+                <img class="img_tuto" src="images/annonce_consult.png" alt="accueil de l'application">
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
