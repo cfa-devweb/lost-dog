@@ -10,10 +10,6 @@
     background-color: white;
   }
 
-  .list {
-    list-style: none;
-  }
-
   .text-color {
     color: #f5e400;
   }
@@ -23,13 +19,30 @@
     border-radius: 40px;
   }
 
-  .style-link {
-    text-decoration: none;
-    color: #f5e400;
-  }
-
   .padd-left {
     padding-left: 10%;
+  }
+
+  .boite-important{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    margin: 4% 0 4% 0;
+  }
+
+  .contacts{
+    display: flex;
+    width: 33.3333%;
+    flex-flow: column;
+    margin: 0 0 2% 0;
+  }
+
+  .title-important{
+    text-align: center;
+  }
+
+  .meslistes{
+    list-style-type: none;
   }
 </style>
 {% endblock %}
@@ -104,70 +117,94 @@
     </div>
 
     <h4 class="titres text-center font-title text-color mt-5">CONTACT IMPORTANT</h4>
-    <div class="container padd-left">
-      <div class="row mb-5">
-        <div class="col mt-5 col-12 col-lg-4">
-          <h6>FOURRIERE</h6>
-          <ul class="list font-default">
-            <li>Téléphone : 26.86.66</li>
-            <li>Adresse : 16 rue Raymonde JORE - DUCOS</li>
-            <li>LUNDI - JEUDI : 8h00 à 15h30 en continu</li>
-            <li>VENDREDI : 8h00 à 12h00</li>
-            <li>Photos sur <a href="https://www.sign.nc/" target="_blanck" class="style-link">www.sign.nc</a></li>
-            <li>Ou dans LOSTDOG "animaux capturés"</li>
-          </ul>
-          <h6>RADIO OCEANE FM</h6>
-          <ul class="list font-default">
-            <li>Antenne : 36.70.71
-            <li>Standard : 41.00.95</li>
-          </ul>
-          <h6>RADIO NC 1ère</h6>
-          <ul class="list font-default">
-            <li>Téléphone :25.82.58</li>
-          </ul>
-        </div>
-        <div class="col mt-5 col-12 col-lg-4">
-          <h6>LA BANDE A NOUNOUS </h6>
-          <ul class="list font-default">
-            <li>Téléphone : 79.41.30</li>
-            <li>Email : spanc-nc@hotmail.nc</li>
-          </ul>
-          <h6>AAAC </h6>
-          <ul class="list font-default">
-            <li>Téléphone : 47.12.66</li>
-            <li>Email : aaac.caledo@gmail.com</li>
-            <li>site : <a href="http://www.aaac-nouvelle-caledonie.net" target="_blanck"
-                class="style-link">http://www.aaac-nouvelle-caledonie.net</a></li>
-          </ul>
-          <h6>BIEN NAÎTRE ANIMAL</h6>
-          <ul class="list font-default">
-            <li>Téléphone : 50.08.03</li>
-            <li>Email : bna.animal0nc@gmail.com</li>
-          </ul>
-        </div>
-        <div class="col mt-5 col-12 col-lg-4">
-          <h6>CHATS DE NC</h6>
-          <ul class="list font-default">
-            <li>Téléphone : 91.97.60</li>
-            <li>Email: chatdenc@gmail.com</li>
-          </ul>
-          <h6>REFUGE ANIMALIER NC</h6>
-          <ul class="list font-default">
-            <li>Téléphone : 78.75.20</li>
-            <li>Email: ranc@lagoon.nc</li>
-          </ul>
-          <h6>SOS ANIMAUX</h6>
-          <ul class="list font-default">
-            <li>Téléphone : 76.02.08</li>
-            <li>Email: sosanimauxnc@hotmail.fr</li>
-          </ul>
-          <h6>ANIMAL ACTION </h6>
-          <ul class="list font-default">
-            <li>Email: animal.action.nc@gmail.com</li>
-          </ul>
-        </div>
+
+    <div class="boite-important">
+      <div class="contacts">
+        <h6 class="title-important">FOURRIERE</h6>
+        <ul class="meslistes">
+          <li>Téléphone : 26.86.66</li>
+          <li>Adresse : 16 rue Raymonde JORE - DUCOS</li>
+          <li>LUNDI - JEUDI : 8h00 à 15h30 en continu</li>
+          <li>VENDREDI : 8h00 à 12h00</li>
+          <li>Photos sur <a href="https://www.sign.nc/" target="_blanck" class="">www.sign.nc</a></li>
+          <li>Ou dans LOSTDOG "animaux capturés"</li>
+        </ul>
+      </div>
+
+      <div class="contacts one">
+        <h6 class="title-important">RADIO OCEANE FM</h6>
+        <ul class="meslistes">
+          <li>Antenne : 36.70.71
+          <li>Standard : 41.00.95</li>
+        </ul>
+      </div>
+
+      <div class="contact two">
+        <h6 class="title-important">RADIO NC 1ère</h6>
+        <ul class="meslistes">
+          <li>Téléphone :25.82.58</li>
+        </ul>
+      </div>
+
+      <div class="contacts one">
+        <h6 class="title-important">LA BANDE A NOUNOUS </h6>
+        <ul class="meslistes">
+          <li>Téléphone : 79.41.30</li>
+          <li>Email : spanc-nc@hotmail.nc</li>
+        </ul>
+      </div>
+
+      <div class="contacts two">
+        <h6 class="title-important">AAAC </h6>
+        <ul class="meslistes">
+          <li>Téléphone : 47.12.66</li>
+          <li>Email : aaac.caledo@gmail.com</li>
+          <li>site : <a href="http://www.aaac-nouvelle-caledonie.net" target="_blanck" class="">http://www.aaac-nouvelle-caledonie.net</a></li>
+        </ul>
+      </div>
+
+      <div class="contacts one">
+        <h6 class="title-important">BIEN NAÎTRE ANIMAL</h6>
+        <ul class="meslistes">
+          <li>Téléphone : 50.08.03</li>
+          <li>Email : bna.animal0nc@gmail.com</li>
+        </ul>
+      </div>
+
+      <div class="contacts two">
+        <h6 class="title-important">CHATS DE NC</h6>
+        <ul class="meslistes">
+          <li>Téléphone : 91.97.60</li>
+          <li>Email: chatdenc@gmail.com</li>
+        </ul>
+      </div>
+
+      <div class="contacts one">
+        <h6 class="title-important">REFUGE ANIMALIER NC</h6>
+        <ul class="meslistes">
+          <li>Téléphone : 78.75.20</li>
+          <li>Email: ranc@lagoon.nc</li>
+        </ul>
+      </div>
+
+      <div class="contacts two">
+        <h6 class="title-important">SOS ANIMAUX</h6>
+        <ul class="meslistes">
+          <li>Téléphone : 76.02.08</li>
+          <li>Email: sosanimauxnc@hotmail.fr</li>
+        </ul>
+      </div>
+
+      <div class="contacts one">
+        <h6 class="title-important">ANIMAL ACTION </h6>
+        <ul class="meslistes">
+          <li>Email: animal.action.nc@gmail.com</li>
+        </ul>
       </div>
     </div>
+
+
+
   </div>
 </main>
 {% endblock %}
