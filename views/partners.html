@@ -59,6 +59,10 @@
         background-color: rgba(245, 228, 0, 0.4);
     }
 
+    .nomPartner {
+        text-align: center;
+    }
+
     .logo-partner {
         background-position: center;
         background-size: contain;
@@ -126,6 +130,16 @@
                 <h3 class="sous-titre1">Nos partenaires :</h3>
             </div>
             <div class="thecarousel">
+                {% for partener in parteners %}
+                    <a class="logo-partner" style="background-image: url({% if (partener.NbImages).length > 0 %} { partener.NbImages } {% else %}'https://via.placeholder.com/300x150'{% endif %})"
+                    href="{{ partener.LienWeb }}" target="_blank">
+                    <div class="boite-partner"></div>
+                    </a>
+                 {% endfor %}
+                <!-- <a class="logo-partner" style="background-image: url(/images/logo_elagage_evolution.png);"
+                    href="http://www.elagage-evolution.sitew.com/" target="_blank">
+                    <div class="boite-partner"></div>
+                </a>
                 <a class="logo-partner" style="background-image: url(/images/logo_elagage_evolution.png);"
                     href="http://www.elagage-evolution.sitew.com/" target="_blank">
                     <div class="boite-partner"></div>
@@ -148,7 +162,7 @@
                 </a>
                 <a class="logo-partner" style="background-image: url(/images/logo_bien_naitre_animal.png);"
                     href="https://www.helloasso.com/associations/bien-naitre-animal" target="_blank">
-                    <div class="boite-partner"></div>
+                    <div class="boite-partner"></div> -->
                 </a>
             </div>
         </div>

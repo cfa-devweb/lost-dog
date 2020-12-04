@@ -51,7 +51,7 @@ app.get("/", async (req, res) => {
 
     res.render("home.html", {
       ads: ads,
-      title: 'Accueil'
+      title: 'Accueil',
     });
   } catch (error) {
     res.render("error.html", {
@@ -134,7 +134,7 @@ app.post("/api/annonce", recaptcha.middleware.verify, async (req, res) => {
   if (!req.recaptcha.error) {
     try {
       const connection = await odbc.connect(process.env.CONNECTION);
-      const ad = await connection.query(`INSERT INTO FichesSaisies (TYPE, TypeAnimal, Commentaires) VALUES (${adType},${animalType},${commentaires})`);
+      await connection.query(`INSERT INTO FichesSaisies (TYPE, TypeAnimal, Commentaires) VALUES ('${adType}',${animalType},'${commentaires}')`);
 
       res.send(200);
     } catch (error) {
@@ -151,10 +151,10 @@ app.post("/api/annonce", recaptcha.middleware.verify, async (req, res) => {
 
 app.post("/api/contact", recaptcha.middleware.verify, async (req, res) => {
   const message = req.body.message;
-  if (!req.recaptcha.error) {
+  // if (!req.recaptcha.error) {
     try {
       const connection = await odbc.connect(process.env.CONNECTION);
-      const ad = await connection.query(`INSERT INTO NousContacter (Message) VALUES (${message})`);
+      const ad = await connection.query(`INSERT INTO NousContacter (Message) VALUES ('${message}')`);
 
       res.send(200);
     } catch (error) {
@@ -162,11 +162,11 @@ app.post("/api/contact", recaptcha.middleware.verify, async (req, res) => {
         error: error
       });
     }
-  } else {
-    res.json({
-      error: req.recaptcha.error
-    });
-  }
+  // } else {
+  //   res.json({
+  //     error: req.recaptcha.error
+  //   });
+  // }
 });
 
 app.post("/api/comments", async (req, res) => {
@@ -195,7 +195,7 @@ app.get("/conseils", (req, res) => {
 app.get("/partenaires", async (req, res) => {
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
-    const parteners = await connection.query(`SELECT Nom, LienWeb FROM Partenaires`);
+    const parteners = await connection.query(`SELECT Nom, LienWeb, NbImages FROM Partenaires`);
 
     res.render("partners.html", {
       parteners: parteners,
