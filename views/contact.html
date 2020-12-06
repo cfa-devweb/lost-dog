@@ -183,14 +183,14 @@
   $('form').submit(function (event) {
     event.preventDefault();
     $message = $('#inputMessage').val();
-    $.post('/contact', {
+    $.post('/api/contact', {
         message: $message
       }, function (data) {
         console.log('Votre message a bien été envoyé');
         $('#exampleModal').modal();
       },
       'json');
-    $('form')[0].reset();
+      $('form')[0].reset();
   })
 </script>
 {% endblock %}

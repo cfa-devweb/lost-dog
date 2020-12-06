@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const Recaptcha = require('express-recaptcha').RecaptchaV3;
+const Recaptcha = require("express-recaptcha").RecaptchaV3;
 const sassMiddleware = require("node-sass-middleware");
 const bodyParser = require("body-parser");
 const nunjucks = require("nunjucks");
@@ -12,9 +12,8 @@ const port = 8080;
 
 const recaptcha = new Recaptcha(
   process.env.CAPTCHA_SITE_KEY,
-  process.env.CAPTCHA_API_KEY, {
-    callback: 'resRecaptcha'
-  }
+  process.env.CAPTCHA_API_KEY,
+  { callback: "resRecaptcha" }
 );
 
 nunjucks.configure("views", {
@@ -38,20 +37,60 @@ app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.set("view engine", "html");
-app.use(function (req, res, next) {
-  req.breadcrumb = '<a class="bread-js" href="/"><i class="fas fa-home"></i> Accueil </a> > ' + req.originalUrl.substring(1).split('/').map(item => `<a>${item}</a>`).join("");
+app.use(function(req, res, next) {
+  req.breadcrumb =
+    '<a class="bread-js" href="/"><i class="fas fa-home"></i> Accueil </a> > ' +
+    req.originalUrl
+      .substring(1)
+      .split("/")
+      .map(item => `<a>${item}</a>`)
+      .join("");
   next();
 });
+
+const ads = [{
+    DATE: "25/12/2020",
+    Commentaires: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    TYPE: "PERDU",
+    TypeAnimal: 1,
+    PhotoVignette: "https://via.placeholder.com/480x320",
+},{
+    DATE: "25/12/2020",
+    Commentaires: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    TYPE: "TROUVE",
+    TypeAnimal: 1,
+    PhotoVignette: "https://via.placeholder.com/480x320",
+},{
+    DATE: "25/12/2020",
+    Commentaires: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    TYPE: "ADOPTION",
+    TypeAnimal: 1,
+    PhotoVignette: "https://via.placeholder.com/480x320",
+},{
+    DATE: "25/12/2020",
+    Commentaires: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    TYPE: "PERDU",
+    TypeAnimal: 1,
+    PhotoVignette: "https://via.placeholder.com/480x320",
+}];
+
+const parteners = [{
+  LienWeb: 'https://www.google.com',
+},{
+  LienWeb: 'https://www.google.com',
+},{
+  LienWeb: 'https://www.google.com',
+}];
 
 // HOME
 app.get("/", async (req, res) => {
   try {
-    const connection = await odbc.connect(process.env.CONNECTION);
-    const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, Commentaires, DATE, TYPE FROM FichesSaisies ORDER BY Date DESC LIMIT 4`);
+    // const connection = await odbc.connect(process.env.CONNECTION);
+    // const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, Commentaires, DATE, TYPE FROM FichesSaisies ORDER BY Date DESC LIMIT 4`);
 
     res.render("home.html", {
       ads: ads,
-      title: 'Accueil'
+      title: "Accueil"
     });
   } catch (error) {
     res.render("error.html", {
@@ -63,7 +102,7 @@ app.get("/", async (req, res) => {
 app.get("/annonce", recaptcha.middleware.render, (req, res) => {
   res.render("create.html", {
     captcha: res.recaptcha,
-    title: 'Ajouter une annonce',
+    title: "Ajouter une annonce",
     breadcrumb: req.breadcrumb
   });
 });
@@ -72,12 +111,12 @@ app.get("/annonce/:id", async (req, res) => {
   const id = req.params.id;
 
   try {
-    const connection = await odbc.connect(process.env.CONNECTION);
-    const ad = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, Commentaires, DATE, Heure, TYPE, SiFourriere, SiRetrouve FROM FichesSaisies WHERE IDFichesSaisies = ${id}`);
+    // const connection = await odbc.connect(process.env.CONNECTION);
+    // const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, Commentaires, DATE, Heure, TYPE, SiFourriere, SiRetrouve FROM FichesSaisies WHERE IDFichesSaisies = ${id}`);
 
     res.render("ad.html", {
-      ad: ad[0],
-      title: 'annonce',
+      ad: ads[0],
+      title: "annonce",
       breadcrumb: req.breadcrumb
     });
   } catch (error) {
@@ -92,12 +131,12 @@ app.get("/annonces", async (req, res) => {
   const adType = req.query.adType;
 
   try {
-    const connection = await odbc.connect(process.env.CONNECTION);
-    const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, Commentaires, DATE, Heure, TYPE FROM FichesSaisies ${adType ? `WHERE TYPE = '${adType}'` : ''} ORDER BY Date DESC LIMIT 12`);
+    // const connection = await odbc.connect(process.env.CONNECTION);
+    // const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, Commentaires, DATE, Heure, TYPE FROM FichesSaisies ${adType ? `WHERE TYPE = '${adType}'` : ""} ORDER BY Date DESC LIMIT 12`);
 
     res.render("ads.html", {
       ads: ads,
-      title: 'Annonces',
+      title: "Annonces",
       breadcrumb: req.breadcrumb
     });
   } catch (error) {
@@ -112,8 +151,8 @@ app.get("/api/annonces", async (req, res) => {
   const adType = req.body.adType;
 
   try {
-    const connection = await odbc.connect(process.env.CONNECTION);
-    const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, Commentaires, DATE, Heure, TYPE FROM FichesSaisies ${adType ? `WHERE TYPE = '${adType}'` : ''} ORDER BY Date DESC LIMIT 12`);
+    // const connection = await odbc.connect(process.env.CONNECTION);
+    // const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, Commentaires, DATE, Heure, TYPE FROM FichesSaisies ${adType ? `WHERE TYPE = '${adType}'` : ""} ORDER BY Date DESC LIMIT 12`);
 
     res.json({
       ads: ads
@@ -134,7 +173,7 @@ app.post("/api/annonce", recaptcha.middleware.verify, async (req, res) => {
   if (!req.recaptcha.error) {
     try {
       const connection = await odbc.connect(process.env.CONNECTION);
-      const ad = await connection.query(`INSERT INTO FichesSaisies (TYPE, TypeAnimal, Commentaires) VALUES (${adType},${animalType},${commentaires})`);
+      await connection.query(`INSERT INTO FichesSaisies (TYPE, TypeAnimal, Commentaires) VALUES ('${adType}',${animalType},'${commentaires}')`);
 
       res.send(200);
     } catch (error) {
@@ -154,7 +193,7 @@ app.post("/api/contact", recaptcha.middleware.verify, async (req, res) => {
   if (!req.recaptcha.error) {
     try {
       const connection = await odbc.connect(process.env.CONNECTION);
-      const ad = await connection.query(`INSERT INTO NousContacter (Message) VALUES (${message})`);
+      const ad = await connection.query(`INSERT INTO NousContacter (Message) VALUES ('${message}')`);
 
       res.send(200);
     } catch (error) {
@@ -173,13 +212,13 @@ app.post("/api/comments", async (req, res) => {
   const commentaires = req.body.commentaires;
 
   res.json({
-    commentaires: commentaires,
+    commentaires: commentaires
   });
 });
 
 app.get("/contact", recaptcha.middleware.render, (req, res) => {
   res.render("contact.html", {
-    title: 'Contact',
+    title: "Contact",
     breadcrumb: req.breadcrumb,
     captcha: res.recaptcha
   });
@@ -187,19 +226,19 @@ app.get("/contact", recaptcha.middleware.render, (req, res) => {
 
 app.get("/conseils", (req, res) => {
   res.render("advises.html", {
-    title: 'Conseils',
+    title: "Conseils",
     breadcrumb: req.breadcrumb
   });
 });
 
 app.get("/partenaires", async (req, res) => {
   try {
-    const connection = await odbc.connect(process.env.CONNECTION);
-    const parteners = await connection.query(`SELECT Nom, LienWeb FROM Partenaires`);
+    // const connection = await odbc.connect(process.env.CONNECTION);
+    // const parteners = await connection.query(`SELECT Nom, LienWeb, NbImages FROM Partenaires`);
 
     res.render("partners.html", {
       parteners: parteners,
-      title: 'Partenaires',
+      title: "Partenaires",
       breadcrumb: req.breadcrumb
     });
   } catch (error) {
@@ -211,7 +250,7 @@ app.get("/partenaires", async (req, res) => {
 
 app.get("/mentions-legales", (req, res) => {
   res.render("mentions.html", {
-    title: 'Mentions legales',
+    title: "Mentions legales",
     breadcrumb: req.breadcrumb
   });
 });
