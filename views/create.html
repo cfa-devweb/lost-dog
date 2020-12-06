@@ -126,8 +126,9 @@
                                 <div class="col-lg-8">
                                     <select class="form-control mb-3" id="ftype-animal">
                                         <option value="" class="font-default">--Choisi ton option--</option>
-                                        <option value="dog" class="font-default">Chien</option>
-                                        <option value="cat" class="font-default">Chat</option>
+                                        <option value="0" class="font-default">Chien</option>
+                                        <option value="1" class="font-default">Chat</option>
+                                        <option value="2" class="font-default">Autres</option>
                                     </select>
                                 </div>
                             </div>
@@ -143,9 +144,9 @@
                                         id="select_designatfirst">
                                         <option value="0" id="choiceNull" class="font-default">--Choisi ton option--
                                         </option>
-                                        <option value="1" class=" font-default">Perdu</option>
-                                        <option value="2" class=" font-default">Trouver</option>
-                                        <option value="3" class=" font-default">Adopter</option>
+                                        <option value="PERDU" class=" font-default">Perdu</option>
+                                        <option value="TROUVE" class=" font-default">Trouver</option>
+                                        <option value="ADOPTION" class=" font-default">Adopter</option>
                                     </select>
                                 </div>
                             </div>
@@ -260,15 +261,19 @@
     // Envoi des données aux Back-End
     $('form').submit(function (event) {
         event.preventDefault();
+        $situationAnimal = $('.fsituation-animal').val();
+        $typeAnimal = $('#ftype-animal').val();
         $description = $('.description').val();
-        $img = $('#fimage-animal').get(0).files;
-        $image = $img[0].name;
+        // $img = $('#fimage-animal').get(0).files;
+        // $image = $img[0].name;
 
         $('form').submit(function (event) {
             event.preventDefault();
-            $.post('/annonce', {
-                    description: $description,
-                    image: $image
+            $.post('/api/annonce', {
+                adType: $situationAnimal,
+                animalType: $typeAnimal,
+                commentaires: $description
+                // image: $image
                 }, function (data) {
                     // alert('Votre publication a bien été ajoutée');
                 },
