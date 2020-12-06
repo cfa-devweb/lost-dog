@@ -1,6 +1,6 @@
 <div class="mt-4  col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
     <div class="card border-0">
-        <img src="{{ ad.PhotoVignette }}" class="card-img-top" alt="{{ ad.title }}">
+        <img src="{{ ad.PhotoVignette }}" class="card-img-top" alt="">
         <div class="card-body">
             <p class="card-text">{{ ad.Commentaires | truncate(50) }}</p>
             <div class="article d-flex  my-3">
@@ -13,7 +13,7 @@
                     <label for="" class="size-small">{{ ad.DATE }}</label>
                 </div>
             </div>
-            <a href="/annonce/{{ ad.IDFichesSaisies }}" class="btn btn-primary">Go somewhere</a>
+            <a href="/annonce/{{ ad.IDFichesSaisies }}" class="btn btn-primary">Voir</a>
             {% if ad.TYPE == 'PERDU' %}
             <i class="far fa-frown color-perdus icons-situations"></i>
             {% elif ad.TYPE == 'ADOPTION' %}
