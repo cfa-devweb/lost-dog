@@ -5,7 +5,7 @@
 {% endblock %}
 {% block css %}
 <style>
-    .block-monde {
+    .block-partenaires {
         margin: auto;
         width: 50%;
         margin-bottom: 3%;
@@ -18,7 +18,7 @@
     }
 
 
-    .title-monde {
+    .title-partenaire {
         background-image: url(/images/chat_partenaire.jpg);
         background-size: cover;
         background-position-y: center;
@@ -49,21 +49,21 @@
         margin: auto;
     }
 
-    .boite-monde {
+    .boite-partner {
         width: 100%;
         height: 100%;
         border-radius: 10px;
     }
 
-    .boite-monde:hover {
+    .boite-partner:hover {
         background-color: rgba(245, 228, 0, 0.4);
     }
 
-    .nomMonde {
+    .nomPartner {
         text-align: center;
     }
 
-    .logo-monde {
+    .logo-partner {
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -71,12 +71,12 @@
         height: 200px;
     }
 
-    .page-monde{
+    .page-partner{
         margin: 4% 0 4% 0;
     }
 
     @media only screen and (max-width: 990px){
-        .logo-monde {
+        .logo-partner {
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -86,10 +86,10 @@
         .montitre {
         font-size: 0.5em;}
 
-        .block-monde {
+        .block-partenaires {
         width: 80%;}
 
-        .title-monde {
+        .title-partenaire {
             width: 100%;
             border-radius: 0;
         }
@@ -99,7 +99,7 @@
             font-size: 1.3em;
         }
 
-        .page-monde{
+        .page-partner{
         margin: 0% 0 4% 0;
     }
     }
@@ -107,36 +107,36 @@
 {% endblock %}
 {% block content %}
     {% include "layouts/breadcrumb.html" %}
-    <div class="page-monde">
-        <div class="div_contenaire_monde">
-            <div class="title-monde">
+    <div class="page-partner">
+        <div class="div_contenaire_partenaire">
+            <div class="title-partenaire">
                 <i class="fas fa-handshake"></i>
                 &nbsp;
                 <h2 class="montitre">Le monde animal</h2>
             </div>
-            <div class="block-monde">
+            <div class="block-partenaires">
                 <h3 class="sous-titre1">Nous vous remercions !</h3>
                 <p>
                     Il est évident qu'aujourd'hui une association ne peut vivre sans
-                    l'aide d'homme et de femme,
+                    aides
                     alors,
-                    à vous nos-monde, nous vous témoignons notre gratitude
+                    à vous nos partenaires, nous vous témoignons notre gratitude
                     pour le soutien que vous nous apportez.
                     <br>
-                    Nos-monde soucieux du bien être animal, nous suivent dans toutes nos actions!
+                    Nos partenaires soucieux du bien être animal, nous suivent dans toutes nos actions!
                 </p>
             </div>
-            <div class="block-monde">
-                <h3 class="sous-titre1">Nos-monde :</h3>
+            <div class="block-partenaires">
+                <h3 class="sous-titre1">Le monde :</h3>
             </div>
             <div class="thecarousel">
-                {% for partener in parteners %}
-                    <a class="logo-monde" style="background-image: url({% if (partener.NbImages).length > 0 %} { partener.NbImages } {% else %}'https://via.placeholder.com/300x150'{% endif %})"
-                    href="{{ partener.LienWeb }}" target="_blank">
-                    <div class="boite-monde"></div>
+                {% for animal in animals %}
+                    <a class="logo-partner" style="background-image: url({% if (animal.NbImages).length > 0 %} { animal.NbImages } {% else %}'http://139.99.135.47/partenaires-MondeAnimal/{{ animal.IDPartenaires }}.jpg'{% endif %})"
+                    href="{{ animal.LienWeb }}" target="_blank">
+                    <div class="boite-partner"></div>
                     </a>
                  {% endfor %}
-                </a>
+                
             </div>
         </div>
     </div>
