@@ -200,7 +200,7 @@ app.get("/conseils", (req, res) => {
 app.get("/partenaires", async (req, res) => {
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
-    const parteners = await connection.query(`SELECT IDPartenaires, Nom, LienWeb, NbImages FROM Partenaires`);
+    const parteners = await connection.query(`SELECT IDPartenaires, Nom, LienWeb, NbImages FROM Partenaires WHERE TYPE = 'PARTENAIRE'`);
 
     res.render("partners.html", {
       parteners: parteners,
