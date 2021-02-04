@@ -214,6 +214,23 @@ app.get("/partenaires", async (req, res) => {
   }
 });
 
+app.get("/monde-animal", async (req, res) => {
+  try {
+    const connection = await odbc.connect(process.env.CONNECTION);
+    const monde = await connection.query(`SELECT Nom, LienWeb, NbImages FROM Partenaires`);
+
+    res.render("mondeAnimal.html", {
+      monde: monde,
+      title: "Monde Animale",
+      breadcrumb: req.breadcrumb
+    });
+  } catch (error) {
+    res.render("error.html", {
+      error: error
+    });
+  }
+});
+
 app.get("/mentions-legales", (req, res) => {
   res.render("mentions.html", {
     title: "Mentions legales",
