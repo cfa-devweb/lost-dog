@@ -131,7 +131,7 @@
             </div>
             <div class="thecarousel">
                 {% for partener in parteners %}
-                    <a class="logo-partner" style="background-image: url({% if (partener.NbImages).length > 0 %} { partener.NbImages } {% else %}'https://via.placeholder.com/300x150'{% endif %})"
+                    <a class="logo-partner" style="background-image: url({% if (partener.NbImages).length > 0 %} { partener.NbImages } {% else %}'http://139.99.135.47/partenaires-MondeAnimal/{{ partener.IDPartenaires }}.jpg'{% endif %})"
                     href="{{ partener.LienWeb }}" target="_blank">
                     <div class="boite-partner"></div>
                     </a>
