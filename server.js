@@ -217,10 +217,10 @@ app.get("/partenaires", async (req, res) => {
 app.get("/monde-animal", async (req, res) => {
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
-    const monde = await connection.query(`SELECT Nom, LienWeb, NbImages FROM Partenaires`);
+    const animals = await connection.query(`SELECT IDPartenaires, Nom, LienWeb, NbImages FROM Partenaires WHERE TYPE = 'DONS'`);
 
-    res.render("mondeAnimal.html", {
-      monde: monde,
+    res.render("animal.html", {
+      animals: animals,
       title: "Monde Animale",
       breadcrumb: req.breadcrumb
     });
