@@ -214,6 +214,13 @@ app.get("/partenaires", async (req, res) => {
   }
 });
 
+app.get("/jeux", async (req, res) => {
+  res.render("game.html", {
+    title: "Jeux",
+    breadcrumb: req.breadcrumb
+  });
+});
+
 app.get("/mentions-legales", (req, res) => {
   res.render("mentions.html", {
     title: "Mentions legales",
