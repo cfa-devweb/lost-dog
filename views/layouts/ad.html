@@ -1,8 +1,8 @@
 <div class="mt-4  col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
     <div class="card border-0">
-        <img src="{{ ad.PhotoVignette }}" class="card-img-top" alt="">
+        <img src="http://139.99.135.47/photos/{{ ad.IDFichesSaisies }}.jpg" class="card-img-top" alt="">
         <div class="card-body">
-            <p class="card-text">{{ ad.Commentaires | truncate(50) }}</p>
+            <p class="card-text">{{ ad.Commentaires | truncate(150) }}</p>
             <div class="article d-flex  my-3">
                 <div class="article_date">
                     <svg width="0.8em" height="0.8em" viewBox="0 0 16 16" class="bi bi-calendar-date-fill "

@@ -48,45 +48,11 @@ app.use(function(req, res, next) {
   next();
 });
 
-const ads = [{
-    DATE: "25/12/2020",
-    Commentaires: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    TYPE: "PERDU",
-    TypeAnimal: 1,
-    PhotoVignette: "https://via.placeholder.com/480x320",
-},{
-    DATE: "25/12/2020",
-    Commentaires: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    TYPE: "TROUVE",
-    TypeAnimal: 1,
-    PhotoVignette: "https://via.placeholder.com/480x320",
-},{
-    DATE: "25/12/2020",
-    Commentaires: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    TYPE: "ADOPTION",
-    TypeAnimal: 1,
-    PhotoVignette: "https://via.placeholder.com/480x320",
-},{
-    DATE: "25/12/2020",
-    Commentaires: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    TYPE: "PERDU",
-    TypeAnimal: 1,
-    PhotoVignette: "https://via.placeholder.com/480x320",
-}];
-
-const parteners = [{
-  LienWeb: 'https://www.google.com',
-},{
-  LienWeb: 'https://www.google.com',
-},{
-  LienWeb: 'https://www.google.com',
-}];
-
 // HOME
 app.get("/", async (req, res) => {
   try {
-    // const connection = await odbc.connect(process.env.CONNECTION);
-    // const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, Commentaires, DATE, TYPE FROM FichesSaisies ORDER BY Date DESC LIMIT 4`);
+    const connection = await odbc.connect(process.env.CONNECTION);
+    const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, CAST(Commentaires AS VARCHAR(8000)) AS Commentaires, DATE, TYPE FROM FichesSaisies ORDER BY Date DESC LIMIT 4`);
 
     res.render("home.html", {
       ads: ads,
@@ -111,8 +77,8 @@ app.get("/annonce/:id", async (req, res) => {
   const id = req.params.id;
 
   try {
-    // const connection = await odbc.connect(process.env.CONNECTION);
-    // const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, Commentaires, DATE, Heure, TYPE, SiFourriere, SiRetrouve FROM FichesSaisies WHERE IDFichesSaisies = ${id}`);
+    const connection = await odbc.connect(process.env.CONNECTION);
+    const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, CAST(Commentaires AS VARCHAR(8000)) AS Commentaires, DATE, Heure, TYPE, SiFourriere, SiRetrouve FROM FichesSaisies WHERE IDFichesSaisies = ${id}`);
 
     res.render("ad.html", {
       ad: ads[0],
@@ -131,8 +97,8 @@ app.get("/annonces", async (req, res) => {
   const adType = req.query.adType;
 
   try {
-    // const connection = await odbc.connect(process.env.CONNECTION);
-    // const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, Commentaires, DATE, Heure, TYPE FROM FichesSaisies ${adType ? `WHERE TYPE = '${adType}'` : ""} ORDER BY Date DESC LIMIT 12`);
+    const connection = await odbc.connect(process.env.CONNECTION);
+    const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, CAST(Commentaires AS VARCHAR(8000)) AS Commentaires, DATE, Heure, TYPE FROM FichesSaisies ${adType ? `WHERE TYPE = '${adType}'` : ""} ORDER BY Date DESC LIMIT 12`);
 
     res.render("ads.html", {
       ads: ads,
@@ -151,8 +117,8 @@ app.get("/api/annonces", async (req, res) => {
   const adType = req.body.adType;
 
   try {
-    // const connection = await odbc.connect(process.env.CONNECTION);
-    // const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, Commentaires, DATE, Heure, TYPE FROM FichesSaisies ${adType ? `WHERE TYPE = '${adType}'` : ""} ORDER BY Date DESC LIMIT 12`);
+    const connection = await odbc.connect(process.env.CONNECTION);
+    const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, CAST(Commentaires AS VARCHAR(8000)) AS Commentaires, DATE, Heure, TYPE FROM FichesSaisies ${adType ? `WHERE TYPE = '${adType}'` : ""} ORDER BY Date DESC LIMIT 12`);
 
     res.json({
       ads: ads
@@ -233,8 +199,8 @@ app.get("/conseils", (req, res) => {
 
 app.get("/partenaires", async (req, res) => {
   try {
-    // const connection = await odbc.connect(process.env.CONNECTION);
-    // const parteners = await connection.query(`SELECT Nom, LienWeb, NbImages FROM Partenaires`);
+    const connection = await odbc.connect(process.env.CONNECTION);
+    const parteners = await connection.query(`SELECT Nom, LienWeb, NbImages FROM Partenaires`);
 
     res.render("partners.html", {
       parteners: parteners,
