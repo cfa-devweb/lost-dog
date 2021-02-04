@@ -112,58 +112,32 @@
             <div class="title-partenaire">
                 <i class="fas fa-handshake"></i>
                 &nbsp;
-                <h2 class="montitre">Nos partenaires</h2>
+                <h2 class="montitre">Le monde animal</h2>
             </div>
             <div class="block-partenaires">
-                <h3 class="sous-titre1">Nous vous remercions !</h3>
+                <h3 class="sous-titre1">Nous ne sommes pas seul !</h3>
                 <p>
-                    Il est évident qu'aujourd'hui une association ne peut vivre sans
-                    l'aide d'homme et de femme,
+                    Il est évident qu'aujourd'hui il n'existe pas qu'une seul association,
+                    </br>
                     alors,
-                    à vous nos partenaires, nous vous témoignons notre gratitude
-                    pour le soutien que vous nous apportez.
-                    <br>
-                    Nos partenaires soucieux du bien être animal, nous suivent dans toutes nos actions!
+                    </br>
+                    voici d'autres associations/organisations , suceptible de vous aider ou ayant besoin de votre aide.
+                    </br>
+                    Merci a tous pour votre participation !
+            
                 </p>
             </div>
             <div class="block-partenaires">
-                <h3 class="sous-titre1">Nos partenaires :</h3>
+                <h3 class="sous-titre1">Le monde Animal :</h3>
             </div>
             <div class="thecarousel">
-                {% for partener in parteners %}
-                    <a class="logo-partner" style="background-image: url({% if (partener.NbImages).length > 0 %} { partener.NbImages } {% else %}'http://139.99.135.47/partenaires-MondeAnimal/{{ partener.IDPartenaires }}.jpg'{% endif %})"
-                    href="{{ partener.LienWeb }}" target="_blank">
+                {% for animal in animals %}
+                    <a class="logo-partner" style="background-image: url({% if (animal.NbImages).length > 0 %} { animal.NbImages } {% else %}'http://139.99.135.47/partenaires-MondeAnimal/{{ animal.IDPartenaires }}.jpg'{% endif %})"
+                    href="{{ animal.LienWeb }}" target="_blank">
                     <div class="boite-partner"></div>
                     </a>
                  {% endfor %}
-                <!-- <a class="logo-partner" style="background-image: url(/images/logo_elagage_evolution.png);"
-                    href="http://www.elagage-evolution.sitew.com/" target="_blank">
-                    <div class="boite-partner"></div>
-                </a>
-                <a class="logo-partner" style="background-image: url(/images/logo_elagage_evolution.png);"
-                    href="http://www.elagage-evolution.sitew.com/" target="_blank">
-                    <div class="boite-partner"></div>
-                </a>
-                <a class="logo-partner" style="background-image: url(/images/logo-dogme.jpeg);"
-                    href="https://www.facebook.com/DogMe.nc/?pageid=188484478543433&ftentidentifier=627305311328012&padding=0" target="_blank">
-                    <div class="boite-partner"></div>
-                </a>
-                <a class="logo-partner" style="background-image: url(/images/logo-bandeanounou.png);"
-                    href="http://labandeanounou.nc/" target="_blank">
-                    <div class="boite-partner"></div>
-                </a>
-                <a class="logo-partner" style="background-image: url(/images/logo-croqadom.jpeg);"
-                    href="https://croqadom.nc/fr/" target="_blank">
-                    <div class="boite-partner"></div>
-                </a>
-                <a class="logo-partner" style="background-image: url(/images/logo_ouEstLeChat.png);"
-                    href="https://www.chat-perdu.org/fr-nc/" target="_blank">
-                    <div class="boite-partner"></div>
-                </a>
-                <a class="logo-partner" style="background-image: url(/images/logo_bien_naitre_animal.png);"
-                    href="https://www.helloasso.com/associations/bien-naitre-animal" target="_blank">
-                    <div class="boite-partner"></div> -->
-                </a>
+                
             </div>
         </div>
     </div>

@@ -1,148 +1,67 @@
 {% extends "layouts/base.html" %}
 {% block css %}
 <style>
-    .container_tutoriel {
-        padding-top: 50px;
-        padding-bottom: 80px;
-        border-top-style: inset;
-    }
-
-    .container_title {
-        padding-bottom: 30px;
-    }
-
-    .container_title {
-        padding-bottom: 30px;
-    }
-
-    .title_tuto {
-        text-align: center;
-    }
-
-    .img_tuto {
-        height: 200px;
-        border-radius: 10px;
-    }
-
-    .container_consultation {
-        padding-top: 50px;
-        border-top-style: solid;
-        border-top-color: #EFE21D;
-    }
-
-    .div_contenu_consult {
-        display: flex;
-        padding-top: 50px;
-        padding-right: 20px;
-        margin-bottom: 30px;
-    }
-.numero{
-    color:#EFE21D;
-}
-    .div_paragraphe {
-        padding-right: 10px;
-    }
-    .title_section_tuto{
-        font-weight: bold;
-    }
+    
 </style>
 {% endblock %}
 
 {% block content %}
 <main>
-    <div class="container_tutoriel container">
-        <div class="container_title">
-            <h3 class="size-h3 title_tuto">Tutoriel pour l'utilisation de l'application mobile</h3>
-        </div>
-        <div class="row container_consultation justify-content-center">
-            <h5 class="title_section_tuto">Pour consulter les animaux perdus et trouvés</h5>
-            <div class="col div_contenu_consult">
-                <div class="div_paragraphe">
-                    <p class="size-p"><b class="numero">1.</b> Quand vous ouvrez votre application, cliquer sur 'Album photo'</p>
-                </div>
-                <div>
-                    <img class="img_tuto" src="images/acc_app.png" alt="accueil de l'application">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 mb-5">
+                <!-- Titre de la vidéo (principe) -->
+                <h2 class="d-flex justify-content-center">Lostdog - Le principe</h2>
+                <div class="d-flex justify-content-center">
+                    <!-- Lien de la vidéo youtube -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="col div_contenu_consult">
-                <div class="div_paragraphe">
-                    <p class="size-p"><b class="numero">2.</b> Si vous voulez consulter les animaux trouvés, taper sur 'trouvé', les
-                        animaux perdu, allez sur
-                        'perdu'. Et enfin, si vous voulez en
-                        adopter, choisissez 'A adopter'.
-                    </p>
-                </div>
-                <div>
-                    <img class="img_tuto" src="images/choix_statut_consult.png" alt="accueil de l'application">
-                </div>
-            </div>
-            <div class="col div_contenu_consult">
-                <div class="div_paragraphe">
-                    <p class="size-p"><b class="numero">3.</b>Choisir le type de l'animal que vous recherchez, en cliquant soit sur
-                        chien, soit sur chat</p>
-                </div>
-                <div>
-                    <img class="img_tuto" src="images/choix_race_consult.png" alt="accueil de l'application">
+            <div class="col-lg-6 mb-5">
+                <!-- Titre de la vidéo (principe) -->
+                <h2 class="d-flex justify-content-center">J'ai trouvé un animal</h2>
+                <div class="d-flex justify-content-center">
+                    <!-- Lien de la vidéo youtube -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col div_contenu_consult">
-                <div class="div_paragraphe">
-                    <p class="size-p"><b class="numero">4.</b> Vous pouvez choisir le moment où l'annnonce a été publiée</p>
-                </div>
-                <div>
-                    <img class="img_tuto" src="images/choix_date_consult.png" alt="accueil de l'application">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 mb-5">
+                <!-- Titre de la vidéo (principe) -->
+                <h2 class="d-flex justify-content-center">J'ai perdu un animal</h2>
+                <div class="d-flex justify-content-center">
+                    <!-- Lien de la vidéo youtube -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="col div_contenu_consult">
-                <div class="div_paragraphe">
-                    <p class="size-p"><b class="numero">5.</b> Vous avez les annonces qui s'affichent une par une. Vous avez la
-                        possibilité de zapper en cliquant sur les flêches du bas</p>
-                </div>
-                <div>
-                    <img class="img_tuto" src="images/annonce_consult.png" alt="accueil de l'application">
+            <div class="col-lg-6 mb-5">
+                <!-- Titre de la vidéo (principe) -->
+                <h2 class="d-flex justify-content-center">Ajouter une adoption</h2>
+                <div class="d-flex justify-content-center">
+                    <!-- Lien de la vidéo youtube -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
-        <div class="row container_consultation justify-content-center">
-            <h5 class="title_section_tuto">Pour ajouter un animal (perdu, trouvé ou a adopté)</h5>
-
-            <div class="col div_contenu_consult">
-                <div class="div_paragraphe">
-                    <p class="size-p">
-                        <b class="numero">1.</b> Sur l'accueil cliquer sur 'Ajouter un animal'. Ensuite selon la situation qui vous
-                        convient
-                        cliquer sur "Mon album photo". 
-                    </p>
-                </div>
-                <div>
-                    <img class="img_tuto" src="images/acc_ajout_anim_tuto.jpg" alt="accueil de l'application">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 mb-5">
+                <!-- Titre de la vidéo (principe) -->
+                <h2 class="d-flex justify-content-center">Supprimer, modifier ou signaler</h2>
+                <div class="d-flex justify-content-center">
+                    <!-- Lien de la vidéo youtube -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="col div_contenu_consult">
-                <div class="div_paragraphe">
-                    <p class="size-p">
-                        <b class="numero">2.</b>Lorsque votre écran s'affiche comme l'image ci-contre, taper sur le type d'animal que
-                        vous
-                        ajouter. 
-                    </p>
-                </div>
-                <div>
-                    <img class="img_tuto" src="images/choix_race_ajout_tuto.jpg" alt="accueil de l'application">
+            <div class="col-lg-6 mb-5">
+                <!-- Titre de la vidéo (principe) -->
+                <h2 class="d-flex justify-content-center">Lostdog - Le principe</h2>
+                <div class="d-flex justify-content-center">
+                    <!-- Lien de la vidéo youtube -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="col div_contenu_consult">
-                <div class="div_paragraphe">
-                    <p class="size-p">
-                        <b class="numero">3.</b>Enfin, rédiger votre publication en mettant le plus d'information possible concernant
-                        l'animal.</p>
-                </div>
-                <div>
-                    <img class="img_tuto" src="images/ajouter_comm_tuto.jpg" alt="accueil de l'application">
-                </div>
-            </div>
-          </div>
+        </div>
     </div>
 </main>
 {% endblock %}

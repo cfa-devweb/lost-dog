@@ -35,6 +35,12 @@
         <lastmod>2020-12-04</lastmod>
         <priority>0.6</priority>
     </url>
+        <url>
+        <loc>https://www.lostdog.nc/monde-animal</loc>
+        <changefreq>weekly</changefreq>
+        <lastmod>2020-12-04</lastmod>
+        <priority>0.5</priority>
+    </url>
     <url>
         <loc>https://www.lostdog.nc/annonce</loc>
         <changefreq>weekly</changefreq>

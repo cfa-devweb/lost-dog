@@ -200,7 +200,7 @@ app.get("/conseils", (req, res) => {
 app.get("/partenaires", async (req, res) => {
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
-    const parteners = await connection.query(`SELECT Nom, LienWeb, NbImages FROM Partenaires`);
+    const parteners = await connection.query(`SELECT IDPartenaires, Nom, LienWeb, NbImages FROM Partenaires WHERE TYPE = 'PARTENAIRE'`);
 
     res.render("partners.html", {
       parteners: parteners,
@@ -214,11 +214,29 @@ app.get("/partenaires", async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 app.get("/jeux", async (req, res) => {
   res.render("game.html", {
     title: "Jeux",
     breadcrumb: req.breadcrumb
   });
+=======
+app.get("/monde-animal", async (req, res) => {
+  try {
+    const connection = await odbc.connect(process.env.CONNECTION);
+    const animals = await connection.query(`SELECT IDPartenaires, Nom, LienWeb, NbImages FROM Partenaires WHERE TYPE = 'DONS'`);
+
+    res.render("animal.html", {
+      animals: animals,
+      title: "Monde Animale",
+      breadcrumb: req.breadcrumb
+    });
+  } catch (error) {
+    res.render("error.html", {
+      error: error
+    });
+  }
+>>>>>>> 57754244ed833104f2c6933cd1c84143623aac81
 });
 
 app.get("/mentions-legales", (req, res) => {
