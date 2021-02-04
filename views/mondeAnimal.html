@@ -1,0 +1,143 @@
+{% extends "layouts/base.html" %}
+{% block meta %}
+<meta name=" description" content=" Description de la page">
+<meta name=" robots" content=" index, follow">
+{% endblock %}
+{% block css %}
+<style>
+    .block-monde {
+        margin: auto;
+        width: 50%;
+        margin-bottom: 3%;
+        font-family: 'Open Sans', sans-serif;
+        color: #000000;
+    }
+
+    .sous-titre1 {
+        font-weight: bold;
+    }
+
+
+    .title-monde {
+        background-image: url(/images/chat_partenaire.jpg);
+        background-size: cover;
+        background-position-y: center;
+        color: #FFFFFF;
+        text-shadow: 1px 1px 2px #000000, 0 0 1em #000000, 0 0 0.2em #000000;
+        width: 80%;
+        border-radius: 10px;
+        padding: 4% 0% 4% 0%;
+        font-family: 'Francois One', sans-serif;
+        margin: auto;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 4em;
+        line-height: 0%;
+        margin-bottom: 3%;
+    }
+
+    .montitre {
+        font-size: 1em;
+    }
+
+    .thecarousel {
+        width: 50%;
+        display: flex;
+        flex-flow: row wrap;
+        margin: auto;
+    }
+
+    .boite-monde {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    .boite-monde:hover {
+        background-color: rgba(245, 228, 0, 0.4);
+    }
+
+    .nomMonde {
+        text-align: center;
+    }
+
+    .logo-monde {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 33.33333%;
+        height: 200px;
+    }
+
+    .page-monde{
+        margin: 4% 0 4% 0;
+    }
+
+    @media only screen and (max-width: 990px){
+        .logo-monde {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 50%;
+        height: 150px;}
+        
+        .montitre {
+        font-size: 0.5em;}
+
+        .block-monde {
+        width: 80%;}
+
+        .title-monde {
+            width: 100%;
+            border-radius: 0;
+        }
+
+        .sous-titre1{
+            text-align: center;
+            font-size: 1.3em;
+        }
+
+        .page-monde{
+        margin: 0% 0 4% 0;
+    }
+    }
+</style>
+{% endblock %}
+{% block content %}
+    {% include "layouts/breadcrumb.html" %}
+    <div class="page-monde">
+        <div class="div_contenaire_monde">
+            <div class="title-monde">
+                <i class="fas fa-handshake"></i>
+                &nbsp;
+                <h2 class="montitre">Le monde animal</h2>
+            </div>
+            <div class="block-monde">
+                <h3 class="sous-titre1">Nous vous remercions !</h3>
+                <p>
+                    Il est évident qu'aujourd'hui une association ne peut vivre sans
+                    l'aide d'homme et de femme,
+                    alors,
+                    à vous nos-monde, nous vous témoignons notre gratitude
+                    pour le soutien que vous nous apportez.
+                    <br>
+                    Nos-monde soucieux du bien être animal, nous suivent dans toutes nos actions!
+                </p>
+            </div>
+            <div class="block-monde">
+                <h3 class="sous-titre1">Nos-monde :</h3>
+            </div>
+            <div class="thecarousel">
+                {% for partener in parteners %}
+                    <a class="logo-monde" style="background-image: url({% if (partener.NbImages).length > 0 %} { partener.NbImages } {% else %}'https://via.placeholder.com/300x150'{% endif %})"
+                    href="{{ partener.LienWeb }}" target="_blank">
+                    <div class="boite-monde"></div>
+                    </a>
+                 {% endfor %}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
