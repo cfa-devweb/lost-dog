@@ -57,7 +57,7 @@ app.get("/", async (req, res) => {
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
     const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, CAST(Commentaires AS VARCHAR(8000)) AS Commentaires, DATE, TYPE FROM FichesSaisies ORDER BY Date DESC LIMIT 4`);
-    const homeparteners = await connection.query(`SELECT IDPartenaires, LienWeb, NbImages FROM Partenaires WHERE TYPE = 'PARTENAIRE' ORDER BY IDPartenaires DESC LIMIT 3`);
+    const homeparteners = await connection.query(`SELECT IDPartenaires, LienWeb, NbImages FROM Partenaires WHERE TYPE = 'PARTENAIRE' ORDER BY RAND() DESC LIMIT 3`);
     
     res.render("home.html", {
       homeparteners: homeparteners,
