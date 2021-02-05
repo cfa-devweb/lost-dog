@@ -214,6 +214,12 @@ app.get("/partenaires", async (req, res) => {
   }
 });
 
+app.get("/jeux", async (req, res) => {
+  res.render("game.html", {
+    title: "Jeux",
+    breadcrumb: req.breadcrumb
+  });
+
 app.get("/monde-animal", async (req, res) => {
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
