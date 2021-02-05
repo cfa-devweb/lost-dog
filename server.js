@@ -220,6 +220,8 @@ app.get("/jeux", async (req, res) => {
     breadcrumb: req.breadcrumb
   });
 
+});
+
 app.get("/monde-animal", async (req, res) => {
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
@@ -253,3 +255,5 @@ app.get("/tutoriel", (req, res) => {
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
+
+
