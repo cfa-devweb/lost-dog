@@ -209,8 +209,6 @@
             </div>
         </div>
         </div>
-
-        {{ captcha | safe }}
     </form>
 </main>
 {% endblock %}
@@ -249,14 +247,6 @@
         }
         return true;
     });
-    // reCapatcha Google
-    function resRecaptcha(token) {
-        var input = document.createElement('input');
-        input.setAttribute('type', 'hidden');
-        input.setAttribute('name', 'g-recaptcha-response');
-        input.setAttribute('value', token);
-        document.getElementsByTagName('form')[0].appendChild(input);
-    }
 
     // Envoi des données aux Back-End
     $('form').submit(function (event) {
@@ -264,22 +254,25 @@
         $situationAnimal = $('.fsituation-animal').val();
         $typeAnimal = $('#ftype-animal').val();
         $description = $('.description').val();
-        // $img = $('#fimage-animal').get(0).files;
-        // $image = $img[0].name;
+        $file = $('#fimage-animal').get(0).files[0];
 
-        $('form').submit(function (event) {
-            event.preventDefault();
-            $.post('/api/annonce', {
-                adType: $situationAnimal,
-                animalType: $typeAnimal,
-                commentaires: $description
-                // image: $image
-                }, function (data) {
-                    // alert('Votre publication a bien été ajoutée');
-                },
-                'json');
-        })
-    })
+        var formData = new FormData();
+        formData.append('adType', $situationAnimal);
+        formData.append('animalType', $typeAnimal);
+        formData.append('commentaires', $description);
+        formData.append('file', $file);
+
+        $.ajax('/api/annonce', {
+            type : 'post',
+            data : formData,
+            contentType: false,
+            processData: false,
+        }, function (data) {
+            alert('Votre publication a bien été ajoutée');
+            console.log(data);
+            },
+        'json');
+    });
     // Animal type
     $("#ftype-animal")
         .on("mouseenter", function () {

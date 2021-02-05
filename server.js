@@ -2,11 +2,14 @@ require("dotenv").config();
 
 const Recaptcha = require("express-recaptcha").RecaptchaV3;
 const sassMiddleware = require("node-sass-middleware");
+const fileUpload = require('express-fileupload');
 const bodyParser = require("body-parser");
 const nunjucks = require("nunjucks");
 const express = require("express");
+const ftp = require("basic-ftp")
 const path = require("path");
 const odbc = require("odbc");
+const fs = require("fs");
 const app = express();
 const port = 8080;
 
@@ -32,6 +35,7 @@ app.use(
   })
 );
 
+app.use(fileUpload());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, "public")));
@@ -133,26 +137,36 @@ app.get("/api/annonces", async (req, res) => {
   }
 });
 
-app.post("/api/annonce", recaptcha.middleware.verify, async (req, res) => {
+app.post("/api/annonce", async (req, res) => {
+  //const client = new ftp.Client();
   const adType = req.body.adType;
   const animalType = req.body.animalType;
   const commentaires = req.body.commentaires;
+  const fileName = 'image-' + Date.now();
+  const file = req.files;
 
-  if (!req.recaptcha.error) {
-    try {
-      const connection = await odbc.connect(process.env.CONNECTION);
-      await connection.query(`INSERT INTO FichesSaisies (TYPE, TypeAnimal, Commentaires) VALUES ('${adType}',${animalType},'${commentaires}')`);
+  try {
+    
+    fs.writeFile('upload.txt', `
+      AdType: ${adType},
+      AnimalType: ${animalType},
+      Commentaires: ${commentaires}
+      File: ${fileName}
+    `, { flag: 'w' }, err => {});
 
-      res.send(200);
-    } catch (error) {
-      res.json({
-        error: error
-      });
-    }
-  } else {
-    res.json({
-      error: req.recaptcha.error
+    await client.access({
+        host: "",
+        user: "",
+        password: "",
+        secure: true
     });
+
+    await client.uploadFrom(file, "annonces/" + fileName);
+    await client.uploadFrom("upload.txt", "annonces/upload.txt");
+
+    res.send(200);
+  } catch (error) {
+    res.send(400);
   }
 });
 
