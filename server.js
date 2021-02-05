@@ -214,13 +214,12 @@ app.get("/partenaires", async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 app.get("/jeux", async (req, res) => {
   res.render("game.html", {
     title: "Jeux",
     breadcrumb: req.breadcrumb
   });
-=======
+
 app.get("/monde-animal", async (req, res) => {
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
@@ -236,7 +235,6 @@ app.get("/monde-animal", async (req, res) => {
       error: error
     });
   }
->>>>>>> 57754244ed833104f2c6933cd1c84143623aac81
 });
 
 app.get("/mentions-legales", (req, res) => {
