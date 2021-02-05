@@ -131,39 +131,11 @@
             </div>
             <div class="thecarousel">
                 {% for partener in parteners %}
-                    <a class="logo-partner" style="background-image: url({% if (partener.NbImages).length > 0 %} { partener.NbImages } {% else %}'http://139.99.135.47/partenaires-MondeAnimal/{{ partener.IDPartenaires }}.jpg'{% endif %})"
+                    <a class="logo-partner" style="background-image: url({% if (partener.NbImages).length > 0 %} { partener.NbImages } {% else %} 'http://139.99.135.47/partenaires-MondeAnimal/{{ partener.IDPartenaires }}.jpg' {% endif %})"
                     href="{{ partener.LienWeb }}" target="_blank">
                     <div class="boite-partner"></div>
                     </a>
                  {% endfor %}
-                <!-- <a class="logo-partner" style="background-image: url(/images/logo_elagage_evolution.png);"
-                    href="http://www.elagage-evolution.sitew.com/" target="_blank">
-                    <div class="boite-partner"></div>
-                </a>
-                <a class="logo-partner" style="background-image: url(/images/logo_elagage_evolution.png);"
-                    href="http://www.elagage-evolution.sitew.com/" target="_blank">
-                    <div class="boite-partner"></div>
-                </a>
-                <a class="logo-partner" style="background-image: url(/images/logo-dogme.jpeg);"
-                    href="https://www.facebook.com/DogMe.nc/?pageid=188484478543433&ftentidentifier=627305311328012&padding=0" target="_blank">
-                    <div class="boite-partner"></div>
-                </a>
-                <a class="logo-partner" style="background-image: url(/images/logo-bandeanounou.png);"
-                    href="http://labandeanounou.nc/" target="_blank">
-                    <div class="boite-partner"></div>
-                </a>
-                <a class="logo-partner" style="background-image: url(/images/logo-croqadom.jpeg);"
-                    href="https://croqadom.nc/fr/" target="_blank">
-                    <div class="boite-partner"></div>
-                </a>
-                <a class="logo-partner" style="background-image: url(/images/logo_ouEstLeChat.png);"
-                    href="https://www.chat-perdu.org/fr-nc/" target="_blank">
-                    <div class="boite-partner"></div>
-                </a>
-                <a class="logo-partner" style="background-image: url(/images/logo_bien_naitre_animal.png);"
-                    href="https://www.helloasso.com/associations/bien-naitre-animal" target="_blank">
-                    <div class="boite-partner"></div> -->
-                </a>
             </div>
         </div>
     </div>
