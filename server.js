@@ -2,11 +2,11 @@ require("dotenv").config();
 
 const Recaptcha = require("express-recaptcha").RecaptchaV3;
 const sassMiddleware = require("node-sass-middleware");
-const fileUpload = require('express-fileupload');
+const fileUpload = require("express-fileupload");
 const bodyParser = require("body-parser");
 const nunjucks = require("nunjucks");
 const express = require("express");
-const ftp = require("basic-ftp")
+const ftp = require("basic-ftp");
 const path = require("path");
 const odbc = require("odbc");
 const fs = require("fs");
@@ -56,9 +56,13 @@ app.use(function(req, res, next) {
 app.get("/", async (req, res) => {
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
-    const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, CAST(Commentaires AS VARCHAR(8000)) AS Commentaires, DATE, TYPE FROM FichesSaisies ORDER BY Date DESC LIMIT 4`);
-    const homeparteners = await connection.query(`SELECT IDPartenaires, LienWeb, NbImages FROM Partenaires WHERE TYPE = 'PARTENAIRE' ORDER BY RAND() DESC LIMIT 3`);
-    
+    const ads = await connection.query(
+      `SELECT IDFichesSaisies, TypeAnimal, CAST(Commentaires AS VARCHAR(8000)) AS Commentaires, DATE, TYPE FROM FichesSaisies ORDER BY Date DESC LIMIT 4`
+    );
+    const homeparteners = await connection.query(
+      `SELECT IDPartenaires, LienWeb, NbImages FROM Partenaires WHERE TYPE = 'PARTENAIRE' ORDER BY RAND() DESC LIMIT 3`
+    );
+
     res.render("home.html", {
       homeparteners: homeparteners,
       ads: ads,
@@ -84,7 +88,9 @@ app.get("/annonce/:id", async (req, res) => {
 
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
-    const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, CAST(Commentaires AS VARCHAR(8000)) AS Commentaires, DATE, Heure, TYPE, SiFourriere, SiRetrouve FROM FichesSaisies WHERE IDFichesSaisies = ${id}`);
+    const ads = await connection.query(
+      `SELECT IDFichesSaisies, TypeAnimal, CAST(Commentaires AS VARCHAR(8000)) AS Commentaires, DATE, Heure, TYPE, SiFourriere, SiRetrouve FROM FichesSaisies WHERE IDFichesSaisies = ${id}`
+    );
 
     res.render("ad.html", {
       ad: ads[0],
@@ -104,7 +110,11 @@ app.get("/annonces", async (req, res) => {
 
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
-    const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, CAST(Commentaires AS VARCHAR(8000)) AS Commentaires, DATE, Heure, TYPE FROM FichesSaisies ${adType ? `WHERE TYPE = '${adType}'` : ""} ORDER BY Date DESC LIMIT 12`);
+    const ads = await connection.query(
+      `SELECT IDFichesSaisies, TypeAnimal, CAST(Commentaires AS VARCHAR(8000)) AS Commentaires, DATE, Heure, TYPE FROM FichesSaisies ${
+        adType ? `WHERE TYPE = '${adType}'` : ""
+      } ORDER BY Date DESC LIMIT 12`
+    );
 
     res.render("ads.html", {
       ads: ads,
@@ -124,7 +134,11 @@ app.get("/api/annonces", async (req, res) => {
 
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
-    const ads = await connection.query(`SELECT IDFichesSaisies, TypeAnimal, CAST(Commentaires AS VARCHAR(8000)) AS Commentaires, DATE, Heure, TYPE FROM FichesSaisies ${adType ? `WHERE TYPE = '${adType}'` : ""} ORDER BY Date DESC LIMIT 12`);
+    const ads = await connection.query(
+      `SELECT IDFichesSaisies, TypeAnimal, CAST(Commentaires AS VARCHAR(8000)) AS Commentaires, DATE, Heure, TYPE FROM FichesSaisies ${
+        adType ? `WHERE TYPE = '${adType}'` : ""
+      } ORDER BY Date DESC LIMIT 12`
+    );
 
     res.json({
       ads: ads
@@ -142,23 +156,26 @@ app.post("/api/annonce", async (req, res) => {
   const adType = req.body.adType;
   const animalType = req.body.animalType;
   const commentaires = req.body.commentaires;
-  const fileName = 'image-' + Date.now();
+  const fileName = "image-" + Date.now();
   const file = req.files;
 
   try {
-    
-    fs.writeFile('upload.txt', `
+    fs.writeFile(
+      "upload.txt",
+      `
       AdType: ${adType},
       AnimalType: ${animalType},
       Commentaires: ${commentaires}
       File: ${fileName}
-    `, { flag: 'w' }, err => {});
+    `, { flag: "w" }, err => {
+      
+    });
 
     await client.access({
-        host: "",
-        user: "",
-        password: "",
-        secure: true
+      host: "",
+      user: "",
+      password: "",
+      secure: true
     });
 
     await client.uploadFrom(file, "annonces/" + fileName);
@@ -175,7 +192,9 @@ app.post("/api/contact", recaptcha.middleware.verify, async (req, res) => {
   if (!req.recaptcha.error) {
     try {
       const connection = await odbc.connect(process.env.CONNECTION);
-      const ad = await connection.query(`INSERT INTO NousContacter (Message) VALUES ('${message}')`);
+      const ad = await connection.query(
+        `INSERT INTO NousContacter (Message) VALUES ('${message}')`
+      );
 
       res.send(200);
     } catch (error) {
@@ -216,7 +235,9 @@ app.get("/conseils", (req, res) => {
 app.get("/partenaires", async (req, res) => {
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
-    const parteners = await connection.query(`SELECT IDPartenaires, Nom, LienWeb, NbImages FROM Partenaires WHERE TYPE = 'PARTENAIRE'`);
+    const parteners = await connection.query(
+      `SELECT IDPartenaires, Nom, LienWeb, NbImages FROM Partenaires WHERE TYPE = 'PARTENAIRE'`
+    );
 
     res.render("partners.html", {
       parteners: parteners,
@@ -235,13 +256,14 @@ app.get("/jeux", async (req, res) => {
     title: "Jeux",
     breadcrumb: req.breadcrumb
   });
-
 });
 
 app.get("/monde-animal", async (req, res) => {
   try {
     const connection = await odbc.connect(process.env.CONNECTION);
-    const animals = await connection.query(`SELECT IDPartenaires, Nom, LienWeb, NbImages FROM Partenaires WHERE TYPE = 'DONS'`);
+    const animals = await connection.query(
+      `SELECT IDPartenaires, Nom, LienWeb, NbImages FROM Partenaires WHERE TYPE = 'DONS'`
+    );
 
     res.render("animal.html", {
       animals: animals,
@@ -271,5 +293,3 @@ app.get("/tutoriel", (req, res) => {
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
-
-
