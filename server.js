@@ -152,12 +152,12 @@ app.get("/api/annonces", async (req, res) => {
 });
 
 app.post("/api/annonce", async (req, res) => {
-  //const client = new ftp.Client();
+  const client = new ftp.Client();
   const adType = req.body.adType;
   const animalType = req.body.animalType;
   const commentaires = req.body.commentaires;
   const fileName = "image-" + Date.now();
-  const file = req.files;
+  const file = req.files.file;
 
   try {
     fs.writeFile(
@@ -172,13 +172,13 @@ app.post("/api/annonce", async (req, res) => {
     });
 
     await client.access({
-      host: "",
-      user: "",
-      password: "",
-      secure: true
+      host: process.env.FTP_HOST,
+      user: process.env.FTP_USER,
+      password: process.env.FTP_PASS,
+      secure: false
     });
 
-    await client.uploadFrom(file, "annonces/" + fileName);
+    await client.downloadTo(file.name, "annonces/" + fileName);
     await client.uploadFrom("upload.txt", "annonces/upload.txt");
 
     res.send(200);
