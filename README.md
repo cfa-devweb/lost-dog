@@ -3,6 +3,9 @@
 ### Softwares required
 - NodeJS
 
+### Driver link install
+- LINK : https://docs.microsoft.com/fr-fr/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15
+
 ### Classe Boostrap à utiliser
 #### BOUTON
 - Bouton bleue : btn btn-primary.
